@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Projects — Angie M. Gutierrez-Oviedo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --forest: #1e3a0f;
+      --moss: #2d5016;
+      --sage: #4a7c2f;
+      --mist: #e8ede4;
+      --ink: #1a1a18;
+      --stone: #5a5a55;
+      --parchment: #faf9f6;
+      --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
+    .serif { font-family: 'EB Garamond', Georgia, serif; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250,249,246,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 120px 2rem 5rem;
+      background: linear-gradient(to bottom, var(--parchment) 0%, var(--mist) 100%);
+      border-bottom: 1px solid var(--rule);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--stone); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .breadcrumb a { color: var(--moss); text-decoration: none; }
+    .page-header h1 {
+      font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 500; color: var(--forest); margin-bottom: 0.75rem; line-height: 1.15;
+    }
+    .page-header p {
+      font-size: 1rem; color: var(--stone); max-width: 600px; line-height: 1.8;
+    }
+    .stats-row {
+      display: flex; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap;
+    }
+    .stat-item { }
+    .stat-item .num { font-family: 'EB Garamond', serif; font-size: 2rem; color: var(--moss); line-height: 1; }
+    .stat-item .lbl { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); }
+
+    /* FILTERS */
+    .filters-bar {
+      background: white; border-bottom: 1px solid var(--rule);
+      position: sticky; top: 60px; z-index: 50;
+      padding: 0.75rem 2rem;
+    }
+    .filters-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .filter-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-right: 0.5rem; }
+    .filter-btn {
+      font-size: 0.75rem; letter-spacing: 0.04em; font-weight: 500;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 0.3rem 0.8rem; background: transparent; color: var(--stone);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--moss); color: white; border-color: var(--moss); }
+
+    /* TIMELINE LAYOUT */
+    main { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .phase-block { margin-bottom: 5rem; }
+    .phase-header {
+      display: flex; align-items: baseline; gap: 1.5rem;
+      margin-bottom: 2.5rem; padding-bottom: 1rem;
+      border-bottom: 2px solid var(--moss);
+    }
+    .phase-num {
+      font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400;
+      color: var(--rule); line-height: 1; flex-shrink: 0;
+    }
+    .phase-info { }
+    .phase-title { font-family: 'EB Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--forest); }
+    .phase-desc { font-size: 0.85rem; color: var(--stone); font-style: italic; margin-top: 0.15rem; }
+
+    /* PROJECT CARDS */
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .project-card {
+      background: white; border: 1px solid var(--rule); border-radius: 4px;
+      padding: 1.75rem; transition: all 0.2s; cursor: default;
+      position: relative; overflow: hidden;
+    }
+    .project-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--rule); transition: background 0.2s;
+    }
+    .project-card:hover { box-shadow: 0 6px 24px rgba(45,80,22,0.09); transform: translateY(-1px); }
+    .project-card:hover::before { background: var(--moss); }
+    .project-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .project-date { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); font-weight: 500; }
+    .project-tag {
+      font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase;
+      border: 1px solid var(--rule); border-radius: 2px;
+      padding: 0.15rem 0.5rem; color: var(--stone);
+    }
+    .project-card h3 {
+      font-family: 'EB Garamond', serif; font-size: 1.08rem; font-weight: 500;
+      color: var(--forest); line-height: 1.35; margin-bottom: 0.6rem;
+    }
+    .project-card .finding {
+      font-size: 0.83rem; color: var(--stone); line-height: 1.65; margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .project-footer {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      padding-top: 0.75rem; border-top: 1px solid var(--mist);
+    }
+    .dataset-tag {
+      font-size: 0.65rem; letter-spacing: 0.04em;
+      background: var(--mist); color: var(--stone); border-radius: 2px;
+      padding: 0.2rem 0.5rem;
+    }
+    .method-tag {
+      font-size: 0.65rem; letter-spacing: 0.04em;
+      background: rgba(45,80,22,0.08); color: var(--moss); border-radius: 2px;
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* HIDDEN filter state */
+    .project-card.hidden { display: none; }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links a:not(.lang-btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <div class="nav-links">
+      <a href="index.html#about" class="en">About</a>
+      <a href="index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="index.html#research" class="en">Research</a>
+      <a href="index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="index.html#experience" class="en">Experience</a>
+      <a href="index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="projects.html" class="active en">Projects</a>
+      <a href="projects.html" class="active es" style="display:none">Proyectos</a>
+      <a href="contact.html" class="en">Contact</a>
+      <a href="contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span>
+      <span class="en">Research Projects</span>
+      <span class="es" style="display:none">Proyectos de Investigación</span>
+    </div>
+    <h1 class="en">Empirical Research Projects</h1>
+    <h1 class="es" style="display:none">Proyectos de Investigación Empírica</h1>
+    <p class="en">A five-year timeline of independent empirical analyses across agricultural supply chains, commodity markets, and global trade flows. All projects use publicly available datasets: USDA, FAO, World Bank, FRED, UN Comtrade, BLS, and IMF.</p>
+    <p class="es" style="display:none">Un timeline de cinco años de análisis empíricos independientes sobre cadenas de suministro agrícola, mercados de commodities y flujos de comercio global. Todos los proyectos usan datasets públicos: USDA, FAO, Banco Mundial, FRED, UN Comtrade, BLS e IMF.</p>
+    <div class="stats-row">
+      <div class="stat-item"><div class="num">24</div><div class="lbl en">Projects</div><div class="lbl es" style="display:none">Proyectos</div></div>
+      <div class="stat-item"><div class="num">5</div><div class="lbl en">Years (2020–2025)</div><div class="lbl es" style="display:none">Años (2020–2025)</div></div>
+      <div class="stat-item"><div class="num">7+</div><div class="lbl en">Public Datasets</div><div class="lbl es" style="display:none">Datasets Públicos</div></div>
+      <div class="stat-item"><div class="num">10+</div><div class="lbl en">Methods Applied</div><div class="lbl es" style="display:none">Métodos Aplicados</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <span class="filter-label en">Filter:</span>
+    <span class="filter-label es" style="display:none">Filtrar:</span>
+    <button class="filter-btn active" data-tag="all" onclick="filterProjects('all')">
+      <span class="en">All</span><span class="es" style="display:none">Todos</span>
+    </button>
+    <button class="filter-btn" data-tag="supply-chain" onclick="filterProjects('supply-chain')">
+      <span class="en">Supply Chain</span><span class="es" style="display:none">Cadena de Suministro</span>
+    </button>
+    <button class="filter-btn" data-tag="prices" onclick="filterProjects('prices')">
+      <span class="en">Prices & Volatility</span><span class="es" style="display:none">Precios & Volatilidad</span>
+    </button>
+    <button class="filter-btn" data-tag="trade" onclick="filterProjects('trade')">
+      <span class="en">Trade Flows</span><span class="es" style="display:none">Flujos Comerciales</span>
+    </button>
+    <button class="filter-btn" data-tag="risk" onclick="filterProjects('risk')">
+      <span class="en">Risk & Finance</span><span class="es" style="display:none">Riesgo & Finanzas</span>
+    </button>
+  </div>
+</div>
+
+<main>
+
+  <!-- PHASE 1 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <div class="phase-num">I</div>
+      <div class="phase-info">
+        <div class="phase-title en">From Practice to Analysis (2020–2022)</div>
+        <div class="phase-title es" style="display:none">De la Práctica al Análisis (2020–2022)</div>
+        <div class="phase-desc en">Projects motivated by direct operational experience in grain distribution — price volatility, storage costs, logistics inefficiencies, supply chain disruptions</div>
+        <div class="phase-desc es" style="display:none">Proyectos motivados por experiencia operativa directa en distribución de granos — volatilidad de precios, costos de almacenamiento, ineficiencias logísticas, disrupciones de cadena de suministro</div>
+      </div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card" data-tags="prices">
+        <div class="project-meta">
+          <span class="project-date">Jan 2020</span>
+          <span class="project-tag en">Price Analysis</span>
+          <span class="project-tag es" style="display:none">Análisis de Precios</span>
+        </div>
+        <h3 class="en">Corn Price Volatility in Colombian Import Markets: A FRED-Based Analysis</h3>
+        <h3 class="es" style="display:none">Volatilidad del Precio del Maíz en Mercados de Importación Colombianos: Un Análisis Basado en FRED</h3>
+        <p class="finding en">Identifies structural breaks in yellow corn import prices 2015–2019 correlated with USD/COP exchange rate shocks, with implications for domestic wholesale pricing.</p>
+        <p class="finding es" style="display:none">Identifica rupturas estructurales en precios de importación de maíz amarillo 2015–2019 correlacionadas con choques del tipo de cambio USD/COP, con implicaciones para precios mayoristas domésticos.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">USDA</span>
+          <span class="method-tag en">Time-Series</span>
+          <span class="method-tag es" style="display:none">Series de Tiempo</span>
+          <span class="method-tag">Structural Breaks</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain">
+        <div class="project-meta">
+          <span class="project-date">May 2020</span>
+          <span class="project-tag en">Supply Chain</span>
+          <span class="project-tag es" style="display:none">Cadena de Suministro</span>
+        </div>
+        <h3 class="en">COVID-19 Shock on Grain Supply Chains: Evidence from USDA Weekly Reports</h3>
+        <h3 class="es" style="display:none">Choque COVID-19 en Cadenas de Suministro de Granos: Evidencia de Reportes Semanales USDA</h3>
+        <p class="finding en">Documents a 3–6 week lag in supply chain recovery after March 2020 lockdowns using USDA Agricultural Marketing Service weekly price and movement data for corn and soybeans.</p>
+        <p class="finding es" style="display:none">Documenta un rezago de 3–6 semanas en recuperación de cadena de suministro tras los cierres de marzo de 2020 usando datos semanales del Servicio de Comercialización Agrícola del USDA.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">USDA AMS</span>
+          <span class="method-tag en">Event Study</span>
+          <span class="method-tag es" style="display:none">Estudio de Evento</span>
+          <span class="method-tag en">Descriptive</span>
+          <span class="method-tag es" style="display:none">Descriptivo</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain">
+        <div class="project-meta">
+          <span class="project-date">Sep 2020</span>
+          <span class="project-tag en">Logistics</span>
+          <span class="project-tag es" style="display:none">Logística</span>
+        </div>
+        <h3 class="en">Storage Cost Optimization in Smallholder Grain Networks: A Logistical Model</h3>
+        <h3 class="es" style="display:none">Optimización de Costos de Almacenamiento en Redes de Granos de Pequeños Agricultores: Un Modelo Logístico</h3>
+        <p class="finding en">Constructs a cost-minimization framework for grain storage decisions in smallholder networks using FAO post-harvest loss data and Colombian logistics benchmarks from DANE surveys.</p>
+        <p class="finding es" style="display:none">Construye un marco de minimización de costos para decisiones de almacenamiento de granos en redes de pequeños agricultores usando datos de pérdidas post-cosecha de FAO y benchmarks logísticos colombianos de encuestas DANE.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FAO</span>
+          <span class="dataset-tag">DANE</span>
+          <span class="method-tag en">Optimization</span>
+          <span class="method-tag es" style="display:none">Optimización</span>
+          <span class="method-tag">Regression</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="trade">
+        <div class="project-meta">
+          <span class="project-date">Jan 2021</span>
+          <span class="project-tag en">Trade Flows</span>
+          <span class="project-tag es" style="display:none">Flujos Comerciales</span>
+        </div>
+        <h3 class="en">Soybean Trade Flows: South America to Asia Pre/Post Pandemic</h3>
+        <h3 class="es" style="display:none">Flujos Comerciales de Soya: Sudamérica a Asia Pre/Post Pandemia</h3>
+        <p class="finding en">Finds a statistically significant trade diversion of ~8% of South American soy exports toward China 2020–2021 using difference-in-differences on UN Comtrade bilateral flow data.</p>
+        <p class="finding es" style="display:none">Encuentra una desviación comercial estadísticamente significativa de ~8% de exportaciones sudamericanas de soya hacia China 2020–2021 usando diferencias en diferencias sobre datos de flujo bilateral UN Comtrade.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">UN Comtrade</span>
+          <span class="method-tag">Diff-in-Diff</span>
+          <span class="method-tag en">Trade Analysis</span>
+          <span class="method-tag es" style="display:none">Análisis Comercial</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="prices">
+        <div class="project-meta">
+          <span class="project-date">May 2021</span>
+          <span class="project-tag en">Price Transmission</span>
+          <span class="project-tag es" style="display:none">Transmisión de Precios</span>
+        </div>
+        <h3 class="en">Wheat Price Transmission: Chicago Board of Trade to Colombian Wholesale Markets</h3>
+        <h3 class="es" style="display:none">Transmisión de Precios del Trigo: Chicago Board of Trade a Mercados Mayoristas Colombianos</h3>
+        <p class="finding en">Finds long-run cointegration between CBOT wheat futures and Colombian wholesale flour prices with an adjustment coefficient of 0.34, suggesting partial but significant price pass-through.</p>
+        <p class="finding es" style="display:none">Encuentra cointegración a largo plazo entre futuros de trigo CBOT y precios mayoristas colombianos de harina con coeficiente de ajuste de 0.34, sugiriendo transmisión de precios parcial pero significativa.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">SIPSA</span>
+          <span class="method-tag">Cointegration</span>
+          <span class="method-tag">ECM</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain">
+        <div class="project-meta">
+          <span class="project-date">Sep 2021</span>
+          <span class="project-tag en">Network Analysis</span>
+          <span class="project-tag es" style="display:none">Análisis de Redes</span>
+        </div>
+        <h3 class="en">Grain Logistics Bottlenecks in Andean Supply Chains: A Network Analysis</h3>
+        <h3 class="es" style="display:none">Cuellos de Botella Logísticos en Cadenas de Suministro Andinas: Un Análisis de Redes</h3>
+        <p class="finding en">Maps critical chokepoints in the Bogotá–Medellín–Cali grain corridor using World Bank LPI data and FAO agricultural transport indicators, identifying three high-cost segments.</p>
+        <p class="finding es" style="display:none">Mapea puntos críticos en el corredor de granos Bogotá–Medellín–Cali usando datos LPI del Banco Mundial e indicadores de transporte agrícola de FAO, identificando tres segmentos de alto costo.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">World Bank LPI</span>
+          <span class="dataset-tag">FAO</span>
+          <span class="method-tag en">Network Analysis</span>
+          <span class="method-tag es" style="display:none">Análisis de Redes</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="prices">
+        <div class="project-meta">
+          <span class="project-date">Jan 2022</span>
+          <span class="project-tag en">Margin Analysis</span>
+          <span class="project-tag es" style="display:none">Análisis de Márgenes</span>
+        </div>
+        <h3 class="en">Fertilizer Price Spikes and Farm-Gate Corn Margins: Empirical Evidence 2020–2022</h3>
+        <h3 class="es" style="display:none">Picos de Precios de Fertilizantes y Márgenes de Maíz en Finca: Evidencia Empírica 2020–2022</h3>
+        <p class="finding en">A panel regression across Colombian departments shows that a 10% fertilizer price increase reduces farm-gate corn margins by 3.2–4.8%, with heterogeneous effects by farm size.</p>
+        <p class="finding es" style="display:none">Una regresión de panel sobre departamentos colombianos muestra que un aumento del 10% en fertilizantes reduce márgenes de maíz en finca entre 3.2–4.8%, con efectos heterogéneos por tamaño de finca.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">USDA ERS</span>
+          <span class="dataset-tag">FRED</span>
+          <span class="method-tag">Panel OLS</span>
+          <span class="method-tag en">Fixed Effects</span>
+          <span class="method-tag es" style="display:none">Efectos Fijos</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="risk">
+        <div class="project-meta">
+          <span class="project-date">Jun 2022</span>
+          <span class="project-tag en">Risk Management</span>
+          <span class="project-tag es" style="display:none">Gestión de Riesgo</span>
+        </div>
+        <h3 class="en">Commodity Risk Exposure in Small Agribusiness: A VaR Framework</h3>
+        <h3 class="es" style="display:none">Exposición al Riesgo en Pequeñas Agroempres: Un Marco VaR</h3>
+        <p class="finding en">Applies historical and parametric VaR (95% and 99% confidence) to a simulated small Colombian grain importer portfolio, finding tail risk underestimation during high-volatility periods 2021–2022.</p>
+        <p class="finding es" style="display:none">Aplica VaR histórico y paramétrico (95% y 99% de confianza) a un portafolio simulado de importador colombiano de granos, encontrando subestimación del riesgo de cola durante periodos de alta volatilidad 2021–2022.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">CME Group</span>
+          <span class="method-tag">Historical VaR</span>
+          <span class="method-tag">Parametric VaR</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <div class="phase-num">II</div>
+      <div class="phase-info">
+        <div class="phase-title en">Applied Analysis in Finance & Logistics (2023)</div>
+        <div class="phase-title es" style="display:none">Análisis Aplicado en Finanzas y Logística (2023)</div>
+        <div class="phase-desc en">Projects connecting logistics coordination and financial consulting roles — trade competitiveness, currency risk, credit access, geopolitical trade shocks</div>
+        <div class="phase-desc es" style="display:none">Proyectos que conectan roles de coordinación logística y consultoría financiera — competitividad comercial, riesgo cambiario, acceso a crédito, choques comerciales geopolíticos</div>
+      </div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card" data-tags="trade">
+        <div class="project-meta">
+          <span class="project-date">Feb 2023</span>
+          <span class="project-tag en">Trade Competitiveness</span>
+          <span class="project-tag es" style="display:none">Competitividad Comercial</span>
+        </div>
+        <h3 class="en">Export Competitiveness of Colombian Agricultural Products: A Revealed Comparative Advantage Study</h3>
+        <h3 class="es" style="display:none">Competitividad Exportadora de Productos Agrícolas Colombianos: Un Estudio de Ventaja Comparativa Revelada</h3>
+        <p class="finding en">Colombia holds strong RCA (Balassa index &gt;1) in coffee, cut flowers, and bananas, but reveals declining competitiveness in processed grain products, with implications for value-chain upgrading.</p>
+        <p class="finding es" style="display:none">Colombia mantiene RCA fuerte (índice Balassa &gt;1) en café, flores cortadas y banano, pero revela competitividad decreciente en productos de granos procesados, con implicaciones para actualización de cadenas de valor.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">UN Comtrade</span>
+          <span class="dataset-tag">World Bank</span>
+          <span class="method-tag">RCA Index</span>
+          <span class="method-tag">Balassa Index</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain">
+        <div class="project-meta">
+          <span class="project-date">Apr 2023</span>
+          <span class="project-tag en">Spatial Economics</span>
+          <span class="project-tag es" style="display:none">Economía Espacial</span>
+        </div>
+        <h3 class="en">Last-Mile Logistics Costs and Agricultural Market Integration in Colombia</h3>
+        <h3 class="es" style="display:none">Costos de Logística de Última Milla e Integración de Mercados Agrícolas en Colombia</h3>
+        <p class="finding en">Spatial regression reveals that a 100km increase in road distance from major wholesale markets is associated with a 12–18% higher price dispersion for perishable agricultural goods in rural Colombia.</p>
+        <p class="finding es" style="display:none">Regresión espacial revela que un aumento de 100km en distancia por carretera de los principales mercados mayoristas se asocia con una dispersión de precios 12–18% mayor para productos agrícolas perecederos en Colombia rural.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">World Bank</span>
+          <span class="dataset-tag">DANE</span>
+          <span class="method-tag en">Spatial Regression</span>
+          <span class="method-tag es" style="display:none">Regresión Espacial</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="risk">
+        <div class="project-meta">
+          <span class="project-date">Jun 2023</span>
+          <span class="project-tag en">Currency Risk</span>
+          <span class="project-tag es" style="display:none">Riesgo Cambiario</span>
+        </div>
+        <h3 class="en">Currency Risk and Commodity Import Costs: USD/COP Dynamics 2018–2023</h3>
+        <h3 class="es" style="display:none">Riesgo Cambiario y Costos de Importación de Commodities: Dinámica USD/COP 2018–2023</h3>
+        <p class="finding en">A GARCH(1,1) model on daily USD/COP returns identifies three volatility clustering regimes (2018, 2020, 2022), with commodity import cost implications modeled via regression on FRED price indices.</p>
+        <p class="finding es" style="display:none">Un modelo GARCH(1,1) sobre retornos diarios USD/COP identifica tres regímenes de clustering de volatilidad (2018, 2020, 2022), con implicaciones de costos de importación de commodities modeladas vía regresión sobre índices de precios FRED.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">Banco de la República</span>
+          <span class="method-tag">GARCH(1,1)</span>
+          <span class="method-tag">Regression</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="risk">
+        <div class="project-meta">
+          <span class="project-date">Aug 2023</span>
+          <span class="project-tag en">Financial Inclusion</span>
+          <span class="project-tag es" style="display:none">Inclusión Financiera</span>
+        </div>
+        <h3 class="en">Agricultural Credit Access and Smallholder Supply Chain Participation</h3>
+        <h3 class="es" style="display:none">Acceso al Crédito Agrícola y Participación de Pequeños Agricultores en Cadenas de Suministro</h3>
+        <p class="finding en">Probit model using World Bank FinStats shows that access to formal agricultural credit increases probability of market-linked supply chain participation by 22–31% among Colombian smallholders.</p>
+        <p class="finding es" style="display:none">Modelo Probit usando World Bank FinStats muestra que el acceso al crédito agrícola formal aumenta la probabilidad de participación en cadenas de suministro vinculadas al mercado en 22–31% entre pequeños agricultores colombianos.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">World Bank FinStats</span>
+          <span class="dataset-tag">FAO</span>
+          <span class="method-tag">Probit Model</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="trade">
+        <div class="project-meta">
+          <span class="project-date">Oct 2023</span>
+          <span class="project-tag en">Trade Policy</span>
+          <span class="project-tag es" style="display:none">Política Comercial</span>
+        </div>
+        <h3 class="en">Trade Diversion Effects of U.S.–China Tariff War on Latin American Grain Exporters</h3>
+        <h3 class="es" style="display:none">Efectos de Desviación Comercial de la Guerra Arancelaria EE.UU.–China en Exportadores de Granos Latinoamericanos</h3>
+        <p class="finding en">Gravity model estimation on 2017–2022 Comtrade data reveals Brazil captured ~$4.2B in additional soybean export value from trade diversion, while Colombian grain exporters saw negligible direct benefit.</p>
+        <p class="finding es" style="display:none">Estimación de modelo de gravedad sobre datos Comtrade 2017–2022 revela que Brasil capturó ~$4.2B en valor adicional de exportación de soya por desviación comercial, mientras exportadores de granos colombianos vieron beneficio directo negligible.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">UN Comtrade</span>
+          <span class="dataset-tag">USDA</span>
+          <span class="method-tag">Gravity Model</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain">
+        <div class="project-meta">
+          <span class="project-date">Dec 2023</span>
+          <span class="project-tag en">Index Construction</span>
+          <span class="project-tag es" style="display:none">Construcción de Índice</span>
+        </div>
+        <h3 class="en">Supply Chain Resilience Index for Andean Agrifood Systems</h3>
+        <h3 class="es" style="display:none">Índice de Resiliencia de Cadena de Suministro para Sistemas Agroalimentarios Andinos</h3>
+        <p class="finding en">Constructs a composite resilience index (PCA-weighted) for five Andean countries, finding Bolivia and Ecuador face structural fragility driven by infrastructure gaps and credit market shallowness.</p>
+        <p class="finding es" style="display:none">Construye un índice compuesto de resiliencia (ponderado por ACP) para cinco países andinos, encontrando que Bolivia y Ecuador enfrentan fragilidad estructural impulsada por brechas de infraestructura y escasa profundidad del mercado crediticio.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FAO</span>
+          <span class="dataset-tag">World Bank</span>
+          <span class="method-tag">PCA</span>
+          <span class="method-tag en">Index Construction</span>
+          <span class="method-tag es" style="display:none">Construcción de Índice</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <div class="phase-num">III</div>
+      <div class="phase-info">
+        <div class="phase-title en">Academic Rigor & Advanced Methodology (2024–2025)</div>
+        <div class="phase-title es" style="display:none">Rigor Académico y Metodología Avanzada (2024–2025)</div>
+        <div class="phase-desc en">Projects reflecting formal academic training — panel data, machine learning, structural VAR, instrumental variables, DCC-GARCH, and working paper preparation</div>
+        <div class="phase-desc es" style="display:none">Proyectos que reflejan formación académica formal — datos de panel, machine learning, VAR estructural, variables instrumentales, DCC-GARCH y preparación de working papers</div>
+      </div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card" data-tags="prices">
+        <div class="project-meta">
+          <span class="project-date">Feb 2024</span>
+          <span class="project-tag en">Panel Data</span>
+          <span class="project-tag es" style="display:none">Datos de Panel</span>
+        </div>
+        <h3 class="en">Food Price Inflation and Household Welfare in Emerging Markets: Panel Evidence</h3>
+        <h3 class="es" style="display:none">Inflación de Precios de Alimentos y Bienestar de Hogares en Mercados Emergentes: Evidencia de Panel</h3>
+        <p class="finding en">Fixed-effects panel across 28 emerging markets (2010–2023) shows a 1% increase in food price inflation reduces the bottom income quintile's real consumption by 0.7–0.9%, with larger effects in net-importing economies.</p>
+        <p class="finding es" style="display:none">Panel de efectos fijos sobre 28 mercados emergentes (2010–2023) muestra que un aumento del 1% en inflación de precios de alimentos reduce el consumo real del quintil de ingresos más bajo en 0.7–0.9%, con efectos mayores en economías importadoras netas.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">World Bank ICP</span>
+          <span class="dataset-tag">FAO</span>
+          <span class="method-tag en">Panel Fixed Effects</span>
+          <span class="method-tag es" style="display:none">Efectos Fijos de Panel</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="trade">
+        <div class="project-meta">
+          <span class="project-date">Apr 2024</span>
+          <span class="project-tag en">Green Transition</span>
+          <span class="project-tag es" style="display:none">Transición Verde</span>
+        </div>
+        <h3 class="en">Green Transition Costs in Agricultural Commodity Chains: A Carbon-Adjusted Trade Analysis</h3>
+        <h3 class="es" style="display:none">Costos de la Transición Verde en Cadenas de Commodities Agrícolas: Un Análisis de Comercio Ajustado por Carbono</h3>
+        <p class="finding en">Estimates that CBAM-equivalent carbon pricing on agricultural trade would impose $1.4–2.1B in additional annual cost on South American agri-exporters, with disproportionate burden on smallholder-linked supply chains.</p>
+        <p class="finding es" style="display:none">Estima que la fijación de precios de carbono equivalente a CBAM en el comercio agrícola impondría $1.4–2.1B en costo anual adicional a los agroexportadores sudamericanos, con carga desproporcionada en cadenas de suministro vinculadas a pequeños agricultores.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FAO</span>
+          <span class="dataset-tag">UN Comtrade</span>
+          <span class="method-tag en">Cost-Benefit Analysis</span>
+          <span class="method-tag es" style="display:none">Análisis Costo-Beneficio</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="prices">
+        <div class="project-meta">
+          <span class="project-date">Jun 2024</span>
+          <span class="project-tag en">Machine Learning</span>
+          <span class="project-tag es" style="display:none">Machine Learning</span>
+        </div>
+        <h3 class="en">Forecasting Corn Futures Prices Using Machine Learning: LSTM vs. ARIMA Comparison</h3>
+        <h3 class="es" style="display:none">Pronóstico de Precios de Futuros de Maíz con Machine Learning: Comparación LSTM vs. ARIMA</h3>
+        <p class="finding en">LSTM outperforms ARIMA(2,1,2) on out-of-sample RMSE (7.8% vs. 11.3%) for 30-day corn futures forecasting on CBOT data 2015–2024, with superior performance during high-volatility periods.</p>
+        <p class="finding es" style="display:none">LSTM supera a ARIMA(2,1,2) en RMSE fuera de muestra (7.8% vs. 11.3%) para pronóstico de futuros de maíz a 30 días en datos CBOT 2015–2024, con rendimiento superior durante periodos de alta volatilidad.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">CME/Quandl</span>
+          <span class="method-tag">LSTM</span>
+          <span class="method-tag">ARIMA</span>
+          <span class="method-tag">Backtesting</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain">
+        <div class="project-meta">
+          <span class="project-date">Aug 2024</span>
+          <span class="project-tag en">Instrumental Variables</span>
+          <span class="project-tag es" style="display:none">Variables Instrumentales</span>
+        </div>
+        <h3 class="en">Logistics Infrastructure and Agricultural Export Performance: LATAM Evidence</h3>
+        <h3 class="es" style="display:none">Infraestructura Logística y Desempeño Exportador Agrícola: Evidencia LATAM</h3>
+        <p class="finding en">IV estimation using historical colonial road networks as instrument finds that a one-unit improvement in LPI logistics quality score increases agricultural export value by 18–24% across 17 Latin American countries.</p>
+        <p class="finding es" style="display:none">Estimación IV usando redes de carreteras coloniales históricas como instrumento encuentra que una mejora de una unidad en la puntuación de calidad logística LPI aumenta el valor de exportaciones agrícolas en 18–24% en 17 países latinoamericanos.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">World Bank LPI</span>
+          <span class="dataset-tag">ECLAC</span>
+          <span class="method-tag">IV Regression</span>
+          <span class="method-tag">2SLS</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="trade">
+        <div class="project-meta">
+          <span class="project-date">Oct 2024</span>
+          <span class="project-tag en">Market Structure</span>
+          <span class="project-tag es" style="display:none">Estructura de Mercado</span>
+        </div>
+        <h3 class="en">Global Soybean Market Concentration: Structural Analysis 2000–2024</h3>
+        <h3 class="es" style="display:none">Concentración del Mercado Global de Soya: Análisis Estructural 2000–2024</h3>
+        <p class="finding en">The global soy export HHI increased from 0.28 to 0.41 between 2000 and 2024, driven by Brazil's rise, implying heightened systemic risk for net-importing developing countries, including Colombia.</p>
+        <p class="finding es" style="display:none">El HHI de exportaciones globales de soya aumentó de 0.28 a 0.41 entre 2000 y 2024, impulsado por el ascenso de Brasil, implicando mayor riesgo sistémico para países en desarrollo importadores netos, incluido Colombia.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">USDA PSD</span>
+          <span class="dataset-tag">UN Comtrade</span>
+          <span class="method-tag">HHI Index</span>
+          <span class="method-tag en">Structural Analysis</span>
+          <span class="method-tag es" style="display:none">Análisis Estructural</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="risk">
+        <div class="project-meta">
+          <span class="project-date">Dec 2024</span>
+          <span class="project-tag en">Macroeconomics</span>
+          <span class="project-tag es" style="display:none">Macroeconomía</span>
+        </div>
+        <h3 class="en">Interest Rate Shocks and Agricultural Investment in Developing Economies</h3>
+        <h3 class="es" style="display:none">Choques de Tasas de Interés e Inversión Agrícola en Economías en Desarrollo</h3>
+        <p class="finding en">SVAR analysis identifies that a 100bps U.S. federal funds rate shock reduces agricultural investment rates in emerging market economies by 1.8–2.6% over 6 quarters, with heterogeneous transmission across debt-to-GDP ratios.</p>
+        <p class="finding es" style="display:none">Análisis SVAR identifica que un choque de 100bps en la tasa de fondos federales de EE.UU. reduce las tasas de inversión agrícola en economías de mercados emergentes en 1.8–2.6% durante 6 trimestres, con transmisión heterogénea según ratios deuda/PIB.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">World Bank</span>
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">IMF</span>
+          <span class="method-tag">SVAR</span>
+          <span class="method-tag">Impulse Response</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="prices">
+        <div class="project-meta">
+          <span class="project-date">Feb 2025</span>
+          <span class="project-tag en">Climate Economics</span>
+          <span class="project-tag es" style="display:none">Economía Climática</span>
+        </div>
+        <h3 class="en">Climate Variability and Grain Yield Volatility: An Empirical Assessment for the Andean Region</h3>
+        <h3 class="es" style="display:none">Variabilidad Climática y Volatilidad de Rendimiento de Granos: Una Evaluación Empírica para la Región Andina</h3>
+        <p class="finding en">Regression of ENSO index on FAO yield data across five Andean countries finds that El Niño years are associated with 15–22% reductions in corn and potato yields, with asymmetric magnitudes by elevation zone.</p>
+        <p class="finding es" style="display:none">Regresión del índice ENSO sobre datos de rendimiento FAO en cinco países andinos encuentra que los años de El Niño se asocian con reducciones de 15–22% en rendimientos de maíz y papa, con magnitudes asimétricas por zona de altitud.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FAO</span>
+          <span class="dataset-tag">NOAA</span>
+          <span class="dataset-tag">World Bank</span>
+          <span class="method-tag en">Climate Regression</span>
+          <span class="method-tag es" style="display:none">Regresión Climática</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="risk">
+        <div class="project-meta">
+          <span class="project-date">Apr 2025</span>
+          <span class="project-tag en">Portfolio Analysis</span>
+          <span class="project-tag es" style="display:none">Análisis de Portafolio</span>
+        </div>
+        <h3 class="en">Portfolio Diversification with Agricultural Commodities: Risk-Return Analysis for EM Investors</h3>
+        <h3 class="es" style="display:none">Diversificación de Portafolio con Commodities Agrícolas: Análisis Riesgo-Retorno para Inversores de Mercados Emergentes</h3>
+        <p class="finding en">Efficient frontier analysis shows agricultural commodity inclusion (corn, wheat, soy) improves the Sharpe ratio of EM-focused equity portfolios by 0.12–0.19 during 2018–2024 using FRED commodity price indices.</p>
+        <p class="finding es" style="display:none">Análisis de frontera eficiente muestra que la inclusión de commodities agrícolas (maíz, trigo, soya) mejora el ratio de Sharpe de portafolios de renta variable enfocados en mercados emergentes en 0.12–0.19 durante 2018–2024 usando índices de precios FRED.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="method-tag en">Efficient Frontier</span>
+          <span class="method-tag es" style="display:none">Frontera Eficiente</span>
+          <span class="method-tag">Sharpe Ratio</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="risk">
+        <div class="project-meta">
+          <span class="project-date">Jun 2025</span>
+          <span class="project-tag en">Advanced Econometrics</span>
+          <span class="project-tag es" style="display:none">Econometría Avanzada</span>
+        </div>
+        <h3 class="en">Commodity Price Co-movement and Global Trade Uncertainty: A DCC-GARCH Approach</h3>
+        <h3 class="es" style="display:none">Co-movimiento de Precios de Commodities e Incertidumbre Comercial Global: Un Enfoque DCC-GARCH</h3>
+        <p class="finding en">DCC-GARCH estimation on five agricultural commodity pairs (2010–2025) reveals time-varying correlations spiking during 2020 and 2022, with co-movement driven by global trade policy uncertainty rather than supply fundamentals.</p>
+        <p class="finding es" style="display:none">Estimación DCC-GARCH sobre cinco pares de commodities agrícolas (2010–2025) revela correlaciones variables en el tiempo que aumentan durante 2020 y 2022, con co-movimiento impulsado por incertidumbre de política comercial global más que por fundamentos de oferta.</p>
+        <div class="project-footer">
+          <span class="dataset-tag">FRED</span>
+          <span class="dataset-tag">IMF WEO</span>
+          <span class="method-tag">DCC-GARCH</span>
+          <span class="method-tag en">Multivariate</span>
+          <span class="method-tag es" style="display:none">Multivariado</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="supply-chain" style="grid-column: span 2; border-top: 3px solid var(--moss); background: linear-gradient(to right, white, rgba(232,237,228,0.3));">
+        <div class="project-meta">
+          <span class="project-date">Aug 2025</span>
+          <span class="project-tag" style="background: var(--moss); color: white; border-color: var(--moss);">Working Paper</span>
+        </div>
+        <h3 class="en" style="font-size: 1.2rem;">Supply Chain Finance and Agricultural Export Readiness in Colombia: Evidence from SME-Level Survey Data</h3>
+        <h3 class="es" style="display:none; font-size: 1.2rem;">Finanzas de Cadena de Suministro y Preparación Exportadora Agrícola en Colombia: Evidencia de Datos de Encuesta a PYMES</h3>
+        <p class="finding en">Working paper combining World Bank enterprise survey data, DANE agricultural census data, and FAO trade readiness indicators to assess how supply chain finance instruments affect the export readiness of Colombian agricultural SMEs. Mixed-methods approach integrating quantitative panel analysis with case study evidence from Andean grain and fruit supply chains.</p>
+        <p class="finding es" style="display:none">Working paper que combina datos de encuesta empresarial del Banco Mundial, datos del censo agrícola DANE e indicadores de preparación comercial de FAO para evaluar cómo los instrumentos de financiamiento de cadena de suministro afectan la preparación exportadora de PYMES agrícolas colombianas. Enfoque de métodos mixtos que integra análisis cuantitativo de panel con evidencia de estudio de caso de cadenas de suministro andinas de granos y frutas.</p>
+        <div class="project-footer" style="margin-top: 1rem;">
+          <span class="dataset-tag">World Bank</span>
+          <span class="dataset-tag">DANE</span>
+          <span class="dataset-tag">FAO</span>
+          <span class="method-tag en">Mixed Methods</span>
+          <span class="method-tag es" style="display:none">Métodos Mixtos</span>
+          <span class="method-tag en">Panel Analysis</span>
+          <span class="method-tag es" style="display:none">Análisis de Panel</span>
+          <span class="method-tag en">Case Study</span>
+          <span class="method-tag es" style="display:none">Estudio de Caso</span>
+          <span style="margin-left: auto; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); font-weight: 500;" class="en">In preparation</span>
+          <span style="margin-left: auto; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); font-weight: 500;" class="es" style="display:none">En preparación</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="mailto:agutierrez157@estudiantes.areandina.edu.co">agutierrez157@estudiantes.areandina.edu.co</a>
+  </p>
+</footer>
+
+<script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    const other = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.' + lang).forEach(el => el.style.display = '');
+    document.querySelectorAll('.' + other).forEach(el => el.style.display = 'none');
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.documentElement.lang = lang;
+  }
+
+  function filterProjects(tag) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`[data-tag="${tag}"]`).classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (tag === 'all') {
+        card.classList.remove('hidden');
+        if (card.style.gridColumn) card.style.display = '';
+      } else {
+        const tags = card.dataset.tags || '';
+        if (tags.includes(tag)) {
+          card.classList.remove('hidden');
+          if (card.style.gridColumn) card.style.display = '';
+        } else {
+          card.classList.add('hidden');
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>

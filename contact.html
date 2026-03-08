@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Angie M. Gutierrez-Oviedo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
+      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
+      --parchment: #faf9f6; --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+
+    .page-header { padding: 120px 2rem 5rem; background: linear-gradient(to bottom, var(--parchment) 0%, var(--mist) 100%); border-bottom: 1px solid var(--rule); }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .breadcrumb a { color: var(--moss); text-decoration: none; }
+    .page-header h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 500; color: var(--forest); margin-bottom: 0.75rem; }
+    .page-header p { font-size: 1rem; color: var(--stone); max-width: 560px; line-height: 1.8; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+    .contact-block { margin-bottom: 2.5rem; }
+    .contact-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; }
+    .contact-value { font-family: 'EB Garamond', serif; font-size: 1.25rem; color: var(--forest); }
+    .contact-value a { color: var(--forest); text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+    .contact-value a:hover { border-color: var(--moss); }
+    .contact-note { font-size: 0.82rem; color: var(--stone); margin-top: 0.3rem; }
+
+    .divider { width: 40px; height: 2px; background: var(--moss); margin-bottom: 2rem; }
+
+    .scholar-box { background: white; border: 1px solid var(--rule); border-top: 3px solid var(--moss); border-radius: 4px; padding: 2.5rem; }
+    .scholar-box h2 { font-family: 'EB Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--forest); margin-bottom: 1rem; }
+    .scholar-box p { font-size: 0.9rem; color: var(--stone); line-height: 1.8; margin-bottom: 1rem; }
+    .scholar-interests { margin: 1.5rem 0; }
+    .interest-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--mist); }
+    .interest-item:last-child { border-bottom: none; }
+    .interest-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--moss); margin-top: 0.45rem; flex-shrink: 0; }
+    .interest-text { font-size: 0.88rem; color: var(--ink); line-height: 1.55; }
+    .interest-text strong { font-weight: 500; }
+
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--moss); color: white; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 3px; transition: background 0.2s; margin-top: 1rem; }
+    .btn-primary:hover { background: var(--forest); }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; margin-top: 4rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    @media (max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .nav-links a:not(.lang-btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <div class="nav-links">
+      <a href="index.html#about" class="en">About</a>
+      <a href="index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="index.html#research" class="en">Research</a>
+      <a href="index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="index.html#experience" class="en">Experience</a>
+      <a href="index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="projects.html" class="en">Projects</a>
+      <a href="projects.html" class="es" style="display:none">Proyectos</a>
+      <a href="contact.html" class="active en">Contact</a>
+      <a href="contact.html" class="active es" style="display:none">Contacto</a>
+      <button class="lang-toggle" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span>
+      <span class="en">Contact</span>
+      <span class="es" style="display:none">Contacto</span>
+    </div>
+    <h1 class="en">Get in touch</h1>
+    <h1 class="es" style="display:none">Contacto</h1>
+    <p class="en">I welcome inquiries from faculty and research groups exploring visiting scholar arrangements, collaborative research, or academic exchange in agricultural economics, commodity markets, and global trade.</p>
+    <p class="es" style="display:none">Doy la bienvenida a consultas de académicos y grupos de investigación que exploran acuerdos de investigadora visitante, investigación colaborativa o intercambio académico en economía agrícola, mercados de commodities y comercio global.</p>
+  </div>
+</div>
+
+<main>
+  <div class="contact-grid">
+    <div>
+      <div class="divider"></div>
+
+      <div class="contact-block">
+        <div class="contact-label en">Email</div>
+        <div class="contact-label es" style="display:none">Correo Electrónico</div>
+        <div class="contact-value">
+          <a href="mailto:agutierrez157@estudiantes.areandina.edu.co">agutierrez157@estudiantes.areandina.edu.co</a>
+        </div>
+        <div class="contact-note en">Preferred channel for academic and research inquiries</div>
+        <div class="contact-note es" style="display:none">Canal preferido para consultas académicas y de investigación</div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-label en">Location</div>
+        <div class="contact-label es" style="display:none">Ubicación</div>
+        <div class="contact-value">Bogotá, Colombia</div>
+        <div class="contact-note en">UTC–5 · Available for remote collaboration and campus visits</div>
+        <div class="contact-note es" style="display:none">UTC–5 · Disponible para colaboración remota y visitas al campus</div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-label en">Languages</div>
+        <div class="contact-label es" style="display:none">Idiomas</div>
+        <div class="contact-value en">English (Professional) · Spanish (Native)</div>
+        <div class="contact-value es" style="display:none">Inglés (Profesional) · Español (Nativo)</div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-label en">Curriculum Vitae</div>
+        <div class="contact-label es" style="display:none">Currículum Vitae</div>
+        <div class="contact-value">
+          <a href="assets/CV_Angie_Gutierrez.pdf" download class="en">Download PDF</a>
+          <a href="assets/CV_Angie_Gutierrez.pdf" download class="es" style="display:none">Descargar PDF</a>
+        </div>
+        <div class="contact-note en">Last updated May 2025</div>
+        <div class="contact-note es" style="display:none">Última actualización mayo 2025</div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: var(--mist); border-radius: 4px; border: 1px solid var(--rule);">
+        <p style="font-family: 'EB Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--forest); line-height: 1.6;" class="en">"I am particularly interested in collaborative research that bridges field-level agricultural economics with rigorous empirical methodology — especially in contexts where practitioner insight and quantitative analysis can reinforce each other."</p>
+        <p style="font-family: 'EB Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--forest); line-height: 1.6;" class="es" style="display:none">"Estoy particularmente interesada en investigación colaborativa que conecte la economía agrícola a nivel de campo con metodología empírica rigurosa, especialmente en contextos donde la perspectiva del profesional y el análisis cuantitativo pueden reforzarse mutuamente."</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="scholar-box">
+        <h2 class="en">Visiting Scholar Inquiry</h2>
+        <h2 class="es" style="display:none">Consulta de Investigadora Visitante</h2>
+        <p class="en">I am actively seeking Visiting Scholar positions at U.S. universities for 2025–2026. My research agenda is well-suited for collaboration with agricultural economics, development economics, international business, or finance departments.</p>
+        <p class="es" style="display:none">Estoy buscando activamente posiciones de Investigadora Visitante en universidades de EE.UU. para 2025–2026. Mi agenda de investigación es adecuada para colaboración con departamentos de economía agrícola, economía del desarrollo, negocios internacionales o finanzas.</p>
+        <p class="en">Areas where collaboration would be most productive:</p>
+        <p class="es" style="display:none">Áreas donde la colaboración sería más productiva:</p>
+        <div class="scholar-interests">
+          <div class="interest-item">
+            <div class="interest-dot"></div>
+            <div class="interest-text en"><strong>Agricultural supply chain resilience</strong> — empirical analysis of disruptions, bottlenecks, and cost structures in developing country grain networks</div>
+            <div class="interest-text es" style="display:none"><strong>Resiliencia de cadena de suministro agrícola</strong> — análisis empírico de disrupciones, cuellos de botella y estructuras de costos en redes de granos de países en desarrollo</div>
+          </div>
+          <div class="interest-item">
+            <div class="interest-dot"></div>
+            <div class="interest-text en"><strong>Commodity price dynamics</strong> — price transmission, volatility modeling, and market integration between global and local agricultural markets</div>
+            <div class="interest-text es" style="display:none"><strong>Dinámica de precios de commodities</strong> — transmisión de precios, modelado de volatilidad e integración de mercados entre mercados agrícolas globales y locales</div>
+          </div>
+          <div class="interest-item">
+            <div class="interest-dot"></div>
+            <div class="interest-text en"><strong>Latin American agricultural trade</strong> — competitiveness, trade policy effects, and the role of logistics infrastructure in export performance</div>
+            <div class="interest-text es" style="display:none"><strong>Comercio agrícola latinoamericano</strong> — competitividad, efectos de política comercial y papel de la infraestructura logística en el desempeño exportador</div>
+          </div>
+          <div class="interest-item">
+            <div class="interest-dot"></div>
+            <div class="interest-text en"><strong>Financial inclusion in agrifood systems</strong> — credit access, supply chain finance, and their effects on smallholder market participation</div>
+            <div class="interest-text es" style="display:none"><strong>Inclusión financiera en sistemas agroalimentarios</strong> — acceso al crédito, financiamiento de cadena de suministro y sus efectos en la participación de pequeños agricultores en el mercado</div>
+          </div>
+        </div>
+        <a href="mailto:agutierrez157@estudiantes.areandina.edu.co?subject=Visiting Scholar Inquiry" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <span class="en">Send Inquiry</span>
+          <span class="es" style="display:none">Enviar Consulta</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="mailto:agutierrez157@estudiantes.areandina.edu.co">agutierrez157@estudiantes.areandina.edu.co</a>
+  </p>
+</footer>
+
+<script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    const other = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.' + lang).forEach(el => el.style.display = '');
+    document.querySelectorAll('.' + other).forEach(el => el.style.display = 'none');
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>

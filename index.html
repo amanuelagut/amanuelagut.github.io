@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angie M. Gutierrez-Oviedo — Agricultural Economics Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --forest: #1e3a0f;
+      --moss: #2d5016;
+      --sage: #4a7c2f;
+      --mist: #e8ede4;
+      --ink: #1a1a18;
+      --stone: #5a5a55;
+      --parchment: #faf9f6;
+      --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--parchment);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .serif { font-family: 'EB Garamond', Georgia, serif; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250,249,246,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-logo {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem; font-weight: 500;
+      color: var(--forest); letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--stone);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; cursor: pointer;
+      border: 1px solid var(--rule); border-radius: 3px;
+      padding: 0.25rem 0.6rem; color: var(--stone);
+      background: transparent; transition: all 0.2s;
+    }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding-top: 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(45,80,22,0.06) 0%, transparent 70%),
+        linear-gradient(to bottom, var(--parchment) 0%, var(--mist) 100%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; z-index: 0; opacity: 0.18;
+      background-image:
+        linear-gradient(var(--rule) 1px, transparent 1px),
+        linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+      display: grid; grid-template-columns: 1fr 340px; gap: 6rem;
+      align-items: center; width: 100%;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--moss);
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 32px; height: 1px; background: var(--moss);
+    }
+    h1.hero-name {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 500; line-height: 1.1;
+      color: var(--forest); margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.35rem; font-style: italic;
+      color: var(--stone); margin-bottom: 1.75rem;
+    }
+    .hero-desc {
+      font-size: 0.95rem; color: var(--stone);
+      max-width: 500px; margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--moss); color: white;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 1.5rem; border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--forest); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid var(--rule); color: var(--stone);
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 1.5rem; border-radius: 3px;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--moss); color: var(--moss); }
+
+    /* PHOTO PLACEHOLDER */
+    .hero-photo {
+      width: 100%; aspect-ratio: 3/4;
+      background: var(--mist);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.75rem; position: relative; overflow: hidden;
+    }
+    .hero-photo::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(45,80,22,0.04) 0%, transparent 50%);
+    }
+    .photo-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%; background: var(--rule);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .photo-icon svg { width: 32px; height: 32px; color: var(--stone); }
+    .photo-label {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--stone);
+    }
+    .hero-location {
+      position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
+      font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--stone); text-align: center;
+    }
+
+    /* SECTION COMMONS */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--moss);
+      margin-bottom: 0.5rem;
+    }
+    h2.section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      font-weight: 500; color: var(--forest);
+      margin-bottom: 3rem; line-height: 1.2;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--moss); margin-bottom: 1rem;
+    }
+
+    /* ABOUT */
+    #about { background: white; border-top: 1px solid var(--rule); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 1.05rem; color: var(--stone);
+      margin-bottom: 1.25rem; line-height: 1.85;
+    }
+    .about-text p strong { color: var(--ink); font-weight: 500; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .stat-card {
+      border: 1px solid var(--rule); border-radius: 4px;
+      padding: 1.25rem 1.5rem; background: var(--parchment);
+    }
+    .stat-number {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.2rem; font-weight: 500; color: var(--moss);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--stone);
+      margin-top: 0.25rem;
+    }
+
+    /* RESEARCH INTERESTS */
+    #research { background: var(--parchment); }
+    .research-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem;
+    }
+    .research-card {
+      background: white; border: 1px solid var(--rule);
+      border-radius: 4px; padding: 2rem 1.5rem;
+      border-top: 3px solid var(--moss);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .research-card:hover {
+      box-shadow: 0 8px 32px rgba(45,80,22,0.08);
+      transform: translateY(-2px);
+    }
+    .research-icon {
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .research-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem; font-weight: 500; color: var(--forest);
+      margin-bottom: 0.75rem;
+    }
+    .research-card p {
+      font-size: 0.85rem; color: var(--stone); line-height: 1.7;
+    }
+
+    /* EXPERIENCE */
+    #experience { background: white; border-top: 1px solid var(--rule); }
+    .exp-timeline { position: relative; padding-left: 2rem; }
+    .exp-timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+      width: 1px; background: var(--rule);
+    }
+    .exp-item {
+      position: relative; margin-bottom: 3rem;
+      padding-bottom: 3rem; border-bottom: 1px solid var(--rule);
+    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-dot {
+      position: absolute; left: -2.4rem; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--moss); border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--moss);
+    }
+    .exp-date {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--moss); font-weight: 500; margin-bottom: 0.4rem;
+    }
+    .exp-role {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem; font-weight: 500; color: var(--forest);
+    }
+    .exp-org {
+      font-size: 0.88rem; color: var(--stone); margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .exp-bullets { list-style: none; }
+    .exp-bullets li {
+      font-size: 0.9rem; color: var(--stone); padding: 0.3rem 0;
+      padding-left: 1rem; position: relative; line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--moss); font-size: 0.8rem;
+    }
+    .edu-section { margin-top: 4rem; }
+    .edu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .edu-card {
+      border: 1px solid var(--rule); border-radius: 4px;
+      padding: 1.5rem; background: var(--parchment);
+    }
+    .edu-degree {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem; font-weight: 500; color: var(--forest);
+      margin-bottom: 0.25rem;
+    }
+    .edu-inst { font-size: 0.82rem; color: var(--stone); }
+    .edu-year {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--moss); font-weight: 500; margin-top: 0.5rem;
+    }
+
+    /* SKILLS STRIP */
+    .skills-strip {
+      background: var(--forest); padding: 3rem 2rem;
+    }
+    .skills-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
+    }
+    .skills-label {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); white-space: nowrap;
+    }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .skill-tag {
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 3px;
+      padding: 0.3rem 0.75rem;
+    }
+
+    /* FOOTER NAV TO OTHER PAGES */
+    .page-nav {
+      background: var(--mist); border-top: 1px solid var(--rule);
+      padding: 3rem 2rem;
+    }
+    .page-nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+    }
+    .page-nav-card {
+      display: flex; align-items: center; gap: 1rem;
+      background: white; border: 1px solid var(--rule);
+      border-radius: 4px; padding: 1.5rem 2rem;
+      text-decoration: none; min-width: 220px;
+      transition: all 0.2s; flex: 1; max-width: 300px;
+    }
+    .page-nav-card:hover {
+      border-color: var(--moss);
+      box-shadow: 0 4px 16px rgba(45,80,22,0.08);
+    }
+    .page-nav-arrow { font-size: 1.5rem; color: var(--moss); }
+    .page-nav-text .label {
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--stone);
+    }
+    .page-nav-text .title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem; color: var(--forest); font-weight: 500;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--forest); color: rgba(255,255,255,0.5);
+      padding: 2rem; text-align: center;
+      font-size: 0.78rem; letter-spacing: 0.04em;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-photo { max-width: 260px; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .research-grid { grid-template-columns: 1fr 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+    }
+    @media (max-width: 600px) {
+      .research-grid { grid-template-columns: 1fr; }
+      .nav-links a:not(.lang-btn) { display: none; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+    .delay-5 { animation-delay: 0.58s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <div class="nav-links">
+      <a href="index.html#about" class="en">About</a>
+      <a href="index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="index.html#research" class="en">Research</a>
+      <a href="index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="index.html#experience" class="en">Experience</a>
+      <a href="index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="projects.html" class="en">Projects</a>
+      <a href="projects.html" class="es" style="display:none">Proyectos</a>
+      <a href="contact.html" class="en">Contact</a>
+      <a href="contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow fade-up en">Agricultural Economics · Researcher</div>
+      <div class="hero-eyebrow fade-up es" style="display:none">Economía Agrícola · Investigadora</div>
+      <h1 class="hero-name fade-up delay-1">Angie Manuela<br>Gutierrez-Oviedo</h1>
+      <p class="hero-title fade-up delay-2 en">Finance & International Business — Supply Chain Economics</p>
+      <p class="hero-title fade-up delay-2 es" style="display:none">Finanzas y Negocios Internacionales — Economía de Cadenas de Suministro</p>
+      <p class="hero-desc fade-up delay-3 en">
+        Five years of empirical data analysis at the intersection of agricultural markets, commodity risk, and global trade flows. Grounded in operational experience across grain distribution, logistics, and financial consulting in Colombia.
+      </p>
+      <p class="hero-desc fade-up delay-3 es" style="display:none">
+        Cinco años de análisis empírico de datos en la intersección de mercados agrícolas, riesgo en commodities y flujos de comercio global. Fundamentado en experiencia operativa en distribución de granos, logística y consultoría financiera en Colombia.
+      </p>
+      <div class="hero-ctas fade-up delay-4">
+        <a href="assets/CV_Angie_Gutierrez.pdf" class="btn-primary" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="en">Download CV</span>
+          <span class="es" style="display:none">Descargar CV</span>
+        </a>
+        <a href="projects.html" class="btn-secondary">
+          <span class="en">View Research Projects</span>
+          <span class="es" style="display:none">Ver Proyectos</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="fade-up delay-5">
+      <div class="hero-photo">
+        <div class="photo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <span class="photo-label en">Photo</span>
+        <span class="photo-label es" style="display:none">Foto</span>
+        <div class="hero-location">Bogotá, Colombia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="divider"></div>
+    <p class="section-label en">About</p>
+    <p class="section-label es" style="display:none">Sobre mí</p>
+    <h2 class="section-title en">From grain warehouses<br>to empirical research</h2>
+    <h2 class="section-title es" style="display:none">De los almacenes de granos<br>a la investigación empírica</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="en">My research is shaped by seven years inside the agricultural supply chain — not as an observer, but as an operator. From 2016 to 2022, I managed administrative and logistics operations for a grain marketing and distribution company in Ibagué, Tolima, where I developed direct exposure to commodity price dynamics, storage cost trade-offs, and distribution inefficiencies in Andean agrifood systems.</p>
+        <p class="es" style="display:none">Mi investigación está moldeada por siete años dentro de la cadena de suministro agrícola, no como observadora, sino como operadora. De 2016 a 2022, gestioné operaciones administrativas y logísticas en una empresa distribuidora de granos en Ibagué, Tolima, adquiriendo exposición directa a la dinámica de precios de commodities, costos de almacenamiento y eficiencias de distribución.</p>
+        <p class="en">This operational foundation informs five years of independent empirical analysis using public datasets — USDA, FAO, World Bank, FRED, UN Comtrade — applying methods from cointegration and panel data to GARCH models and gravity trade frameworks. My work bridges field-level observation with rigorous quantitative methodology.</p>
+        <p class="es" style="display:none">Esta base operativa fundamenta cinco años de análisis empírico independiente usando datasets públicos — USDA, FAO, Banco Mundial, FRED, UN Comtrade — aplicando métodos desde cointegración y datos de panel hasta modelos GARCH y marcos de gravedad comercial. Mi trabajo conecta la observación de campo con metodología cuantitativa rigurosa.</p>
+        <p class="en">I hold a B.S. in Finance and International Business from Fundación Universitaria del Área Andina (2025) and a Diplomado in Integrated Project Management (PMI-aligned, 2024). I am actively seeking a Visiting Scholar position to advance this research agenda within a collaborative academic environment.</p>
+        <p class="es" style="display:none">Tengo un B.S. en Finanzas y Negocios Internacionales de la Fundación Universitaria del Área Andina (2025) y un Diplomado en Gestión Integral de Proyectos (alineado PMI, 2024). Busco activamente una posición de Visiting Scholar para avanzar esta agenda de investigación en un entorno académico colaborativo.</p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label en">Years of Empirical Analysis</div>
+            <div class="stat-label es" style="display:none">Años de Análisis Empírico</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24</div>
+            <div class="stat-label en">Research Projects</div>
+            <div class="stat-label es" style="display:none">Proyectos de Investigación</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">7+</div>
+            <div class="stat-label en">Public Datasets Used</div>
+            <div class="stat-label es" style="display:none">Datasets Públicos Usados</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">7yr</div>
+            <div class="stat-label en">Industry Experience</div>
+            <div class="stat-label es" style="display:none">Experiencia en Industria</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background: var(--mist); border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; margin-bottom: 1.5rem;">
+          <p style="font-family: 'EB Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--forest); line-height: 1.6; margin-bottom: 1rem;" class="en">"Understanding commodity markets requires standing inside them — watching prices change at the warehouse level before modeling them at the macro level."</p>
+          <p style="font-family: 'EB Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--forest); line-height: 1.6; margin-bottom: 1rem;" class="es" style="display:none">"Comprender los mercados de commodities requiere estar dentro de ellos — observar cómo cambian los precios en el almacén antes de modelarlos a nivel macro."</p>
+        </div>
+        <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem;">
+          <p style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem;" class="en">Key Datasets</p>
+          <p style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem;" class="es" style="display:none">Datasets Principales</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">USDA NASS/ERS</span>
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">FAO FAOSTAT</span>
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">World Bank WDI</span>
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">FRED / St. Louis Fed</span>
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">UN Comtrade</span>
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">BLS</span>
+            <span class="skill-tag" style="background: var(--mist); border-color: var(--rule); color: var(--stone);">IMF WEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research">
+  <div class="section-inner">
+    <div class="divider"></div>
+    <p class="section-label en">Research Interests</p>
+    <p class="section-label es" style="display:none">Intereses de Investigación</p>
+    <h2 class="section-title en">Lines of inquiry</h2>
+    <h2 class="section-title es" style="display:none">Líneas de investigación</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="research-icon">🌾</div>
+        <h3 class="en">Agricultural Supply Chain Economics</h3>
+        <h3 class="es" style="display:none">Economía de Cadenas de Suministro Agrícola</h3>
+        <p class="en">Quantitative analysis of efficiency, cost structures, and market integration in grain and food commodity supply chains, with emphasis on Andean and Latin American contexts.</p>
+        <p class="es" style="display:none">Análisis cuantitativo de eficiencia, estructuras de costos e integración de mercados en cadenas de suministro de granos y alimentos, con énfasis en contextos andinos y latinoamericanos.</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon">📊</div>
+        <h3 class="en">Commodity Risk Management</h3>
+        <h3 class="es" style="display:none">Gestión de Riesgo en Commodities</h3>
+        <p class="en">Price volatility modeling, VaR frameworks, and hedging strategy analysis for agricultural commodities in emerging market contexts using GARCH and time-series methods.</p>
+        <p class="es" style="display:none">Modelado de volatilidad de precios, marcos VaR y análisis de estrategias de cobertura para commodities agrícolas en mercados emergentes usando métodos GARCH y de series de tiempo.</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon">🌐</div>
+        <h3 class="en">Global Trade Flows</h3>
+        <h3 class="es" style="display:none">Flujos de Comercio Global</h3>
+        <p class="en">Empirical examination of agricultural trade patterns, comparative advantage, and the effects of geopolitical shocks and trade policy on commodity flows using gravity model frameworks.</p>
+        <p class="es" style="display:none">Examen empírico de patrones de comercio agrícola, ventaja comparativa y efectos de choques geopolíticos y política comercial en flujos de commodities usando modelos de gravedad.</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon">⚖️</div>
+        <h3 class="en">Geopolitical Financial Stability</h3>
+        <h3 class="es" style="display:none">Estabilidad Financiera Geopolítica</h3>
+        <p class="en">Analysis of how geopolitical disruptions, currency dynamics, and global financial conditions transmit through commodity markets to agricultural producers in emerging economies.</p>
+        <p class="es" style="display:none">Análisis de cómo las disrupciones geopolíticas, dinámicas cambiarias y condiciones financieras globales se transmiten a través de mercados de commodities hacia productores agrícolas en economías emergentes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="divider"></div>
+    <p class="section-label en">Work Experience</p>
+    <p class="section-label es" style="display:none">Experiencia Laboral</p>
+    <h2 class="section-title en">Professional trajectory</h2>
+    <h2 class="section-title es" style="display:none">Trayectoria profesional</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
+      <div class="exp-timeline">
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-date">May 2023 – Nov 2023</div>
+          <div class="exp-role en">Logistics Coordinator</div>
+          <div class="exp-role es" style="display:none">Coordinadora de Logística</div>
+          <div class="exp-org">ISG Service S.A.S — Bogotá, Colombia</div>
+          <ul class="exp-bullets">
+            <li class="en">Managed and audited daily financial transactions and cash flows, ensuring full accuracy in financial integrity compliance.</li>
+            <li class="es" style="display:none">Gestionó y auditó transacciones financieras diarias y flujos de caja, garantizando precisión total en cumplimiento de integridad financiera.</li>
+            <li class="en">Generated strategic financial reports to analyze operational efficiency and resolve discrepancies through data-driven problem solving.</li>
+            <li class="es" style="display:none">Generó reportes financieros estratégicos para analizar eficiencia operativa y resolver discrepancias mediante resolución de problemas basada en datos.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Jan 2023 – Apr 2023</div>
+          <div class="exp-role en">Business Consultant</div>
+          <div class="exp-role es" style="display:none">Consultora de Negocios</div>
+          <div class="exp-org">Actions & Services S.A.S (contractor: Scotiabank Colpatría, Codensa) — Bogotá</div>
+          <ul class="exp-bullets">
+            <li class="en">Performed quantitative credit risk evaluations and financial profile analysis for personalized investment and credit solutions.</li>
+            <li class="es" style="display:none">Realizó evaluaciones cuantitativas de riesgo crediticio y análisis de perfiles financieros para soluciones personalizadas de inversión y crédito.</li>
+            <li class="en">Developed and presented commercial proposals leveraging market data to close high-impact financial transactions.</li>
+            <li class="es" style="display:none">Desarrolló y presentó propuestas comerciales aprovechando datos de mercado para cerrar transacciones financieras de alto impacto.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-date">Jan 2016 – Dec 2022</div>
+          <div class="exp-role en">Administrative Operations Assistant</div>
+          <div class="exp-role es" style="display:none">Asistente de Operaciones Administrativas</div>
+          <div class="exp-org en">Grain Marketing & Distributor S.A.S — Ibagué, Tolima, Colombia</div>
+          <div class="exp-org es" style="display:none">Comercializadora y Distribuidora de Granos S.A.S — Ibagué, Tolima</div>
+          <ul class="exp-bullets">
+            <li class="en">Optimized supply chain and inventory logistics, managing administrative billing and accounting for operational continuity across regional grain distribution.</li>
+            <li class="es" style="display:none">Optimizó logística de cadena de suministro e inventarios, gestionando facturación y contabilidad administrativa para continuidad operativa en distribución regional de granos.</li>
+            <li class="en">Streamlined reporting workflows and delivery tracking, improving distribution efficiency through systematic data management over a seven-year period.</li>
+            <li class="es" style="display:none">Optimizó flujos de trabajo de reporte y seguimiento de entregas, mejorando eficiencia de distribución mediante gestión sistemática de datos durante siete años.</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="edu-section" style="margin-top: 0;">
+          <p class="section-label en" style="margin-bottom: 1.5rem;">Education</p>
+          <p class="section-label es" style="display:none; margin-bottom: 1.5rem;">Educación</p>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="edu-card">
+              <div class="edu-degree en">B.S. Finance and International Business</div>
+              <div class="edu-degree es" style="display:none">Lic. en Finanzas y Negocios Internacionales</div>
+              <div class="edu-inst">Fundación Universitaria del Área Andina, Bogotá</div>
+              <div class="edu-year">2025</div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-degree en">Diplomado — Integrated Project Management</div>
+              <div class="edu-degree es" style="display:none">Diplomado — Gestión Integral de Proyectos</div>
+              <div class="edu-inst en">Fundación Universitaria del Área Andina · PMI-aligned</div>
+              <div class="edu-inst es" style="display:none">Fundación Universitaria del Área Andina · Alineado PMI</div>
+              <div class="edu-year">2024</div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-degree en">Associate Degree — Business Management</div>
+              <div class="edu-degree es" style="display:none">Técnico en Gestión Empresarial</div>
+              <div class="edu-inst">SENA, Ibagué, Tolima</div>
+              <div class="edu-year">2017</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS STRIP -->
+<div class="skills-strip">
+  <div class="skills-inner">
+    <span class="skills-label en">Technical Skills</span>
+    <span class="skills-label es" style="display:none">Habilidades Técnicas</span>
+    <div class="skills-list">
+      <span class="skill-tag">Advanced Excel</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">LaTeX</span>
+      <span class="skill-tag">Microsoft Project</span>
+      <span class="skill-tag">Financial Modeling</span>
+      <span class="skill-tag">Time-Series Analysis</span>
+      <span class="skill-tag">GARCH / VaR</span>
+      <span class="skill-tag">Panel Data</span>
+      <span class="skill-tag">Gravity Models</span>
+      <span class="skill-tag">English · Spanish</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE NAVIGATION -->
+<div class="page-nav">
+  <div class="page-nav-inner">
+    <a href="projects.html" class="page-nav-card">
+      <div class="page-nav-arrow">→</div>
+      <div class="page-nav-text">
+        <div class="label en">Browse</div>
+        <div class="label es" style="display:none">Explorar</div>
+        <div class="title en">Research Projects</div>
+        <div class="title es" style="display:none">Proyectos de Investigación</div>
+      </div>
+    </a>
+    <a href="contact.html" class="page-nav-card">
+      <div class="page-nav-arrow">→</div>
+      <div class="page-nav-text">
+        <div class="label en">Get in touch</div>
+        <div class="label es" style="display:none">Contactar</div>
+        <div class="title en">Contact</div>
+        <div class="title es" style="display:none">Contacto</div>
+      </div>
+    </a>
+    <a href="assets/CV_Angie_Gutierrez.pdf" class="page-nav-card" download>
+      <div class="page-nav-arrow">↓</div>
+      <div class="page-nav-text">
+        <div class="label en">Download</div>
+        <div class="label es" style="display:none">Descargar</div>
+        <div class="title en">Curriculum Vitae</div>
+        <div class="title es" style="display:none">Currículum Vitae</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="mailto:agutierrez157@estudiantes.areandina.edu.co">agutierrez157@estudiantes.areandina.edu.co</a>
+  </p>
+</footer>
+
+<script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    const other = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.' + lang).forEach(el => el.style.display = '');
+    document.querySelectorAll('.' + other).forEach(el => el.style.display = 'none');
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>
