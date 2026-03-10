@@ -6,702 +6,443 @@
   <title>Research Projects — Angie M. Gutierrez-Oviedo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
-      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
-      --parchment: #faf9f6; --rule: #c8d4c0; --gold: #8a6e2f;
+    :root { --forest:#1e3a0f;--moss:#2d5016;--mist:#e8ede4;--ink:#1a1a18;--stone:#5a5a55;--parchment:#faf9f6;--rule:#c8d4c0; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--parchment);color:var(--ink);line-height:1.7;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px;}
+    .nav-logo{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--forest);text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:2rem;}
+    .nav-links a{font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--moss);}
+    .lang-toggle{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border:1px solid var(--rule);border-radius:3px;padding:0.25rem 0.6rem;color:var(--stone);background:transparent;transition:all 0.2s;}
+    .lang-toggle:hover{border-color:var(--moss);color:var(--moss);}
+    .page-header{padding:100px 2rem 3rem;background:linear-gradient(to bottom,var(--parchment) 0%,var(--mist) 100%);border-bottom:1px solid var(--rule);}
+    .page-header-inner{max-width:1100px;margin:0 auto;}
+    .breadcrumb{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem;}
+    .breadcrumb a{color:var(--moss);text-decoration:none;}
+    .divider-line{width:36px;height:2px;background:var(--moss);margin-bottom:1.25rem;}
+    .page-header h1{font-family:'EB Garamond',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:500;color:var(--forest);margin-bottom:1rem;line-height:1.1;}
+    .page-header p{font-family:'EB Garamond',serif;font-size:1.12rem;font-style:italic;color:var(--stone);max-width:780px;line-height:1.8;}
+    .stats-row{display:flex;gap:3.5rem;margin-top:1.75rem;flex-wrap:wrap;}
+    .stat-item .num{font-family:'EB Garamond',serif;font-size:1.6rem;color:var(--moss);line-height:1;}
+    .stat-item .lbl{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-top:0.2rem;}
+    .filters-bar{background:white;border-bottom:1px solid var(--rule);position:sticky;top:60px;z-index:50;padding:0.8rem 2rem;}
+    .filters-inner{max-width:1100px;margin:0 auto;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;}
+    .filter-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-right:0.5rem;}
+    .filter-btn{font-family:'EB Garamond',serif;font-size:0.9rem;border:1px solid var(--rule);border-radius:3px;padding:0.25rem 0.9rem;background:transparent;color:var(--stone);cursor:pointer;transition:all 0.15s;}
+    .filter-btn:hover,.filter-btn.active{background:var(--moss);color:white;border-color:var(--moss);}
+    main{max-width:1100px;margin:0 auto;padding:4rem 2rem 6rem;}
+    .year-block{margin-bottom:5rem;}
+    .year-block.hidden{display:none;}
+    .year-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--moss);}
+    .year-roman{font-family:'EB Garamond',serif;font-size:2.4rem;font-weight:400;color:var(--rule);line-height:1;flex-shrink:0;}
+    .year-theme{font-family:'EB Garamond',serif;font-size:1.55rem;font-weight:500;color:var(--forest);line-height:1.2;}
+    .year-context{font-family:'EB Garamond',serif;font-size:0.95rem;font-style:italic;color:var(--stone);margin:0.35rem 0 0.4rem;line-height:1.6;}
+    .year-sub{font-size:0.72rem;letter-spacing:0.06em;color:var(--stone);margin-top:0.3rem;display:flex;gap:0.75rem;flex-wrap:wrap;}
+    .year-tool{background:rgba(45,80,22,0.07);color:var(--moss);border-radius:2px;padding:0.12rem 0.5rem;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;}
+    /* Capstone */
+    .capstone-card{background:white;border:1px solid var(--rule);border-top:3px solid var(--moss);border-radius:4px;margin-bottom:1rem;transition:box-shadow 0.2s,transform 0.2s;}
+    .capstone-card:hover{box-shadow:0 4px 18px rgba(45,80,22,0.08);transform:translateY(-1px);}
+    .capstone-body{padding:1.4rem 1.4rem 1rem;font-family:'DM Sans',sans-serif;font-style:normal;}
+    .capstone-meta{display:flex;align-items:center;gap:1rem;margin-bottom:0.85rem;}
+    .capstone-badge{font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--moss);color:white;border-radius:2px;padding:0.22rem 0.75rem;font-weight:500;}
+    .capstone-period{font-family:'DM Sans',sans-serif;font-size:0.65rem;color:var(--stone);}
+    .capstone-title{font-family:'EB Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--forest);line-height:1.3;margin-bottom:0.6rem;}
+    .capstone-question{font-family:'EB Garamond',serif;font-size:0.95rem;font-style:italic;color:var(--stone);line-height:1.7;margin-bottom:0.9rem;}
+    .capstone-fields{display:flex;gap:2.5rem;flex-wrap:wrap;}
+    .capstone-field-label{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--moss);margin-bottom:0.2rem;}
+    .capstone-field-value{font-size:0.82rem;color:var(--ink);line-height:1.5;}
+    .capstone-footer{border-top:1px solid var(--mist);padding:0.65rem 1.4rem;display:flex;align-items:center;justify-content:space-between;}
+    .capstone-tags-row{display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .capstone-tag{font-family:'DM Sans',sans-serif;font-size:0.6rem;background:var(--mist);color:var(--stone);border-radius:2px;padding:0.12rem 0.4rem;}
+    .capstone-view{font-family:'DM Sans',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--moss);text-decoration:none;font-weight:500;}
+    .capstone-view:hover{color:var(--forest);}
+    /* RB */
+    .rb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+    .rb-card{background:white;border:1px solid var(--rule);border-top:3px solid var(--moss);border-radius:4px;display:flex;flex-direction:column;transition:box-shadow 0.2s,transform 0.2s;}
+    .rb-card:hover{box-shadow:0 4px 18px rgba(45,80,22,0.08);transform:translateY(-1px);}
+    .rb-body{padding:1.4rem 1.4rem 0.9rem;}
+    .rb-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.7rem;}
+    .rb-label{font-family:'DM Sans',sans-serif;font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:white;background:var(--moss);border-radius:2px;padding:0.08rem 0.4rem;}
+    .rb-period{font-family:'DM Sans',sans-serif;font-size:0.65rem;color:var(--stone);}
+    .rb-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--forest);line-height:1.35;min-height:4.3rem;}
+    .rb-question{font-family:'EB Garamond',serif;font-size:0.88rem;font-style:italic;color:var(--stone);line-height:1.65;padding:0.8rem 1.4rem;border-top:1px solid var(--mist);flex:1;}
+    .rb-tags{padding:0.6rem 1.4rem;border-top:1px solid var(--mist);display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .rb-tag{font-family:'DM Sans',sans-serif;font-size:0.6rem;background:var(--mist);color:var(--stone);border-radius:2px;padding:0.12rem 0.4rem;}
+    .rb-link{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 1.4rem;border-top:1px solid var(--mist);text-decoration:none;transition:background 0.15s;border-radius:0 0 4px 4px;}
+    .rb-link:hover{background:var(--mist);}
+    .rb-link-label{font-family:'DM Sans',sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--moss);font-weight:500;}
+    .rb-link-arrow{font-size:0.85rem;color:var(--moss);}
+    footer{background:var(--forest);color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:0.78rem;}
+    footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+    @media(max-width:900px){.rb-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.rb-grid{grid-template-columns:1fr;}}
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .rb-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
-
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
-    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
-    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
-    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
-
-    /* PAGE HEADER */
-    .page-header { padding: 120px 2rem 5rem; background: linear-gradient(to bottom, var(--parchment) 0%, var(--mist) 100%); border-bottom: 1px solid var(--rule); }
-    .page-header-inner { max-width: 1100px; margin: 0 auto; }
-    .breadcrumb { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .breadcrumb a { color: var(--moss); text-decoration: none; }
-    .page-header h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 500; color: var(--forest); margin-bottom: 0.75rem; line-height: 1.15; }
-    .page-header p { font-size: 1rem; color: var(--stone); max-width: 620px; line-height: 1.8; }
-    .stats-row { display: flex; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap; }
-    .stat-item .num { font-family: 'EB Garamond', serif; font-size: 2rem; color: var(--moss); line-height: 1; }
-    .stat-item .lbl { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); }
-
-    /* FILTERS */
-    .filters-bar { background: white; border-bottom: 1px solid var(--rule); position: sticky; top: 60px; z-index: 50; padding: 0.75rem 2rem; }
-    .filters-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
-    .filter-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-right: 0.5rem; }
-    .filter-btn { font-size: 0.75rem; letter-spacing: 0.04em; font-weight: 500; border: 1px solid var(--rule); border-radius: 3px; padding: 0.3rem 0.8rem; background: transparent; color: var(--stone); cursor: pointer; transition: all 0.15s; }
-    .filter-btn:hover, .filter-btn.active { background: var(--moss); color: white; border-color: var(--moss); }
-
-    /* MAIN */
-    main { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 6rem; }
-
-    /* YEAR BLOCK */
-    .year-block { margin-bottom: 5rem; }
-    .year-header { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--moss); }
-    .year-number { font-family: 'EB Garamond', serif; font-size: 4rem; font-weight: 400; color: var(--rule); line-height: 1; flex-shrink: 0; }
-    .year-info { padding-top: 0.5rem; }
-    .year-theme { font-family: 'EB Garamond', serif; font-size: 1.7rem; font-weight: 500; color: var(--forest); line-height: 1.2; margin-bottom: 0.4rem; }
-    .year-meta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.5rem; }
-    .year-tool-badge { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(45,80,22,0.08); color: var(--moss); border-radius: 3px; padding: 0.2rem 0.6rem; font-weight: 500; }
-    .year-desc { font-size: 0.88rem; color: var(--stone); line-height: 1.7; max-width: 700px; }
-
-    /* PROJECT GRID */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
-
-    /* RESEARCH BRIEF CARD */
-    .rb-card { background: white; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; transition: all 0.2s; }
-    .rb-card:hover { box-shadow: 0 4px 20px rgba(45,80,22,0.08); transform: translateY(-1px); }
-    .rb-card-header { padding: 1.5rem 1.5rem 0; }
-    .rb-type-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
-    .rb-badge { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); border: 1px solid var(--rule); border-radius: 2px; padding: 0.15rem 0.5rem; }
-    .rb-period { font-size: 0.68rem; letter-spacing: 0.06em; color: var(--stone); }
-    .rb-title { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); line-height: 1.35; margin-bottom: 0.75rem; }
-    .rb-question { font-size: 0.8rem; color: var(--stone); font-style: italic; line-height: 1.6; padding: 0.75rem 1.5rem; border-top: 1px solid var(--mist); }
-    .rb-footer { padding: 0.75rem 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; border-top: 1px solid var(--mist); }
-    .rb-tag { font-size: 0.62rem; letter-spacing: 0.04em; background: var(--mist); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.45rem; }
-
-    /* BRIEF TOGGLE BUTTON */
-    .brief-toggle { width: 100%; background: none; border: none; border-top: 1px solid var(--mist); padding: 0.6rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.15s; }
-    .brief-toggle:hover { background: var(--mist); }
-    .brief-toggle-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); font-weight: 500; }
-    .brief-toggle-icon { font-size: 0.75rem; color: var(--moss); transition: transform 0.2s; }
-    .brief-toggle.open .brief-toggle-icon { transform: rotate(180deg); }
-
-    /* PROJECT BRIEF PANEL — Research Brief */
-    .brief-panel { display: none; border-top: 1px solid var(--mist); background: var(--parchment); }
-    .brief-panel.open { display: block; }
-    .brief-panel-inner { padding: 1.5rem; }
-    .brief-field { margin-bottom: 1.1rem; }
-    .brief-field:last-child { margin-bottom: 0; }
-    .brief-field-label { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.3rem; }
-    .brief-field-value { font-size: 0.85rem; color: var(--ink); line-height: 1.65; }
-    .brief-field-value.italic { font-style: italic; color: var(--stone); }
-    .brief-divider { height: 1px; background: var(--rule); margin: 1rem 0; }
-    .brief-finding { background: white; border-left: 3px solid var(--moss); padding: 0.75rem 1rem; border-radius: 0 3px 3px 0; font-size: 0.85rem; color: var(--ink); line-height: 1.65; }
-    .brief-limitation { background: white; border-left: 3px solid var(--rule); padding: 0.75rem 1rem; border-radius: 0 3px 3px 0; font-size: 0.85rem; color: var(--stone); font-style: italic; line-height: 1.65; }
-    .brief-download { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--moss); border: 1px solid var(--moss); border-radius: 3px; padding: 0.4rem 0.8rem; text-decoration: none; margin-top: 0.5rem; transition: all 0.15s; }
-    .brief-download:hover { background: var(--moss); color: white; }
-
-    /* CAPSTONE CARD */
-    .capstone-card { background: white; border: 1px solid var(--rule); border-top: 3px solid var(--moss); border-radius: 4px; overflow: hidden; transition: all 0.2s; }
-    .capstone-card:hover { box-shadow: 0 6px 28px rgba(45,80,22,0.1); transform: translateY(-1px); }
-    .capstone-inner { padding: 2rem; }
-    .capstone-type-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .capstone-badge { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--moss); color: white; border-radius: 2px; padding: 0.2rem 0.65rem; font-weight: 500; }
-    .capstone-period { font-size: 0.68rem; color: var(--stone); letter-spacing: 0.06em; }
-    .capstone-title { font-family: 'EB Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--forest); line-height: 1.3; margin-bottom: 0.75rem; }
-    .capstone-question { font-size: 0.88rem; color: var(--stone); font-style: italic; line-height: 1.7; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--mist); }
-    .capstone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
-    .capstone-field-label { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.3rem; }
-    .capstone-field-value { font-size: 0.83rem; color: var(--ink); line-height: 1.6; }
-    .capstone-finding { background: var(--mist); border-left: 3px solid var(--moss); padding: 0.9rem 1.1rem; border-radius: 0 3px 3px 0; font-size: 0.85rem; color: var(--ink); line-height: 1.65; margin-bottom: 1rem; }
-    .capstone-next { font-size: 0.78rem; color: var(--stone); border-top: 1px solid var(--mist); padding-top: 1rem; display: flex; align-items: flex-start; gap: 0.5rem; }
-    .capstone-next-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); white-space: nowrap; margin-top: 0.15rem; font-weight: 500; }
-    .capstone-footer { padding: 1rem 2rem; background: var(--parchment); border-top: 1px solid var(--mist); display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; gap: 0.75rem; }
-    .capstone-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .capstone-tag { font-size: 0.62rem; letter-spacing: 0.04em; background: white; border: 1px solid var(--rule); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.5rem; }
-
-    /* CAPSTONE BRIEF TOGGLE */
-    .capstone-brief-toggle { width: 100%; background: none; border: none; border-top: 1px solid var(--rule); padding: 0.7rem 2rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.15s; }
-    .capstone-brief-toggle:hover { background: var(--mist); }
-    .capstone-brief-toggle-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); font-weight: 500; }
-    .capstone-brief-panel { display: none; background: var(--parchment); border-top: 1px solid var(--mist); }
-    .capstone-brief-panel.open { display: block; }
-    .capstone-brief-inner { padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .capstone-brief-field { }
-    .capstone-brief-label { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.35rem; }
-    .capstone-brief-value { font-size: 0.85rem; color: var(--ink); line-height: 1.65; }
-    .capstone-brief-full { grid-column: span 2; }
-    .capstone-downloads { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
-
-    /* PENDING STATE */
-    .pending-badge { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); background: var(--mist); border-radius: 2px; padding: 0.15rem 0.5rem; font-style: italic; }
-
-    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
-    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
-
-    @media (max-width: 900px) {
-      .projects-grid { grid-template-columns: 1fr 1fr; }
-      .capstone-grid { grid-template-columns: 1fr; }
-      .capstone-brief-inner { grid-template-columns: 1fr; }
-      .capstone-brief-full { grid-column: span 1; }
-    }
-    @media (max-width: 600px) {
-      .projects-grid { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
       .nav-links a { display: none; }
-      .lang-toggle { display: flex; }
+      .nav-links .lang-toggle { display: inline-block; }
+      .page-header { padding: 80px 1.25rem 2.5rem; }
+      .page-header h1 { font-size: 2.2rem; }
+      .page-header p { font-size: 1rem; }
+      .stats-row { gap: 2rem; }
+      .filters-inner { gap: 0.35rem; }
+      .filter-btn { font-size: 0.8rem; padding: 0.2rem 0.65rem; }
+      main { padding: 2.5rem 1.25rem 4rem; }
+      .year-header { flex-direction: column; gap: 0.5rem; }
+      .year-roman { font-size: 1.8rem; }
+      .year-theme { font-size: 1.25rem; }
+      .rb-grid { grid-template-columns: 1fr; }
+      .capstone-fields { flex-direction: column; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .page-header h1 { font-size: 1.85rem; }
+      .stats-row { gap: 1.25rem; }
+      .stat-item .num { font-size: 1.3rem; }
+    }
+
+    .nav-hamburger { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--forest); }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      #navLinks { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem; gap: 1rem; z-index: 200; }
+      #navLinks.open { display: flex; }
+      #navLinks a { display: block; }
+    }
+  </style>
+
+  <style>
+    div.capstone-field-label, div.capstone-field-value,
+    .capstone-card .capstone-fields div,
+    .capstone-card .capstone-fields {
+      font-family: 'DM Sans', Arial, Helvetica, sans-serif !important;
+      font-style: normal !important;
+      font-weight: 400 !important;
+    }
+    div.capstone-field-label {
+      font-size: 0.58rem !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase !important;
+      color: #2d5016 !important;
+    }
+    div.capstone-field-value {
+      font-size: 0.78rem !important;
+      color: #1a1a18 !important;
+      line-height: 1.5 !important;
+    }
+    .capstone-question {
+      font-size: 1.02rem !important;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .rb-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links a { display: none; }
+      .nav-links .lang-toggle { display: inline-block; }
+      .page-header { padding: 80px 1.25rem 2.5rem; }
+      .page-header h1 { font-size: 2.2rem; }
+      .page-header p { font-size: 1rem; }
+      .stats-row { gap: 2rem; }
+      .filters-inner { gap: 0.35rem; }
+      .filter-btn { font-size: 0.8rem; padding: 0.2rem 0.65rem; }
+      main { padding: 2.5rem 1.25rem 4rem; }
+      .year-header { flex-direction: column; gap: 0.5rem; }
+      .year-roman { font-size: 1.8rem; }
+      .year-theme { font-size: 1.25rem; }
+      .rb-grid { grid-template-columns: 1fr; }
+      .capstone-fields { flex-direction: column; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .page-header h1 { font-size: 1.85rem; }
+      .stats-row { gap: 1.25rem; }
+      .stat-item .num { font-size: 1.3rem; }
+    }
+
+    .nav-hamburger { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--forest); }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      #navLinks { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem; gap: 1rem; z-index: 200; }
+      #navLinks.open { display: flex; }
+      #navLinks a { display: block; }
     }
   </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
-    <div class="nav-links">
-      <a href="index.html#about" class="en">About</a>
-      <a href="index.html#about" class="es" style="display:none">Sobre mí</a>
-      <a href="index.html#research" class="en">Research</a>
-      <a href="index.html#research" class="es" style="display:none">Investigación</a>
-      <a href="index.html#experience" class="en">Experience</a>
-      <a href="index.html#experience" class="es" style="display:none">Experiencia</a>
-      <a href="projects.html" class="active en">Projects</a>
-      <a href="projects.html" class="active es" style="display:none">Proyectos</a>
-      <a href="contact.html" class="en">Contact</a>
-      <a href="contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" onclick="toggleLang()">ES</button>
+    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about" data-en="About" data-es="Acerca de">About</a>
+      <a href="index.html#research" data-en="Research" data-es="Investigación">Research</a>
+      <a href="index.html#experience" data-en="Experience" data-es="Experiencia">Experience</a>
+      <a href="projects.html" class="active" data-en="Projects" data-es="Proyectos">Projects</a>
+      <a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
     </div>
   </div>
 </nav>
 
 <div class="page-header">
   <div class="page-header-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a> <span>/</span>
-      <span class="en">Research Projects</span>
-      <span class="es" style="display:none">Proyectos de Investigación</span>
-    </div>
-    <h1 class="en">Six Years of Empirical Work</h1>
-    <h1 class="es" style="display:none">Seis Años de Trabajo Empírico</h1>
-    <p class="en">A progressive research portfolio built through independent study and applied analysis — from foundational data work in Google Sheets to Python-based econometric modeling. Each year introduces a new analytical tool, applied to real problems in commodity markets, agricultural trade, and emerging market finance.</p>
-    <p class="es" style="display:none">Un portafolio de investigación progresivo construido mediante estudio independiente y análisis aplicado — desde trabajo fundamental de datos en Google Sheets hasta modelado econométrico en Python. Cada año introduce una nueva herramienta analítica, aplicada a problemas reales en mercados de commodities, comercio agrícola y finanzas de mercados emergentes.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Research Projects</div>
+    <div class="divider-line"></div>
+    <h1>Research Projects</h1>
+    <p>A quantitative research portfolio on agricultural economics, commodity markets, biotechnology, and emerging market finance in Latin America — built on public data and progressive in analytical method.</p>
     <div class="stats-row">
-      <div class="stat-item"><div class="num">24</div><div class="lbl en">Projects</div><div class="lbl es" style="display:none">Proyectos</div></div>
-      <div class="stat-item"><div class="num">6</div><div class="lbl en">Tools Mastered</div><div class="lbl es" style="display:none">Herramientas</div></div>
-      <div class="stat-item"><div class="num">2020–25</div><div class="lbl en">Timeline</div><div class="lbl es" style="display:none">Cronología</div></div>
-      <div class="stat-item"><div class="num">7+</div><div class="lbl en">Public Datasets</div><div class="lbl es" style="display:none">Datasets Públicos</div></div>
+      <div class="stat-item"><div class="num">18</div><div class="lbl">Research Briefs</div></div>
+      <div class="stat-item"><div class="num">6</div><div class="lbl">Capstones</div></div>
+      <div class="stat-item"><div class="num">6</div><div class="lbl">Years · 2020–2025</div></div>
+      <div class="stat-item"><div class="num">7+</div><div class="lbl">Public Datasets</div></div>
+      <div class="stat-item"><div class="num">10+</div><div class="lbl">Methods &amp; Tools</div></div>
     </div>
   </div>
 </div>
 
 <div class="filters-bar">
   <div class="filters-inner">
-    <span class="filter-label en">Filter:</span>
-    <span class="filter-label es" style="display:none">Filtrar:</span>
-    <button class="filter-btn active" onclick="filterYear('all')">
-      <span class="en">All Years</span><span class="es" style="display:none">Todos</span>
-    </button>
-    <button class="filter-btn" onclick="filterYear('2020')">2020</button>
-    <button class="filter-btn" onclick="filterYear('2021')">2021</button>
-    <button class="filter-btn" onclick="filterYear('2022')">2022</button>
-    <button class="filter-btn" onclick="filterYear('2023')">2023</button>
-    <button class="filter-btn" onclick="filterYear('2024')">2024</button>
-    <button class="filter-btn" onclick="filterYear('2025')">2025</button>
+    <span class="filter-label" data-en="Filter:" data-es="Filtrar:">Filter:</span>
+    <button class="filter-btn active" onclick="filterTopic(this,'all')" data-en="All" data-es="Todos">All</button>
+    <button class="filter-btn" onclick="filterTopic(this,'prices')" data-en="Prices &amp; Volatility" data-es="Precios &amp; Volatilidad">Prices &amp; Volatility</button>
+    <button class="filter-btn" onclick="filterTopic(this,'trade')" data-en="Trade Flows" data-es="Flujos de Comercio">Trade Flows</button>
+    <button class="filter-btn" onclick="filterTopic(this,'risk')" data-en="Risk &amp; Finance" data-es="Riesgo &amp; Finanzas">Risk &amp; Finance</button>
+    <button class="filter-btn" onclick="filterTopic(this,'supply-chain')" data-en="Supply Chain" data-es="Cadena de Suministro">Supply Chain</button>
+    <button class="filter-btn" onclick="filterTopic(this,'biotech')" data-en="Biotechnology" data-es="Biotecnología">Biotechnology</button>
   </div>
 </div>
 
 <main>
 
-  <!-- ═══════════════════════════════════════════ 2020 -->
-  <div class="year-block" data-year="2020">
-    <div class="year-header">
-      <div class="year-number">2020</div>
-      <div class="year-info">
-        <div class="year-theme en">Price Shocks & Market Disruption</div>
-        <div class="year-theme es" style="display:none">Choques de Precios y Disrupción de Mercados</div>
-        <div class="year-meta">
-          <span class="year-tool-badge">Google Sheets · Excel</span>
-          <span class="year-tool-badge en">Descriptive Statistics</span>
-          <span class="year-tool-badge es" style="display:none">Estadística Descriptiva</span>
-        </div>
-        <p class="year-desc en">First year of systematic empirical analysis — motivated by direct operational exposure to grain price volatility during the COVID-19 pandemic. Projects build foundational skills: statistical description, indexing, time-series visualization, and correlation analysis.</p>
-        <p class="year-desc es" style="display:none">Primer año de análisis empírico sistemático — motivado por exposición operativa directa a la volatilidad de precios de granos durante la pandemia. Los proyectos construyen habilidades fundacionales: descripción estadística, indexación, visualización de series de tiempo y análisis de correlación.</p>
-      </div>
-    </div>
-
-    <!-- Research Briefs 2020 -->
-    <div class="projects-grid">
-
-      <!-- RB1 -->
-      <div class="rb-card" data-tags="prices">
-        <div class="rb-card-header">
-          <div class="rb-type-row">
-            <span class="rb-badge en">Research Brief 1</span>
-            <span class="rb-badge es" style="display:none">Brief de Investigación 1</span>
-            <span class="rb-period">Jan 2019 – Aug 2020</span>
-          </div>
-          <div class="rb-title en">Fríjol Price Volatility in Colombia: First 6 Months of COVID</div>
-          <div class="rb-title es" style="display:none">Volatilidad del Precio del Fríjol en Colombia: Primeros 6 Meses de COVID</div>
-        </div>
-        <div class="rb-question en">Did COVID-19 disruptions increase wholesale fríjol price volatility in Colombia's main market during March–August 2020 compared to the same period in 2019?</div>
-        <div class="rb-question es" style="display:none">¿Las disrupciones de COVID-19 aumentaron la volatilidad del precio mayorista del fríjol en el mercado principal de Colombia durante marzo–agosto 2020 comparado con el mismo período de 2019?</div>
-        <div class="rb-footer">
-          <span class="rb-tag">SIPSA/DANE</span>
-          <span class="rb-tag">Corabastos</span>
-          <span class="rb-tag en">Coefficient of Variation</span>
-          <span class="rb-tag es" style="display:none">Coeficiente de Variación</span>
-        </div>
-        <button class="brief-toggle" onclick="toggleBrief(this)">
-          <span class="brief-toggle-label en">View Project Brief</span>
-          <span class="brief-toggle-label es" style="display:none">Ver Ficha del Proyecto</span>
-          <span class="brief-toggle-icon">▾</span>
-        </button>
-        <div class="brief-panel">
-          <div class="brief-panel-inner">
-            <div class="brief-field">
-              <div class="brief-field-label en">Tool</div>
-              <div class="brief-field-label es" style="display:none">Herramienta</div>
-              <div class="brief-field-value">Google Sheets — statistical formulas, conditional formatting, line charts</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Data</div>
-              <div class="brief-field-label es" style="display:none">Datos</div>
-              <div class="brief-field-value">SIPSA-DANE · Mayoristas · Corabastos, Bogotá · Fríjol bolo rojo · Jan 2019 – Aug 2020</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Methodology</div>
-              <div class="brief-field-label es" style="display:none">Metodología</div>
-              <div class="brief-field-value en">Comparative descriptive statistics (mean, standard deviation, coefficient of variation), base-100 price indexing, month-over-month change, dual time-series visualization</div>
-              <div class="brief-field-value es" style="display:none">Estadística descriptiva comparativa (media, desviación estándar, coeficiente de variación), indexación base 100, variación mensual, visualización de series de tiempo dobles</div>
-            </div>
-            <div class="brief-divider"></div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Key Finding</div>
-              <div class="brief-field-label es" style="display:none">Hallazgo Principal</div>
-              <div class="brief-finding en">Results pending — to be completed with real SIPSA data. Expected finding: CV of fríjol prices increased significantly between Mar–Aug 2019 vs Mar–Aug 2020, indicating higher instability during the pandemic period.</div>
-              <div class="brief-finding es" style="display:none">Resultados pendientes — a completar con datos reales del SIPSA.</div>
-            </div>
-            <div class="brief-field" style="margin-top:1rem;">
-              <div class="brief-field-label en">What I Learned</div>
-              <div class="brief-field-label es" style="display:none">Lo que Aprendí</div>
-              <div class="brief-field-value en">How to quantify price volatility using the coefficient of variation · How to build base-100 indexes · How to represent economic shocks in time-series charts</div>
-              <div class="brief-field-value es" style="display:none">Cómo cuantificar la volatilidad de precios usando el coeficiente de variación · Cómo construir índices base 100 · Cómo representar choques económicos en series de tiempo</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Limitation</div>
-              <div class="brief-field-label es" style="display:none">Limitación</div>
-              <div class="brief-limitation en">Single market (Corabastos) and single variety — does not capture regional heterogeneity or differences by fríjol variety across Colombia.</div>
-              <div class="brief-limitation es" style="display:none">Un solo mercado (Corabastos) y una sola variedad — no captura heterogeneidad regional ni diferencias por variedad de fríjol en Colombia.</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Deliverable</div>
-              <div class="brief-field-label es" style="display:none">Entregable</div>
-              <a href="#" class="brief-download">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="en">Google Sheet + Report PDF — Coming Soon</span>
-                <span class="es" style="display:none">Google Sheet + Reporte PDF — Próximamente</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RB2 -->
-      <div class="rb-card" data-tags="risk">
-        <div class="rb-card-header">
-          <div class="rb-type-row">
-            <span class="rb-badge en">Research Brief 2</span>
-            <span class="rb-badge es" style="display:none">Brief de Investigación 2</span>
-            <span class="rb-period">Jan 2018 – Dec 2020</span>
-          </div>
-          <div class="rb-title en">USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020</div>
-          <div class="rb-title es" style="display:none">Tipo de Cambio USD/COP y Costos de Importación de Granos en Colombia 2018–2020</div>
-        </div>
-        <div class="rb-question en">What is the relationship between the USD/COP exchange rate and the cost of grain imports in Colombia, and how did this relationship change during the COVID-19 shock?</div>
-        <div class="rb-question es" style="display:none">¿Qué relación existe entre el tipo de cambio USD/COP y el costo de importación de granos en Colombia, y cómo cambió esta relación durante el choque COVID-19?</div>
-        <div class="rb-footer">
-          <span class="rb-tag">FRED</span>
-          <span class="rb-tag">Banco de la República</span>
-          <span class="rb-tag en">Correlation · Regression</span>
-          <span class="rb-tag es" style="display:none">Correlación · Regresión</span>
-        </div>
-        <button class="brief-toggle" onclick="toggleBrief(this)">
-          <span class="brief-toggle-label en">View Project Brief</span>
-          <span class="brief-toggle-label es" style="display:none">Ver Ficha del Proyecto</span>
-          <span class="brief-toggle-icon">▾</span>
-        </button>
-        <div class="brief-panel">
-          <div class="brief-panel-inner">
-            <div class="brief-field">
-              <div class="brief-field-label en">Tool</div>
-              <div class="brief-field-label es" style="display:none">Herramienta</div>
-              <div class="brief-field-value">Google Sheets — CORREL function, scatter chart, linear regression (SLOPE/INTERCEPT)</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Data</div>
-              <div class="brief-field-label es" style="display:none">Datos</div>
-              <div class="brief-field-value">FRED (USD/COP monthly rate) · Banco de la República (import price indices) · Jan 2018 – Dec 2020</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Methodology</div>
-              <div class="brief-field-label es" style="display:none">Metodología</div>
-              <div class="brief-field-value en">Pearson correlation between monthly USD/COP rate and grain import cost index · Linear regression (OLS via SLOPE/INTERCEPT) · Scatter plot visualization · Pre/post COVID period comparison</div>
-              <div class="brief-field-value es" style="display:none">Correlación de Pearson entre tipo de cambio USD/COP mensual e índice de costos de importación de granos · Regresión lineal (MCO via SLOPE/INTERCEPT) · Visualización de dispersión · Comparación pre/post COVID</div>
-            </div>
-            <div class="brief-divider"></div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Key Finding</div>
-              <div class="brief-field-label es" style="display:none">Hallazgo Principal</div>
-              <div class="brief-finding en">Results pending — to be completed with real FRED and Banco de la República data.</div>
-              <div class="brief-finding es" style="display:none">Resultados pendientes — a completar con datos reales de FRED y Banco de la República.</div>
-            </div>
-            <div class="brief-field" style="margin-top:1rem;">
-              <div class="brief-field-label en">What I Learned</div>
-              <div class="brief-field-label es" style="display:none">Lo que Aprendí</div>
-              <div class="brief-field-value en">Pearson correlation and linear regression in Google Sheets · How to interpret scatter plots · How exchange rate volatility transmits to import costs</div>
-              <div class="brief-field-value es" style="display:none">Correlación de Pearson y regresión lineal en Google Sheets · Cómo interpretar gráficos de dispersión · Cómo la volatilidad cambiaria se transmite a costos de importación</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Limitation</div>
-              <div class="brief-field-label es" style="display:none">Limitación</div>
-              <div class="brief-limitation en">Does not control for transportation costs, tariffs, or domestic distribution margins — factors that also affect final import costs.</div>
-              <div class="brief-limitation es" style="display:none">No controla costos de transporte, aranceles ni márgenes de distribución doméstica — factores que también afectan los costos finales de importación.</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Deliverable</div>
-              <div class="brief-field-label es" style="display:none">Entregable</div>
-              <a href="#" class="brief-download">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="en">Google Sheet + Report PDF — Coming Soon</span>
-                <span class="es" style="display:none">Google Sheet + Reporte PDF — Próximamente</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RB3 -->
-      <div class="rb-card" data-tags="prices">
-        <div class="rb-card-header">
-          <div class="rb-type-row">
-            <span class="rb-badge en">Research Brief 3</span>
-            <span class="rb-badge es" style="display:none">Brief de Investigación 3</span>
-            <span class="rb-period">Mar – Dec 2020</span>
-          </div>
-          <div class="rb-title en">Grain Wholesale Prices: Ibagué vs Bogotá During the Pandemic</div>
-          <div class="rb-title es" style="display:none">Precios Mayoristas de Granos: Ibagué vs Bogotá Durante la Pandemia</div>
-        </div>
-        <div class="rb-question en">How did wholesale grain prices behave differently in Ibagué vs Bogotá during the COVID-19 pandemic, and what does this reveal about regional market integration?</div>
-        <div class="rb-question es" style="display:none">¿Cómo se comportaron los precios mayoristas de granos de manera diferente en Ibagué vs Bogotá durante la pandemia, y qué revela esto sobre la integración regional de mercados?</div>
-        <div class="rb-footer">
-          <span class="rb-tag">SIPSA/DANE</span>
-          <span class="rb-tag en">Pivot Tables</span>
-          <span class="rb-tag es" style="display:none">Tablas Dinámicas</span>
-          <span class="rb-tag">Price Index</span>
-        </div>
-        <button class="brief-toggle" onclick="toggleBrief(this)">
-          <span class="brief-toggle-label en">View Project Brief</span>
-          <span class="brief-toggle-label es" style="display:none">Ver Ficha del Proyecto</span>
-          <span class="brief-toggle-icon">▾</span>
-        </button>
-        <div class="brief-panel">
-          <div class="brief-panel-inner">
-            <div class="brief-field">
-              <div class="brief-field-label en">Tool</div>
-              <div class="brief-field-label es" style="display:none">Herramienta</div>
-              <div class="brief-field-value">Google Sheets — pivot tables, comparative price index (base 100), multi-city line chart</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Data</div>
-              <div class="brief-field-label es" style="display:none">Datos</div>
-              <div class="brief-field-value">SIPSA-DANE · Mayoristas · Ibagué (Galería Campesina) & Bogotá (Corabastos) · Mar – Dec 2020</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Methodology</div>
-              <div class="brief-field-label es" style="display:none">Metodología</div>
-              <div class="brief-field-value en">Pivot tables to reorganize multi-city SIPSA data · Base-100 comparative price index for both cities · Price dispersion calculation · Visual comparison of trajectories across the pandemic period</div>
-              <div class="brief-field-value es" style="display:none">Tablas dinámicas para reorganizar datos SIPSA multi-ciudad · Índice de precios comparativo base 100 para ambas ciudades · Cálculo de dispersión de precios · Comparación visual de trayectorias durante el período pandémico</div>
-            </div>
-            <div class="brief-divider"></div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Key Finding</div>
-              <div class="brief-field-label es" style="display:none">Hallazgo Principal</div>
-              <div class="brief-finding en">Results pending — to be completed with real SIPSA data.</div>
-              <div class="brief-finding es" style="display:none">Resultados pendientes — a completar con datos reales del SIPSA.</div>
-            </div>
-            <div class="brief-field" style="margin-top:1rem;">
-              <div class="brief-field-label en">What I Learned</div>
-              <div class="brief-field-label es" style="display:none">Lo que Aprendí</div>
-              <div class="brief-field-value en">Advanced pivot tables in Google Sheets · How to build comparative price indexes across multiple markets · How to identify regional price divergence visually</div>
-              <div class="brief-field-value es" style="display:none">Tablas dinámicas avanzadas en Google Sheets · Cómo construir índices de precios comparativos entre múltiples mercados · Cómo identificar divergencia regional de precios visualmente</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Limitation</div>
-              <div class="brief-field-label es" style="display:none">Limitación</div>
-              <div class="brief-limitation en">Does not include volume data — price differences may reflect changes in product quality or variety mix, not only supply disruptions.</div>
-              <div class="brief-limitation es" style="display:none">No incluye datos de volumen — las diferencias de precios pueden reflejar cambios en calidad o mezcla de variedades, no solo disrupciones de oferta.</div>
-            </div>
-            <div class="brief-field">
-              <div class="brief-field-label en">Deliverable</div>
-              <div class="brief-field-label es" style="display:none">Entregable</div>
-              <a href="#" class="brief-download">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="en">Google Sheet + Report PDF — Coming Soon</span>
-                <span class="es" style="display:none">Google Sheet + Reporte PDF — Próximamente</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end projects-grid -->
-
-    <!-- CAPSTONE 2020 -->
-    <div class="capstone-card">
-      <div class="capstone-inner">
-        <div class="capstone-type-row">
-          <span class="capstone-badge">Capstone 2020</span>
-          <span class="capstone-period">Jan 2018 – Dec 2020</span>
-        </div>
-        <div class="capstone-title en">Colombian Grain Price Dynamics During COVID-19: A Multi-Market Excel Analysis</div>
-        <div class="capstone-title es" style="display:none">Dinámica de Precios de Granos en Colombia Durante COVID-19: Un Análisis Multi-Mercado en Excel</div>
-        <div class="capstone-question en">What systematic price patterns emerge when crossing products, cities, and time periods across Colombia's main grain wholesale markets during the COVID-19 shock — and what do they reveal about market integration and vulnerability?</div>
-        <div class="capstone-question es" style="display:none">¿Qué patrones sistemáticos de precios emergen al cruzar productos, ciudades y períodos de tiempo en los principales mercados mayoristas de granos de Colombia durante el choque COVID-19?</div>
-        <div class="capstone-grid">
-          <div>
-            <div class="capstone-field-label en">Tool</div>
-            <div class="capstone-field-label es" style="display:none">Herramienta</div>
-            <div class="capstone-field-value">Google Sheets — pivot tables, Analysis ToolPak equivalent, multi-series charts, dashboard</div>
-          </div>
-          <div>
-            <div class="capstone-field-label en">Data</div>
-            <div class="capstone-field-label es" style="display:none">Datos</div>
-            <div class="capstone-field-value">SIPSA-DANE (multiple cities & products) · FRED (USD/COP) · Banco de la República</div>
-          </div>
-          <div>
-            <div class="capstone-field-label en">Methodology</div>
-            <div class="capstone-field-label es" style="display:none">Metodología</div>
-            <div class="capstone-field-value en">Descriptive statistics · Pearson correlation matrix · Base-100 multi-product index · Multiple regression (LINEST) · Dashboard with cross-filters</div>
-            <div class="capstone-field-value es" style="display:none">Estadística descriptiva · Matriz de correlación de Pearson · Índice base-100 multi-producto · Regresión múltiple (LINEST) · Dashboard con filtros cruzados</div>
-          </div>
-          <div>
-            <div class="capstone-field-label en">Context & Motivation</div>
-            <div class="capstone-field-label es" style="display:none">Contexto y Motivación</div>
-            <div class="capstone-field-value en">Integrates all analytical skills developed across the three Research Briefs of 2020 into a single, comprehensive analysis — demonstrating command of Google Sheets as a full analytical environment.</div>
-            <div class="capstone-field-value es" style="display:none">Integra todas las habilidades analíticas desarrolladas en los tres Research Briefs de 2020 en un solo análisis comprehensivo — demostrando dominio de Google Sheets como entorno analítico completo.</div>
-          </div>
-        </div>
-        <div class="capstone-finding en">Results pending — to be completed with real SIPSA and FRED data. Expected to reveal differential price transmission patterns across Colombian grain markets during the 2020 shock.</div>
-        <div class="capstone-finding es" style="display:none">Resultados pendientes — a completar con datos reales de SIPSA y FRED.</div>
-        <div class="capstone-next">
-          <span class="capstone-next-label en">Next →</span>
-          <span class="capstone-next-label es" style="display:none">Siguiente →</span>
-          <span class="en">This project establishes the analytical baseline for 2021, where larger multi-country trade datasets require SQL to query and process efficiently.</span>
-          <span class="es" style="display:none">Este proyecto establece la línea de base analítica para 2021, donde datasets de comercio multi-país más grandes requieren SQL para consultar y procesar eficientemente.</span>
-        </div>
-      </div>
-      <div class="capstone-footer">
-        <div class="capstone-tags">
-          <span class="capstone-tag">SIPSA/DANE</span>
-          <span class="capstone-tag">FRED</span>
-          <span class="capstone-tag en">Multiple Regression</span>
-          <span class="capstone-tag es" style="display:none">Regresión Múltiple</span>
-          <span class="capstone-tag en">Dashboard</span>
-        </div>
-        <span class="pending-badge en">In Progress</span>
-        <span class="pending-badge es" style="display:none">En Progreso</span>
-      </div>
-      <button class="capstone-brief-toggle" onclick="toggleCapstone(this)">
-        <span class="capstone-brief-toggle-label en">View Full Project Brief</span>
-        <span class="capstone-brief-toggle-label es" style="display:none">Ver Ficha Completa del Proyecto</span>
-        <span class="brief-toggle-icon">▾</span>
-      </button>
-      <div class="capstone-brief-panel">
-        <div class="capstone-brief-inner">
-          <div class="capstone-brief-field">
-            <div class="capstone-brief-label en">What I Learned</div>
-            <div class="capstone-brief-label es" style="display:none">Lo que Aprendí</div>
-            <div class="capstone-brief-value en">Full integration of Google Sheets as an analytical environment: pivot tables, statistical functions, multiple regression with LINEST, dashboard construction, and cross-market comparison methodology.</div>
-            <div class="capstone-brief-value es" style="display:none">Integración completa de Google Sheets como entorno analítico: tablas dinámicas, funciones estadísticas, regresión múltiple con LINEST, construcción de dashboard y metodología de comparación multi-mercado.</div>
-          </div>
-          <div class="capstone-brief-field">
-            <div class="capstone-brief-label en">Limitation</div>
-            <div class="capstone-brief-label es" style="display:none">Limitación</div>
-            <div class="capstone-brief-value en">Analysis is correlational — does not establish structural causality between variables. Large multi-country datasets exceed what Google Sheets handles efficiently, motivating the transition to SQL in 2021.</div>
-            <div class="capstone-brief-value es" style="display:none">El análisis es correlacional — no establece causalidad estructural entre variables. Datasets multi-país grandes exceden lo que Google Sheets maneja eficientemente, motivando la transición a SQL en 2021.</div>
-          </div>
-          <div class="capstone-brief-field capstone-brief-full">
-            <div class="capstone-brief-label en">Deliverables</div>
-            <div class="capstone-brief-label es" style="display:none">Entregables</div>
-            <div class="capstone-downloads">
-              <a href="#" class="brief-download">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="en">Google Sheet (Full Analysis) — Coming Soon</span>
-                <span class="es" style="display:none">Google Sheet (Análisis Completo) — Próximamente</span>
-              </a>
-              <a href="#" class="brief-download">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="en">Executive Report PDF — Coming Soon</span>
-                <span class="es" style="display:none">Reporte Ejecutivo PDF — Próximamente</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- end 2020 -->
-
-  <!-- ═══════════════════════════════════════════ 2021–2025 PLACEHOLDER BLOCKS -->
-  <!-- These will be fully populated as projects are built -->
-
-  <!-- 2021 -->
-  <div class="year-block" data-year="2021">
-    <div class="year-header">
-      <div class="year-number">2021</div>
-      <div class="year-info">
-        <div class="year-theme en">Trade Networks & Data at Scale</div>
-        <div class="year-theme es" style="display:none">Redes Comerciales y Datos a Escala</div>
-        <div class="year-meta">
-          <span class="year-tool-badge">SQL</span>
-          <span class="year-tool-badge en">Database Queries</span>
-          <span class="year-tool-badge es" style="display:none">Consultas de Base de Datos</span>
-        </div>
-        <p class="year-desc en">Multi-country trade data exceeds what spreadsheets handle efficiently. This year introduces SQL to query, clean, and cross-reference UN Comtrade bilateral flow data — enabling analysis of Latin American agricultural trade networks at scale.</p>
-        <p class="year-desc es" style="display:none">Los datos de comercio multi-país exceden lo que las hojas de cálculo manejan eficientemente. Este año introduce SQL para consultar, limpiar y cruzar datos de flujo bilateral de UN Comtrade — permitiendo análisis de redes de comercio agrícola latinoamericano a escala.</p>
-      </div>
-    </div>
-    <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; text-align: center; color: var(--stone); font-size: 0.88rem;">
-      <p class="en">Projects in progress — being built alongside the 2020 portfolio.</p>
-      <p class="es" style="display:none">Proyectos en progreso — siendo construidos junto con el portafolio de 2020.</p>
+<!-- VI · 2025 -->
+<div class="year-block" data-topics="prices trade biotech risk">
+  <div class="year-header">
+    <div class="year-roman">VI</div>
+    <div>
+      <div class="year-theme">Formal Research &amp; Academic Publication Standards (2025)</div>
+      <div class="year-context">Python econometrics documented in LaTeX — panel regression, GARCH modeling, and a submission-ready working paper on GitHub.</div>
+      <div class="year-sub"><span class="year-tool">Python · LaTeX</span><span class="year-tool">Working Papers · Reproducible Research · GitHub</span></div>
     </div>
   </div>
-
-  <!-- 2022 -->
-  <div class="year-block" data-year="2022">
-    <div class="year-header">
-      <div class="year-number">2022</div>
-      <div class="year-info">
-        <div class="year-theme en">Risk, Volatility & Statistical Inference</div>
-        <div class="year-theme es" style="display:none">Riesgo, Volatilidad e Inferencia Estadística</div>
-        <div class="year-meta">
-          <span class="year-tool-badge en">Applied Statistics · Excel</span>
-          <span class="year-tool-badge es" style="display:none">Estadística Aplicada · Excel</span>
-        </div>
-        <p class="year-desc en">Moving beyond description toward inference — correlation, regression, and time-series analysis applied to commodity price transmission and agricultural risk in Colombian markets.</p>
-        <p class="year-desc es" style="display:none">Avanzando más allá de la descripción hacia la inferencia — correlación, regresión y análisis de series de tiempo aplicados a la transmisión de precios de commodities y riesgo agrícola en mercados colombianos.</p>
+  <div class="capstone-card">
+    <div class="capstone-body">
+      <div class="capstone-meta"><span class="capstone-badge">Capstone 2025</span><span class="capstone-period">2019 – 2025</span></div>
+      <div class="capstone-title">Agricultural Market Vulnerability in Emerging Economies: A Six-Year Empirical Analysis of Prices, Trade and Biotechnology in Colombia</div>
+      <div class="capstone-question">What patterns of agricultural market vulnerability emerge across six years when price dynamics, trade flows, and biotechnology adoption are examined together for Colombia?</div>
+      <div class="capstone-fields">
+        <div><div class="capstone-field-label">Tool</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">Python · LaTeX · GitHub</span></div></div>
+        <div><div class="capstone-field-label">Data</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">FRED · SIPSA-DANE · UN Comtrade · FAO · ISAAA · Banco de la República</span></div></div>
       </div>
     </div>
-    <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; text-align: center; color: var(--stone); font-size: 0.88rem;">
-      <p class="en">Projects in progress.</p>
-      <p class="es" style="display:none">Proyectos en progreso.</p>
+    <div class="capstone-footer">
+      <div class="capstone-tags-row"><span class="capstone-tag">Working Paper</span><span class="capstone-tag">LaTeX .pdf</span><span class="capstone-tag">.ipynb</span></div>
+      <a href="projects/2025-capstone.html" class="capstone-view">View Project Brief →</a>
     </div>
   </div>
+  <div class="rb-grid">
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 1</span><span class="rb-period">2010 – 2025</span></div><div class="rb-title">Agricultural Biotechnology and Food Security in Colombia: An Empirical Assessment 2010–2025</div></div><div class="rb-question">What measurable impact has agricultural biotechnology adoption had on food security indicators in Colombia between 2010 and 2025?</div><div class="rb-tags"><span class="rb-tag">FAO</span><span class="rb-tag">ISAAA</span><span class="rb-tag">DANE</span><span class="rb-tag">Panel Regression</span></div><a href="projects/2025-rb1-biotech-food-security.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 2</span><span class="rb-period">2015 – 2025</span></div><div class="rb-title">Commodity Portfolio Risk Modeling in Latin American Agricultural Markets</div></div><div class="rb-question">How does GARCH-based volatility modeling improve portfolio risk estimates for agricultural commodity investors in Latin American emerging markets?</div><div class="rb-tags"><span class="rb-tag">FRED</span><span class="rb-tag">UN Comtrade</span><span class="rb-tag">GARCH</span></div><a href="projects/2025-rb2-portfolio-risk.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 3</span><span class="rb-period">2015 – 2025</span></div><div class="rb-title">Structural Determinants of Colombian Agricultural Export Competitiveness 2015–2025</div></div><div class="rb-question">What structural factors — logistics quality, exchange rate, productivity — most strongly determine Colombia's agricultural export competitiveness between 2015 and 2025?</div><div class="rb-tags"><span class="rb-tag">UN Comtrade</span><span class="rb-tag">World Bank</span><span class="rb-tag">RCA · IV Regression</span></div><a href="projects/2025-rb3-export-competitiveness.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+  </div>
+</div>
 
-  <!-- 2023 -->
-  <div class="year-block" data-year="2023">
-    <div class="year-header">
-      <div class="year-number">2023</div>
-      <div class="year-info">
-        <div class="year-theme en">Visual Intelligence & Market Storytelling</div>
-        <div class="year-theme es" style="display:none">Inteligencia Visual y Narrativa de Mercados</div>
-        <div class="year-meta">
-          <span class="year-tool-badge">Power BI</span>
-          <span class="year-tool-badge en">Data Visualization</span>
-          <span class="year-tool-badge es" style="display:none">Visualización de Datos</span>
-        </div>
-        <p class="year-desc en">Analytical rigor meets executive communication — Power BI dashboards translating complex trade, currency risk, and agricultural biotechnology data into actionable visual narratives for non-technical audiences.</p>
-        <p class="year-desc es" style="display:none">El rigor analítico se une a la comunicación ejecutiva — dashboards de Power BI que traducen datos complejos de comercio, riesgo cambiario y biotecnología agrícola en narrativas visuales accionables para audiencias no técnicas.</p>
+<!-- V · 2024 -->
+<div class="year-block" data-topics="prices biotech risk">
+  <div class="year-header">
+    <div class="year-roman">V</div>
+    <div>
+      <div class="year-theme">Automation, APIs &amp; Econometric Modeling (2024)</div>
+      <div class="year-context">Automated econometric analysis — Python, FRED API, and reproducible forecasting models in Jupyter Notebooks.</div>
+      <div class="year-sub"><span class="year-tool">Python</span><span class="year-tool">pandas · matplotlib · statsmodels · FRED API</span></div>
+    </div>
+  </div>
+  <div class="capstone-card">
+    <div class="capstone-body">
+      <div class="capstone-meta"><span class="capstone-badge">Capstone 2024</span><span class="capstone-period">2015 – 2024</span></div>
+      <div class="capstone-title">Agricultural Commodity Price Forecasting in Emerging Markets: A Python-Based Analysis</div>
+      <div class="capstone-question">Can a Python-based ARIMA forecasting model outperform a naive baseline in predicting agricultural commodity prices in Colombian and Latin American markets?</div>
+      <div class="capstone-fields">
+        <div><div class="capstone-field-label">Tool</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">Python — pandas, matplotlib, statsmodels, FRED API</span></div></div>
+        <div><div class="capstone-field-label">Data</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">FRED API · FAO · USDA · ISAAA</span></div></div>
       </div>
     </div>
-    <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; text-align: center; color: var(--stone); font-size: 0.88rem;">
-      <p class="en">Projects in progress.</p>
-      <p class="es" style="display:none">Proyectos en progreso.</p>
+    <div class="capstone-footer">
+      <div class="capstone-tags-row"><span class="capstone-tag">ARIMA</span><span class="capstone-tag">.ipynb</span><span class="capstone-tag">Backtesting</span></div>
+      <a href="projects/2024-capstone.html" class="capstone-view">View Project Brief →</a>
     </div>
   </div>
+  <div class="rb-grid">
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 1</span><span class="rb-period">2010 – 2024</span></div><div class="rb-title">Biotech Seed Adoption and Agricultural Price Volatility in Latin America 2010–2024</div></div><div class="rb-question">Does higher biotech seed adoption correlate with lower agricultural price volatility across Latin American countries between 2010 and 2024?</div><div class="rb-tags"><span class="rb-tag">FAO</span><span class="rb-tag">ISAAA</span><span class="rb-tag">pandas · matplotlib</span></div><a href="projects/2024-rb1-biotech-volatility.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 2</span><span class="rb-period">2015 – 2024</span></div><div class="rb-title">Automating Commodity Price Time-Series Analysis with Python and FRED API</div></div><div class="rb-question">How can the FRED API and Python automate the retrieval and time-series analysis of agricultural commodity prices, replacing manual Excel workflows?</div><div class="rb-tags"><span class="rb-tag">FRED API</span><span class="rb-tag">pandas</span><span class="rb-tag">matplotlib</span></div><a href="projects/2024-rb2-fred-automation.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 3</span><span class="rb-period">2015 – 2024</span></div><div class="rb-title">Macroeconomic Indicators and Agricultural Price Correlations in Colombia 2015–2024</div></div><div class="rb-question">Which macroeconomic indicators — interest rates, inflation, exchange rate — show the strongest correlations with agricultural prices in Colombia between 2015 and 2024?</div><div class="rb-tags"><span class="rb-tag">FRED</span><span class="rb-tag">Banco de la República</span><span class="rb-tag">seaborn · statsmodels</span></div><a href="projects/2024-rb3-macro-correlations.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+  </div>
+</div>
 
-  <!-- 2024 -->
-  <div class="year-block" data-year="2024">
-    <div class="year-header">
-      <div class="year-number">2024</div>
-      <div class="year-info">
-        <div class="year-theme en">Automation, APIs & Econometric Modeling</div>
-        <div class="year-theme es" style="display:none">Automatización, APIs y Modelado Econométrico</div>
-        <div class="year-meta">
-          <span class="year-tool-badge">Python</span>
-          <span class="year-tool-badge">pandas · matplotlib · statsmodels</span>
-        </div>
-        <p class="year-desc en">Python enables what spreadsheets cannot — automated data retrieval via APIs, large dataset processing, and reproducible econometric analysis. This year bridges operational data work with formal academic methodology.</p>
-        <p class="year-desc es" style="display:none">Python permite lo que las hojas de cálculo no pueden — recuperación automatizada de datos via APIs, procesamiento de datasets grandes y análisis econométrico reproducible. Este año conecta el trabajo operativo de datos con metodología académica formal.</p>
+<!-- IV · 2023 -->
+<div class="year-block" data-topics="trade risk biotech supply-chain">
+  <div class="year-header">
+    <div class="year-roman">IV</div>
+    <div>
+      <div class="year-theme">Visual Intelligence &amp; Market Storytelling (2023)</div>
+      <div class="year-context">Interactive market intelligence — Power BI dashboards integrating currency risk, biotechnology trends, and trade geography.</div>
+      <div class="year-sub"><span class="year-tool">Power BI</span><span class="year-tool">Power Query · Data Modeling · Interactive Dashboards</span></div>
+    </div>
+  </div>
+  <div class="capstone-card">
+    <div class="capstone-body">
+      <div class="capstone-meta"><span class="capstone-badge">Capstone 2023</span><span class="capstone-period">2019 – 2023</span></div>
+      <div class="capstone-title">Colombian Agricultural Market Intelligence Dashboard 2019–2023</div>
+      <div class="capstone-question">How can an interactive Power BI dashboard integrate currency risk, biotechnology trends, and trade geography into a single market intelligence tool?</div>
+      <div class="capstone-fields">
+        <div><div class="capstone-field-label">Tool</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">Power BI — Power Query, data modeling, slicers, maps</span></div></div>
+        <div><div class="capstone-field-label">Data</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">FRED · FAO · UN Comtrade · SIPSA-DANE</span></div></div>
       </div>
     </div>
-    <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; text-align: center; color: var(--stone); font-size: 0.88rem;">
-      <p class="en">Projects in progress.</p>
-      <p class="es" style="display:none">Proyectos en progreso.</p>
+    <div class="capstone-footer">
+      <div class="capstone-tags-row"><span class="capstone-tag">Power Query</span><span class="capstone-tag">.pbix</span><span class="capstone-tag">Executive Report</span></div>
+      <a href="projects/2023-capstone.html" class="capstone-view">View Project Brief →</a>
     </div>
   </div>
+  <div class="rb-grid">
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 1</span><span class="rb-period">2020 – 2023</span></div><div class="rb-title">USD/COP Exchange Rate Risk and Agricultural Import Costs: A Power BI Visual Analysis</div></div><div class="rb-question">How can Power BI effectively communicate the relationship between USD/COP volatility and agricultural import cost dynamics to a non-technical audience?</div><div class="rb-tags"><span class="rb-tag">FRED</span><span class="rb-tag">Banco de la República</span><span class="rb-tag">Power BI</span></div><a href="projects/2023-rb1-usdcop-powerbi.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 2</span><span class="rb-period">2015 – 2023</span></div><div class="rb-title">Agricultural Biotechnology Adoption in Latin America: Crop Yield Patterns 2015–2023</div></div><div class="rb-question">What visual patterns emerge in the relationship between biotech seed adoption and crop yield performance across Latin American countries between 2015 and 2023?</div><div class="rb-tags"><span class="rb-tag">FAO</span><span class="rb-tag">ISAAA</span><span class="rb-tag">Maps · Trends</span></div><a href="projects/2023-rb2-biotech-latam.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 3</span><span class="rb-period">2019 – 2023</span></div><div class="rb-title">Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023</div></div><div class="rb-question">How can geographic mapping in Power BI reveal the spatial distribution and evolution of Colombia's agricultural trade partnerships between 2019 and 2023?</div><div class="rb-tags"><span class="rb-tag">UN Comtrade</span><span class="rb-tag">DANE</span><span class="rb-tag">Maps · Treemap</span></div><a href="projects/2023-rb3-trade-geography.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+  </div>
+</div>
 
-  <!-- 2025 -->
-  <div class="year-block" data-year="2025">
-    <div class="year-header">
-      <div class="year-number">2025</div>
-      <div class="year-info">
-        <div class="year-theme en">Formal Research & Academic Publication Standards</div>
-        <div class="year-theme es" style="display:none">Investigación Formal y Estándares de Publicación Académica</div>
-        <div class="year-meta">
-          <span class="year-tool-badge">Python · LaTeX</span>
-          <span class="year-tool-badge en">Working Papers</span>
-          <span class="year-tool-badge es" style="display:none">Working Papers</span>
-        </div>
-        <p class="year-desc en">Six years of empirical work culminate in formally documented research — Python-based analysis written up in LaTeX to international academic standards, with reproducible code on GitHub. The Capstone working paper synthesizes the full portfolio narrative.</p>
-        <p class="year-desc es" style="display:none">Seis años de trabajo empírico culminan en investigación documentada formalmente — análisis en Python redactado en LaTeX según estándares académicos internacionales, con código reproducible en GitHub. El working paper Capstone sintetiza la narrativa completa del portafolio.</p>
+<!-- III · 2022 -->
+<div class="year-block" data-topics="prices risk supply-chain">
+  <div class="year-header">
+    <div class="year-roman">III</div>
+    <div>
+      <div class="year-theme">Risk, Volatility &amp; Statistical Inference (2022)</div>
+      <div class="year-context">Price transmission and market risk — regression, correlation matrices, and time-series inference applied to Colombian grain markets.</div>
+      <div class="year-sub"><span class="year-tool">Applied Statistics · Excel</span><span class="year-tool">Regression · Correlation · Time Series</span></div>
+    </div>
+  </div>
+  <div class="capstone-card">
+    <div class="capstone-body">
+      <div class="capstone-meta"><span class="capstone-badge">Capstone 2022</span><span class="capstone-period">2018 – 2022</span></div>
+      <div class="capstone-title">Agricultural Price Risk in Colombia 2018–2022: Volatility, Correlation and Price Transmission</div>
+      <div class="capstone-question">What integrated picture of agricultural price risk emerges when volatility, correlation, and price transmission are applied simultaneously to Colombian grain markets?</div>
+      <div class="capstone-fields">
+        <div><div class="capstone-field-label">Tool</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">Excel — Analysis ToolPak, LINEST, full statistical suite</span></div></div>
+        <div><div class="capstone-field-label">Data</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">FRED · SIPSA-DANE · Banco de la República</span></div></div>
       </div>
     </div>
-    <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; text-align: center; color: var(--stone); font-size: 0.88rem;">
-      <p class="en">Projects in progress.</p>
-      <p class="es" style="display:none">Proyectos en progreso.</p>
+    <div class="capstone-footer">
+      <div class="capstone-tags-row"><span class="capstone-tag">Regression</span><span class="capstone-tag">Time Series</span><span class="capstone-tag">t-test</span></div>
+      <a href="projects/2022-capstone.html" class="capstone-view">View Project Brief →</a>
     </div>
   </div>
+  <div class="rb-grid">
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 1</span><span class="rb-period">2018 – 2022</span></div><div class="rb-title">Oil Price Shocks and Agricultural Transport Costs in Colombia 2018–2022</div></div><div class="rb-question">Does a statistically significant correlation exist between international oil price shocks and agricultural transport costs in Colombia between 2018 and 2022?</div><div class="rb-tags"><span class="rb-tag">FRED</span><span class="rb-tag">Banco de la República</span><span class="rb-tag">Pearson · OLS</span></div><a href="projects/2022-rb1-oil-transport.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 2</span><span class="rb-period">2019 – 2022</span></div><div class="rb-title">Price Determinants of Rice Wholesale Markets in Colombia 2019–2022</div></div><div class="rb-question">What factors — exchange rate, oil prices, seasonality — best explain wholesale rice price variation across Colombian markets between 2019 and 2022?</div><div class="rb-tags"><span class="rb-tag">SIPSA/DANE</span><span class="rb-tag">USDA</span><span class="rb-tag">Multiple Regression</span></div><a href="projects/2022-rb2-rice-prices.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 3</span><span class="rb-period">2018 – 2022</span></div><div class="rb-title">Chicago-to-Colombia: Corn Price Transmission Analysis 2018–2022</div></div><div class="rb-question">How do price shocks originating at the Chicago Board of Trade transmit to Colombian wholesale corn markets, and with what lag and magnitude?</div><div class="rb-tags"><span class="rb-tag">FRED</span><span class="rb-tag">SIPSA/DANE</span><span class="rb-tag">Time Series · Lags</span></div><a href="projects/2022-rb3-corn-transmission.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+  </div>
+</div>
+
+<!-- II · 2021 -->
+<div class="year-block" data-topics="trade supply-chain">
+  <div class="year-header">
+    <div class="year-roman">II</div>
+    <div>
+      <div class="year-theme">Trade Networks &amp; Data at Scale (2021)</div>
+      <div class="year-context">Latin American agricultural trade networks at scale — SQL queries, multi-table joins, and bilateral flow analysis from UN Comtrade.</div>
+      <div class="year-sub"><span class="year-tool">SQL</span><span class="year-tool">SELECT · JOIN · GROUP BY · Subqueries</span></div>
+    </div>
+  </div>
+  <div class="capstone-card">
+    <div class="capstone-body">
+      <div class="capstone-meta"><span class="capstone-badge">Capstone 2021</span><span class="capstone-period">2015 – 2021</span></div>
+      <div class="capstone-title">Latin American Agricultural Trade Networks 2015–2021: A SQL-Based Multi-Source Analysis</div>
+      <div class="capstone-question">What structural patterns emerge in Latin American agricultural trade networks when multiple UN Comtrade tables are queried and crossed using SQL?</div>
+      <div class="capstone-fields">
+        <div><div class="capstone-field-label">Tool</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">SQL — multi-table queries, cleaning, export to Excel</span></div></div>
+        <div><div class="capstone-field-label">Data</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">UN Comtrade (3+ tables)</span></div></div>
+      </div>
+    </div>
+    <div class="capstone-footer">
+      <div class="capstone-tags-row"><span class="capstone-tag">Multi-table JOIN</span><span class="capstone-tag">.sql script</span></div>
+      <a href="projects/2021-capstone.html" class="capstone-view">View Project Brief →</a>
+    </div>
+  </div>
+  <div class="rb-grid">
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 1</span><span class="rb-period">2015 – 2021</span></div><div class="rb-title">Colombian Agricultural Export Evolution: Key Trading Partners 2015–2021</div></div><div class="rb-question">How did Colombian agricultural exports to key trading partners evolve between 2015 and 2021, and which partners gained or lost share?</div><div class="rb-tags"><span class="rb-tag">UN Comtrade</span><span class="rb-tag">SQL</span></div><a href="projects/2021-rb1-export-evolution.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 2</span><span class="rb-period">2018 – 2021</span></div><div class="rb-title">Top-Growing Agricultural Commodities in Latin America 2018–2021</div></div><div class="rb-question">Which agricultural commodities showed the highest trade volume growth in Latin America between 2018 and 2021, and what drove this growth?</div><div class="rb-tags"><span class="rb-tag">UN Comtrade</span><span class="rb-tag">SQL JOIN</span></div><a href="projects/2021-rb2-latam-commodities.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 3</span><span class="rb-period">2017 – 2021</span></div><div class="rb-title">Colombia's Share in Andean Grain Imports 2017–2021</div></div><div class="rb-question">How did Colombia's share in regional Andean grain imports change between 2017 and 2021, and what structural factors explain this trend?</div><div class="rb-tags"><span class="rb-tag">UN Comtrade</span><span class="rb-tag">Subqueries</span></div><a href="projects/2021-rb3-andean-grain.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+  </div>
+</div>
+
+<!-- I · 2020 -->
+<div class="year-block" data-topics="prices risk">
+  <div class="year-header">
+    <div class="year-roman">I</div>
+    <div>
+      <div class="year-theme">Price Shocks &amp; Market Disruption (2020)</div>
+      <div class="year-context">Commodity price volatility during COVID-19 — descriptive statistics, base-100 indexing, and correlation in Google Sheets.</div>
+      <div class="year-sub"><span class="year-tool">Google Sheets · Excel</span><span class="year-tool">Descriptive Statistics · Indexing · Correlation</span></div>
+    </div>
+  </div>
+  <div class="capstone-card">
+    <div class="capstone-body">
+      <div class="capstone-meta"><span class="capstone-badge">Capstone 2020</span><span class="capstone-period">Jan 2018 – Dec 2020</span></div>
+      <div class="capstone-title">Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis</div>
+      <div class="capstone-question">What systematic price patterns emerge when crossing products, cities, and time periods across Colombia's main grain wholesale markets during the COVID-19 shock?</div>
+      <div class="capstone-fields">
+        <div><div class="capstone-field-label">Tool</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">Google Sheets — pivot tables, LINEST, correlation matrix, dashboard</span></div></div>
+        <div><div class="capstone-field-label">Data</div><div class="capstone-field-value"><span style="font-family:Arial,Helvetica,sans-serif;font-style:normal;font-weight:400;">SIPSA-DANE · FRED · Banco de la República</span></div></div>
+      </div>
+    </div>
+    <div class="capstone-footer">
+      <div class="capstone-tags-row"><span class="capstone-tag">Multiple Regression</span><span class="capstone-tag">Dashboard</span><span class="capstone-tag">Correlation Matrix</span></div>
+      <a href="projects/2020-capstone.html" class="capstone-view">View Project Brief →</a>
+    </div>
+  </div>
+  <div class="rb-grid">
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 1</span><span class="rb-period">Jan 2019 – Aug 2020</span></div><div class="rb-title">Fríjol Price Volatility in Colombia: First 6 Months of COVID</div></div><div class="rb-question">Did COVID-19 disruptions increase wholesale fríjol price volatility in Colombia's main market during March–August 2020 vs. the same period in 2019?</div><div class="rb-tags"><span class="rb-tag">SIPSA/DANE</span><span class="rb-tag">Corabastos</span><span class="rb-tag">CV · Index</span></div><a href="projects/2020-rb1-frijol.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 2</span><span class="rb-period">Jan 2018 – Dec 2020</span></div><div class="rb-title">USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020</div></div><div class="rb-question">What is the relationship between the USD/COP exchange rate and grain import costs in Colombia, and how did it change during the COVID-19 shock?</div><div class="rb-tags"><span class="rb-tag">FRED</span><span class="rb-tag">Banco de la República</span><span class="rb-tag">Correlation · OLS</span></div><a href="projects/2020-rb2-usdcop.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+    <div class="rb-card"><div class="rb-body"><div class="rb-meta"><span class="rb-label">Research Brief 3</span><span class="rb-period">Mar – Dec 2020</span></div><div class="rb-title">Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic</div></div><div class="rb-question">How did wholesale grain prices diverge between Ibagué and Bogotá during COVID-19, and what does this reveal about regional market integration?</div><div class="rb-tags"><span class="rb-tag">SIPSA/DANE</span><span class="rb-tag">Pivot Tables</span><span class="rb-tag">Price Index</span></div><a href="projects/2020-rb3-ibague-bogota.html" class="rb-link"><span class="rb-link-label">View Project Brief</span><span class="rb-link-arrow">→</span></a></div>
+  </div>
+</div>
 
 </main>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="mailto:agutierrez157@estudiantes.areandina.edu.co">agutierrez157@estudiantes.areandina.edu.co</a>
-  </p>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia · <a href="/cdn-cgi/l/email-protection#67060012130e021515021d5652502702141312030e0609130214490615020609030e090649020312490408"><span class="__cf_email__" data-cfemail="4b2a2c3e3f222e39392e317a7e7c0b2e383f3e2f222a253f2e38652a392e2a252f22252a652e2f3e652824">[email&#160;protected]</span></a></p>
 </footer>
 
 <script>
-  // LANG TOGGLE
+  function filterTopic(btn, topic) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
-    const other = lang === 'en' ? 'es' : 'en';
-    document.querySelectorAll('.' + lang).forEach(el => el.style.display = '');
-    document.querySelectorAll('.' + other).forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
     document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
     document.documentElement.lang = lang;
   }
-
-  // YEAR FILTER
-  function filterYear(year) {
+  function toggleMobileNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function filterTopic(btn, topic) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
+    btn.classList.add('active');
     document.querySelectorAll('.year-block').forEach(block => {
-      if (year === 'all' || block.dataset.year === year) {
+      if (topic === 'all') {
         block.style.display = '';
       } else {
-        block.style.display = 'none';
+        const topics = block.dataset.topics || '';
+        block.style.display = topics.includes(topic) ? '' : 'none';
       }
     });
-  }
-
-  // BRIEF TOGGLE — Research Brief
-  function toggleBrief(btn) {
-    const panel = btn.nextElementSibling;
-    const isOpen = panel.classList.contains('open');
-    panel.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-  }
-
-  // BRIEF TOGGLE — Capstone
-  function toggleCapstone(btn) {
-    const panel = btn.nextElementSibling;
-    const isOpen = panel.classList.contains('open');
-    panel.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
   }
 </script>
 </body>

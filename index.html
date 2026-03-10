@@ -384,6 +384,31 @@
     .delay-3 { animation-delay: 0.34s; }
     .delay-4 { animation-delay: 0.46s; }
     .delay-5 { animation-delay: 0.58s; }
+
+    /* Mobile nav */
+    .nav-hamburger { display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--forest); padding:0 0.5rem; }
+    @media (max-width: 768px) {
+      .nav-hamburger { display:block; }
+      #navLinks { display:none; flex-direction:column; position:fixed; top:60px; left:0; right:0; background:var(--parchment); border-bottom:1px solid var(--rule); padding:1rem 2rem 1.5rem; gap:1rem; z-index:200; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+      #navLinks.open { display:flex; }
+      #navLinks a { display:block !important; font-size:0.9rem; padding:0.3rem 0; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr !important; }
+      .hero-photo { max-width: 220px; }
+      section { padding: 4rem 1.25rem; }
+      .skills-strip { padding: 2rem 1.25rem; }
+      .page-nav { padding: 2rem 1.25rem; }
+      .page-nav-inner { flex-direction: column; }
+      .page-nav-card { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      h1.hero-name { font-size: 2.4rem !important; }
+      h2.section-title { font-size: 1.8rem !important; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .edu-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -392,7 +417,8 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
-    <div class="nav-links">
+    <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
+    <div class="nav-links" id="navLinks">
       <a href="index.html#about" class="en">About</a>
       <a href="index.html#about" class="es" style="display:none">Sobre mí</a>
       <a href="index.html#research" class="en">Research</a>
@@ -698,11 +724,19 @@
   <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
     <a href="/cdn-cgi/l/email-protection#e4858391908d819696819ed5d1d3a481979091808d858a908197ca859681858a808d8a85ca818091ca878b"><span class="__cf_email__" data-cfemail="13727466677a76616176692226245376606766777a727d6776603d726176727d777a7d723d7677663d707c">[email&#160;protected]</span></a>
   </p>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+</footer
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
-    const other = lang === 'en' ? 'es' : 'en';
-    document.querySelectorAll('.' 
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.documentElement.lang = lang;
+  }
+  function toggleMobileNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
