@@ -4,9 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Angie M. Gutierrez-Oviedo — Agricultural Economics Researcher</title>
+  <meta name="description" content="Agricultural economics researcher specializing in commodity markets, supply chain risk, and trade flows in Latin America. Five years of empirical analysis on public datasets. Based in Bogotá, Colombia.">
+  <meta name="author" content="Angie Manuela Gutierrez-Oviedo">
+  <meta property="og:title" content="Angie M. Gutierrez-Oviedo — Agricultural Economics Researcher">
+  <meta property="og:description" content="Empirical research portfolio on agricultural commodity markets, supply chain economics, and trade flows in Latin America.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amanuelagut.github.io/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_CO">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
       --forest: #1e3a0f;
@@ -297,6 +305,9 @@
       font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--moss); font-weight: 500; margin-top: 0.5rem;
     }
+    .exp-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    }
 
     /* SKILLS STRIP */
     .skills-strip {
@@ -363,6 +374,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .research-grid { grid-template-columns: 1fr 1fr; }
       .edu-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; gap: 2rem; }
       .nav-links { gap: 1rem; }
     }
     @media (max-width: 600px) {
@@ -592,7 +604,7 @@
     <h2 class="section-title en">Professional trajectory</h2>
     <h2 class="section-title es" style="display:none">Trayectoria profesional</h2>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
+    <div class="exp-grid">
       <div class="exp-timeline">
         <div class="exp-item">
           <div class="exp-dot"></div>
@@ -672,6 +684,8 @@
     <span class="skills-label en">Technical Skills</span>
     <span class="skills-label es" style="display:none">Habilidades Técnicas</span>
     <div class="skills-list">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">SQL</span>
       <span class="skill-tag">Advanced Excel</span>
       <span class="skill-tag">Power BI</span>
       <span class="skill-tag">LaTeX</span>
