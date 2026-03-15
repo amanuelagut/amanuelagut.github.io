@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <title>Latin American Agricultural Trade Networks 2015–2021: A SQL-Based Multi-Source Analysis — Angie M. Gutierrez-Oviedo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
+      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
+      --parchment: #faf9f6; --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+    .nav-hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--forest); padding: 0 0.5rem; }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      #navLinks { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem 1.5rem; gap: 1rem; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      #navLinks.open { display: flex; }
+      #navLinks a { display: block !important; font-size: 0.9rem; padding: 0.3rem 0; }
+    }
+
+    /* PAPER LAYOUT */
+    .paper-wrap { max-width: 820px; margin: 0 auto; padding: 100px 2rem 6rem; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--moss); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .paper-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .paper-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .meta-badge { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 2px; padding: 0.15rem 0.5rem; color: var(--stone); }
+    .meta-badge.type { background: var(--mist); }
+    .meta-badge.type-cap { background: var(--moss); color: white; border-color: var(--moss); }
+    .meta-period { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--stone); }
+    .meta-sep { color: var(--rule); }
+    .paper-title { font-family: 'EB Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 500; color: var(--forest); line-height: 1.2; margin-bottom: 1rem; }
+    .paper-author { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--stone); margin-bottom: 1.5rem; }
+    .paper-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .paper-tag { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; background: var(--mist); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.5rem; }
+
+    /* ABSTRACT */
+    .abstract-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.5rem 1.75rem; margin-bottom: 3rem; }
+    .abstract-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.6rem; }
+    .abstract-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; font-style: italic; }
+
+    /* SECTIONS */
+    .paper-section { margin-bottom: 2.75rem; }
+    .section-number { font-family: 'EB Garamond', serif; font-size: 0.85rem; color: var(--moss); margin-bottom: 0.1rem; }
+    .section-title { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--mist); }
+    .paper-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.85; margin-bottom: 1rem; }
+    .paper-text:last-child { margin-bottom: 0; }
+    .paper-text strong { font-weight: 600; }
+
+    /* DATA TABLE */
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+    .data-table th { background: var(--mist); font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--rule); }
+    .data-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--mist); color: var(--ink); font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.5; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* KEY FINDING */
+    .finding-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .finding-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
+    .finding-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; }
+
+    /* LIMITATION */
+    .limitation-box { background: var(--mist); border-radius: 3px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .limitation-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.4rem; font-weight: 500; }
+    .limitation-text { font-family: 'EB Garamond', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.75; font-style: italic; }
+
+    /* DELIVERABLE */
+    .deliverable-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); border: 1px solid var(--moss); border-radius: 3px; padding: 0.5rem 1rem; text-decoration: none; transition: all 0.15s; }
+    .dl-btn:hover { background: var(--moss); color: white; }
+    .dl-btn.primary { background: var(--moss); color: white; }
+    .dl-btn.primary:hover { background: var(--forest); }
+
+    /* PROJECT NAV */
+    .project-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; gap: 1rem; }
+    .proj-nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+    .proj-nav-link:hover { color: var(--forest); }
+    .proj-nav-back { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
+    .proj-nav-back:hover { color: var(--moss); }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .paper-wrap { padding: 90px 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#about" class="en">About</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="../index.html#research" class="en">Research</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="../index.html#experience" class="en">Experience</a>
+      <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="../projects.html" class="active en">Projects</a>
+      <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
+      <a href="../contact.html" class="en">Contact</a>
+      <a href="../contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<div class="paper-wrap">
+
+  <!-- BREADCRUMB -->
+  <!-- II = I–VI  |  Trade Networks &amp; Data at Scale = Price Shocks & Market Disruption  |  2021 = 2020 -->
+  <!-- Capstone = Research Brief 1  OR  Capstone -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>/</span>
+    <a href="../projects.html">Research Projects</a>
+    <span>/</span>
+    <span>II · Trade Networks &amp; Data at Scale (2021)</span>
+    <span>/</span>
+    <span>Capstone</span>
+  </div>
+
+  <!-- PAPER HEADER -->
+  <!-- type type-cap = "type" for RB  |  "type type-cap" for Capstone -->
+  <!-- Capstone 2021 = Research Brief 1  |  Capstone -->
+  <!-- 2021 = 2020 -->
+  <!-- 2015 – 2021 = January 2019 – August 2020 -->
+  <!-- SQL = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
+  <!-- Latin American Agricultural Trade Networks 2015–2021: A SQL-Based Multi-Source Analysis = Full project title -->
+  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021 -->
+  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
+  <div class="paper-header">
+    <div class="paper-meta-row">
+      <span class="meta-badge type type-cap">Capstone 2021</span>
+      <span class="meta-badge">2021</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">2015 – 2021</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">SQL</span>
+    </div>
+    <h1 class="paper-title">Latin American Agricultural Trade Networks 2015–2021: A SQL-Based Multi-Source Analysis</h1>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021</div>
+    <div class="paper-tags">
+      <!-- One <span class="paper-tag"> per tag -->
+      <span class="paper-tag">UN Comtrade</span>
+      <span class="paper-tag">SQL</span>
+      <span class="paper-tag">Multi-table JOIN</span>
+      <span class="paper-tag">Trade Networks</span>
+      <span class="paper-tag">Latin America</span>
+    </div>
+  </div>
+
+  <!-- ABSTRACT -->
+  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
+  <div class="abstract-box">
+    <div class="abstract-label">Abstract</div>
+    <div class="abstract-text">This capstone applies structured SQL queries to UN Comtrade trade data to identify structural patterns in Latin American agricultural trade networks over 2015–2021. Using multi-table joins, subqueries, and aggregation functions, the analysis crosses bilateral trade flows, product classifications, and partner country data to reveal concentration patterns, partner dependencies, and shifts in trade composition. The transition from spreadsheet-based to database-driven analysis marks a methodological step change in the portfolio, enabling analysis at a scale not feasible with manual data manipulation.</div>
+  </div>
+
+  <!-- 1. RESEARCH QUESTION -->
+  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
+  <div class="paper-section">
+    <div class="section-number">1.</div>
+    <div class="section-title">Research Question</div>
+    <p class="paper-text">What structural patterns emerge in Latin American agricultural trade networks when multiple UN Comtrade tables are queried and crossed using SQL?</p>
+    <p class="paper-text">The 2020 portfolio demonstrated that Colombian agricultural markets are sensitive to external shocks. Understanding the trade network structure — who trades what with whom, and how concentrated those flows are — provides the structural context for interpreting price dynamics. SQL enables this analysis at a bilateral, product-level granularity that spreadsheet tools cannot efficiently handle.</p>
+  </div>
+
+  <!-- 2. DATA & SOURCES -->
+  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
+  <div class="paper-section">
+    <div class="section-number">2.</div>
+    <div class="section-title">Data &amp; Sources</div>
+    <p class="paper-text">All trade data is sourced from UN Comtrade, the most comprehensive publicly available bilateral trade database, using HS (Harmonized System) commodity codes for agricultural products.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Source</th>
+          <th>Frequency</th>
+          <th>Period</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bilateral trade flows (USD, kg)</td><td>UN Comtrade</td><td>Annual</td><td>2015 – 2021</td><td>comtrade.un.org</td></tr>
+        <tr><td>HS commodity classifications</td><td>UN Comtrade / WCO</td><td>—</td><td>—</td><td>comtrade.un.org</td></tr>
+        <tr><td>Country/partner metadata</td><td>UN Comtrade</td><td>—</td><td>—</td><td>comtrade.un.org</td></tr>
+      </tbody>
+    </table>
+
+    <p class="paper-text">Agricultural commodities are defined using HS chapters 01–24 (live animals, vegetable products, fats, prepared foodstuffs). The geographic scope covers 10 Latin American countries with significant agricultural trade: Argentina, Brazil, Chile, Colombia, Ecuador, Mexico, Paraguay, Peru, Uruguay, and Bolivia.</p>
+  </div>
+
+  <!-- 3. METHODOLOGY -->
+  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
+  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
+  <div class="paper-section">
+    <div class="section-number">3.</div>
+    <div class="section-title">Methodology</div>
+    <p class="paper-text">The analysis progresses from simple queries to complex multi-table operations, reflecting the SQL skill progression over the year.</p>
+    <p class="paper-text"><strong>Step 1 — Single-table aggregation.</strong> Basic SELECT/GROUP BY queries compute total export and import values by country and year, establishing the top-level trade landscape for each country.</p>
+    <p class="paper-text"><strong>Step 2 — Multi-table JOIN.</strong> Trade flow tables are joined with commodity classification tables to identify which agricultural products dominate each country's export and import portfolio. LEFT JOINs handle cases where product codes appear in flows but not in classification metadata.</p>
+    <p class="paper-text"><strong>Step 3 — Partner concentration analysis.</strong> Subqueries compute Herfindahl-Hirschman Index (HHI) equivalents for each country's trade partner distribution, identifying which countries have diversified vs. concentrated trade networks.</p>
+    <p class="paper-text"><strong>Step 4 — Temporal shift detection.</strong> Year-over-year growth rates computed via self-joins identify which products and partners gained or lost share over the period, revealing structural shifts in the regional trade architecture.</p>
+  </div>
+
+  <!-- 4. KEY FINDING -->
+  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
+  <div class="paper-section">
+    <div class="section-number">4.</div>
+    <div class="section-title">Key Finding</div>
+    <p class="paper-text">The SQL-based analysis reveals significant heterogeneity in trade network structure across Latin American agricultural exporters.</p>
+    <div class="finding-box">
+      <div class="finding-label">Key Finding</div>
+      <div class="finding-text">Colombia's agricultural export network is more concentrated by partner (higher HHI) than Brazil's or Argentina's, with the United States and European Union accounting for a disproportionate share of coffee and flower exports. Intra-regional agricultural trade (within Latin America) grew faster than extra-regional trade over 2015–2021, driven by grain flows between Argentina/Brazil and Andean importing countries. The most rapidly growing product categories were oilseeds and processed food products.</div>
+    </div>
+    <p class="paper-text">The concentration of Colombia's trade network in a few partners and products creates structural vulnerability — a disruption in any single relationship (e.g., a tariff change, a phytosanitary ban) would have disproportionate impact compared to more diversified exporters like Brazil.</p>
+  </div>
+
+  <!-- 5. WHAT I LEARNED -->
+  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
+  <div class="paper-section">
+    <div class="section-number">5.</div>
+    <div class="section-title">What I Learned</div>
+    <p class="paper-text">The <strong>transition from spreadsheet to database thinking</strong> was the central skill of this year. SQL's declarative logic — specifying what you want rather than how to compute it step by step — fundamentally changed how I approach data analysis. The same cross-tabulation that required hours of manual pivot table work in 2020 can be expressed in a single JOIN query.</p>
+    <p class="paper-text">Writing <strong>subqueries to compute derived metrics</strong> (like HHI concentration indices) within a larger query taught me the power of composable analysis — building complex results from simpler building blocks. This compositional logic translates directly to function-based Python programming in 2024.</p>
+    <p class="paper-text"><strong>Self-joins for temporal comparison</strong> (joining a table to itself at t and t-1) introduced a technique for computing growth rates and detecting structural changes without external tools — a pattern that recurs in panel data construction in 2025.</p>
+  </div>
+
+  <!-- 6. LIMITATION -->
+  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
+  <div class="paper-section">
+    <div class="section-number">6.</div>
+    <div class="section-title">Limitation</div>
+    <div class="limitation-box">
+      <div class="limitation-label">Data Limitation</div>
+      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-text">UN Comtrade data has known reporting asymmetries (exporter and importer reports for the same flow often differ). The analysis uses reporter data without mirror analysis. Additionally, HS classification changes between 2012 and 2017 create potential inconsistencies in product-level time series. A more rigorous approach would apply concordance tables to harmonize classification changes.</div>
+    </div>
+  </div>
+
+  <!-- 7. DELIVERABLE -->
+  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
+  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
+  <div class="paper-section">
+    <div class="section-number">7.</div>
+    <div class="section-title">Deliverable</div>
+    <p class="paper-text">The deliverable is a .sql script file containing all queries (annotated with comments), plus an Excel workbook with exported query results formatted as summary tables and charts.</p>
+    <div class="deliverable-row">
+      <a href="#" class="dl-btn primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        SQL Script (.sql) — Coming Soon
+      </a>
+      
+      <a href="#" class="dl-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Results Workbook (.xlsx) — Coming Soon
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT NAVIGATION -->
+  <!-- ../projects.html = previous project html filename (or ../projects.html if first) -->
+  <!-- ← Back to All Projects = ← Capstone 2020  OR  ← Back to All Projects -->
+  <!-- 2021-rb1-export-evolution.html = next project html filename -->
+  <!-- Research Brief 1 → = Research Brief 2 →  OR  Capstone 2020 → -->
+  <div class="project-nav">
+    <a href="../projects.html" class="proj-nav-back">← Back to All Projects</a>
+    <a href="2021-rb1-export-evolution.html" class="proj-nav-link">Research Brief 1 →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="/cdn-cgi/l/email-protection#58393f2d2c313d2a2a3d22696d6f183d2b2c2d3c3139362c3d2b76392a3d39363c313639763d3c2d763b37"><span class="__cf_email__" data-cfemail="ea8b8d9f9e838f98988f90dbdfddaa8f999e9f8e838b849e8f99c48b988f8b848e83848bc48f8e9fc48985">[email&#160;protected]</span></a>
+  </p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.es').forEach(el => el.style.displa

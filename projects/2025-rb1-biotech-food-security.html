@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <title>Agricultural Biotechnology and Food Security in Colombia: An Empirical Assessment 2010–2025 — Angie M. Gutierrez-Oviedo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
+      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
+      --parchment: #faf9f6; --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+    .nav-hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--forest); padding: 0 0.5rem; }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      #navLinks { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem 1.5rem; gap: 1rem; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      #navLinks.open { display: flex; }
+      #navLinks a { display: block !important; font-size: 0.9rem; padding: 0.3rem 0; }
+    }
+
+    /* PAPER LAYOUT */
+    .paper-wrap { max-width: 820px; margin: 0 auto; padding: 100px 2rem 6rem; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--moss); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .paper-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .paper-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .meta-badge { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 2px; padding: 0.15rem 0.5rem; color: var(--stone); }
+    .meta-badge.type { background: var(--mist); }
+    .meta-badge.type-cap { background: var(--moss); color: white; border-color: var(--moss); }
+    .meta-period { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--stone); }
+    .meta-sep { color: var(--rule); }
+    .paper-title { font-family: 'EB Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 500; color: var(--forest); line-height: 1.2; margin-bottom: 1rem; }
+    .paper-author { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--stone); margin-bottom: 1.5rem; }
+    .paper-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .paper-tag { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; background: var(--mist); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.5rem; }
+
+    /* ABSTRACT */
+    .abstract-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.5rem 1.75rem; margin-bottom: 3rem; }
+    .abstract-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.6rem; }
+    .abstract-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; font-style: italic; }
+
+    /* SECTIONS */
+    .paper-section { margin-bottom: 2.75rem; }
+    .section-number { font-family: 'EB Garamond', serif; font-size: 0.85rem; color: var(--moss); margin-bottom: 0.1rem; }
+    .section-title { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--mist); }
+    .paper-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.85; margin-bottom: 1rem; }
+    .paper-text:last-child { margin-bottom: 0; }
+    .paper-text strong { font-weight: 600; }
+
+    /* DATA TABLE */
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+    .data-table th { background: var(--mist); font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--rule); }
+    .data-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--mist); color: var(--ink); font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.5; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* KEY FINDING */
+    .finding-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .finding-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
+    .finding-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; }
+
+    /* LIMITATION */
+    .limitation-box { background: var(--mist); border-radius: 3px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .limitation-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.4rem; font-weight: 500; }
+    .limitation-text { font-family: 'EB Garamond', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.75; font-style: italic; }
+
+    /* DELIVERABLE */
+    .deliverable-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); border: 1px solid var(--moss); border-radius: 3px; padding: 0.5rem 1rem; text-decoration: none; transition: all 0.15s; }
+    .dl-btn:hover { background: var(--moss); color: white; }
+    .dl-btn.primary { background: var(--moss); color: white; }
+    .dl-btn.primary:hover { background: var(--forest); }
+
+    /* PROJECT NAV */
+    .project-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; gap: 1rem; }
+    .proj-nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+    .proj-nav-link:hover { color: var(--forest); }
+    .proj-nav-back { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
+    .proj-nav-back:hover { color: var(--moss); }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .paper-wrap { padding: 90px 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#about" class="en">About</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="../index.html#research" class="en">Research</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="../index.html#experience" class="en">Experience</a>
+      <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="../projects.html" class="active en">Projects</a>
+      <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
+      <a href="../contact.html" class="en">Contact</a>
+      <a href="../contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<div class="paper-wrap">
+
+  <!-- BREADCRUMB -->
+  <!-- VI = I–VI  |  Formal Research &amp; Academic Publication Standards = Price Shocks & Market Disruption  |  2025 = 2020 -->
+  <!-- Research Brief 1 = Research Brief 1  OR  Capstone -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>/</span>
+    <a href="../projects.html">Research Projects</a>
+    <span>/</span>
+    <span>VI · Formal Research &amp; Academic Publication Standards (2025)</span>
+    <span>/</span>
+    <span>Research Brief 1</span>
+  </div>
+
+  <!-- PAPER HEADER -->
+  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
+  <!-- Research Brief 1 = Research Brief 1  |  Capstone -->
+  <!-- 2025 = 2020 -->
+  <!-- 2010 – 2025 = January 2019 – August 2020 -->
+  <!-- Python · LaTeX = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
+  <!-- Agricultural Biotechnology and Food Security in Colombia: An Empirical Assessment 2010–2025 = Full project title -->
+  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2025 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2025 -->
+  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
+  <div class="paper-header">
+    <div class="paper-meta-row">
+      <span class="meta-badge type">Research Brief 1</span>
+      <span class="meta-badge">2025</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">2010 – 2025</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">Python · LaTeX</span>
+    </div>
+    <h1 class="paper-title">Agricultural Biotechnology and Food Security in Colombia: An Empirical Assessment 2010–2025</h1>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2025</div>
+    <div class="paper-tags">
+      <!-- One <span class="paper-tag"> per tag -->
+      <span class="paper-tag">FAO</span>
+      <span class="paper-tag">ISAAA</span>
+      <span class="paper-tag">DANE</span>
+      <span class="paper-tag">Panel Regression</span>
+      <span class="paper-tag">Fixed Effects</span>
+      <span class="paper-tag">Biotechnology</span>
+      <span class="paper-tag">Food Security</span>
+    </div>
+  </div>
+
+  <!-- ABSTRACT -->
+  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
+  <div class="abstract-box">
+    <div class="abstract-label">Abstract</div>
+    <div class="abstract-text">This brief applies panel regression with country and time fixed effects to estimate the impact of agricultural biotechnology adoption on food security indicators in Colombia, benchmarked against Latin American comparators, over 2010–2025. Using FAO food security metrics, ISAAA biotechnology adoption data, and DANE national statistics, the analysis controls for income, trade openness, and infrastructure quality to isolate the marginal effect of biotech adoption. The study extends the 2024 exploratory correlation analysis into a formally identified econometric framework.</div>
+  </div>
+
+  <!-- 1. RESEARCH QUESTION -->
+  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
+  <div class="paper-section">
+    <div class="section-number">1.</div>
+    <div class="section-title">Research Question</div>
+    <p class="paper-text">What measurable impact has agricultural biotechnology adoption had on food security indicators in Colombia between 2010 and 2025?</p>
+    <p class="paper-text">The 2023 visual analysis and 2024 correlation study suggested a positive biotech-yield association. This brief provides the formal econometric test: using panel fixed effects to control for unobserved country characteristics and time trends that could confound the relationship.</p>
+  </div>
+
+  <!-- 2. DATA & SOURCES -->
+  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
+  <div class="paper-section">
+    <div class="section-number">2.</div>
+    <div class="section-title">Data &amp; Sources</div>
+    <p class="paper-text">The analysis constructs a panel dataset linking biotechnology adoption to food security outcomes across Latin American countries.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Source</th>
+          <th>Frequency</th>
+          <th>Period</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Food security indicators (PoU, DES, food CPI)</td><td>FAO / DANE</td><td>Annual</td><td>2010–2025</td><td>fao.org · dane.gov.co</td></tr>
+        <tr><td>Biotech crop area</td><td>ISAAA</td><td>Annual</td><td>2010–2025</td><td>isaaa.org</td></tr>
+        <tr><td>GDP per capita, trade openness</td><td>World Bank WDI</td><td>Annual</td><td>2010–2025</td><td>worldbank.org</td></tr>
+      </tbody>
+    </table>
+
+    <p class="paper-text">The 15-year panel with 8 countries provides 120 country-year observations after excluding cases with missing data. Fixed effects absorb time-invariant country characteristics and common time shocks.</p>
+  </div>
+
+  <!-- 3. METHODOLOGY -->
+  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
+  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
+  <div class="paper-section">
+    <div class="section-number">3.</div>
+    <div class="section-title">Methodology</div>
+    <p class="paper-text">The brief applies panel econometric methods with formal identification and robustness testing.</p>
+    <p class="paper-text"><strong>Step 1 — Panel data construction.</strong> Country-year panel assembled from multiple sources using Python, with consistent coding, interpolation of occasional missing values, and logarithmic transformations for skewed variables.</p>
+    <p class="paper-text"><strong>Step 2 — Fixed effects regression.</strong> Two-way fixed effects (country + year) regression estimates: Food_Security_it = α + β × Biotech_it + γ × Controls_it + μ_i + λ_t + ε_it. The coefficient β is the parameter of interest.</p>
+    <p class="paper-text"><strong>Step 3 — Robustness checks.</strong> Alternative specifications tested: different food security measures, inclusion/exclusion of control variables, and a first-differences specification as an alternative to fixed effects.</p>
+  </div>
+
+  <!-- 4. KEY FINDING -->
+  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
+  <div class="paper-section">
+    <div class="section-number">4.</div>
+    <div class="section-title">Key Finding</div>
+    <p class="paper-text">The panel regression provides a more nuanced picture than the 2024 correlation analysis.</p>
+    <div class="finding-box">
+      <div class="finding-label">Key Finding</div>
+      <div class="finding-text">Biotechnology adoption shows a positive and statistically significant association with crop yields (the supply-side food security channel) but a weaker and less robust association with direct food security measures (prevalence of undernourishment, dietary energy supply). The results suggest that biotech adoption affects food security primarily through productivity gains rather than directly through food availability, and that the transmission from productivity to food security is mediated by market access, income distribution, and food system infrastructure.</div>
+    </div>
+    <p class="paper-text">The nuanced finding — significant for yields but attenuated for food security — implies that biotechnology is not a standalone solution to food insecurity. Complementary investments in market access, distribution infrastructure, and social protection are needed to translate productivity gains into food security improvements.</p>
+  </div>
+
+  <!-- 5. WHAT I LEARNED -->
+  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
+  <div class="paper-section">
+    <div class="section-number">5.</div>
+    <div class="section-title">What I Learned</div>
+    <p class="paper-text"><strong>Panel regression with fixed effects</strong> represents the econometric culmination of the portfolio. The ability to control for unobserved heterogeneity and common shocks addresses the fundamental limitation of all cross-sectional analyses conducted in prior years.</p>
+    <p class="paper-text">The discipline of <strong>formal robustness checks</strong> — testing whether the main finding survives alternative specifications — is a hallmark of credible empirical research that I learned to implement systematically.</p>
+    <p class="paper-text">The <strong>distinction between statistical significance and economic significance</strong> — a coefficient can be statistically significant but economically small — became clear in interpreting the food security results, where the effects are real but modest in magnitude.</p>
+  </div>
+
+  <!-- 6. LIMITATION -->
+  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
+  <div class="paper-section">
+    <div class="section-number">6.</div>
+    <div class="section-title">Limitation</div>
+    <div class="limitation-box">
+      <div class="limitation-label">Data Limitation</div>
+      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-text">Food security indicators at the national level are noisy proxies for household-level food access. Subnational data would provide a more precise test but is not consistently available across countries. Additionally, the biotech adoption variable (total area) does not capture adoption intensity or varietal quality differences across countries.</div>
+    </div>
+  </div>
+
+  <!-- 7. DELIVERABLE -->
+  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
+  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
+  <div class="paper-section">
+    <div class="section-number">7.</div>
+    <div class="section-title">Deliverable</div>
+    <p class="paper-text">Jupyter Notebook with panel data construction, fixed effects estimation, robustness tests, and formatted regression tables. LaTeX-compiled brief included in the working paper appendix.</p>
+    <div class="deliverable-row">
+      <a href="#" class="dl-btn primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Jupyter Notebook (.ipynb) — Coming Soon
+      </a>
+      
+      <a href="#" class="dl-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        LaTeX Brief (.pdf) — Coming Soon
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT NAVIGATION -->
+  <!-- 2025-capstone.html = previous project html filename (or ../projects.html if first) -->
+  <!-- ← Capstone 2025 = ← Capstone 2020  OR  ← Back to All Projects -->
+  <!-- 2025-rb2-portfolio-risk.html = next project html filename -->
+  <!-- Research Brief 2 → = Research Brief 2 →  OR  Capstone 2020 → -->
+  <div class="project-nav">
+    <a href="2025-capstone.html" class="proj-nav-back">← Capstone 2025</a>
+    <a href="2025-rb2-portfolio-risk.html" class="proj-nav-link">Research Brief 2 →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="/cdn-cgi/l/email-protection#fd9c9a888994988f8f9887ccc8cabd988e898899949c9389988ed39c8f989c939994939cd3989988d39e92"><span class="__cf_email__" data-cfemail="f19096848598948383948bc0c4c6b1948285849598909f859482df908394909f95989f90df949584df929e">[email&#160;protected]</span></a>
+  </p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.es').forEach(el => el.style.displa

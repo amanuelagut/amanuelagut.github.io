@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <title>Agricultural Commodity Price Forecasting in Emerging Markets: A Python-Based Analysis — Angie M. Gutierrez-Oviedo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
+      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
+      --parchment: #faf9f6; --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+    .nav-hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--forest); padding: 0 0.5rem; }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      #navLinks { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem 1.5rem; gap: 1rem; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      #navLinks.open { display: flex; }
+      #navLinks a { display: block !important; font-size: 0.9rem; padding: 0.3rem 0; }
+    }
+
+    /* PAPER LAYOUT */
+    .paper-wrap { max-width: 820px; margin: 0 auto; padding: 100px 2rem 6rem; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--moss); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .paper-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .paper-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .meta-badge { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 2px; padding: 0.15rem 0.5rem; color: var(--stone); }
+    .meta-badge.type { background: var(--mist); }
+    .meta-badge.type-cap { background: var(--moss); color: white; border-color: var(--moss); }
+    .meta-period { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--stone); }
+    .meta-sep { color: var(--rule); }
+    .paper-title { font-family: 'EB Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 500; color: var(--forest); line-height: 1.2; margin-bottom: 1rem; }
+    .paper-author { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--stone); margin-bottom: 1.5rem; }
+    .paper-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .paper-tag { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; background: var(--mist); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.5rem; }
+
+    /* ABSTRACT */
+    .abstract-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.5rem 1.75rem; margin-bottom: 3rem; }
+    .abstract-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.6rem; }
+    .abstract-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; font-style: italic; }
+
+    /* SECTIONS */
+    .paper-section { margin-bottom: 2.75rem; }
+    .section-number { font-family: 'EB Garamond', serif; font-size: 0.85rem; color: var(--moss); margin-bottom: 0.1rem; }
+    .section-title { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--mist); }
+    .paper-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.85; margin-bottom: 1rem; }
+    .paper-text:last-child { margin-bottom: 0; }
+    .paper-text strong { font-weight: 600; }
+
+    /* DATA TABLE */
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+    .data-table th { background: var(--mist); font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--rule); }
+    .data-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--mist); color: var(--ink); font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.5; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* KEY FINDING */
+    .finding-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .finding-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
+    .finding-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; }
+
+    /* LIMITATION */
+    .limitation-box { background: var(--mist); border-radius: 3px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .limitation-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.4rem; font-weight: 500; }
+    .limitation-text { font-family: 'EB Garamond', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.75; font-style: italic; }
+
+    /* DELIVERABLE */
+    .deliverable-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); border: 1px solid var(--moss); border-radius: 3px; padding: 0.5rem 1rem; text-decoration: none; transition: all 0.15s; }
+    .dl-btn:hover { background: var(--moss); color: white; }
+    .dl-btn.primary { background: var(--moss); color: white; }
+    .dl-btn.primary:hover { background: var(--forest); }
+
+    /* PROJECT NAV */
+    .project-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; gap: 1rem; }
+    .proj-nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+    .proj-nav-link:hover { color: var(--forest); }
+    .proj-nav-back { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
+    .proj-nav-back:hover { color: var(--moss); }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .paper-wrap { padding: 90px 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#about" class="en">About</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="../index.html#research" class="en">Research</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="../index.html#experience" class="en">Experience</a>
+      <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="../projects.html" class="active en">Projects</a>
+      <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
+      <a href="../contact.html" class="en">Contact</a>
+      <a href="../contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<div class="paper-wrap">
+
+  <!-- BREADCRUMB -->
+  <!-- V = I–VI  |  Automation, APIs &amp; Econometric Modeling = Price Shocks & Market Disruption  |  2024 = 2020 -->
+  <!-- Capstone = Research Brief 1  OR  Capstone -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>/</span>
+    <a href="../projects.html">Research Projects</a>
+    <span>/</span>
+    <span>V · Automation, APIs &amp; Econometric Modeling (2024)</span>
+    <span>/</span>
+    <span>Capstone</span>
+  </div>
+
+  <!-- PAPER HEADER -->
+  <!-- type type-cap = "type" for RB  |  "type type-cap" for Capstone -->
+  <!-- Capstone 2024 = Research Brief 1  |  Capstone -->
+  <!-- 2024 = 2020 -->
+  <!-- 2015 – 2024 = January 2019 – August 2020 -->
+  <!-- Python — pandas, matplotlib, statsmodels, FRED API = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
+  <!-- Agricultural Commodity Price Forecasting in Emerging Markets: A Python-Based Analysis = Full project title -->
+  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2024 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2024 -->
+  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
+  <div class="paper-header">
+    <div class="paper-meta-row">
+      <span class="meta-badge type type-cap">Capstone 2024</span>
+      <span class="meta-badge">2024</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">2015 – 2024</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">Python — pandas, matplotlib, statsmodels, FRED API</span>
+    </div>
+    <h1 class="paper-title">Agricultural Commodity Price Forecasting in Emerging Markets: A Python-Based Analysis</h1>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2024</div>
+    <div class="paper-tags">
+      <!-- One <span class="paper-tag"> per tag -->
+      <span class="paper-tag">FRED API</span>
+      <span class="paper-tag">FAO</span>
+      <span class="paper-tag">USDA</span>
+      <span class="paper-tag">ISAAA</span>
+      <span class="paper-tag">ARIMA</span>
+      <span class="paper-tag">Backtesting</span>
+      <span class="paper-tag">Jupyter Notebook</span>
+    </div>
+  </div>
+
+  <!-- ABSTRACT -->
+  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
+  <div class="abstract-box">
+    <div class="abstract-label">Abstract</div>
+    <div class="abstract-text">This capstone builds a Python-based ARIMA forecasting framework for agricultural commodity prices in Colombian and Latin American markets. Using programmatic data retrieval via the FRED API, automated time-series preprocessing with pandas, and formal ARIMA model estimation with statsmodels, the analysis tests whether statistical forecasting models can outperform naive baselines for corn, coffee, and soybean prices. The project represents the portfolio's transition from manual analysis to reproducible, code-based research.</div>
+  </div>
+
+  <!-- 1. RESEARCH QUESTION -->
+  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
+  <div class="paper-section">
+    <div class="section-number">1.</div>
+    <div class="section-title">Research Question</div>
+    <p class="paper-text">Can a Python-based ARIMA forecasting model outperform a naive baseline in predicting agricultural commodity prices in Colombian and Latin American markets?</p>
+    <p class="paper-text">The 2022 portfolio demonstrated price transmission relationships statistically; the 2023 portfolio visualized them interactively. The natural next question is: can we forecast prices? ARIMA provides a formal forecasting framework that tests whether historical price patterns contain predictive information beyond the most recent observation (the naive benchmark).</p>
+  </div>
+
+  <!-- 2. DATA & SOURCES -->
+  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
+  <div class="paper-section">
+    <div class="section-number">2.</div>
+    <div class="section-title">Data &amp; Sources</div>
+    <p class="paper-text">Data is retrieved programmatically through the FRED API, supplemented with FAO and USDA datasets loaded from CSV files.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Source</th>
+          <th>Frequency</th>
+          <th>Period</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Commodity prices (corn, coffee, soybeans)</td><td>FRED API</td><td>Monthly</td><td>2015–2024</td><td>fred.stlouisfed.org</td></tr>
+        <tr><td>Agricultural production data</td><td>FAO FAOSTAT</td><td>Annual</td><td>2015–2024</td><td>fao.org/faostat</td></tr>
+        <tr><td>Crop area and trade</td><td>USDA ERS/PSD</td><td>Annual</td><td>2015–2024</td><td>usda.gov</td></tr>
+      </tbody>
+    </table>
+
+    <p class="paper-text">The FRED API enables automated, reproducible data retrieval — a key methodological advancement. Three commodity price series are selected for their relevance to Colombian markets and their different volatility profiles: corn (high import dependence), coffee (primary export), and soybeans (regional benchmark).</p>
+  </div>
+
+  <!-- 3. METHODOLOGY -->
+  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
+  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
+  <div class="paper-section">
+    <div class="section-number">3.</div>
+    <div class="section-title">Methodology</div>
+    <p class="paper-text">The capstone follows a standard time-series forecasting workflow: data retrieval, preprocessing, stationarity testing, model estimation, and backtesting.</p>
+    <p class="paper-text"><strong>Step 1 — Automated data retrieval.</strong> Python's fredapi library retrieves price series programmatically, with error handling and automatic date alignment. This replaces the manual download-and-copy workflow used in 2020–2023.</p>
+    <p class="paper-text"><strong>Step 2 — Stationarity testing.</strong> Augmented Dickey-Fuller (ADF) tests determine whether each price series is stationary or requires differencing. This addresses the non-stationarity limitation identified in the 2022 portfolio.</p>
+    <p class="paper-text"><strong>Step 3 — ARIMA model estimation.</strong> Grid search over (p,d,q) parameters identifies the optimal ARIMA specification for each commodity, using AIC/BIC for model selection. Diagnostic plots (residual ACF, QQ-plot) verify model adequacy.</p>
+    <p class="paper-text"><strong>Step 4 — Backtesting framework.</strong> An expanding-window backtest computes rolling one-month-ahead forecasts over the 2022–2024 period, comparing ARIMA predictions against a naive (random walk) baseline using RMSE and MAE metrics.</p>
+  </div>
+
+  <!-- 4. KEY FINDING -->
+  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
+  <div class="paper-section">
+    <div class="section-number">4.</div>
+    <div class="section-title">Key Finding</div>
+    <p class="paper-text">The backtesting results show mixed but informative performance across commodities.</p>
+    <div class="finding-box">
+      <div class="finding-label">Key Finding</div>
+      <div class="finding-text">The ARIMA model outperforms the naive baseline for coffee prices (lower RMSE by approximately 10–15%), performs comparably for corn, and slightly underperforms for soybeans. The improvement for coffee is attributed to its more persistent autocorrelation structure (seasonal harvest cycles). The corn and soybean results suggest that these markets are closer to efficient (random walk), consistent with their deep integration into global futures markets where information is rapidly priced in.</div>
+    </div>
+    <p class="paper-text">The commodity-specific results reinforce a key lesson: no single model works universally. The forecasting value of ARIMA depends on the autocorrelation structure of each series, which in turn reflects the market's efficiency and integration. This motivates the exploration of conditional volatility models (GARCH) in 2025.</p>
+  </div>
+
+  <!-- 5. WHAT I LEARNED -->
+  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
+  <div class="paper-section">
+    <div class="section-number">5.</div>
+    <div class="section-title">What I Learned</div>
+    <p class="paper-text">The <strong>transition to Python</strong> was the defining advancement of 2024. Writing code instead of clicking through menus changes the relationship between analyst and data: every step is documented, reproducible, and scalable. The entire analysis can be re-run with a single command — impossible in the spreadsheet and Power BI workflows of prior years.</p>
+    <p class="paper-text"><strong>ADF testing for stationarity</strong> formally addresses the limitation identified in the 2022 portfolio: that OLS regression on non-stationary series produces spurious results. The discipline of testing stationarity before modeling is now embedded in all subsequent time-series work.</p>
+    <p class="paper-text">The <strong>backtesting framework</strong> — evaluating models on out-of-sample data rather than in-sample fit — introduced the fundamental distinction between fitting and forecasting. A model can fit historical data perfectly and forecast poorly; only backtesting reveals this.</p>
+  </div>
+
+  <!-- 6. LIMITATION -->
+  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
+  <div class="paper-section">
+    <div class="section-number">6.</div>
+    <div class="section-title">Limitation</div>
+    <div class="limitation-box">
+      <div class="limitation-label">Method Limitation</div>
+      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-text">ARIMA models are univariate — they use only the price series' own history for forecasting, ignoring external variables (exchange rates, supply shocks, policy changes) that the 2022 regression analysis showed to be significant predictors. The 2025 portfolio addresses this with multivariate panel regression and GARCH models that incorporate exogenous variables.</div>
+    </div>
+  </div>
+
+  <!-- 7. DELIVERABLE -->
+  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
+  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
+  <div class="paper-section">
+    <div class="section-number">7.</div>
+    <div class="section-title">Deliverable</div>
+    <p class="paper-text">A Jupyter Notebook (.ipynb) containing the complete analysis: FRED API data retrieval, ADF tests, ARIMA estimation, backtesting, and visualization. The notebook is designed to be fully executable and reproducible.</p>
+    <div class="deliverable-row">
+      <a href="#" class="dl-btn primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Jupyter Notebook (.ipynb) — Coming Soon
+      </a>
+      
+      <a href="#" class="dl-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Backtest Results (.xlsx) — Coming Soon
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT NAVIGATION -->
+  <!-- ../projects.html = previous project html filename (or ../projects.html if first) -->
+  <!-- ← Back to All Projects = ← Capstone 2020  OR  ← Back to All Projects -->
+  <!-- 2024-rb1-biotech-volatility.html = next project html filename -->
+  <!-- Research Brief 1 → = Research Brief 2 →  OR  Capstone 2020 → -->
+  <div class="project-nav">
+    <a href="../projects.html" class="proj-nav-back">← Back to All Projects</a>
+    <a href="2024-rb1-biotech-volatility.html" class="proj-nav-link">Research Brief 1 →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="/cdn-cgi/l/email-protection#65040210110c001717001f5450522500161110010c040b1100164b041700040b010c0b044b0001104b060a"><span class="__cf_email__" data-cfemail="a1c0c6d4d5c8c4d3d3c4db909496e1c4d2d5d4c5c8c0cfd5c4d28fc0d3c4c0cfc5c8cfc08fc4c5d48fc2ce">[email&#160;protected]</span></a>
+  </p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.es').forEach(el => el.style.displa

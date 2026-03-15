@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <title>Structural Determinants of Colombian Agricultural Export Competitiveness 2015–2025 — Angie M. Gutierrez-Oviedo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
+      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
+      --parchment: #faf9f6; --rule: #c8d4c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
+    .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--moss); }
+    .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
+    .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
+    .nav-hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--forest); padding: 0 0.5rem; }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      #navLinks { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem 1.5rem; gap: 1rem; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      #navLinks.open { display: flex; }
+      #navLinks a { display: block !important; font-size: 0.9rem; padding: 0.3rem 0; }
+    }
+
+    /* PAPER LAYOUT */
+    .paper-wrap { max-width: 820px; margin: 0 auto; padding: 100px 2rem 6rem; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--moss); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .paper-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .paper-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .meta-badge { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 2px; padding: 0.15rem 0.5rem; color: var(--stone); }
+    .meta-badge.type { background: var(--mist); }
+    .meta-badge.type-cap { background: var(--moss); color: white; border-color: var(--moss); }
+    .meta-period { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--stone); }
+    .meta-sep { color: var(--rule); }
+    .paper-title { font-family: 'EB Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 500; color: var(--forest); line-height: 1.2; margin-bottom: 1rem; }
+    .paper-author { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--stone); margin-bottom: 1.5rem; }
+    .paper-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .paper-tag { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; background: var(--mist); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.5rem; }
+
+    /* ABSTRACT */
+    .abstract-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.5rem 1.75rem; margin-bottom: 3rem; }
+    .abstract-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.6rem; }
+    .abstract-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; font-style: italic; }
+
+    /* SECTIONS */
+    .paper-section { margin-bottom: 2.75rem; }
+    .section-number { font-family: 'EB Garamond', serif; font-size: 0.85rem; color: var(--moss); margin-bottom: 0.1rem; }
+    .section-title { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--mist); }
+    .paper-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.85; margin-bottom: 1rem; }
+    .paper-text:last-child { margin-bottom: 0; }
+    .paper-text strong { font-weight: 600; }
+
+    /* DATA TABLE */
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+    .data-table th { background: var(--mist); font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--rule); }
+    .data-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--mist); color: var(--ink); font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.5; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* KEY FINDING */
+    .finding-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .finding-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
+    .finding-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; }
+
+    /* LIMITATION */
+    .limitation-box { background: var(--mist); border-radius: 3px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .limitation-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.4rem; font-weight: 500; }
+    .limitation-text { font-family: 'EB Garamond', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.75; font-style: italic; }
+
+    /* DELIVERABLE */
+    .deliverable-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); border: 1px solid var(--moss); border-radius: 3px; padding: 0.5rem 1rem; text-decoration: none; transition: all 0.15s; }
+    .dl-btn:hover { background: var(--moss); color: white; }
+    .dl-btn.primary { background: var(--moss); color: white; }
+    .dl-btn.primary:hover { background: var(--forest); }
+
+    /* PROJECT NAV */
+    .project-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; gap: 1rem; }
+    .proj-nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+    .proj-nav-link:hover { color: var(--forest); }
+    .proj-nav-back { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
+    .proj-nav-back:hover { color: var(--moss); }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .paper-wrap { padding: 90px 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#about" class="en">About</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="../index.html#research" class="en">Research</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="../index.html#experience" class="en">Experience</a>
+      <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="../projects.html" class="active en">Projects</a>
+      <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
+      <a href="../contact.html" class="en">Contact</a>
+      <a href="../contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+    </div>
+  </div>
+</nav>
+
+<div class="paper-wrap">
+
+  <!-- BREADCRUMB -->
+  <!-- VI = I–VI  |  Formal Research &amp; Academic Publication Standards = Price Shocks & Market Disruption  |  2025 = 2020 -->
+  <!-- Research Brief 3 = Research Brief 1  OR  Capstone -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>/</span>
+    <a href="../projects.html">Research Projects</a>
+    <span>/</span>
+    <span>VI · Formal Research &amp; Academic Publication Standards (2025)</span>
+    <span>/</span>
+    <span>Research Brief 3</span>
+  </div>
+
+  <!-- PAPER HEADER -->
+  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
+  <!-- Research Brief 3 = Research Brief 1  |  Capstone -->
+  <!-- 2025 = 2020 -->
+  <!-- 2015 – 2025 = January 2019 – August 2020 -->
+  <!-- Python · LaTeX = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
+  <!-- Structural Determinants of Colombian Agricultural Export Competitiveness 2015–2025 = Full project title -->
+  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2025 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2025 -->
+  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
+  <div class="paper-header">
+    <div class="paper-meta-row">
+      <span class="meta-badge type">Research Brief 3</span>
+      <span class="meta-badge">2025</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">2015 – 2025</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-period">Python · LaTeX</span>
+    </div>
+    <h1 class="paper-title">Structural Determinants of Colombian Agricultural Export Competitiveness 2015–2025</h1>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2025</div>
+    <div class="paper-tags">
+      <!-- One <span class="paper-tag"> per tag -->
+      <span class="paper-tag">UN Comtrade</span>
+      <span class="paper-tag">World Bank</span>
+      <span class="paper-tag">RCA</span>
+      <span class="paper-tag">IV Regression</span>
+      <span class="paper-tag">Export Competitiveness</span>
+      <span class="paper-tag">Logistics</span>
+    </div>
+  </div>
+
+  <!-- ABSTRACT -->
+  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
+  <div class="abstract-box">
+    <div class="abstract-label">Abstract</div>
+    <div class="abstract-text">This brief applies Revealed Comparative Advantage (RCA) analysis and instrumental variable regression to identify the structural determinants of Colombian agricultural export competitiveness over 2015–2025. Using UN Comtrade trade data, World Bank Logistics Performance Index, and exchange rate data, the analysis estimates which factors — logistics quality, exchange rate, productivity — most strongly determine Colombia's competitive position in agricultural export markets relative to regional and global peers.</div>
+  </div>
+
+  <!-- 1. RESEARCH QUESTION -->
+  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
+  <div class="paper-section">
+    <div class="section-number">1.</div>
+    <div class="section-title">Research Question</div>
+    <p class="paper-text">What structural factors — logistics quality, exchange rate, productivity — most strongly determine Colombia's agricultural export competitiveness between 2015 and 2025?</p>
+    <p class="paper-text">The 2021 SQL analysis mapped Colombia's trade network structure; the 2023 Power BI dashboard visualized trade geography. This brief asks the causal question: what structural factors explain why Colombia's agricultural exports are competitive in some products and markets but not others?</p>
+  </div>
+
+  <!-- 2. DATA & SOURCES -->
+  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
+  <div class="paper-section">
+    <div class="section-number">2.</div>
+    <div class="section-title">Data &amp; Sources</div>
+    <p class="paper-text">The analysis combines trade flow data with structural determinant indicators from multiple sources.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Source</th>
+          <th>Frequency</th>
+          <th>Period</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Agricultural trade flows (bilateral)</td><td>UN Comtrade</td><td>Annual</td><td>2015–2025</td><td>comtrade.un.org</td></tr>
+        <tr><td>Logistics Performance Index</td><td>World Bank</td><td>Biennial → interpolated</td><td>2016–2025</td><td>worldbank.org</td></tr>
+        <tr><td>Agricultural productivity (yield/ha)</td><td>FAO</td><td>Annual</td><td>2015–2025</td><td>fao.org</td></tr>
+        <tr><td>Real effective exchange rate</td><td>World Bank / Banco de la República</td><td>Annual</td><td>2015–2025</td><td>worldbank.org</td></tr>
+      </tbody>
+    </table>
+
+    <p class="paper-text">RCA indices are computed for each Colombian agricultural product using the standard Balassa formula. The regression sample includes 10 Latin American countries over 10 years, with product-level RCA as the dependent variable.</p>
+  </div>
+
+  <!-- 3. METHODOLOGY -->
+  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
+  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
+  <div class="paper-section">
+    <div class="section-number">3.</div>
+    <div class="section-title">Methodology</div>
+    <p class="paper-text">The analysis combines trade competitiveness measurement with formal causal inference techniques.</p>
+    <p class="paper-text"><strong>Step 1 — Revealed Comparative Advantage computation.</strong> Balassa RCA indices computed for each country-product-year combination: RCA = (X_ij / X_i) / (X_wj / X_w), where values above 1 indicate revealed comparative advantage.</p>
+    <p class="paper-text"><strong>Step 2 — Panel regression of RCA determinants.</strong> Fixed effects regression estimates RCA_ijt = α + β₁ × Logistics_it + β₂ × REER_it + β₃ × Productivity_it + μ_i + λ_t + ε_ijt, identifying which structural factors predict competitiveness.</p>
+    <p class="paper-text"><strong>Step 3 — Instrumental variable estimation.</strong> To address potential endogeneity (competitive countries may invest more in logistics), an IV strategy uses geographic distance to major ports as an instrument for logistics quality.</p>
+  </div>
+
+  <!-- 4. KEY FINDING -->
+  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
+  <div class="paper-section">
+    <div class="section-number">4.</div>
+    <div class="section-title">Key Finding</div>
+    <p class="paper-text">The competitiveness analysis identifies logistics quality as the most policy-relevant determinant.</p>
+    <div class="finding-box">
+      <div class="finding-label">Key Finding</div>
+      <div class="finding-text">Logistics quality (World Bank LPI) is the strongest and most robust predictor of agricultural export competitiveness across Latin American countries. A one-standard-deviation improvement in LPI is associated with a significant increase in average RCA. Exchange rate effects are significant but smaller in magnitude, and agricultural productivity shows the expected positive sign but is less robust across specifications. The IV estimates suggest that the OLS results, if anything, underestimate the causal effect of logistics quality.</div>
+    </div>
+    <p class="paper-text">The finding that logistics infrastructure matters more than exchange rate or productivity for export competitiveness has clear policy implications: Colombia's agricultural export potential is constrained more by infrastructure bottlenecks than by macroeconomic conditions or farm-level productivity. This aligns with the author's operational experience in grain distribution, where transport and logistics costs were consistently identified as the binding constraint.</p>
+  </div>
+
+  <!-- 5. WHAT I LEARNED -->
+  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
+  <div class="paper-section">
+    <div class="section-number">5.</div>
+    <div class="section-title">What I Learned</div>
+    <p class="paper-text"><strong>Revealed Comparative Advantage analysis</strong> connects trade theory (Ricardian comparative advantage) to empirical measurement, providing a bridge between abstract economic concepts and measurable trade outcomes.</p>
+    <p class="paper-text"><strong>Instrumental variable estimation</strong> addresses the fundamental challenge of causal inference in observational data. The discipline of finding valid instruments and testing exclusion restrictions represents the highest level of econometric rigor in the portfolio.</p>
+    <p class="paper-text">The convergence of <strong>empirical findings with operational experience</strong> — that logistics constraints matter most — validates the research agenda's grounding in real-world observation. The six-year journey from warehouse observation to formal econometric evidence closes a full analytical loop.</p>
+  </div>
+
+  <!-- 6. LIMITATION -->
+  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
+  <div class="paper-section">
+    <div class="section-number">6.</div>
+    <div class="section-title">Limitation</div>
+    <div class="limitation-box">
+      <div class="limitation-label">Data & Identification Limitation</div>
+      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-text">The World Bank LPI is only available biennially, requiring interpolation for annual panel construction. The geographic instrument for logistics quality may violate the exclusion restriction if coastal proximity directly affects agricultural trade patterns (e.g., through access to maritime shipping). Alternative instruments (historical road network density) would strengthen the identification strategy but are not available for all countries in the sample.</div>
+    </div>
+  </div>
+
+  <!-- 7. DELIVERABLE -->
+  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
+  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
+  <div class="paper-section">
+    <div class="section-number">7.</div>
+    <div class="section-title">Deliverable</div>
+    <p class="paper-text">Jupyter Notebook with RCA computation, panel regression, IV estimation, and robustness tests. LaTeX-compiled brief included in the working paper appendix. All code and data documented in the GitHub repository.</p>
+    <div class="deliverable-row">
+      <a href="#" class="dl-btn primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Jupyter Notebook (.ipynb) — Coming Soon
+      </a>
+      
+      <a href="#" class="dl-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        LaTeX Brief (.pdf) — Coming Soon
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT NAVIGATION -->
+  <!-- 2025-rb2-portfolio-risk.html = previous project html filename (or ../projects.html if first) -->
+  <!-- ← Research Brief 2 = ← Capstone 2020  OR  ← Back to All Projects -->
+  <!-- ../projects.html = next project html filename -->
+  <!-- Back to All Projects → = Research Brief 2 →  OR  Capstone 2020 → -->
+  <div class="project-nav">
+    <a href="2025-rb2-portfolio-risk.html" class="proj-nav-back">← Research Brief 2</a>
+    <a href="../projects.html" class="proj-nav-link">Back to All Projects →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
+    <a href="/cdn-cgi/l/email-protection#2a4b4d5f5e434f58584f501b1f1d6a4f595e5f4e434b445e4f59044b584f4b444e43444b044f4e5f044945"><span class="__cf_email__" data-cfemail="cbaaacbebfa2aeb9b9aeb1fafefc8baeb8bfbeafa2aaa5bfaeb8e5aab9aeaaa5afa2a5aae5aeafbee5a8a4">[email&#160;protected]</span></a>
+  </p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let lang = 'en';
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
+    document.querySelectorAll('.es').forEach(el => el.style.displa
