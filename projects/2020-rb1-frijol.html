@@ -168,7 +168,7 @@
       <span class="meta-sep">·</span>
       <span class="meta-period">January 2019 – August 2020</span>
       <span class="meta-sep">·</span>
-      <span class="meta-period">Google Sheets · Excel</span>
+      <span class="meta-period">SIPSA-DANE · FRED · Python · Excel</span>
     </div>
     <h1 class="paper-title">Fríjol Price Volatility in Colombia: First 6 Months of COVID</h1>
     <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020</div>
@@ -179,6 +179,8 @@
       <span class="paper-tag">Descriptive Statistics</span>
       <span class="paper-tag">Coefficient of Variation</span>
       <span class="paper-tag">Price Indexing</span>
+      <span class="paper-tag">T-Test · OLS</span>
+      <span class="paper-tag">FRED Data</span>
       <span class="paper-tag">COVID-19</span>
     </div>
   </div>
@@ -188,7 +190,7 @@
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
-    <div class="abstract-text">This brief examines whether COVID-19 disruptions significantly increased the price volatility of wholesale fríjol (common bean) in Colombia's main agricultural market during March–August 2020, compared to the same period in 2019. Using publicly available SIPSA-DANE price data from Corabastos, Bogotá, and foundational spreadsheet analysis tools — descriptive statistics, coefficient of variation, and base-100 price indexing — the analysis documents the magnitude and timing of the price shock. Fríjol is Colombia's primary vegetable protein source and one of the commodities most sensitive to supply chain disruptions, making it a relevant case study for food price risk in an emerging economy context.</div>
+    <div class="abstract-text">This brief examines whether COVID-19 disruptions significantly increased the price volatility of wholesale fríjol (common bean) in Colombia's main agricultural market during March–August 2020, compared to the same period in 2019. Using SIPSA-DANE wholesale price data from Corabastos (Bogotá) alongside USD/COP exchange rate and Brent crude oil series from FRED, the analysis documents the magnitude and timing of the price shock through descriptive statistics, Welch's t-test, base-100 price indexing, Pearson correlation, and OLS regression. The Coefficient of Variation of fríjol prices nearly doubled (+88.4%) between the two periods, with the sharpest single-month surge of +28.3% occurring in April 2020 — concurrent with the national lockdown declaration and a 125.7-index reading for the USD/COP rate. Fríjol is Colombia's primary vegetable protein source, making it a relevant case study for food price risk under supply chain stress.</div>
   </div>
 
   <!-- 1. RESEARCH QUESTION -->
@@ -220,8 +222,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Wholesale price — Fríjol bolo rojo (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly</td><td>Jan 2019 – Aug 2020</td><td>dane.gov.co → SIPSA</td></tr>
+        <tr><td>Wholesale price — Fríjol seco* (predominant variety, COP/kg)</td><td>SIPSA-DANE · Boletín Mensual Mayoristas</td><td>Monthly avg</td><td>Jan 2019 – Aug 2020</td><td>dane.gov.co → SIPSA annexes (.xlsx)</td></tr>
         <tr><td>Market</td><td>Corabastos, Bogotá</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>USD/COP exchange rate (monthly average)</td><td>FRED · COLCCUSMA02STM</td><td>Monthly</td><td>Jan 2019 – Aug 2020</td><td>fred.stlouisfed.org</td></tr>
+        <tr><td>Brent crude oil (USD/barrel)</td><td>FRED · DCOILBRENTEU</td><td>Daily → monthly avg</td><td>Jan 2019 – Aug 2020</td><td>fred.stlouisfed.org</td></tr>
       </tbody>
     </table>
 
@@ -235,11 +239,14 @@
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
     <div class="section-title es" style="display:none">Metodología</div>
-    <p class="paper-text">The analysis applies four foundational tools, each building on the previous. All computations are performed in Google Sheets using standard formulas — no external packages or statistical software required at this stage of the portfolio.</p>
-    <p class="paper-text"><strong>Step 1 — Month-over-month change (MoM%).</strong> For each month, the percentage change from the prior month is computed as <em>((P_t − P_t−1) / P_t−1) × 100</em>. This captures the speed of price movement, distinguishing between stable upward trends and volatile oscillations.</p>
-    <p class="paper-text"><strong>Step 2 — Descriptive statistics by period.</strong> Two separate blocks are built — one for March–August 2019, one for March–August 2020 — each reporting mean price, standard deviation, maximum, and minimum. The comparison of standard deviations provides a first-order measure of volatility difference between the baseline and pandemic periods.</p>
-    <p class="paper-text"><strong>Step 3 — Coefficient of Variation (CV).</strong> The CV, computed as <em>(standard deviation / mean) × 100</em>, normalizes volatility relative to the price level. This is the central metric: unlike raw standard deviation, CV allows comparison across periods where the mean price itself changed.</p>
-    <p class="paper-text"><strong>Step 4 — Base-100 price index.</strong> All prices are re-expressed relative to January 2019 = 100 using absolute reference formulas (<em>= (C_t / $C$_Jan2019) × 100</em>). A dual line chart (2019 in grey, 2020 in red) with an annotated vertical marker at March 2020 makes divergence immediately visible.</p>
+    <p class="paper-text">The reconstructed analysis uses Python (pandas, scipy, statsmodels) on the same SIPSA-DANE source data, extended with two macroeconomic variables from FRED to contextualize the price shock. Seven analytical steps are applied sequentially.</p>
+    <p class="paper-text"><strong>Step 1 — Month-over-month change (MoM%).</strong> Computed as <em>((P_t − P_t−1) / P_t−1) × 100</em> for each of the 20 months. Identifies the speed and direction of price movement, separating trend from volatility.</p>
+    <p class="paper-text"><strong>Step 2 — Descriptive statistics by period.</strong> Two comparison blocks (Mar–Aug 2019 vs. Mar–Aug 2020), each reporting mean, standard deviation, min, max, range, and CV. Establishes the baseline before formal testing.</p>
+    <p class="paper-text"><strong>Step 3 — Coefficient of Variation (CV).</strong> <em>CV = (SD / mean) × 100</em>. The central volatility metric: normalizes dispersion relative to the price level, enabling cross-period comparison even when the mean itself changes.</p>
+    <p class="paper-text"><strong>Step 4 — Welch's t-test.</strong> Two-sample t-test with unequal variances compares the mean fríjol price between the two six-month periods. Reports t-statistic, approximate degrees of freedom (Welch–Satterthwaite), two-tailed p-value, and Cohen's d for practical effect size.</p>
+    <p class="paper-text"><strong>Step 5 — Base-100 price index.</strong> All three series (fríjol, USD/COP, Brent) are re-expressed as <em>(P_t / P_Jan2019) × 100</em>. The resulting chart reveals the relative magnitude of each shock on a common scale.</p>
+    <p class="paper-text"><strong>Step 6 — Pearson correlation matrix.</strong> Pairwise correlations across the full 20-month series (n = 20) for fríjol, USD/COP, and Brent. Concurrent monthly data, no lag adjustment.</p>
+    <p class="paper-text"><strong>Step 7 — OLS regression.</strong> <em>Fríjol<sub>t</sub> = β₀ + β₁·USD/COP<sub>t</sub> + β₂·Brent<sub>t</sub> + ε</em>. Reports coefficients, standard errors, t-statistics, R², and adjusted R². The high collinearity between USD/COP and Brent (r = −0.90) limits the interpretability of individual coefficients — a limitation discussed in Section 6.</p>
   </div>
 
   <!-- 4. KEY FINDING -->
@@ -248,13 +255,32 @@
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
     <div class="section-title es" style="display:none">Hallazgo Principal</div>
-    <p class="paper-text">The analysis documents a clear volatility increase in wholesale fríjol prices during the first six months of COVID-19 restrictions.</p>
+    <p class="paper-text">The analysis documents a clear and measurable volatility increase in wholesale fríjol prices during the first six months of COVID-19 restrictions, over and above the mean price shift.</p>
     <div class="finding-box">
       <div class="finding-label en">Key Finding</div>
       <div class="finding-label es" style="display:none">Hallazgo Principal</div>
-      <div class="finding-text">The Coefficient of Variation of wholesale fríjol prices at Corabastos increased substantially between March–August 2019 and March–August 2020. The average price rose between the two periods, but the increase in volatility exceeded the increase in the mean — indicating genuine instability rather than a simple level shift. Price divergence began approximately 2–3 weeks after the national lockdown declaration of March 20, 2020.</div>
+      <div class="finding-text">
+        The Coefficient of Variation of wholesale fríjol prices at Corabastos nearly doubled between the two six-month periods:
+        <strong>CV = 6.02% (Mar–Aug 2019) → 11.34% (Mar–Aug 2020), an increase of +88.4%.</strong>
+        The mean price rose from COP 5,892/kg to COP 6,531/kg (+10.8%), but the volatility increase was eight times larger in relative terms — indicating genuine instability rather than a simple level shift.
+        The sharpest monthly surge was <strong>+28.3% MoM in April 2020</strong>, the largest in the 20-month series, coinciding with the national lockdown declared on March 20, 2020.
+        Prices peaked at <strong>COP 7,317/kg in May 2020</strong> (index: 125.9, base Jan 2019 = 100), before partially recovering to COP 5,978/kg by August 2020.
+        Welch's t-test: <em>t = 1.91, df = 7.18, p = 0.097</em> — not significant at α = 0.05 given n = 6 per period, but Cohen's d = 1.10 indicates a <strong>large practical effect size.</strong>
+        Contextually, Brent crude collapsed to 53.4% of its January 2019 value by March 2020, while the USD/COP rate peaked at index 125.7 in April 2020.
+      </div>
     </div>
-    <p class="paper-text">The finding confirms that volatility — not just the price level — increased during the pandemic period, consistent with the hypothesis that supply chain disruptions introduce instability beyond the average price signal.</p>
+
+    <figure style="margin:1.5rem 0; text-align:center;">
+      <img src="../deliverables/2020-rb1/price_index.png"
+           alt="Base-100 price index: Fríjol, USD/COP, and Brent Crude, Jan 2019–Aug 2020"
+           style="max-width:100%; border:1px solid var(--rule); border-radius:4px;">
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. Base-100 price index (Jan 2019 = 100). Fríjol peaked at 125.9 in May 2020; USD/COP peaked at 125.7 in April 2020; Brent crashed to 33.9 in April 2020.
+        Sources: SIPSA-DANE (fríjol), FRED COLCCUSMA02STM (USD/COP), FRED DCOILBRENTEU (Brent).
+      </figcaption>
+    </figure>
+
+    <p class="paper-text">The finding confirms that volatility — not just the price level — increased during the pandemic period. The OLS regression (R² = 0.36, R²<sub>adj</sub> = 0.29) is constrained by high collinearity between USD/COP and Brent (r = −0.90), but the base-100 index clearly shows that fríjol prices moved in the same direction as the currency depreciation and opposite to the oil crash — a pattern consistent with supply chain disruption rather than cost-push inflation alone.</p>
   </div>
 
   <!-- 5. WHAT I LEARNED -->
@@ -278,7 +304,7 @@
       <div class="limitation-label en">Scope Limitation</div>
       <div class="limitation-label es" style="display:none">Alcance Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
-      <div class="limitation-text">The analysis covers a single market (Corabastos, Bogotá) and a single variety (fríjol bolo rojo). It does not capture regional price heterogeneity across Colombia's distributed wholesale markets, nor does it control for variety-specific supply factors. A multi-market, multi-variety extension — the kind made feasible by SQL queries in 2021 — would produce a more structurally robust finding.</div>
+      <div class="limitation-text">The analysis covers a single market (Corabastos, Bogotá) and aggregated variety data. It does not capture regional price heterogeneity across Colombia's distributed wholesale markets, nor does it control for variety-specific supply factors. The OLS regression is further limited by severe multicollinearity between the two regressors (USD/COP and Brent, r = −0.90 over the 20-month window), which inflates coefficient standard errors and prevents reliable isolation of each variable's independent effect. Additionally, the t-test comparison has n = 6 per period, limiting statistical power despite a large Cohen's d. A multi-market, multi-variety extension — the kind made feasible by SQL queries in 2021 — and a lagged-variable or VAR specification would produce a more structurally robust finding.</div>
     </div>
   </div>
 
@@ -289,11 +315,24 @@
     <div class="section-number">7.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
-    <p class="paper-text">The project deliverable is a Google Sheet file (.xlsx) with three clearly separated worksheets: Raw_Data (SIPSA data as downloaded), Analysis (all computations, clearly labeled), and Chart (the final dual time-series visualization).</p>
+    <p class="paper-text">The deliverable is an Excel workbook (.xlsx) with five worksheets: <strong>Raw_Data</strong> (SIPSA-DANE fríjol prices, FRED USD/COP, FRED Brent monthly averages), <strong>Descriptive_Stats</strong> (period comparison table, Welch's t-test, window analysis, MoM% series), <strong>Correlation</strong> (Pearson matrix with source note), <strong>Regression</strong> (OLS coefficients, fitted values, residuals), and <strong>Charts_Data</strong> (base-100 index values and box plot inputs). Four publication-quality chart images are included alongside the workbook.</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheet (.xlsx) — Coming Soon</span>
-      
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
+      <a class="dl-btn primary" href="../deliverables/2020-rb1/frijol_analysis_2020_rb1.xlsx">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Excel Workbook (.xlsx)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb1/price_index.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Price Index Chart (.png)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb1/frijol_2019_vs_2020.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        2019 vs 2020 Comparison (.png)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb1/correlation_heatmap.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Correlation Chart (.png)
+      </a>
     </div>
   </div>
 
