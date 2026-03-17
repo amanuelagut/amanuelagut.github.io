@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Regional grain wholesale price divergence between Ibague and Bogota during the COVID-19 pandemic."/>
+  <meta property="og:title" content="Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic"/>
+  <meta property="og:description" content="Regional grain wholesale price divergence between Ibague and Bogota during the COVID-19 pandemic."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-rb3-ibague-bogota.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>I · Price Shocks &amp; Market Disruption (2020)</span>
     <span>/</span>
@@ -177,7 +185,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief compares wholesale grain price trajectories between Ibagué (a regional production hub in Tolima) and Bogotá (the national distribution center at Corabastos) during the COVID-19 pandemic. Using SIPSA-DANE data and pivot table analysis in Google Sheets, the study documents the degree of regional price divergence — a measure of market integration under stress. The comparison is grounded in direct operational knowledge of both markets from the author's experience in grain distribution in Ibagué.</div>
   </div>
 
@@ -185,7 +194,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How did wholesale grain prices diverge between Ibagué and Bogotá during COVID-19, and what does this reveal about regional market integration?</p>
     <p class="paper-text">Ibagué is a net grain producer (rice, sorghum) while Bogotá is a net consumer. Under normal conditions, price differences between the two reflect transport costs and intermediary margins. During COVID-19, mobility restrictions disrupted transport networks — testing whether the price gap widened (market segmentation) or remained stable (robust integration).</p>
   </div>
@@ -194,7 +204,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Price data is sourced from SIPSA-DANE for both markets, ensuring methodological consistency in data collection.</p>
 
     <table class="data-table">
@@ -221,7 +232,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis uses pivot tables and price indexing to systematically compare two markets across multiple products.</p>
     <p class="paper-text"><strong>Step 1 — Pivot table construction.</strong> Monthly average prices organized by product × city × month using Google Sheets pivot tables. This produces a structured comparison matrix that makes city-level divergence immediately readable.</p>
     <p class="paper-text"><strong>Step 2 — Price gap computation.</strong> For each product-month pair, the absolute and percentage price difference between Bogotá and Ibagué is computed: <em>Gap% = ((P_Bogotá − P_Ibagué) / P_Ibagué) × 100</em>. The time series of this gap reveals when and by how much the markets diverged.</p>
@@ -232,10 +244,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The regional comparison reveals that market integration weakened measurably during peak lockdown months.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">The Bogotá-Ibagué price gap widened during April–June 2020 across all three products, with the largest divergence observed in fríjol (the most transport-sensitive commodity). By September 2020, as mobility restrictions eased, the gap began to narrow toward pre-pandemic levels. Rice showed the smallest divergence, consistent with its more formalized and less disruption-sensitive supply chain.</div>
     </div>
     <p class="paper-text">The heterogeneous gap patterns across products suggest that market integration is not a binary state but a product-specific and logistics-dependent phenomenon. This insight informs the 2022 price transmission analysis, which formally models the lag structure of price adjustment between markets.</p>
@@ -245,7 +259,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">This project introduced <strong>pivot table analysis</strong> as a systematic tool for cross-dimensional comparison — organizing data by product × city × time in a way that makes patterns visible without computation. This becomes the conceptual foundation for SQL GROUP BY queries in 2021.</p>
     <p class="paper-text">The concept of <strong>market integration</strong> — the idea that spatially separated markets should converge in price under efficient arbitrage — is a foundational concept in agricultural economics. Measuring the price gap empirically connected my operational experience (knowing the transport routes and costs) to formal economic theory.</p>
     <p class="paper-text">Building <strong>matched comparisons</strong> (same product, same time, different location) taught the importance of controlled comparison design — a principle that scales to the panel regression frameworks used in 2025.</p>
@@ -255,9 +270,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Data Limitation</div>
+      <div class="limitation-label en">Data Limitation</div>
+      <div class="limitation-label es" style="display:none">Datos Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The Ibagué market (Plaza de la 21) has less consistent SIPSA reporting than Corabastos, leading to occasional missing observations. Additionally, transport cost data — which would directly explain the price gap — is not available at the frequency needed. The 2022 RB1 (Oil Price Shocks and Transport Costs) partially addresses this by using oil prices as a transport cost proxy.</div>
     </div>
@@ -268,18 +285,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">The deliverable is a Google Sheets workbook (.xlsx) with pivot tables, price gap calculations, and dual-indexed time-series charts for each product comparing Bogotá and Ibagué trajectories.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Google Sheet (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheet (.xlsx) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Summary PDF — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
     </div>
   </div>
 

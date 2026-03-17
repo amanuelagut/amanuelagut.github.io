@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Price Determinants of Rice Wholesale Markets in Colombia 2019–2022 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Multiple regression analysis of price determinants in Colombian rice wholesale markets 2019-2022."/>
+  <meta property="og:title" content="Price Determinants of Rice Wholesale Markets in Colombia 2019–2022"/>
+  <meta property="og:description" content="Multiple regression analysis of price determinants in Colombian rice wholesale markets 2019-2022."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2022-rb2-rice-prices.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>III · Risk, Volatility &amp; Statistical Inference (2022)</span>
     <span>/</span>
@@ -177,7 +185,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief applies multiple regression analysis to identify the key determinants of wholesale rice prices across Colombian markets between 2019 and 2022. Using SIPSA-DANE domestic price data, FRED exchange rates, and international rice price benchmarks from USDA, the analysis tests which factors — exchange rate, oil prices, seasonality — best explain observed price variation. Rice is Colombia's most widely consumed grain and has a partially domestic, partially imported supply structure that makes it sensitive to both local and international forces.</div>
   </div>
 
@@ -185,7 +194,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What factors — exchange rate, oil prices, seasonality — best explain wholesale rice price variation across Colombian markets between 2019 and 2022?</p>
     <p class="paper-text">Rice pricing in Colombia is influenced by a complex mix of domestic production cycles, import competition, government price supports, and macroeconomic variables. Identifying which factors dominate empirically helps prioritize risk management strategies for market participants.</p>
   </div>
@@ -194,7 +204,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis combines domestic price data with international benchmarks and macroeconomic controls.</p>
 
     <table class="data-table">
@@ -223,7 +234,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">A stepwise multiple regression approach tests individual and combined explanatory power of each potential determinant.</p>
     <p class="paper-text"><strong>Step 1 — Univariate correlations.</strong> Each potential determinant is correlated individually with rice prices to establish bivariate relationships before multivariate modeling.</p>
     <p class="paper-text"><strong>Step 2 — Stepwise regression.</strong> Variables are added sequentially to the regression model, with each addition tested for incremental explanatory power (change in R²). This identifies which variables contribute independently vs. redundantly.</p>
@@ -234,10 +246,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The multiple regression analysis identifies the exchange rate and seasonality as the dominant price determinants for Colombian wholesale rice.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">The USD/COP exchange rate and seasonal harvest dummies together explain the majority of rice price variation over the period. International rice price benchmarks add modest incremental explanatory power, suggesting that domestic supply cycles dominate international price transmission for rice — unlike corn, where international prices are the primary driver. Oil prices contribute mainly through their correlation with the exchange rate rather than as an independent factor.</div>
     </div>
     <p class="paper-text">The dominance of domestic factors in rice pricing — contrasting with corn's international dependence — reflects rice's partially self-sufficient supply structure in Colombia. This product-specific difference in price determinant structure is a key insight for differential risk management approaches.</p>
@@ -247,7 +261,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>Stepwise regression</strong> taught me to think about model building as an incremental process — testing each variable's marginal contribution rather than dumping everything into one model. This principle of parsimony carries through all subsequent econometric work.</p>
     <p class="paper-text">The <strong>product-specific finding</strong> — that rice and corn have fundamentally different price determinant structures — reinforced the lesson from 2020 that aggregate food price analysis obscures product-level heterogeneity.</p>
     <p class="paper-text">Constructing <strong>seasonal dummy variables</strong> in Excel (binary 0/1 columns for harvest months) introduced the concept of categorical encoding in regression, which becomes standard practice in Python's pandas get_dummies() and statsmodels.</p>
@@ -257,9 +272,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The multiple regression assumes a linear, additive relationship between determinants and rice prices. Interaction effects (e.g., the exchange rate effect may be stronger during harvest season) are not tested. Additionally, the 48-month sample size limits the number of variables and lags that can be reliably included without overfitting.</div>
     </div>
@@ -270,13 +287,11 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">Excel workbook with correlation matrix, stepwise regression output, full model diagnostics, and comparison charts showing actual vs. predicted rice prices.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Excel Workbook (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Excel Workbook (.xlsx) — Coming Soon</span>
       
     </div>
   </div>

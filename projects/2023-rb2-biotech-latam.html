@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Agricultural Biotechnology Adoption in Latin America: Crop Yield Patterns 2015–2023 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Agricultural biotechnology adoption and crop yield patterns across Latin America 2015-2023."/>
+  <meta property="og:title" content="Agricultural Biotechnology Adoption in Latin America: Crop Yield Patterns 2015–2023"/>
+  <meta property="og:description" content="Agricultural biotechnology adoption and crop yield patterns across Latin America 2015-2023."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2023-rb2-biotech-latam.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>IV · Visual Intelligence &amp; Market Storytelling (2023)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief uses Power BI's mapping and trend visualization capabilities to explore the relationship between biotech seed adoption rates and crop yield performance across Latin American countries between 2015 and 2023. Using FAO production data and ISAAA biotechnology adoption statistics, the analysis creates interactive geographic maps and trend charts that reveal spatial patterns in technology adoption and their association with agricultural productivity.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What visual patterns emerge in the relationship between biotech seed adoption and crop yield performance across Latin American countries between 2015 and 2023?</p>
     <p class="paper-text">Agricultural biotechnology — particularly GM seeds for soybeans, corn, and cotton — has been adopted at different rates across Latin American countries. Understanding whether higher adoption correlates with better yield performance is a foundational question for agricultural development policy.</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis combines global agricultural production data with biotechnology-specific adoption metrics.</p>
 
     <table class="data-table">
@@ -222,7 +233,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The brief uses Power BI's geographic and temporal visualization capabilities.</p>
     <p class="paper-text"><strong>Step 1 — Choropleth maps.</strong> Country-level biotech adoption rates visualized as filled maps with color gradients, showing the geographic distribution of technology adoption across the region.</p>
     <p class="paper-text"><strong>Step 2 — Yield trend lines.</strong> Small multiple line charts show yield trajectories for each country-crop combination, with visual comparison between high-adoption and low-adoption countries.</p>
@@ -233,10 +245,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The visual analysis reveals a general positive association between biotech adoption and yield levels, with important country-specific variation.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Countries with higher biotech adoption rates (Argentina, Brazil, Paraguay) consistently show higher average yields for soybeans and corn than lower-adoption countries. However, the relationship is not purely linear — Uruguay achieves high yields with moderate adoption, suggesting that complementary factors (soil quality, management practices, infrastructure) mediate the biotechnology-yield relationship. Colombia, with limited biotech adoption, shows yields below the regional frontier, particularly for corn.</div>
     </div>
     <p class="paper-text">The visual patterns suggest that biotechnology is a necessary but not sufficient condition for yield improvement. The cross-country comparison motivates the formal econometric analysis conducted in the 2024 and 2025 portfolios.</p>
@@ -246,7 +260,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">Building <strong>choropleth maps in Power BI</strong> introduced geographic visualization as an analytical tool — using spatial patterns to generate hypotheses about regional differences in technology adoption.</p>
     <p class="paper-text"><strong>Small multiples</strong> — showing the same chart type for multiple categories side by side — proved more effective for cross-country comparison than overlapping lines on a single chart. This design principle carries through all subsequent visualization work.</p>
     <p class="paper-text">The <strong>biotechnology-yield relationship</strong> became a core research interest that develops into formal panel regression analysis in the 2025 portfolio, demonstrating how visual exploration can motivate rigorous empirical investigation.</p>
@@ -256,9 +271,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">Power BI visualizations show correlation patterns but cannot establish causation. The positive association between biotech adoption and yields may reflect confounding factors (countries that adopt biotech may also have better infrastructure, education, and capital access). The 2025 RB1 addresses this with panel regression controlling for these confounders.</div>
     </div>
@@ -269,13 +286,11 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">Power BI report (.pbix) with interactive maps, trend charts, and scatter analysis pages for biotechnology-yield exploration across Latin America.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Power BI Report (.pbix) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Power BI Report (.pbix) — Coming Soon</span>
       
     </div>
   </div>

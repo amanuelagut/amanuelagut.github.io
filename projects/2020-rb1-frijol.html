@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Fríjol Price Volatility in Colombia: First 6 Months of COVID — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Frijol price volatility in Colombia main wholesale market during the first 6 months of COVID-19."/>
+  <meta property="og:title" content="Fríjol Price Volatility in Colombia: First 6 Months of COVID"/>
+  <meta property="og:description" content="Frijol price volatility in Colombia main wholesale market during the first 6 months of COVID-19."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-rb1-frijol.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>I · Price Shocks &amp; Market Disruption (2020)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief examines whether COVID-19 disruptions significantly increased the price volatility of wholesale fríjol (common bean) in Colombia's main agricultural market during March–August 2020, compared to the same period in 2019. Using publicly available SIPSA-DANE price data from Corabastos, Bogotá, and foundational spreadsheet analysis tools — descriptive statistics, coefficient of variation, and base-100 price indexing — the analysis documents the magnitude and timing of the price shock. Fríjol is Colombia's primary vegetable protein source and one of the commodities most sensitive to supply chain disruptions, making it a relevant case study for food price risk in an emerging economy context.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">Did COVID-19 disruptions increase wholesale fríjol price volatility in Colombia's main market (Corabastos, Bogotá) during March–August 2020, compared to the same period in 2019? And if so, by how much, and from which point in the pandemic timeline did divergence begin?</p>
     <p class="paper-text">The question is motivated by direct operational observation: during the first months of the pandemic, supply chain disruptions in Colombian food distribution networks were significant, with mobility restrictions affecting both transport and market access. Fríjol — as a storable staple with concentrated wholesale distribution — provides a clean case for measuring price transmission of a supply shock.</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">All data for this project is drawn from SIPSA (Sistema de Información de Precios del Sector Agropecuario), the official agricultural price information system of Colombia's national statistics agency DANE. SIPSA publishes weekly wholesale prices by product, market, and city — the same source cited in Banco de la República analyses of food inflation.</p>
 
     <table class="data-table">
@@ -222,7 +233,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis applies four foundational tools, each building on the previous. All computations are performed in Google Sheets using standard formulas — no external packages or statistical software required at this stage of the portfolio.</p>
     <p class="paper-text"><strong>Step 1 — Month-over-month change (MoM%).</strong> For each month, the percentage change from the prior month is computed as <em>((P_t − P_t−1) / P_t−1) × 100</em>. This captures the speed of price movement, distinguishing between stable upward trends and volatile oscillations.</p>
     <p class="paper-text"><strong>Step 2 — Descriptive statistics by period.</strong> Two separate blocks are built — one for March–August 2019, one for March–August 2020 — each reporting mean price, standard deviation, maximum, and minimum. The comparison of standard deviations provides a first-order measure of volatility difference between the baseline and pandemic periods.</p>
@@ -234,10 +246,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The analysis documents a clear volatility increase in wholesale fríjol prices during the first six months of COVID-19 restrictions.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">The Coefficient of Variation of wholesale fríjol prices at Corabastos increased substantially between March–August 2019 and March–August 2020. The average price rose between the two periods, but the increase in volatility exceeded the increase in the mean — indicating genuine instability rather than a simple level shift. Price divergence began approximately 2–3 weeks after the national lockdown declaration of March 20, 2020.</div>
     </div>
     <p class="paper-text">The finding confirms that volatility — not just the price level — increased during the pandemic period, consistent with the hypothesis that supply chain disruptions introduce instability beyond the average price signal.</p>
@@ -247,7 +261,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">This project introduced the <strong>coefficient of variation</strong> as the first normalizing statistic I applied — the insight that comparing raw standard deviations across periods with different mean prices is methodologically flawed, and that CV resolves this by expressing dispersion relative to the mean. This principle reappears in the 2022 Capstone and the 2025 RB2 (formal GARCH in Python).</p>
     <p class="paper-text"><strong>Base-100 indexing</strong> is the standard language of economic reporting — IPC, terms of trade, equity indices all use this convention. Building it manually from a fixed reference point, with absolute cell references in Google Sheets, makes the underlying logic explicit.</p>
     <p class="paper-text">The discipline of <strong>separating raw data from analysis</strong> (Raw_Data, Analysis, and Chart as three separate sheets) establishes a reproducibility habit that scales directly to Jupyter Notebooks in 2024–2025.</p>
@@ -257,9 +272,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Scope Limitation</div>
+      <div class="limitation-label en">Scope Limitation</div>
+      <div class="limitation-label es" style="display:none">Alcance Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The analysis covers a single market (Corabastos, Bogotá) and a single variety (fríjol bolo rojo). It does not capture regional price heterogeneity across Colombia's distributed wholesale markets, nor does it control for variety-specific supply factors. A multi-market, multi-variety extension — the kind made feasible by SQL queries in 2021 — would produce a more structurally robust finding.</div>
     </div>
@@ -270,18 +287,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">The project deliverable is a Google Sheet file (.xlsx) with three clearly separated worksheets: Raw_Data (SIPSA data as downloaded), Analysis (all computations, clearly labeled), and Chart (the final dual time-series visualization).</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Google Sheet (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheet (.xlsx) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Summary PDF — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
     </div>
   </div>
 

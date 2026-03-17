@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Agricultural Commodity Price Forecasting in Emerging Markets: A Python-Based Analysis — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Python-based ARIMA forecasting models for agricultural commodity prices in Colombian and Latin American markets."/>
+  <meta property="og:title" content="Agricultural Commodity Price Forecasting in Emerging Markets: A Python-Based Analysis"/>
+  <meta property="og:description" content="Python-based ARIMA forecasting models for agricultural commodity prices in Colombian and Latin American markets."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2024-capstone.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>V · Automation, APIs &amp; Econometric Modeling (2024)</span>
     <span>/</span>
@@ -179,7 +187,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This capstone builds a Python-based ARIMA forecasting framework for agricultural commodity prices in Colombian and Latin American markets. Using programmatic data retrieval via the FRED API, automated time-series preprocessing with pandas, and formal ARIMA model estimation with statsmodels, the analysis tests whether statistical forecasting models can outperform naive baselines for corn, coffee, and soybean prices. The project represents the portfolio's transition from manual analysis to reproducible, code-based research.</div>
   </div>
 
@@ -187,7 +196,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">Can a Python-based ARIMA forecasting model outperform a naive baseline in predicting agricultural commodity prices in Colombian and Latin American markets?</p>
     <p class="paper-text">The 2022 portfolio demonstrated price transmission relationships statistically; the 2023 portfolio visualized them interactively. The natural next question is: can we forecast prices? ARIMA provides a formal forecasting framework that tests whether historical price patterns contain predictive information beyond the most recent observation (the naive benchmark).</p>
   </div>
@@ -196,7 +206,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Data is retrieved programmatically through the FRED API, supplemented with FAO and USDA datasets loaded from CSV files.</p>
 
     <table class="data-table">
@@ -224,7 +235,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The capstone follows a standard time-series forecasting workflow: data retrieval, preprocessing, stationarity testing, model estimation, and backtesting.</p>
     <p class="paper-text"><strong>Step 1 — Automated data retrieval.</strong> Python's fredapi library retrieves price series programmatically, with error handling and automatic date alignment. This replaces the manual download-and-copy workflow used in 2020–2023.</p>
     <p class="paper-text"><strong>Step 2 — Stationarity testing.</strong> Augmented Dickey-Fuller (ADF) tests determine whether each price series is stationary or requires differencing. This addresses the non-stationarity limitation identified in the 2022 portfolio.</p>
@@ -236,10 +248,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The backtesting results show mixed but informative performance across commodities.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">The ARIMA model outperforms the naive baseline for coffee prices (lower RMSE by approximately 10–15%), performs comparably for corn, and slightly underperforms for soybeans. The improvement for coffee is attributed to its more persistent autocorrelation structure (seasonal harvest cycles). The corn and soybean results suggest that these markets are closer to efficient (random walk), consistent with their deep integration into global futures markets where information is rapidly priced in.</div>
     </div>
     <p class="paper-text">The commodity-specific results reinforce a key lesson: no single model works universally. The forecasting value of ARIMA depends on the autocorrelation structure of each series, which in turn reflects the market's efficiency and integration. This motivates the exploration of conditional volatility models (GARCH) in 2025.</p>
@@ -249,7 +263,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">The <strong>transition to Python</strong> was the defining advancement of 2024. Writing code instead of clicking through menus changes the relationship between analyst and data: every step is documented, reproducible, and scalable. The entire analysis can be re-run with a single command — impossible in the spreadsheet and Power BI workflows of prior years.</p>
     <p class="paper-text"><strong>ADF testing for stationarity</strong> formally addresses the limitation identified in the 2022 portfolio: that OLS regression on non-stationary series produces spurious results. The discipline of testing stationarity before modeling is now embedded in all subsequent time-series work.</p>
     <p class="paper-text">The <strong>backtesting framework</strong> — evaluating models on out-of-sample data rather than in-sample fit — introduced the fundamental distinction between fitting and forecasting. A model can fit historical data perfectly and forecast poorly; only backtesting reveals this.</p>
@@ -259,9 +274,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">ARIMA models are univariate — they use only the price series' own history for forecasting, ignoring external variables (exchange rates, supply shocks, policy changes) that the 2022 regression analysis showed to be significant predictors. The 2025 portfolio addresses this with multivariate panel regression and GARCH models that incorporate exogenous variables.</div>
     </div>
@@ -272,18 +289,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">A Jupyter Notebook (.ipynb) containing the complete analysis: FRED API data retrieval, ADF tests, ARIMA estimation, backtesting, and visualization. The notebook is designed to be fully executable and reproducible.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Jupyter Notebook (.ipynb) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Jupyter Notebook (.ipynb) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Backtest Results (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Backtest Results (.xlsx) — Coming Soon</span>
     </div>
   </div>
 

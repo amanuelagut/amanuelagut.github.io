@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="USD/COP exchange rate and grain import costs in Colombia during the COVID-19 shock 2018-2020."/>
+  <meta property="og:title" content="USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020"/>
+  <meta property="og:description" content="USD/COP exchange rate and grain import costs in Colombia during the COVID-19 shock 2018-2020."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-rb2-usdcop.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>I · Price Shocks &amp; Market Disruption (2020)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief investigates the relationship between the USD/COP exchange rate and grain import costs in Colombia between 2018 and 2020, with particular attention to how this relationship changed during the COVID-19 shock. Using FRED exchange rate data and Banco de la República trade statistics, the analysis applies Pearson correlation and simple OLS regression in Google Sheets to quantify the pass-through from currency depreciation to food import costs. The Colombian peso experienced one of its sharpest depreciations in March 2020, making this period a natural experiment for exchange rate transmission analysis.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What is the relationship between the USD/COP exchange rate and grain import costs in Colombia, and how did it change during the COVID-19 shock?</p>
     <p class="paper-text">Colombia imports a significant share of its corn and wheat consumption. When the peso depreciates, the COP-denominated cost of these imports rises — but the speed and completeness of this pass-through is an empirical question. The March 2020 depreciation (from ~3,400 to ~4,100 COP/USD in weeks) provides a stress test for measuring transmission speed.</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis combines international financial data with Colombian trade and price statistics.</p>
 
     <table class="data-table">
@@ -223,7 +234,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis uses three techniques, progressing from descriptive to inferential.</p>
     <p class="paper-text"><strong>Step 1 — Scatter plot and Pearson correlation.</strong> The USD/COP rate is plotted against grain import costs to visualize the relationship. Pearson's r is computed using the CORREL function in Google Sheets, separately for the pre-COVID and COVID periods, to test whether the correlation strengthened or weakened under stress.</p>
     <p class="paper-text"><strong>Step 2 — Simple OLS regression.</strong> Using LINEST, a linear regression estimates import cost = α + β × (USD/COP) + ε. The coefficient β measures the average COP import cost increase per unit of exchange rate depreciation. The regression is run on the full sample and on pre/post-COVID subsamples.</p>
@@ -234,10 +246,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The exchange rate analysis reveals a significant but incomplete pass-through from currency depreciation to grain import costs.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">The Pearson correlation between USD/COP and grain import costs was positive and significant across the full sample period. The COVID-period subsample showed a temporarily stronger correlation as the sharp depreciation coincided with import cost spikes. The 1-month lagged specification produced the best fit, suggesting that exchange rate shocks transmit to import costs with approximately a one-month delay in Colombian grain markets.</div>
     </div>
     <p class="paper-text">The incomplete pass-through implies that importers partially absorb exchange rate shocks through margin compression or inventory buffers — a finding consistent with the operational experience of grain distributors who maintain strategic stock levels precisely to hedge against short-term currency movements.</p>
@@ -247,7 +261,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">This project introduced <strong>lag structure analysis</strong> — the idea that economic relationships operate with temporal delays, and that testing different lag specifications is a standard empirical practice. This concept becomes central in the 2022 corn price transmission study and the 2024 ARIMA forecasting work.</p>
     <p class="paper-text">Computing <strong>Pearson correlation on subsamples</strong> taught me that a correlation coefficient is not a fixed property of two variables but depends on the sample period — a foundational insight for understanding structural breaks and regime changes in time-series analysis.</p>
     <p class="paper-text">The practical experience of <strong>downloading FRED data and aligning it with Colombian sources</strong> in different frequencies (daily vs. weekly vs. monthly) introduced the data harmonization challenges that become routine in 2024–2025 Python workflows.</p>
@@ -257,9 +272,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The OLS regression does not account for non-stationarity in the exchange rate series or potential endogeneity between exchange rates and import volumes. A proper cointegration analysis — introduced conceptually in the 2022 portfolio and implemented in Python in 2025 — would provide a more rigorous test of the long-run equilibrium relationship.</div>
     </div>
@@ -270,18 +287,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">The deliverable is a Google Sheets workbook (.xlsx) with Raw_Data (FRED and SIPSA series), Correlation (scatter plots and Pearson computations), Regression (LINEST output with coefficient interpretation), and Charts (time-series overlays with annotated events).</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Google Sheet (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheet (.xlsx) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Summary PDF — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
     </div>
   </div>
 

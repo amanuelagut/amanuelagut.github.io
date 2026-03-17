@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Top-Growing Agricultural Commodities in Latin America 2018–2021 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Fastest-growing agricultural commodities in Latin American trade 2018-2021."/>
+  <meta property="og:title" content="Top-Growing Agricultural Commodities in Latin America 2018–2021"/>
+  <meta property="og:description" content="Fastest-growing agricultural commodities in Latin American trade 2018-2021."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2021-rb2-latam-commodities.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -176,7 +184,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief identifies which agricultural commodities showed the highest trade volume growth across Latin America between 2018 and 2021. Using SQL JOIN queries on UN Comtrade data, the analysis crosses commodity classification tables with bilateral trade flow tables to rank products by growth rate, revealing structural shifts in the region's agricultural trade composition driven by changing global demand patterns and pandemic-era supply chain adjustments.</div>
   </div>
 
@@ -184,7 +193,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">Which agricultural commodities showed the highest trade volume growth in Latin America between 2018 and 2021, and what drove this growth?</p>
     <p class="paper-text">Understanding which products are growing fastest helps identify where competitive opportunities and risks lie for Colombian agricultural exporters. The 2018–2021 window captures both pre-pandemic trends and pandemic-induced shifts in global food demand.</p>
   </div>
@@ -193,7 +203,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Trade flow data is joined with commodity classification tables to enable product-level growth analysis.</p>
 
     <table class="data-table">
@@ -220,7 +231,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">JOIN queries combine trade flow data with product classifications, followed by growth rate computations.</p>
     <p class="paper-text"><strong>Step 1 — JOIN trade flows with product names.</strong> INNER JOIN connects the numeric HS codes in the flow table with descriptive product names in the classification table, making results human-readable.</p>
     <p class="paper-text"><strong>Step 2 — Aggregate by product across region.</strong> GROUP BY product code computes total Latin American export and import values per product per year, creating a regional-level product portfolio.</p>
@@ -231,10 +243,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The commodity growth analysis reveals clear winners and losers in Latin America's evolving agricultural trade portfolio.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Oilseeds (soybeans, sunflower seeds) and processed food products showed the highest growth rates over the period. Traditional staples like wheat and rice showed stable but slow growth. The most notable pandemic-era shift was increased demand for storable protein sources (pulses, legumes), consistent with global food security concerns during 2020–2021.</div>
     </div>
     <p class="paper-text">The growth in processed products suggests that value-added agriculture is expanding faster than primary commodity trade in the region — a trend with implications for Colombia's export strategy and food industry investment.</p>
@@ -244,7 +258,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>SQL JOINs as analytical building blocks</strong> — this project cemented the understanding that joining tables is not just a database operation but an analytical method for enriching data with context (adding product names, classification hierarchies, partner metadata).</p>
     <p class="paper-text">Computing <strong>growth rates with minimum thresholds</strong> taught me to handle the small-sample problem: a product going from $1,000 to $10,000 has 900% growth but is economically irrelevant. Filtering by absolute value before ranking is essential for meaningful results.</p>
     <p class="paper-text">The <strong>regional aggregation perspective</strong> — looking at Latin America as a whole rather than just Colombia — expanded my analytical frame from national to regional, a shift that carries through the 2023 Power BI dashboards and 2025 panel regressions.</p>
@@ -254,9 +269,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">Simple growth rates do not account for base effects or price vs. volume decomposition. A product whose trade value grew 50% might have experienced a 50% price increase with zero volume change. Separating price and volume effects requires additional data on unit values, which is partially available in Comtrade but not utilized in this brief.</div>
     </div>
@@ -267,18 +284,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">SQL script with JOIN queries and growth rate computations, plus Excel workbook with ranked product growth tables and summary charts.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        SQL Script (.sql) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> SQL Script (.sql) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Results (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Results (.xlsx) — Coming Soon</span>
     </div>
   </div>
 

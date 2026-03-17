@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Commodity Portfolio Risk Modeling in Latin American Agricultural Markets — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="GARCH-based volatility modeling for agricultural commodity portfolio risk in Latin American emerging markets."/>
+  <meta property="og:title" content="Commodity Portfolio Risk Modeling in Latin American Agricultural Markets"/>
+  <meta property="og:description" content="GARCH-based volatility modeling for agricultural commodity portfolio risk in Latin American emerging markets."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2025-rb2-portfolio-risk.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>VI · Formal Research &amp; Academic Publication Standards (2025)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief applies GARCH-based volatility modeling to construct risk measures for agricultural commodity portfolios in Latin American emerging markets. Using FRED commodity price series, the analysis estimates GARCH(1,1) models for individual commodities, computes Value-at-Risk (VaR) measures, and constructs a minimum-variance portfolio using the estimated conditional covariance matrix. The brief demonstrates how formal financial risk management techniques can be applied to agricultural commodity portfolios in emerging market contexts.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How does GARCH-based volatility modeling improve portfolio risk estimates for agricultural commodity investors in Latin American emerging markets?</p>
     <p class="paper-text">The rolling standard deviations computed in the 2022 portfolio assume constant volatility — a known misspecification for financial and commodity time series that exhibit volatility clustering. GARCH models capture this clustering, producing time-varying volatility estimates that more accurately reflect actual risk conditions.</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Monthly commodity return series are computed from FRED price data for the major agricultural commodities relevant to Latin American markets.</p>
 
     <table class="data-table">
@@ -222,7 +233,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis applies formal financial econometrics to agricultural commodity risk measurement.</p>
     <p class="paper-text"><strong>Step 1 — Return series computation and diagnostics.</strong> Log returns computed from price levels, with Jarque-Bera tests for normality, Ljung-Box tests for serial correlation in returns and squared returns (the latter testing for ARCH effects).</p>
     <p class="paper-text"><strong>Step 2 — GARCH(1,1) estimation.</strong> For each commodity, a GARCH(1,1) model is estimated using Python's arch library, with maximum likelihood estimation and diagnostic checks on standardized residuals.</p>
@@ -234,10 +246,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The GARCH-based risk modeling produces significantly different risk estimates than constant-variance approaches.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">All five commodity return series exhibit statistically significant ARCH effects (p < 0.01 on Ljung-Box tests of squared returns), validating the use of GARCH modeling. GARCH-based VaR estimates exceed constant-variance VaR by 20–40% during high-volatility regimes (2020, 2022) while being similar during tranquil periods, demonstrating that constant-variance models systematically underestimate tail risk. The minimum-variance portfolio reduces portfolio volatility by approximately 25% relative to equal weighting, with coffee and sugar receiving the highest weights due to their lower covariance with grain prices.</div>
     </div>
     <p class="paper-text">The finding that constant-variance models underestimate risk during crises has direct practical implications: agricultural commodity traders and importers who use static risk measures are underhedged precisely when hedging matters most. GARCH-based risk management adapts to current market conditions.</p>
@@ -247,7 +261,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>GARCH modeling</strong> formalized the volatility dynamics that the 2020 coefficient of variation could only hint at. The mathematical framework — conditional variance as a function of past shocks and past variance — captures the empirical reality that agricultural prices exhibit 'volatility of volatility.'</p>
     <p class="paper-text"><strong>Value-at-Risk computation</strong> connected academic time-series econometrics to practical financial risk management. VaR is the language that banks, commodity traders, and risk managers use — translating GARCH output into VaR makes the research actionable.</p>
     <p class="paper-text"><strong>Portfolio optimization with conditional covariance</strong> demonstrated that diversification benefits in agricultural commodities are time-varying — correlations increase during crises, reducing the diversification benefit precisely when it is most needed. This has implications for hedging strategy design.</p>
@@ -257,9 +272,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The GARCH(1,1) specification, while standard, does not capture asymmetric volatility responses (leverage effects) or long-memory processes. Extensions like EGARCH or FIGARCH could improve the model but add complexity. Additionally, the portfolio optimization assumes constant expected returns, which is a strong assumption for trending commodity prices.</div>
     </div>
@@ -270,18 +287,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">Jupyter Notebook with GARCH estimation, VaR computation, portfolio optimization, and diagnostic visualizations. LaTeX-compiled brief included in the working paper appendix.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Jupyter Notebook (.ipynb) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Jupyter Notebook (.ipynb) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        LaTeX Brief (.pdf) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> LaTeX Brief (.pdf) — Coming Soon</span>
     </div>
   </div>
 

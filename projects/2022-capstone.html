@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Agricultural Price Risk in Colombia 2018–2022: Volatility, Correlation and Price Transmission — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Agricultural price risk in Colombia 2018-2022: volatility, correlation, and price transmission analysis."/>
+  <meta property="og:title" content="Agricultural Price Risk in Colombia 2018–2022: Volatility, Correlation and Price Transmission"/>
+  <meta property="og:description" content="Agricultural price risk in Colombia 2018-2022: volatility, correlation, and price transmission analysis."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2022-capstone.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>III · Risk, Volatility &amp; Statistical Inference (2022)</span>
     <span>/</span>
@@ -179,7 +187,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This capstone integrates volatility measurement, correlation analysis, and price transmission modeling into a unified framework for assessing agricultural price risk in Colombian grain markets over 2018–2022. Using Excel's Analysis ToolPak, LINEST regression functions, and formal hypothesis testing (t-tests, F-tests), the analysis builds a multi-method risk assessment that connects international commodity benchmarks with domestic wholesale prices. The capstone represents the transition from descriptive to inferential statistics in the portfolio.</div>
   </div>
 
@@ -187,7 +196,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What integrated picture of agricultural price risk emerges when volatility, correlation, and price transmission are applied simultaneously to Colombian grain markets?</p>
     <p class="paper-text">The 2020 portfolio documented price shocks descriptively; the 2021 portfolio mapped trade networks at scale. This capstone asks: can we move from description to inference — testing hypotheses about price relationships using formal statistical methods, still within the Excel environment?</p>
   </div>
@@ -196,7 +206,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis combines international price benchmarks with Colombian domestic price series to model price transmission channels.</p>
 
     <table class="data-table">
@@ -225,7 +236,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The capstone applies three interconnected analytical methods, each representing a skill advancement from the 2020 baseline.</p>
     <p class="paper-text"><strong>Step 1 — Rolling volatility computation.</strong> 12-month rolling standard deviations and coefficients of variation computed for each domestic and international price series. The rolling window approach — as opposed to static period comparison in 2020 — captures how volatility evolves over time.</p>
     <p class="paper-text"><strong>Step 2 — Correlation matrix with hypothesis testing.</strong> Pearson correlation coefficients computed across all price series, with t-tests for statistical significance at the 5% level. The Analysis ToolPak automates the p-value computation that was done manually in 2020.</p>
@@ -237,10 +249,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The multi-method risk assessment reveals that Colombian grain markets are significantly connected to international benchmarks, but with important nuances in transmission speed and completeness.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">International corn prices (CBOT) show statistically significant transmission to Colombian wholesale corn prices with a 1–2 month lag and approximately 60–70% pass-through. The exchange rate amplifies this transmission: a 10% peso depreciation increases the effective domestic price impact by an additional 3–5 percentage points. The Chow test indicates a structural break in March 2020, with post-pandemic transmission becoming faster but more volatile.</div>
     </div>
     <p class="paper-text">The incomplete pass-through and lagged transmission suggest that domestic intermediaries and inventory management partially buffer international shocks — but this buffering capacity diminishes during extreme episodes like COVID-19 and the 2022 grain price surge.</p>
@@ -250,7 +264,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">The <strong>transition from descriptive to inferential statistics</strong> — using t-tests, F-tests, and p-values to make formal claims about significance — represents the single largest methodological advancement in the portfolio up to this point. The discipline of stating null hypotheses and testing them against data is foundational for all subsequent work.</p>
     <p class="paper-text"><strong>Excel's Analysis ToolPak</strong> as a statistical environment taught me that serious analysis is possible within constrained tools. The experience of computing regression diagnostics manually (R², adjusted R², standard errors) built understanding of what Python's statsmodels automates in 2024.</p>
     <p class="paper-text">The concept of <strong>structural breaks</strong> — that a regression relationship can change at a specific point in time — connects the statistical work to real economic events. This insight is formalized in the 2025 capstone's panel regression framework.</p>
@@ -260,9 +275,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Method Limitation</div>
+      <div class="limitation-label en">Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The regression models assume linearity and do not formally test for non-stationarity in the time series (unit root tests are not available in Excel's ToolPak). Additionally, the Chow test implementation is manual and does not account for unknown break dates. The 2024 Python portfolio addresses these limitations with ADF tests and ARIMA modeling.</div>
     </div>
@@ -273,18 +290,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">An Excel workbook (.xlsx) with labeled sheets for each analytical component: Raw_Data, Rolling_Volatility, Correlation_Matrix, Regression_Output, Structural_Break, and a Summary_Dashboard with key findings.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Excel Workbook (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Excel Workbook (.xlsx) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Summary PDF — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
     </div>
   </div>
 

@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Colombian Agricultural Export Evolution: Key Trading Partners 2015–2021 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Evolution of Colombian agricultural exports to key trading partners 2015-2021."/>
+  <meta property="og:title" content="Colombian Agricultural Export Evolution: Key Trading Partners 2015–2021"/>
+  <meta property="og:description" content="Evolution of Colombian agricultural exports to key trading partners 2015-2021."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2021-rb1-export-evolution.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -176,7 +184,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief traces the evolution of Colombian agricultural exports to key trading partners over 2015–2021, identifying which partners gained or lost share. Using SQL queries on UN Comtrade bilateral trade data, the analysis computes annual export values, partner shares, and growth rates for Colombia's top agricultural export destinations. The results reveal a gradually diversifying export portfolio with emerging Asian markets gaining share from traditional North American and European partners.</div>
   </div>
 
@@ -184,7 +193,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How did Colombian agricultural exports to key trading partners evolve between 2015 and 2021, and which partners gained or lost share?</p>
     <p class="paper-text">Colombia's agricultural export profile is historically concentrated in coffee and flowers directed to the US and EU. Understanding whether diversification is occurring — both by product and by destination — is relevant for assessing the country's trade vulnerability and the effectiveness of export promotion policies.</p>
   </div>
@@ -193,7 +203,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Bilateral export data is sourced from UN Comtrade, filtered for Colombian agricultural exports (HS chapters 01–24).</p>
 
     <table class="data-table">
@@ -219,7 +230,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis uses progressively complex SQL queries to extract and compute partner-level export dynamics.</p>
     <p class="paper-text"><strong>Step 1 — Aggregate exports by partner and year.</strong> SELECT partner, year, SUM(value) queries compute annual export totals for each destination country.</p>
     <p class="paper-text"><strong>Step 2 — Partner share computation.</strong> Window functions or subqueries calculate each partner's share of total exports per year, enabling share-based comparison independent of absolute value fluctuations.</p>
@@ -230,10 +242,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The partner evolution analysis reveals a gradual but measurable diversification of Colombia's agricultural export destinations.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">While the United States remained Colombia's largest agricultural export destination throughout the period, its share declined moderately. Asian markets — particularly Japan and South Korea — showed the highest growth rates in Colombian agricultural imports. Intra-regional trade with Ecuador and Peru also expanded, particularly in processed food categories.</div>
     </div>
     <p class="paper-text">The diversification trend reduces Colombia's dependence on any single trading partner, though the pace of change is slow relative to competitors like Peru and Chile, which have pursued more aggressive trade agreement strategies in Asia-Pacific.</p>
@@ -243,7 +257,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">Writing <strong>SQL window functions for share computation</strong> introduced partition-based analysis — computing metrics within groups without collapsing the data. This logic directly informs the panel data structures used in 2025.</p>
     <p class="paper-text">The experience of <strong>interpreting trade share changes</strong> — distinguishing between absolute growth and relative share shifts — built analytical intuition for proportional reasoning that applies across all economic analysis.</p>
     <p class="paper-text">Structuring <strong>queries for export ranking</strong> with ORDER BY and LIMIT clauses taught me to think about data presentation as part of the query design, not just a post-processing step.</p>
@@ -253,9 +268,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Scope Limitation</div>
+      <div class="limitation-label en">Scope Limitation</div>
+      <div class="limitation-label es" style="display:none">Alcance Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The analysis does not disaggregate by product within each partner relationship. A partner gaining share might be driven entirely by one product (e.g., flowers to Japan) rather than broad-based diversification. The 2025 RB3 addresses this limitation with product × partner cross-tabulations.</div>
     </div>
@@ -266,18 +283,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">SQL query script with annotated results exported to Excel charts showing partner share evolution over time.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        SQL Script (.sql) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> SQL Script (.sql) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Results (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Results (.xlsx) — Coming Soon</span>
     </div>
   </div>
 

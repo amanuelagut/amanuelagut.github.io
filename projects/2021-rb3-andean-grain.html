@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Colombia's Share in Andean Grain Imports 2017–2021 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Colombia share in regional Andean grain imports 2017-2021."/>
+  <meta property="og:title" content="Colombia's Share in Andean Grain Imports 2017–2021"/>
+  <meta property="og:description" content="Colombia share in regional Andean grain imports 2017-2021."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2021-rb3-andean-grain.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -177,7 +185,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief examines Colombia's share of grain imports within the Andean region (Colombia, Ecuador, Peru, Bolivia) over 2017–2021, using SQL subqueries to compute market shares and detect structural shifts. The analysis tests whether Colombia's relative position as a grain importer changed during a period marked by currency fluctuations, pandemic disruptions, and evolving regional trade agreements.</div>
   </div>
 
@@ -185,7 +194,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How did Colombia's share in regional Andean grain imports change between 2017 and 2021, and what structural factors explain this trend?</p>
     <p class="paper-text">The Andean countries share grain import dependency (particularly corn, wheat, and soybeans from Argentina, Brazil, and the US). Comparing Colombia's import patterns with its neighbors reveals whether country-specific factors (exchange rate, trade policy) or region-wide forces drive import dynamics.</p>
   </div>
@@ -194,7 +204,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Grain import data for four Andean countries is extracted from UN Comtrade using HS codes for cereals (10), oilseeds (12), and milling products (11).</p>
 
     <table class="data-table">
@@ -220,7 +231,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">Subqueries compute regional totals that serve as denominators for country-level market share calculations.</p>
     <p class="paper-text"><strong>Step 1 — Regional total subquery.</strong> A subquery computes total Andean grain import value per year, which becomes the denominator for share calculations in the outer query.</p>
     <p class="paper-text"><strong>Step 2 — Country share computation.</strong> Each country's annual grain imports are divided by the regional total, producing a time series of import market shares that sum to 100% per year.</p>
@@ -231,10 +243,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The Andean grain import analysis reveals that Colombia's share of regional imports remained relatively stable, with product-specific variation.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Colombia accounted for a consistent share of total Andean grain imports throughout the period, making it the largest importer in the group by absolute value. Peru showed the fastest import growth rate, gradually increasing its share. Corn imports showed the most volatility in shares across countries, driven by exchange rate differentials and domestic production fluctuations in each country.</div>
     </div>
     <p class="paper-text">The stability of Colombia's aggregate share masks compositional shifts — corn imports grew while wheat imports declined relative to the region. This suggests that Colombia's grain import profile is slowly changing, potentially reflecting shifts in animal feed demand (corn) and domestic wheat production capacity.</p>
@@ -244,7 +258,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>Subqueries for derived denominators</strong> — computing a regional total within a subquery and using it in the outer query's denominator taught me the power of nested computation. This pattern reappears in Python as groupby().transform() operations in pandas.</p>
     <p class="paper-text">The <strong>regional benchmarking perspective</strong> — measuring Colombia not in absolute terms but relative to comparable neighbors — introduced the comparative analysis framework that is central to the 2025 panel regression work.</p>
     <p class="paper-text">Understanding <strong>composition effects</strong> — that an aggregate share can be stable while underlying product shares change dramatically — is a foundational analytical insight that guards against misleading aggregate statistics.</p>
@@ -254,9 +269,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Data Limitation</div>
+      <div class="limitation-label en">Data Limitation</div>
+      <div class="limitation-label es" style="display:none">Datos Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The exclusion of Venezuela (due to incomplete reporting) removes the historically largest Andean grain importer from the analysis. Additionally, the analysis uses value-based shares rather than volume-based shares, which means that price fluctuations can shift shares without any change in physical quantities traded.</div>
     </div>
@@ -267,18 +284,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">SQL script with subqueries for share computation, plus Excel workbook with annual share tables and stacked area charts showing share evolution.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        SQL Script (.sql) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> SQL Script (.sql) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Results (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Results (.xlsx) — Coming Soon</span>
     </div>
   </div>
 

@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic 2018-2020."/>
+  <meta property="og:title" content="Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis"/>
+  <meta property="og:description" content="Multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic 2018-2020."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-capstone.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>I · Price Shocks &amp; Market Disruption (2020)</span>
     <span>/</span>
@@ -179,7 +187,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This capstone integrates three parallel research briefs into a unified multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic (2018–2020). Using SIPSA-DANE wholesale price data across multiple products and cities, combined with FRED exchange rate series and Banco de la República macroeconomic indicators, the analysis applies descriptive statistics, correlation matrices, regression modeling, and base-100 price indexing within Google Sheets. The project documents how a systemic supply chain shock — national lockdowns, mobility restrictions, and logistics disruptions — transmitted unevenly across grain markets, producing heterogeneous volatility patterns that simple national averages obscure.</div>
   </div>
 
@@ -187,7 +196,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What systematic price patterns emerge when crossing products, cities, and time periods across Colombia's main grain wholesale markets during the COVID-19 shock?</p>
     <p class="paper-text">The COVID-19 pandemic created a natural experiment in supply chain disruption. Colombia's centralized wholesale market structure — with Corabastos in Bogotá handling a disproportionate share of national grain flows — meant that lockdown-induced bottlenecks would manifest clearly in price data. This capstone tests whether the disruption was uniform or whether product-specific and region-specific factors created divergent price trajectories.</p>
   </div>
@@ -196,7 +206,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis draws on three primary data sources, all publicly available and consistently reported throughout the study period.</p>
 
     <table class="data-table">
@@ -224,7 +235,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The capstone applies four analytical layers, each building on the skills developed in the three research briefs conducted during 2020.</p>
     <p class="paper-text"><strong>Step 1 — Multi-product descriptive statistics.</strong> Mean, standard deviation, coefficient of variation, and min/max computed for each product × city × period combination. This produces a 3×2×2 matrix (3 products, 2 cities, 2 periods: pre-COVID vs. COVID) that makes cross-market comparison systematic rather than anecdotal.</p>
     <p class="paper-text"><strong>Step 2 — Correlation matrix.</strong> Pearson correlation coefficients computed across all product-city price pairs and the USD/COP exchange rate. The matrix identifies which markets move together (high integration) and which diverge under stress (segmentation).</p>
@@ -236,10 +248,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The multi-market analysis reveals that the COVID-19 shock did not affect all grain markets equally — a finding that would be invisible in aggregate national price statistics.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Fríjol prices at Corabastos showed the highest COVID-period volatility increase (CV rising from approximately 8% to over 18%), while rice prices remained comparatively stable (CV change of ~2 percentage points). The USD/COP exchange rate explains a larger share of price variation in imported grains (corn) than in domestically produced staples (fríjol). Regional divergence between Bogotá and Ibagué was most pronounced in April–June 2020, coinciding with peak mobility restrictions.</div>
     </div>
     <p class="paper-text">These results suggest that food price risk in Colombia during supply chain disruptions is highly product-specific and geography-dependent, reinforcing the case for disaggregated monitoring systems rather than national-level food price indices alone.</p>
@@ -249,7 +263,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">The capstone taught me how to <strong>integrate multiple analytical threads into a coherent narrative</strong>. Each research brief (fríjol volatility, exchange rate effects, regional comparison) addresses one dimension; the capstone shows that these dimensions interact — that volatility, exchange rate transmission, and geographic segmentation are not independent phenomena but facets of the same market disruption.</p>
     <p class="paper-text">Building a <strong>Google Sheets dashboard with drop-down filters</strong> — using Data Validation, INDIRECT references, and conditional chart ranges — introduced me to the logic of interactive data exploration that I would later implement in Power BI (2023) and Jupyter Notebooks (2024). The constraint of working within spreadsheet formulas forced me to understand the underlying logic before using dedicated tools.</p>
     <p class="paper-text">The experience of <strong>writing multiple regression in LINEST</strong> within a spreadsheet — manually constructing the design matrix, interpreting coefficient arrays, and computing R² — built intuition for what statsmodels and sklearn automate in Python. When I reached Python in 2024, the econometric concepts were already internalized.</p>
@@ -259,9 +274,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Scope & Data Limitation</div>
+      <div class="limitation-label en">Scope & Data Limitation</div>
+      <div class="limitation-label es" style="display:none">Alcance y Datos Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The analysis is limited to three grain products and two cities. A more comprehensive study would include perishable products (fruits, vegetables), additional regional markets, and weekly rather than monthly frequency to capture intra-month volatility spikes. The regression model uses OLS without testing for heteroscedasticity or autocorrelation — issues addressed in the 2022 Capstone with formal time-series diagnostics.</div>
     </div>
@@ -272,18 +289,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">The deliverable is a multi-sheet Google Sheets workbook (.xlsx export) containing: Raw_Data (three SIPSA series + FRED exchange rate), Analysis (descriptive statistics, correlation matrix, regression output), Dashboard (interactive chart with product/city filters), and a Summary sheet with key findings. All formulas are preserved and labeled.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Google Sheets Workbook (.xlsx) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheets Workbook (.xlsx) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Summary PDF — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
     </div>
   </div>
 

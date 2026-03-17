@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Geographic mapping of Colombia agricultural trade partnerships and flow patterns 2019-2023."/>
+  <meta property="og:title" content="Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023"/>
+  <meta property="og:description" content="Geographic mapping of Colombia agricultural trade partnerships and flow patterns 2019-2023."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2023-rb3-trade-geography.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>IV · Visual Intelligence &amp; Market Storytelling (2023)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief applies Power BI's geographic mapping and hierarchical visualization tools to explore the spatial distribution and evolution of Colombia's agricultural trade partnerships between 2019 and 2023. Using UN Comtrade bilateral trade data, the analysis creates interactive maps, treemaps, and flow diagrams that reveal partner concentration, regional dependencies, and structural shifts in Colombia's agricultural trade network.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How can geographic mapping in Power BI reveal the spatial distribution and evolution of Colombia's agricultural trade partnerships between 2019 and 2023?</p>
     <p class="paper-text">The 2021 SQL-based trade network analysis identified structural patterns in numerical form. This brief asks whether geographic visualization can make those patterns more intuitive and reveal spatial dimensions (proximity effects, regional clustering) that tabular analysis misses.</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">Bilateral trade data is sourced from UN Comtrade, supplemented with DANE's external trade statistics for Colombian-specific detail.</p>
 
     <table class="data-table">
@@ -222,7 +233,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The brief uses Power BI's geographic and hierarchical visualization tools to explore trade network structure.</p>
     <p class="paper-text"><strong>Step 1 — Bubble map of trade partners.</strong> A world map with bubbles sized by trade value shows the geographic distribution of Colombia's agricultural trade network, with color encoding for export vs. import relationships.</p>
     <p class="paper-text"><strong>Step 2 — Treemap of product-partner composition.</strong> Hierarchical treemaps show the product composition of trade with each major partner, revealing whether relationships are diversified or concentrated in a single product.</p>
@@ -233,10 +245,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The geographic visualization reveals that Colombia's agricultural trade network has a strongly asymmetric spatial structure.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Colombia's agricultural exports are geographically concentrated in the Northern Hemisphere (US, EU, Japan) while imports are sourced primarily from Southern Cone countries (Argentina, Brazil) and the US. The treemap analysis shows that export relationships are product-specific (coffee to the US/EU, flowers to the US, bananas to the EU) while import relationships are more diversified by product. The temporal animation reveals a gradual eastward shift in export destinations, with Asian markets growing faster than traditional partners.</div>
     </div>
     <p class="paper-text">The North-South asymmetry in Colombia's trade geography creates differential exposure to geopolitical risks: export revenue depends on Northern Hemisphere demand conditions, while import costs depend on Southern Hemisphere supply conditions and exchange rates.</p>
@@ -246,7 +260,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>Geographic visualization as hypothesis generation</strong> — the map format revealed spatial clustering patterns (Asian market growth, intra-Andean trade intensification) that were not obvious in the 2021 tabular analysis.</p>
     <p class="paper-text">Building <strong>treemaps for hierarchical data</strong> taught me to use visual hierarchy as an analytical tool — showing the product composition within each trade relationship simultaneously rather than requiring separate queries.</p>
     <p class="paper-text">The <strong>animated play axis</strong> for temporal evolution introduced the concept of data storytelling through time — showing change as a narrative rather than a static comparison.</p>
@@ -256,7 +271,8 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
       <div class="limitation-label">Tool Limitation</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
@@ -269,13 +285,11 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">Power BI report (.pbix) with interactive world maps, treemaps, and animated trade flow visualizations for Colombia's agricultural trade network.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Power BI Report (.pbix) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Power BI Report (.pbix) — Coming Soon</span>
       
     </div>
   </div>

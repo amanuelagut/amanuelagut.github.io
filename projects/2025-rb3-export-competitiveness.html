@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Structural Determinants of Colombian Agricultural Export Competitiveness 2015–2025 — Angie M. Gutierrez-Oviedo</title>
+  <meta name="description" content="Structural determinants of Colombian agricultural export competitiveness: logistics, exchange rate, and productivity."/>
+  <meta property="og:title" content="Structural Determinants of Colombian Agricultural Export Competitiveness 2015–2025"/>
+  <meta property="og:description" content="Structural determinants of Colombian agricultural export competitiveness: logistics, exchange rate, and productivity."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2025-rb3-export-competitiveness.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>VI · Formal Research &amp; Academic Publication Standards (2025)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief applies Revealed Comparative Advantage (RCA) analysis and instrumental variable regression to identify the structural determinants of Colombian agricultural export competitiveness over 2015–2025. Using UN Comtrade trade data, World Bank Logistics Performance Index, and exchange rate data, the analysis estimates which factors — logistics quality, exchange rate, productivity — most strongly determine Colombia's competitive position in agricultural export markets relative to regional and global peers.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What structural factors — logistics quality, exchange rate, productivity — most strongly determine Colombia's agricultural export competitiveness between 2015 and 2025?</p>
     <p class="paper-text">The 2021 SQL analysis mapped Colombia's trade network structure; the 2023 Power BI dashboard visualized trade geography. This brief asks the causal question: what structural factors explain why Colombia's agricultural exports are competitive in some products and markets but not others?</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis combines trade flow data with structural determinant indicators from multiple sources.</p>
 
     <table class="data-table">
@@ -224,7 +235,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis combines trade competitiveness measurement with formal causal inference techniques.</p>
     <p class="paper-text"><strong>Step 1 — Revealed Comparative Advantage computation.</strong> Balassa RCA indices computed for each country-product-year combination: RCA = (X_ij / X_i) / (X_wj / X_w), where values above 1 indicate revealed comparative advantage.</p>
     <p class="paper-text"><strong>Step 2 — Panel regression of RCA determinants.</strong> Fixed effects regression estimates RCA_ijt = α + β₁ × Logistics_it + β₂ × REER_it + β₃ × Productivity_it + μ_i + λ_t + ε_ijt, identifying which structural factors predict competitiveness.</p>
@@ -235,10 +247,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The competitiveness analysis identifies logistics quality as the most policy-relevant determinant.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Logistics quality (World Bank LPI) is the strongest and most robust predictor of agricultural export competitiveness across Latin American countries. A one-standard-deviation improvement in LPI is associated with a significant increase in average RCA. Exchange rate effects are significant but smaller in magnitude, and agricultural productivity shows the expected positive sign but is less robust across specifications. The IV estimates suggest that the OLS results, if anything, underestimate the causal effect of logistics quality.</div>
     </div>
     <p class="paper-text">The finding that logistics infrastructure matters more than exchange rate or productivity for export competitiveness has clear policy implications: Colombia's agricultural export potential is constrained more by infrastructure bottlenecks than by macroeconomic conditions or farm-level productivity. This aligns with the author's operational experience in grain distribution, where transport and logistics costs were consistently identified as the binding constraint.</p>
@@ -248,7 +262,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>Revealed Comparative Advantage analysis</strong> connects trade theory (Ricardian comparative advantage) to empirical measurement, providing a bridge between abstract economic concepts and measurable trade outcomes.</p>
     <p class="paper-text"><strong>Instrumental variable estimation</strong> addresses the fundamental challenge of causal inference in observational data. The discipline of finding valid instruments and testing exclusion restrictions represents the highest level of econometric rigor in the portfolio.</p>
     <p class="paper-text">The convergence of <strong>empirical findings with operational experience</strong> — that logistics constraints matter most — validates the research agenda's grounding in real-world observation. The six-year journey from warehouse observation to formal econometric evidence closes a full analytical loop.</p>
@@ -258,7 +273,8 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
       <div class="limitation-label">Data & Identification Limitation</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
@@ -271,18 +287,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">Jupyter Notebook with RCA computation, panel regression, IV estimation, and robustness tests. LaTeX-compiled brief included in the working paper appendix. All code and data documented in the GitHub repository.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Jupyter Notebook (.ipynb) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Jupyter Notebook (.ipynb) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        LaTeX Brief (.pdf) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> LaTeX Brief (.pdf) — Coming Soon</span>
     </div>
   </div>
 
