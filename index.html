@@ -4,17 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Angie M. Gutierrez-Oviedo — Agricultural Economics Researcher</title>
-  <meta name="description" content="Agricultural economics researcher specializing in commodity markets, supply chain risk, and trade flows in Latin America. Five years of empirical analysis on public datasets. Based in Bogotá, Colombia.">
-  <meta name="author" content="Angie Manuela Gutierrez-Oviedo">
-  <meta property="og:title" content="Angie M. Gutierrez-Oviedo — Agricultural Economics Researcher">
-  <meta property="og:description" content="Empirical research portfolio on agricultural commodity markets, supply chain economics, and trade flows in Latin America.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://amanuelagut.github.io/">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="es_CO">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <meta name="description" content="Angie M. Gutierrez-Oviedo — Agricultural economics researcher specializing in commodity markets, supply chain economics, and global trade flows. Based in Bogotá, Colombia."/>
+  <meta property="og:title" content="Angie M. Gutierrez-Oviedo — Agricultural Economics Researcher"/>
+  <meta property="og:description" content="Five years of empirical data analysis at the intersection of agricultural markets, commodity risk, and global trade flows."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
       --forest: #1e3a0f;
@@ -146,21 +145,14 @@
 
     /* PHOTO PLACEHOLDER */
     .hero-photo {
-      width: 100%; max-width: 340px; aspect-ratio: 3/4;
+      width: 100%; aspect-ratio: 3/4;
       border: 1px solid var(--rule);
       border-radius: 4px;
       position: relative; overflow: hidden;
-      background: linear-gradient(135deg, var(--mist) 0%, var(--parchment) 100%);
-    }
-    .hero-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      display: block;
     }
     .hero-photo::before {
-      content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to bottom, transparent 70%, rgba(30,58,15,0.08) 100%);
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(45,80,22,0.04) 0%, transparent 50%);
     }
     .photo-icon {
       width: 64px; height: 64px;
@@ -309,9 +301,6 @@
       font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--moss); font-weight: 500; margin-top: 0.5rem;
     }
-    .exp-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
-    }
 
     /* SKILLS STRIP */
     .skills-strip {
@@ -378,7 +367,6 @@
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .research-grid { grid-template-columns: 1fr 1fr; }
       .edu-grid { grid-template-columns: 1fr; }
-      .exp-grid { grid-template-columns: 1fr; gap: 2rem; }
       .nav-links { gap: 1rem; }
     }
     @media (max-width: 600px) {
@@ -445,7 +433,7 @@
       <a href="projects.html" class="es" style="display:none">Proyectos</a>
       <a href="contact.html" class="en">Contact</a>
       <a href="contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -482,7 +470,7 @@
     </div>
     <div class="fade-up delay-5">
       <div class="hero-photo">
-        <img src="assets/photo.png" alt="Angie Manuela Gutierrez-Oviedo — Agricultural Economics Researcher, Bogotá, Colombia" loading="eager">
+        <img src="assets/photo.png" alt="Angie Manuela Gutierrez-Oviedo — Agricultural Economics Researcher, Bogotá, Colombia" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
         <div class="hero-location">Bogotá, Colombia</div>
       </div>
     </div>
@@ -529,10 +517,7 @@
         </div>
       </div>
       <div>
-        <div style="background: var(--mist); border: 1px solid var(--rule); border-radius: 4px; padding: 2rem; margin-bottom: 1.5rem;">
-          <p style="font-family: 'EB Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--forest); line-height: 1.6; margin-bottom: 1rem;" class="en">"Understanding commodity markets requires standing inside them — watching prices change at the warehouse level before modeling them at the macro level."</p>
-          <p style="font-family: 'EB Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--forest); line-height: 1.6; margin-bottom: 1rem;" class="es" style="display:none">"Comprender los mercados de commodities requiere estar dentro de ellos — observar cómo cambian los precios en el almacén antes de modelarlos a nivel macro."</p>
-        </div>
+        
         <div style="background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem;">
           <p style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem;" class="en">Key Datasets</p>
           <p style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); margin-bottom: 1rem;" class="es" style="display:none">Datasets Principales</p>
@@ -601,7 +586,7 @@
     <h2 class="section-title en">Professional trajectory</h2>
     <h2 class="section-title es" style="display:none">Trayectoria profesional</h2>
 
-    <div class="exp-grid">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
       <div class="exp-timeline">
         <div class="exp-item">
           <div class="exp-dot"></div>
@@ -681,8 +666,6 @@
     <span class="skills-label en">Technical Skills</span>
     <span class="skills-label es" style="display:none">Habilidades Técnicas</span>
     <div class="skills-list">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">SQL</span>
       <span class="skill-tag">Advanced Excel</span>
       <span class="skill-tag">Power BI</span>
       <span class="skill-tag">LaTeX</span>
@@ -742,7 +725,7 @@
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
-    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
     document.documentElement.lang = lang;
   }
   function toggleMobileNav() {

@@ -4,13 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research Projects — Angie M. Gutierrez-Oviedo</title>
-  <meta name="description" content="24 research projects spanning 6 years (2020–2025) in agricultural economics, commodity markets, biotechnology, and emerging market finance. Public datasets, progressive methodology.">
-  <meta name="author" content="Angie Manuela Gutierrez-Oviedo">
-  <meta property="og:title" content="Research Projects — Angie M. Gutierrez-Oviedo">
-  <meta property="og:description" content="24 research projects in agricultural economics: price volatility, trade flows, biotechnology, and risk modeling in Latin American markets.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://amanuelagut.github.io/projects.html">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <meta name="description" content="Research portfolio: 24 projects across 6 years in agricultural economics, commodity markets, biotechnology, and emerging market finance in Latin America."/>
+  <meta property="og:title" content="Research Projects — Angie M. Gutierrez-Oviedo"/>
+  <meta property="og:description" content="A quantitative research portfolio on agricultural economics, commodity markets, and global trade — 18 research briefs and 6 capstones."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -84,6 +84,8 @@
     .rb-link-arrow{font-size:0.85rem;color:var(--moss);}
     footer{background:var(--forest);color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:0.78rem;}
     footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+    @media(max-width:900px){.rb-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.rb-grid{grid-template-columns:1fr;}}
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
@@ -120,29 +122,7 @@
     }
   </style>
 
-  <style>
-    div.capstone-field-label, div.capstone-field-value,
-    .capstone-card .capstone-fields div,
-    .capstone-card .capstone-fields {
-      font-family: 'DM Sans', Arial, Helvetica, sans-serif !important;
-      font-style: normal !important;
-      font-weight: 400 !important;
-    }
-    div.capstone-field-label {
-      font-size: 0.58rem !important;
-      letter-spacing: 0.12em !important;
-      text-transform: uppercase !important;
-      color: #2d5016 !important;
-    }
-    div.capstone-field-value {
-      font-size: 0.78rem !important;
-      color: #1a1a18 !important;
-      line-height: 1.5 !important;
-    }
-    .capstone-question {
-      font-size: 1.02rem !important;
-    }
-  </style>
+  
 </head>
 <body>
 <nav>
@@ -150,12 +130,17 @@
     <a href="index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
     <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776;</button>
     <div class="nav-links" id="navLinks">
-      <a href="index.html#about" data-en="About" data-es="Acerca de">About</a>
-      <a href="index.html#research" data-en="Research" data-es="Investigación">Research</a>
-      <a href="index.html#experience" data-en="Experience" data-es="Experiencia">Experience</a>
-      <a href="projects.html" class="active" data-en="Projects" data-es="Proyectos">Projects</a>
-      <a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <a href="index.html#about" class="en">About</a>
+      <a href="index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="index.html#research" class="en">Research</a>
+      <a href="index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="index.html#experience" class="en">Experience</a>
+      <a href="index.html#experience" class="es" style="display:none">Experiencia</a>
+      <a href="projects.html" class="active" class="active en">Projects</a>
+      <a href="projects.html" class="active es" style="display:none">Proyectos</a>
+      <a href="contact.html" class="en">Contact</a>
+      <a href="contact.html" class="es" style="display:none">Contacto</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -164,27 +149,29 @@
   <div class="page-header-inner">
     <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Research Projects</div>
     <div class="divider-line"></div>
-    <h1>Research Projects</h1>
-    <p>A quantitative research portfolio on agricultural economics, commodity markets, biotechnology, and emerging market finance in Latin America — built on public data and progressive in analytical method.</p>
+    <h1 class="en">Research Projects</h1>
+    <h1 class="es" style="display:none">Proyectos de Investigación</h1>
+    <p class="en">A quantitative research portfolio on agricultural economics, commodity markets, biotechnology, and emerging market finance in Latin America — built on public data and progressive in analytical method.</p>
+    <p class="es" style="display:none">Un portafolio cuantitativo de investigación en economía agrícola, mercados de commodities, biotecnología y finanzas de mercados emergentes en América Latina — construido con datos públicos y progresivo en método analítico.</p>
     <div class="stats-row">
-      <div class="stat-item"><div class="num">18</div><div class="lbl">Research Briefs</div></div>
-      <div class="stat-item"><div class="num">6</div><div class="lbl">Capstones</div></div>
-      <div class="stat-item"><div class="num">6</div><div class="lbl">Years · 2020–2025</div></div>
-      <div class="stat-item"><div class="num">7+</div><div class="lbl">Public Datasets</div></div>
-      <div class="stat-item"><div class="num">10+</div><div class="lbl">Methods &amp; Tools</div></div>
+      <div class="stat-item"><div class="num">18</div><div class="lbl en">Research Briefs</div><div class="lbl es" style="display:none">Briefs de Investigación</div></div>
+      <div class="stat-item"><div class="num">6</div><div class="lbl en">Capstones</div><div class="lbl es" style="display:none">Proyectos Integradores</div></div>
+      <div class="stat-item"><div class="num">6</div><div class="lbl en">Years · 2020–2025</div><div class="lbl es" style="display:none">Años · 2020–2025</div></div>
+      <div class="stat-item"><div class="num">7+</div><div class="lbl en">Public Datasets</div><div class="lbl es" style="display:none">Datasets Públicos</div></div>
+      <div class="stat-item"><div class="num">10+</div><div class="lbl en">Methods &amp; Tools</div><div class="lbl es" style="display:none">Métodos y Herramientas</div></div>
     </div>
   </div>
 </div>
 
 <div class="filters-bar">
   <div class="filters-inner">
-    <span class="filter-label" data-en="Filter:" data-es="Filtrar:">Filter:</span>
-    <button class="filter-btn active" onclick="filterTopic(this,'all')" data-en="All" data-es="Todos">All</button>
-    <button class="filter-btn" onclick="filterTopic(this,'prices')" data-en="Prices &amp; Volatility" data-es="Precios &amp; Volatilidad">Prices &amp; Volatility</button>
-    <button class="filter-btn" onclick="filterTopic(this,'trade')" data-en="Trade Flows" data-es="Flujos de Comercio">Trade Flows</button>
-    <button class="filter-btn" onclick="filterTopic(this,'risk')" data-en="Risk &amp; Finance" data-es="Riesgo &amp; Finanzas">Risk &amp; Finance</button>
-    <button class="filter-btn" onclick="filterTopic(this,'supply-chain')" data-en="Supply Chain" data-es="Cadena de Suministro">Supply Chain</button>
-    <button class="filter-btn" onclick="filterTopic(this,'biotech')" data-en="Biotechnology" data-es="Biotecnología">Biotechnology</button>
+    <span class="filter-label en">Filter:</span><span class="filter-label es" style="display:none">Filtrar:</span>
+    <button class="filter-btn active" onclick="filterTopic(this,'all')" class="en">All</button><button class="filter-btn es" style="display:none" onclick="filterTopic(this,'all')">Todos</button>
+    <button class="filter-btn" onclick="filterTopic(this,'prices')" class="en">Prices &amp; Volatility</button><button class="filter-btn es" style="display:none" onclick="filterTopic(this,'prices')">Precios &amp; Volatilidad</button>
+    <button class="filter-btn" onclick="filterTopic(this,'trade')" class="en">Trade Flows</button><button class="filter-btn es" style="display:none" onclick="filterTopic(this,'trade')">Flujos de Comercio</button>
+    <button class="filter-btn" onclick="filterTopic(this,'risk')" class="en">Risk &amp; Finance</button><button class="filter-btn es" style="display:none" onclick="filterTopic(this,'risk')">Riesgo &amp; Finanzas</button>
+    <button class="filter-btn" onclick="filterTopic(this,'supply-chain')" class="en">Supply Chain</button><button class="filter-btn es" style="display:none" onclick="filterTopic(this,'supply-chain')">Cadena de Suministro</button>
+    <button class="filter-btn" onclick="filterTopic(this,'biotech')" class="en">Biotechnology</button><button class="filter-btn es" style="display:none" onclick="filterTopic(this,'biotech')">Biotecnología</button>
   </div>
 </div>
 
@@ -394,7 +381,7 @@
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
-    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
     document.documentElement.lang = lang;
   }
   function toggleMobileNav() {
