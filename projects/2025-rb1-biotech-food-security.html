@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Empirical assessment of agricultural biotechnology impact on food security indicators in Colombia 2010–2025."/>
+  <meta property="og:title" content="Agricultural Biotechnology and Food Security in Colombia — Angie M. Gutierrez-Oviedo"/>
+  <meta property="og:description" content="Empirical assessment of agricultural biotechnology impact on food security indicators in Colombia 2010–2025."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2025-rb1-biotech-food-security.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Agricultural Biotechnology and Food Security in Colombia: An Empirical Assessment 2010–2025 — Angie M. Gutierrez-Oviedo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>VI · Formal Research &amp; Academic Publication Standards (2025)</span>
     <span>/</span>
@@ -179,7 +187,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief applies panel regression with country and time fixed effects to estimate the impact of agricultural biotechnology adoption on food security indicators in Colombia, benchmarked against Latin American comparators, over 2010–2025. Using FAO food security metrics, ISAAA biotechnology adoption data, and DANE national statistics, the analysis controls for income, trade openness, and infrastructure quality to isolate the marginal effect of biotech adoption. The study extends the 2024 exploratory correlation analysis into a formally identified econometric framework.</div>
   </div>
 
@@ -187,7 +196,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What measurable impact has agricultural biotechnology adoption had on food security indicators in Colombia between 2010 and 2025?</p>
     <p class="paper-text">The 2023 visual analysis and 2024 correlation study suggested a positive biotech-yield association. This brief provides the formal econometric test: using panel fixed effects to control for unobserved country characteristics and time trends that could confound the relationship.</p>
   </div>
@@ -196,7 +206,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The analysis constructs a panel dataset linking biotechnology adoption to food security outcomes across Latin American countries.</p>
 
     <table class="data-table">
@@ -224,7 +235,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The brief applies panel econometric methods with formal identification and robustness testing.</p>
     <p class="paper-text"><strong>Step 1 — Panel data construction.</strong> Country-year panel assembled from multiple sources using Python, with consistent coding, interpolation of occasional missing values, and logarithmic transformations for skewed variables.</p>
     <p class="paper-text"><strong>Step 2 — Fixed effects regression.</strong> Two-way fixed effects (country + year) regression estimates: Food_Security_it = α + β × Biotech_it + γ × Controls_it + μ_i + λ_t + ε_it. The coefficient β is the parameter of interest.</p>
@@ -235,10 +247,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The panel regression provides a more nuanced picture than the 2024 correlation analysis.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Biotechnology adoption shows a positive and statistically significant association with crop yields (the supply-side food security channel) but a weaker and less robust association with direct food security measures (prevalence of undernourishment, dietary energy supply). The results suggest that biotech adoption affects food security primarily through productivity gains rather than directly through food availability, and that the transmission from productivity to food security is mediated by market access, income distribution, and food system infrastructure.</div>
     </div>
     <p class="paper-text">The nuanced finding — significant for yields but attenuated for food security — implies that biotechnology is not a standalone solution to food insecurity. Complementary investments in market access, distribution infrastructure, and social protection are needed to translate productivity gains into food security improvements.</p>
@@ -248,7 +262,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>Panel regression with fixed effects</strong> represents the econometric culmination of the portfolio. The ability to control for unobserved heterogeneity and common shocks addresses the fundamental limitation of all cross-sectional analyses conducted in prior years.</p>
     <p class="paper-text">The discipline of <strong>formal robustness checks</strong> — testing whether the main finding survives alternative specifications — is a hallmark of credible empirical research that I learned to implement systematically.</p>
     <p class="paper-text">The <strong>distinction between statistical significance and economic significance</strong> — a coefficient can be statistically significant but economically small — became clear in interpreting the food security results, where the effects are real but modest in magnitude.</p>
@@ -258,9 +273,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Data Limitation</div>
+      <div class="limitation-label en">Data Limitation</div>
+      <div class="limitation-label es" style="display:none">Datos Limitación</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">Food security indicators at the national level are noisy proxies for household-level food access. Subnational data would provide a more precise test but is not consistently available across countries. Additionally, the biotech adoption variable (total area) does not capture adoption intensity or varietal quality differences across countries.</div>
     </div>
@@ -271,18 +288,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">Jupyter Notebook with panel data construction, fixed effects estimation, robustness tests, and formatted regression tables. LaTeX-compiled brief included in the working paper appendix.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Jupyter Notebook (.ipynb) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Jupyter Notebook (.ipynb) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        LaTeX Brief (.pdf) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> LaTeX Brief (.pdf) — Coming Soon</span>
     </div>
   </div>
 
@@ -309,4 +321,13 @@
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    document.querySelectorAll('.es').forEach(el => el.style.displa
+    document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
+    document.documentElement.lang = lang;
+  }
+  function toggleMobileNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

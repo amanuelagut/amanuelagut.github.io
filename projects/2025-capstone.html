@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Six-year empirical analysis of agricultural market vulnerability in Colombia examining prices, trade and biotechnology."/>
+  <meta property="og:title" content="Agricultural Market Vulnerability in Emerging Economies — Angie M. Gutierrez-Oviedo"/>
+  <meta property="og:description" content="Six-year empirical analysis of agricultural market vulnerability in Colombia examining prices, trade and biotechnology."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://amanuelagut.github.io/projects/2025-capstone.html"/>
+  <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Agricultural Market Vulnerability in Emerging Economies: A Six-Year Empirical Analysis of Prices, Trade and Biotechnology in Colombia — Angie M. Gutierrez-Oviedo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -137,7 +144,8 @@
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
-    <a href="../projects.html">Research Projects</a>
+    <a href="../projects.html" class="en">Research Projects</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>VI · Formal Research &amp; Academic Publication Standards (2025)</span>
     <span>/</span>
@@ -178,7 +186,8 @@
   <!-- ABSTRACT -->
   <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
-    <div class="abstract-label">Abstract</div>
+    <div class="abstract-label en">Abstract</div>
+    <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This capstone synthesizes six years of empirical research into a submission-ready working paper on agricultural market vulnerability in Colombia. Using Python for econometric analysis (panel regression, GARCH volatility modeling) and LaTeX for academic typesetting, the paper examines patterns of price dynamics, trade competitiveness, and biotechnology adoption that create structural vulnerability in emerging agricultural economies. The full analysis is documented in Jupyter Notebooks and hosted on GitHub for reproducibility. The paper follows academic publication standards: formal literature review, explicit identification strategy, robustness checks, and structured conclusions with policy implications.</div>
   </div>
 
@@ -186,7 +195,8 @@
   <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
-    <div class="section-title">Research Question</div>
+    <div class="section-title en">Research Question</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What patterns of agricultural market vulnerability emerge across six years when price dynamics, trade flows, and biotechnology adoption are examined together for Colombia?</p>
     <p class="paper-text">Each year of the portfolio addressed one dimension of agricultural market vulnerability: price volatility (2020, 2022), trade structure (2021, 2023), biotechnology (2023, 2024), and econometric forecasting (2024). The 2025 capstone integrates these threads into a unified analytical framework that examines how they interact and compound to create systemic vulnerability in Colombia's agricultural sector.</p>
   </div>
@@ -195,7 +205,8 @@
   <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
-    <div class="section-title">Data &amp; Sources</div>
+    <div class="section-title en">Data &amp; Sources</div>
+    <div class="section-title es" style="display:none">Datos y Fuentes</div>
     <p class="paper-text">The working paper draws on all major data sources used across the six-year portfolio, harmonized into panel datasets using Python.</p>
 
     <table class="data-table">
@@ -224,7 +235,8 @@
   <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
-    <div class="section-title">Methodology</div>
+    <div class="section-title en">Methodology</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The working paper applies three interconnected econometric methods, each representing the culmination of skills developed across the portfolio.</p>
     <p class="paper-text"><strong>Step 1 — Panel regression with fixed effects.</strong> Country and time fixed effects control for unobserved heterogeneity in a panel regression that estimates the determinants of agricultural price volatility across Latin American countries. Instrumental variables address potential endogeneity in biotechnology adoption.</p>
     <p class="paper-text"><strong>Step 2 — GARCH volatility modeling.</strong> GARCH(1,1) models estimated for each major commodity capture conditional volatility dynamics — the tendency for volatility clustering (high-volatility periods following high-volatility periods) that the 2020 CV analysis could only describe statically.</p>
@@ -236,10 +248,12 @@
   <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
-    <div class="section-title">Key Finding</div>
+    <div class="section-title en">Key Finding</div>
+    <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The integrated analysis reveals that agricultural market vulnerability in Colombia is multi-dimensional and self-reinforcing.</p>
     <div class="finding-box">
-      <div class="finding-label">Key Finding</div>
+      <div class="finding-label en">Key Finding</div>
+      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Panel regression results indicate that exchange rate volatility, trade partner concentration, and low biotechnology adoption are individually significant predictors of agricultural price vulnerability, and their effects are compounding — countries with high exposure on all three dimensions show disproportionately higher price volatility than the sum of individual effects would predict. GARCH models confirm that Colombian agricultural commodity prices exhibit significant volatility clustering, with shocks persisting for 3–5 months. Structural break analysis confirms regime changes during COVID-19 and the 2022 Ukraine crisis.</div>
     </div>
     <p class="paper-text">The compounding nature of vulnerability dimensions suggests that single-factor policy interventions (e.g., exchange rate stabilization alone) will have limited effectiveness. A comprehensive strategy addressing trade diversification, technology adoption, and macroeconomic stability simultaneously is needed to reduce agricultural market vulnerability.</p>
@@ -249,7 +263,8 @@
   <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
-    <div class="section-title">What I Learned</div>
+    <div class="section-title en">What I Learned</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">Writing a <strong>submission-ready working paper</strong> — with formal identification strategy, robustness checks, and LaTeX typesetting — represented the integration of six years of progressive skill building into a single academic output. The process taught me that research communication is as rigorous a discipline as research analysis.</p>
     <p class="paper-text"><strong>GARCH volatility modeling</strong> formalized the intuition about volatility clustering that I first observed in fríjol prices at Corabastos in 2020. What started as a descriptive observation ('prices seem more volatile during crises') is now captured in a mathematically precise conditional variance model.</p>
     <p class="paper-text"><strong>GitHub-based reproducibility</strong> — version control, documented notebooks, and structured repositories — closes the loop on the reproducibility principle that began with separated spreadsheet tabs in 2020. The entire analysis can be independently verified by any researcher with a Python environment.</p>
@@ -259,9 +274,11 @@
   <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
-    <div class="section-title">Limitation</div>
+    <div class="section-title en">Limitation</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Scope & Method Limitation</div>
+      <div class="limitation-label en">Scope &amp; Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Alcance y Limitación de Método</div>
       <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
       <div class="limitation-text">The working paper is a single-author effort without institutional peer review. While the methods are sound and the data is publicly verifiable, the analysis would benefit from external feedback from agricultural economists with field expertise in the specific markets studied. Additionally, the panel includes only 10 countries, which limits the statistical power of cross-country regressions. The visiting scholar position sought by the author would provide the collaborative environment needed to address these limitations.</div>
     </div>
@@ -272,18 +289,13 @@
   <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
-    <div class="section-title">Deliverable</div>
+    <div class="section-title en">Deliverable</div>
+    <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">The deliverable package includes: (1) LaTeX-compiled working paper (.pdf) following academic publication standards, (2) Jupyter Notebooks (.ipynb) with all data processing, estimation, and visualization code, (3) GitHub repository with full documentation and README. All materials are designed for academic submission and independent verification.</p>
     <div class="deliverable-row">
-      <a href="#" class="dl-btn primary">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Working Paper (LaTeX PDF) — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Working Paper (LaTeX PDF) — Coming Soon</span>
       
-      <a href="#" class="dl-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        GitHub Repository — Coming Soon
-      </a>
+      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> GitHub Repository — Coming Soon</span>
     </div>
   </div>
 
@@ -310,4 +322,13 @@
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    document.querySelectorAll('.es').forEach(el => el.style.displa
+    document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
+    document.documentElement.lang = lang;
+  }
+  function toggleMobileNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

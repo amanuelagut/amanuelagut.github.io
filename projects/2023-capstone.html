@@ -322,4 +322,13 @@
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    document.querySelectorAll('.es').forEach(el => el.style.displa
+    document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
+    document.documentElement.lang = lang;
+  }
+  function toggleMobileNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
