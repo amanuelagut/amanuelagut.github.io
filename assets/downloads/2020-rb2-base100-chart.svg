@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" style="background:white;">
+  <!-- Grid lines -->
+  <defs>
+    <linearGradient id="usdcopGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="brentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#cd853f;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background grid -->
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="40" x2="680" y2="40"/>
+    <line x1="60" y1="90" x2="680" y2="90"/>
+    <line x1="60" y1="140" x2="680" y2="140"/>
+    <line x1="60" y1="190" x2="680" y2="190"/>
+    <line x1="60" y1="240" x2="680" y2="240"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <g font-family="Arial,sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+    <text x="55" y="44">140</text>
+    <text x="55" y="94">120</text>
+    <text x="55" y="144">100</text>
+    <text x="55" y="194">80</text>
+    <text x="55" y="244">60</text>
+    <text x="55" y="280">20</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="Arial,sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="80" y="295">Jan 18</text>
+    <text x="165" y="295">Jul 18</text>
+    <text x="250" y="295">Jan 19</text>
+    <text x="335" y="295">Jul 19</text>
+    <text x="420" y="295">Jan 20</text>
+    <text x="505" y="295">Jul 20</text>
+    <text x="590" y="295">Dec 20</text>
+  </g>
+
+  <!-- COVID marker -->
+  <line x1="455" y1="40" x2="455" y2="270" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="455" y="32" font-family="Arial,sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">COVID-19</text>
+
+  <!-- Brent line (brown) -->
+  <polyline fill="none" stroke="url(#brentGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="80,140 97,138 114,145 131,134 148,128 165,132 182,132 199,135 216,125 233,118 250,152 267,147 284,144 301,129 318,129 335,146 352,148 369,156 386,151 403,158 420,147 437,163 455,226 472,268 489,247 506,222 523,216 540,212 557,220 574,221 590,218 607,210"/>
+
+  <!-- USD/COP line (green) -->
+  <polyline fill="none" stroke="url(#usdcopGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="80,140 97,140 114,141 131,144 148,140 165,139 182,139 199,136 216,134 233,132 250,128 267,131 284,130 301,130 318,125 335,128 352,128 369,121 386,121 403,120 420,124 437,121 455,80 472,76 489,92 506,104 523,112 540,108 557,112 574,118 590,122 607,129"/>
+
+  <!-- Peak/trough markers -->
+  <circle cx="472" cy="76" r="5" fill="#2d5016"/>
+  <text x="472" y="68" font-family="Arial,sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">138.6</text>
+
+  <circle cx="472" cy="268" r="5" fill="#8b4513"/>
+  <text x="485" y="280" font-family="Arial,sans-serif" font-size="8" fill="#8b4513" text-anchor="start">28.3</text>
+
+  <!-- Legend -->
+  <g transform="translate(520, 55)">
+    <rect x="0" y="0" width="150" height="45" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="15" x2="35" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="42" y="18" font-family="Arial,sans-serif" font-size="10" fill="#1a1a18">USD/COP</text>
+    <line x1="10" y1="32" x2="35" y2="32" stroke="#8b4513" stroke-width="2.5"/>
+    <text x="42" y="35" font-family="Arial,sans-serif" font-size="10" fill="#1a1a18">Brent Crude</text>
+  </g>
+
+  <!-- Title -->
+  <text x="370" y="18" font-family="Georgia,serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Base-100 Price Index (January 2018 = 100)</text>
+
+  <!-- Source -->
+  <text x="350" y="310" font-family="Arial,sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Sources: FRED COLCCUSMA02STM (USD/COP), FRED DCOILBRENTEU (Brent)</text>
+</svg>

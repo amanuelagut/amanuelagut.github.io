@@ -270,10 +270,84 @@
       </div>
     </div>
 
-    <figure style="margin:1.5rem 0; text-align:center;">
-      <img src="../deliverables/2020-rb1/price_index.png"
-           alt="Base-100 price index: Fríjol, USD/COP, and Brent Crude, Jan 2019–Aug 2020"
-           style="max-width:100%; border:1px solid var(--rule); border-radius:4px;">
+    <figure style="text-align:center;">
+      <div style="width:100%;overflow-x:auto;margin:1.5rem 0">
+      <svg width="100%" height="320" viewBox="0 0 700 320" style="background:white; border:1px solid var(--rule); border-radius:4px;">
+        <!-- Title -->
+        <text x="350" y="22" font-family="'EB Garamond',serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">Base-100 Price Index (January 2019 = 100)</text>
+        <text x="350" y="38" font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">Fríjol, USD/COP, and Brent Crude Oil</text>
+
+        <!-- Background grid -->
+        <g stroke="#e8ede4" stroke-width="1">
+          <line x1="60" y1="55" x2="680" y2="55"/>
+          <line x1="60" y1="95" x2="680" y2="95"/>
+          <line x1="60" y1="135" x2="680" y2="135"/>
+          <line x1="60" y1="175" x2="680" y2="175"/>
+          <line x1="60" y1="215" x2="680" y2="215"/>
+          <line x1="60" y1="255" x2="680" y2="255"/>
+        </g>
+
+        <!-- Y-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+          <text x="55" y="59">130</text>
+          <text x="55" y="99">120</text>
+          <text x="55" y="139">110</text>
+          <text x="55" y="179">100</text>
+          <text x="55" y="219">90</text>
+          <text x="55" y="259">80</text>
+        </g>
+
+        <!-- X-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+          <text x="80" y="280">Jan 19</text>
+          <text x="155" y="280">Mar 19</text>
+          <text x="230" y="280">May 19</text>
+          <text x="305" y="280">Jul 19</text>
+          <text x="380" y="280">Sep 19</text>
+          <text x="455" y="280">Jan 20</text>
+          <text x="530" y="280">Apr 20</text>
+          <text x="605" y="280">Jul 20</text>
+          <text x="660" y="280">Aug 20</text>
+        </g>
+
+        <!-- COVID marker -->
+        <line x1="455" y1="50" x2="455" y2="265" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="455" y="45" font-family="'DM Sans',sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">COVID-19</text>
+
+        <!-- Brent line (brown) -->
+        <polyline fill="none" stroke="#8b4513" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="80,175 155,131 230,103 305,147 380,159 455,223 530,259 605,211 660,211"/>
+
+        <!-- USD/COP line (forest green) -->
+        <polyline fill="none" stroke="#2d5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="80,175 155,175 230,155 305,159 380,151 455,135 530,71 605,95 660,91"/>
+
+        <!-- Frijol line (sage green) -->
+        <polyline fill="none" stroke="#4a7c2f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="80,175 155,183 230,179 305,175 380,175 455,199 530,95 580,55 605,115 660,167"/>
+
+        <!-- Peak markers -->
+        <circle cx="580" cy="55" r="5" fill="#4a7c2f"/>
+        <text x="580" y="47" font-family="'DM Sans',sans-serif" font-size="9" fill="#4a7c2f" text-anchor="middle" font-weight="600">125.9</text>
+
+        <circle cx="530" cy="71" r="5" fill="#2d5016"/>
+        <text x="545" y="65" font-family="'DM Sans',sans-serif" font-size="9" fill="#2d5016" text-anchor="start">125.7</text>
+
+        <circle cx="530" cy="259" r="5" fill="#8b4513"/>
+        <text x="545" y="267" font-family="'DM Sans',sans-serif" font-size="9" fill="#8b4513" text-anchor="start">33.9</text>
+
+        <!-- Legend -->
+        <g transform="translate(520, 85)">
+          <rect x="0" y="0" width="150" height="62" fill="white" stroke="#c8d4c0" rx="3"/>
+          <line x1="10" y1="15" x2="35" y2="15" stroke="#4a7c2f" stroke-width="2.5"/>
+          <text x="42" y="18" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Fríjol</text>
+          <line x1="10" y1="32" x2="35" y2="32" stroke="#2d5016" stroke-width="2.5"/>
+          <text x="42" y="35" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">USD/COP</text>
+          <line x1="10" y1="49" x2="35" y2="49" stroke="#8b4513" stroke-width="2.5"/>
+          <text x="42" y="52" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Brent Crude</text>
+        </g>
+      </svg>
+      </div>
       <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
         Figure 1. Base-100 price index (Jan 2019 = 100). Fríjol peaked at 125.9 in May 2020; USD/COP peaked at 125.7 in April 2020; Brent crashed to 33.9 in April 2020.
         Sources: SIPSA-DANE (fríjol), FRED COLCCUSMA02STM (USD/COP), FRED DCOILBRENTEU (Brent).
@@ -321,17 +395,9 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Data File (.csv)
       </a>
-      <a class="dl-btn" href="../deliverables/2020-rb1/price_index.png" target="_blank">
+      <a class="dl-btn" href="../assets/downloads/2020-rb1-base100-chart.svg" target="_blank">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        Price Index Chart (.png)
-      </a>
-      <a class="dl-btn" href="../deliverables/2020-rb1/frijol_2019_vs_2020.png" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        2019 vs 2020 Comparison (.png)
-      </a>
-      <a class="dl-btn" href="../deliverables/2020-rb1/correlation_heatmap.png" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        Correlation Chart (.png)
+        Base-100 Index Chart (.svg)
       </a>
     </div>
   </div>

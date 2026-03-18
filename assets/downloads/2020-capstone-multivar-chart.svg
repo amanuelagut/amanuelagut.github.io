@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="340" viewBox="0 0 700 340" style="background:white;">
+  <!-- Title -->
+  <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">COVID-19 Impact: Multi-Variable Divergence (Base-100 Index)</text>
+
+  <!-- Left panel: Macro variables (USD/COP, Brent) -->
+  <g transform="translate(0, 35)">
+    <!-- Panel title -->
+    <text x="185" y="15" font-family="Arial,sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">Macro Variables (Jan 2018 = 100)</text>
+
+    <!-- Grid -->
+    <g stroke="#e8ede4" stroke-width="1">
+      <line x1="50" y1="35" x2="320" y2="35"/>
+      <line x1="50" y1="70" x2="320" y2="70"/>
+      <line x1="50" y1="105" x2="320" y2="105"/>
+      <line x1="50" y1="140" x2="320" y2="140"/>
+    </g>
+
+    <!-- Y-axis labels -->
+    <g font-family="Arial,sans-serif" font-size="9" fill="#5a5a55" text-anchor="end">
+      <text x="45" y="39">140</text>
+      <text x="45" y="74">100</text>
+      <text x="45" y="109">60</text>
+      <text x="45" y="144">20</text>
+    </g>
+
+    <!-- X-axis labels -->
+    <g font-family="Arial,sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">
+      <text x="65" y="165">2018</text>
+      <text x="140" y="165">2019</text>
+      <text x="215" y="165">Mar 20</text>
+      <text x="265" y="165">Apr 20</text>
+      <text x="305" y="165">Dec 20</text>
+    </g>
+
+    <!-- COVID line -->
+    <line x1="190" y1="30" x2="190" y2="150" stroke="#d32f2f" stroke-width="1" stroke-dasharray="3,2"/>
+
+    <!-- USD/COP line (green) -->
+    <polyline fill="none" stroke="#2d5016" stroke-width="2" stroke-linecap="round"
+      points="65,70 140,61 215,41 265,38 305,53"/>
+
+    <!-- Brent line (brown) -->
+    <polyline fill="none" stroke="#8b4513" stroke-width="2" stroke-linecap="round"
+      points="65,70 140,81 215,117 265,135 305,93"/>
+
+    <!-- Peak markers -->
+    <circle cx="265" cy="38" r="4" fill="#2d5016"/>
+    <text x="265" y="30" font-family="Arial,sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">138.6</text>
+
+    <circle cx="265" cy="135" r="4" fill="#8b4513"/>
+    <text x="280" y="143" font-family="Arial,sans-serif" font-size="8" fill="#8b4513" text-anchor="start">28.3</text>
+
+    <!-- Mini legend -->
+    <g transform="translate(230, 35)">
+      <line x1="0" y1="5" x2="18" y2="5" stroke="#2d5016" stroke-width="2"/>
+      <text x="22" y="8" font-family="Arial,sans-serif" font-size="8" fill="#1a1a18">USD/COP</text>
+      <line x1="0" y1="18" x2="18" y2="18" stroke="#8b4513" stroke-width="2"/>
+      <text x="22" y="21" font-family="Arial,sans-serif" font-size="8" fill="#1a1a18">Brent</text>
+    </g>
+
+    <!-- Correlation annotation -->
+    <text x="185" y="175" font-family="Arial,sans-serif" font-size="9" fill="#d32f2f" text-anchor="middle" font-weight="500">r = -0.82</text>
+  </g>
+
+  <!-- Right panel: Domestic volatility (Frijol CV, Price Spread) -->
+  <g transform="translate(350, 35)">
+    <!-- Panel title -->
+    <text x="175" y="15" font-family="Arial,sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">Domestic Impact (Volatility %)</text>
+
+    <!-- Grid -->
+    <g stroke="#e8ede4" stroke-width="1">
+      <line x1="50" y1="35" x2="320" y2="35"/>
+      <line x1="50" y1="60" x2="320" y2="60"/>
+      <line x1="50" y1="85" x2="320" y2="85"/>
+      <line x1="50" y1="110" x2="320" y2="110"/>
+      <line x1="50" y1="135" x2="320" y2="135"/>
+    </g>
+
+    <!-- Y-axis labels -->
+    <g font-family="Arial,sans-serif" font-size="9" fill="#5a5a55" text-anchor="end">
+      <text x="45" y="39">16%</text>
+      <text x="45" y="64">12%</text>
+      <text x="45" y="89">8%</text>
+      <text x="45" y="114">4%</text>
+      <text x="45" y="139">0%</text>
+    </g>
+
+    <!-- X-axis labels -->
+    <g font-family="Arial,sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">
+      <text x="80" y="165">Mar 19</text>
+      <text x="140" y="165">Aug 19</text>
+      <text x="200" y="165">Mar 20</text>
+      <text x="260" y="165">May 20</text>
+      <text x="305" y="165">Aug 20</text>
+    </g>
+
+    <!-- COVID line -->
+    <line x1="170" y1="30" x2="170" y2="150" stroke="#d32f2f" stroke-width="1" stroke-dasharray="3,2"/>
+
+    <!-- Frijol CV line (moss) -->
+    <polyline fill="none" stroke="#2d5016" stroke-width="2.5" stroke-linecap="round"
+      points="80,97 140,97 200,82 260,64 305,77"/>
+
+    <!-- Price spread line (gold) -->
+    <polyline fill="none" stroke="#daa520" stroke-width="2.5" stroke-linecap="round"
+      points="80,84 140,85 200,84 260,43 305,70"/>
+
+    <!-- Peak markers -->
+    <circle cx="260" cy="64" r="4" fill="#2d5016"/>
+    <text x="260" y="56" font-family="Arial,sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">11.34%</text>
+
+    <circle cx="260" cy="43" r="4" fill="#daa520"/>
+    <text x="275" y="40" font-family="Arial,sans-serif" font-size="8" fill="#daa520" text-anchor="start">14.7%</text>
+
+    <!-- Mini legend -->
+    <g transform="translate(220, 80)">
+      <line x1="0" y1="5" x2="18" y2="5" stroke="#2d5016" stroke-width="2.5"/>
+      <text x="22" y="8" font-family="Arial,sans-serif" font-size="8" fill="#1a1a18">Frijol CV</text>
+      <line x1="0" y1="18" x2="18" y2="18" stroke="#daa520" stroke-width="2.5"/>
+      <text x="22" y="21" font-family="Arial,sans-serif" font-size="8" fill="#1a1a18">Bog-Iba Spread</text>
+    </g>
+
+    <!-- CV change annotation -->
+    <text x="175" y="175" font-family="Arial,sans-serif" font-size="9" fill="#d32f2f" text-anchor="middle" font-weight="500">CV +88.4%</text>
+  </g>
+
+  <!-- Bottom summary bar -->
+  <g transform="translate(0, 245)">
+    <rect x="30" y="0" width="640" height="55" fill="#e8ede4" rx="4"/>
+    <text x="350" y="18" font-family="Arial,sans-serif" font-size="10" fill="#1e3a0f" text-anchor="middle" font-weight="600">Key Insight: Synchronized Shock</text>
+    <text x="350" y="35" font-family="Georgia,serif" font-size="11" fill="#5a5a55" text-anchor="middle" font-style="italic">Currency depreciation (+43.7%) amplified domestic price volatility (+88.4%) while oil collapse (-76%) reduced transport costs.</text>
+    <text x="350" y="50" font-family="Georgia,serif" font-size="11" fill="#5a5a55" text-anchor="middle" font-style="italic">Net effect: highly product-specific and geography-dependent food price risk.</text>
+  </g>
+
+  <!-- Source -->
+  <text x="350" y="325" font-family="Arial,sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Sources: FRED (USD/COP, Brent), SIPSA-DANE (Frijol prices, regional spreads)</text>
+</svg>

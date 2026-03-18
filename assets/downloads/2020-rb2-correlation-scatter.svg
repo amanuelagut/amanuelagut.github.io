@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400" style="background:white;">
+  <!-- Title -->
+  <text x="250" y="25" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">USD/COP vs Brent Crude Oil Correlation</text>
+  <text x="250" y="42" font-family="Arial,sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">Monthly Data: January 2018 - December 2020 (n=36)</text>
+
+  <!-- Grid -->
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="70" y1="70" x2="450" y2="70"/>
+    <line x1="70" y1="130" x2="450" y2="130"/>
+    <line x1="70" y1="190" x2="450" y2="190"/>
+    <line x1="70" y1="250" x2="450" y2="250"/>
+    <line x1="70" y1="310" x2="450" y2="310"/>
+    <line x1="70" y1="70" x2="70" y2="310"/>
+    <line x1="165" y1="70" x2="165" y2="310"/>
+    <line x1="260" y1="70" x2="260" y2="310"/>
+    <line x1="355" y1="70" x2="355" y2="310"/>
+    <line x1="450" y1="70" x2="450" y2="310"/>
+  </g>
+
+  <!-- Y-axis label (USD/COP) -->
+  <text x="25" y="190" font-family="Arial,sans-serif" font-size="11" fill="#2d5016" text-anchor="middle" transform="rotate(-90,25,190)">USD/COP (COP per USD)</text>
+  <g font-family="Arial,sans-serif" font-size="9" fill="#5a5a55" text-anchor="end">
+    <text x="65" y="74">4000</text>
+    <text x="65" y="134">3700</text>
+    <text x="65" y="194">3400</text>
+    <text x="65" y="254">3100</text>
+    <text x="65" y="314">2800</text>
+  </g>
+
+  <!-- X-axis label (Brent) -->
+  <text x="260" y="365" font-family="Arial,sans-serif" font-size="11" fill="#8b4513" text-anchor="middle">Brent Crude (USD/barrel)</text>
+  <g font-family="Arial,sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="70" y="328">20</text>
+    <text x="165" y="328">40</text>
+    <text x="260" y="328">60</text>
+    <text x="355" y="328">80</text>
+    <text x="450" y="328">100</text>
+  </g>
+
+  <!-- Trend line (negative slope) -->
+  <line x1="70" y1="100" x2="420" y2="290" stroke="#d32f2f" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- Scatter points (approximated from data) -->
+  <!-- 2018 points (higher Brent, lower USD/COP) -->
+  <circle cx="380" cy="280" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="340" cy="275" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="350" cy="270" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="390" cy="265" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="410" cy="260" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="395" cy="255" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="390" cy="245" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="380" cy="235" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="420" cy="220" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="440" cy="200" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="330" cy="185" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="280" cy="175" r="5" fill="#2d5016" opacity="0.7"/>
+
+  <!-- 2019 points -->
+  <circle cx="290" cy="180" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="320" cy="175" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="340" cy="178" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="370" cy="165" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="360" cy="160" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="320" cy="168" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="315" cy="165" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="290" cy="140" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="310" cy="135" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="295" cy="145" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="315" cy="138" r="5" fill="#2d5016" opacity="0.7"/>
+  <circle cx="340" cy="132" r="5" fill="#2d5016" opacity="0.7"/>
+
+  <!-- 2020 points (COVID shock - low Brent, high USD/COP) -->
+  <circle cx="320" cy="150" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="270" cy="145" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="150" cy="95" r="6" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="80" cy="75" r="6" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="140" cy="105" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="195" cy="120" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="210" cy="130" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="215" cy="115" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="200" cy="100" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="190" cy="105" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="210" cy="125" r="5" fill="#d32f2f" opacity="0.9"/>
+  <circle cx="240" cy="140" r="5" fill="#d32f2f" opacity="0.9"/>
+
+  <!-- Correlation annotation -->
+  <rect x="320" y="75" width="120" height="40" fill="white" stroke="#c8d4c0" rx="3"/>
+  <text x="380" y="95" font-family="Arial,sans-serif" font-size="12" fill="#d32f2f" text-anchor="middle" font-weight="600">r = -0.82</text>
+  <text x="380" y="108" font-family="Arial,sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">(p &lt; 0.001)</text>
+
+  <!-- Legend -->
+  <g transform="translate(85, 340)">
+    <circle cx="5" cy="5" r="4" fill="#2d5016" opacity="0.7"/>
+    <text x="15" y="9" font-family="Arial,sans-serif" font-size="9" fill="#5a5a55">2018-2019</text>
+    <circle cx="95" cy="5" r="4" fill="#d32f2f" opacity="0.9"/>
+    <text x="105" y="9" font-family="Arial,sans-serif" font-size="9" fill="#5a5a55">2020 (COVID)</text>
+  </g>
+
+  <!-- Source -->
+  <text x="250" y="385" font-family="Arial,sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Source: FRED (COLCCUSMA02STM, DCOILBRENTEU)</text>
+</svg>
