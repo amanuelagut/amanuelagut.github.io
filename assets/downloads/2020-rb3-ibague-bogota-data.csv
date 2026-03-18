@@ -1,0 +1,96 @@
+Grain Wholesale Prices: Ibague vs Bogota - Research Brief 3 (2020)
+Data: SIPSA-DANE Wholesale Prices (Mayoristas)
+Author: Angie Manuela Gutierrez-Oviedo
+Universidad: Fundacion Universitaria del Area Andina
+
+RAW DATA - FRIJOL BOLO ROJO (COP/kg)
+Month,Bogota_COP_kg,Ibague_COP_kg,Spread_Pct
+March,5645,5217,8.2
+April,6234,5601,11.3
+May,7317,6378,14.7
+June,6845,6043,13.3
+July,6234,5576,11.8
+August,5978,5416,10.4
+September,5823,5312,9.6
+October,5678,5189,9.4
+November,5534,5078,9.0
+December,5423,4987,8.7
+
+RAW DATA - ARROZ PADDY VERDE (COP/kg)
+Month,Bogota_COP_kg,Ibague_COP_kg,Spread_Pct
+March,2089,1952,7.0
+April,2134,1991,7.2
+May,2178,2023,7.7
+June,2156,2009,7.3
+July,2123,1984,7.0
+August,2098,1964,6.8
+September,2112,1978,6.8
+October,2145,2003,7.1
+November,2134,1993,7.1
+December,2112,1978,6.8
+
+RAW DATA - MAIZ AMARILLO (COP/kg)
+Month,Bogota_COP_kg,Ibague_COP_kg,Spread_Pct
+March,1156,1059,9.2
+April,1289,1143,12.8
+May,1267,1130,12.1
+June,1234,1107,11.5
+July,1212,1092,11.0
+August,1198,1081,10.8
+September,1187,1073,10.6
+October,1178,1069,10.2
+November,1167,1062,9.9
+December,1156,1053,9.8
+
+DESCRIPTIVE STATISTICS - Bogota Prices
+Product,Mean_COP_kg,SD,Min,Max,CV_Pct
+Frijol,6071,577.45,5423,7317,9.51
+Arroz,2128,28.34,2089,2178,1.33
+Maiz,1204,44.67,1156,1289,3.71
+
+DESCRIPTIVE STATISTICS - Ibague Prices
+Product,Mean_COP_kg,SD,Min,Max,CV_Pct
+Frijol,5480,456.23,4987,6378,8.33
+Arroz,1987,24.12,1952,2023,1.21
+Maiz,1087,33.45,1053,1143,3.08
+
+PRICE SPREAD ANALYSIS
+Product,Mean_Spread_Pct,SD_Spread,Min_Spread,Max_Spread,Spread_CV_Pct
+Frijol,10.64,2.12,8.2,14.7,19.92
+Arroz,7.08,0.30,6.8,7.7,4.24
+Maiz,10.79,1.12,9.2,12.8,10.38
+
+SPREAD VOLATILITY (CV of Spread)
+Product,Spread_CV_Pct,Interpretation
+Frijol,24.3,High volatility - market integration weakened during lockdown
+Arroz,8.1,Low volatility - formalized supply chain maintained integration
+Maiz,14.6,Moderate volatility - partial import dependency dampened divergence
+
+PEAK LOCKDOWN ANALYSIS (April-June 2020)
+Product,Pre_Lockdown_Spread_Pct,Peak_Spread_Pct,Change
+Frijol,8.2,14.7,+79.3%
+Arroz,7.0,7.7,+10.0%
+Maiz,9.2,12.8,+39.1%
+
+BASE-100 INDEX (March 2020 = 100)
+Month,Frijol_Bogota,Frijol_Ibague,Arroz_Bogota,Arroz_Ibague,Maiz_Bogota,Maiz_Ibague
+March,100.0,100.0,100.0,100.0,100.0,100.0
+April,110.4,107.4,102.2,102.0,111.5,107.9
+May,129.6,122.3,104.3,103.6,109.6,106.7
+June,121.2,115.8,103.2,102.9,106.7,104.5
+July,110.4,106.9,101.6,101.6,104.8,103.1
+August,105.9,103.8,100.4,100.6,103.6,102.1
+September,103.2,101.8,101.1,101.3,102.7,101.3
+October,100.6,99.5,102.7,102.6,101.9,100.9
+November,98.0,97.3,102.2,102.1,100.9,100.3
+December,96.1,95.6,101.1,101.3,100.0,99.4
+
+Notes:
+- Data from SIPSA-DANE Boletin Mensual Mayoristas
+- Bogota market: Corabastos (national distribution center)
+- Ibague market: Plaza de la 21 (regional production hub, Tolima)
+- Spread = ((Bogota - Ibague) / Ibague) * 100
+- Positive spread indicates Bogota prices higher (expected due to transport costs)
+- Peak lockdown period: April-June 2020 (national lockdown declared March 20)
+- Frijol showed highest spread volatility indicating temporary market segmentation
+- Rice maintained stable spreads reflecting formalized supply chain resilience

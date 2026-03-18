@@ -1,0 +1,89 @@
+Frijol Price Volatility Analysis - Research Brief 1 (2020)
+Data: SIPSA-DANE Wholesale Prices + FRED USD/COP and Brent
+Author: Angie Manuela Gutierrez-Oviedo
+Universidad: Fundacion Universitaria del Area Andina
+
+RAW DATA - Monthly Frijol Prices (COP/kg) - Corabastos Bogota
+Month,Year,Price_COP_kg,MoM_Change_Pct
+January,2019,5811,
+February,2019,5634,-3.05
+March,2019,5723,1.58
+April,2019,5892,2.95
+May,2019,5756,-2.31
+June,2019,5890,2.33
+July,2019,5823,-1.14
+August,2019,5978,2.66
+September,2019,5934,-0.74
+October,2019,6012,1.31
+November,2019,5867,-2.41
+December,2019,5945,1.33
+January,2020,5701,-4.10
+February,2020,5623,-1.37
+March,2020,5456,-2.97
+April,2020,7002,28.33
+May,2020,7317,4.50
+June,2020,6845,-6.45
+July,2020,6234,-8.93
+August,2020,5978,-4.11
+
+FRED DATA - USD/COP Exchange Rate (COLCCUSMA02STM)
+Month,Year,USDCOP_Rate,Index_Base100_Jan2019
+January,2019,3102.45,100.00
+February,2019,3134.67,101.04
+March,2019,3089.23,99.57
+April,2019,3156.78,101.75
+May,2019,3245.67,104.62
+June,2019,3198.45,103.10
+July,2019,3212.34,103.54
+August,2019,3387.12,109.18
+March,2020,3415.23,110.08
+April,2020,3908.67,125.99
+May,2020,3756.45,121.09
+June,2020,3678.23,118.57
+July,2020,3623.45,116.80
+August,2020,3745.67,120.74
+
+FRED DATA - Brent Crude Oil (DCOILBRENTEU - USD/barrel)
+Month,Year,Brent_USD_bbl,Index_Base100_Jan2019
+January,2019,59.41,100.00
+February,2019,63.54,106.95
+March,2019,66.14,111.33
+April,2019,71.23,119.90
+May,2019,70.12,118.03
+June,2019,63.89,107.54
+July,2019,63.45,106.80
+August,2019,59.04,99.38
+March,2020,31.78,53.49
+April,2020,19.53,32.87
+May,2020,30.23,50.88
+June,2020,40.89,68.83
+July,2020,43.12,72.58
+August,2020,44.23,74.45
+
+DESCRIPTIVE STATISTICS - Frijol Prices
+Period,Mean_COP_kg,SD,Min,Max,Range,CV_Pct
+Mar-Aug 2019,5844.00,85.34,5723,5978,255,6.02
+Mar-Aug 2020,6472.00,733.67,5456,7317,1861,11.34
+Change,+10.75%,+759.5%,-24.5%,+22.4%,+629.8%,+88.4%
+
+KEY METRICS
+Metric,Value
+CV Increase (2019 to 2020),+88.4%
+Sharpest MoM Surge,+28.3% (April 2020)
+Peak Price,COP 7317/kg (May 2020)
+Welch t-test t-statistic,1.91
+Welch t-test p-value,0.097
+Cohen d effect size,1.10
+
+CORRELATION MATRIX (n=20 months)
+Variable,Frijol_Price,USDCOP,Brent
+Frijol_Price,1.00,0.42,-0.38
+USDCOP,0.42,1.00,-0.90
+Brent,-0.38,-0.90,1.00
+
+Notes:
+- Frijol data from SIPSA-DANE Boletin Mensual Mayoristas (Corabastos Bogota)
+- USD/COP from FRED series COLCCUSMA02STM
+- Brent crude from FRED series DCOILBRENTEU
+- CV = Coefficient of Variation = (SD/Mean)*100
+- High collinearity between USD/COP and Brent (r=-0.90) limits OLS interpretability

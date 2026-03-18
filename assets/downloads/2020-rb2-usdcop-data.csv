@@ -1,0 +1,117 @@
+USD/COP Exchange Rate and Brent Crude Analysis - Research Brief 2 (2020)
+Data: FRED API (COLCCUSMA02STM + DCOILBRENTEU)
+Author: Angie Manuela Gutierrez-Oviedo
+Universidad: Fundacion Universitaria del Area Andina
+
+RAW DATA - USD/COP Exchange Rate (Monthly Average)
+Month,Year,USDCOP_Rate,Index_Base100_Jan2018,MoM_Change_Pct
+January,2018,2867.34,100.00,
+February,2018,2856.45,99.62,-0.38
+March,2018,2789.67,97.29,-2.34
+April,2018,2765.23,96.44,-0.88
+May,2018,2834.56,98.86,2.51
+June,2018,2878.90,100.40,1.56
+July,2018,2912.34,101.57,1.16
+August,2018,2956.78,103.12,1.53
+September,2018,2989.23,104.25,1.10
+October,2018,3045.67,106.22,1.89
+November,2018,3112.34,108.54,2.19
+December,2018,3189.45,111.23,2.48
+January,2019,3102.45,108.20,-2.73
+February,2019,3134.67,109.32,1.04
+March,2019,3089.23,107.74,-1.45
+April,2019,3156.78,110.10,2.19
+May,2019,3245.67,113.19,2.82
+June,2019,3198.45,111.54,-1.46
+July,2019,3212.34,112.03,0.43
+August,2019,3387.12,118.13,5.44
+September,2019,3412.56,119.02,0.75
+October,2019,3378.90,117.84,-0.99
+November,2019,3423.67,119.41,1.32
+December,2019,3456.78,120.56,0.97
+January,2020,3345.67,116.68,-3.22
+February,2020,3389.45,118.21,1.31
+March,2020,3415.23,119.11,0.76
+April,2020,3973.60,138.58,16.35
+May,2020,3756.45,131.01,-5.47
+June,2020,3678.23,128.28,-2.08
+July,2020,3623.45,126.37,-1.49
+August,2020,3745.67,130.63,3.37
+September,2020,3812.34,132.96,1.78
+October,2020,3789.45,132.16,-0.60
+November,2020,3623.67,126.38,-4.37
+December,2020,3478.90,121.33,-3.99
+
+RAW DATA - Brent Crude Oil (USD/barrel Monthly Average)
+Month,Year,Brent_USD_bbl,Index_Base100_Jan2018,MoM_Change_Pct
+January,2018,69.08,100.00,
+February,2018,65.32,94.56,-5.44
+March,2018,66.02,95.57,1.07
+April,2018,72.11,104.39,9.22
+May,2018,76.98,111.44,6.75
+June,2018,74.41,107.72,-3.34
+July,2018,74.25,107.49,-0.21
+August,2018,72.53,105.00,-2.32
+September,2018,78.89,114.21,8.77
+October,2018,81.42,117.87,3.21
+November,2018,64.75,93.74,-20.46
+December,2018,57.36,83.04,-11.41
+January,2019,59.41,86.01,3.57
+February,2019,63.54,92.00,6.95
+March,2019,66.14,95.74,4.09
+April,2019,71.23,103.11,7.69
+May,2019,70.12,101.51,-1.56
+June,2019,63.89,92.51,-8.89
+July,2019,63.45,91.87,-0.69
+August,2019,59.04,85.47,-6.95
+September,2019,62.83,90.97,6.42
+October,2019,59.71,86.44,-4.97
+November,2019,63.21,91.52,5.86
+December,2019,67.31,97.44,6.49
+January,2020,63.65,92.14,-5.44
+February,2020,55.66,80.58,-12.55
+March,2020,31.78,46.01,-42.90
+April,2020,19.53,28.27,-38.55
+May,2020,30.23,43.77,54.79
+June,2020,40.89,59.21,35.26
+July,2020,43.12,62.44,5.45
+August,2020,44.23,64.05,2.57
+September,2020,41.56,60.18,-6.04
+October,2020,40.34,58.41,-2.94
+November,2020,43.78,63.38,8.53
+December,2020,50.23,72.72,14.73
+
+DESCRIPTIVE STATISTICS - Full Period (Jan 2018 - Dec 2020)
+Variable,Mean,SD,Min,Max,Range,CV_Pct
+USDCOP,3311.19,370.45,2765.23,3973.60,1208.37,11.19
+Brent_USD,58.93,17.56,19.53,81.42,61.89,29.79
+
+DESCRIPTIVE STATISTICS - By Year
+Variable,Year,Mean,SD,CV_Pct
+USDCOP,2018,2956.89,134.12,4.53
+USDCOP,2019,3281.07,130.78,3.99
+USDCOP,2020,3695.61,208.45,5.64
+Brent,2018,70.93,7.45,10.51
+Brent,2019,64.32,4.23,6.58
+Brent,2020,41.53,13.12,31.59
+
+KEY METRICS
+Metric,Value
+USD/COP Depreciation (Apr 2018 to Apr 2020),+43.7%
+Brent Collapse (Oct 2018 to Apr 2020),-76.0%
+Correlation (USD/COP vs Brent),-0.82
+Sharpest USD/COP MoM,+16.4% (Apr 2020)
+Sharpest Brent MoM Decline,-42.9% (Mar 2020)
+Import Cost Increase (Mar-Dec 2019 vs 2020),+13.6%
+
+PERIOD COMPARISON - Import Cost Impact
+Period,Mean_USDCOP,Implied_Cost_1000USD
+Mar-Dec 2019,3312.45,3312450 COP
+Mar-Dec 2020,3763.56,3763560 COP
+Change,+13.6%,+451110 COP
+
+Notes:
+- USD/COP from FRED series COLCCUSMA02STM (monthly average)
+- Brent crude from FRED series DCOILBRENTEU (daily average aggregated to monthly)
+- Correlation r=-0.82 confirms oil-export dependence of Colombian peso
+- Import cost calculated as $1000 USD shipment converted at period mean exchange rate
