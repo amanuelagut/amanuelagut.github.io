@@ -270,8 +270,9 @@
     </table>
 
     <!-- SVG Chart: Base-100 Index USD/COP vs Brent (Jan 2018 = 100) -->
-    <figure style="margin:1.5rem 0; text-align:center;">
-      <svg viewBox="0 0 700 320" style="max-width:100%; height:auto; background:white; border:1px solid var(--rule); border-radius:4px;">
+    <figure style="text-align:center;">
+      <div style="width:100%;overflow-x:auto;margin:1.5rem 0">
+      <svg width="100%" height="320" viewBox="0 0 700 320" style="background:white; border:1px solid var(--rule); border-radius:4px;">
         <!-- Grid lines -->
         <defs>
           <linearGradient id="usdcopGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -345,6 +346,7 @@
         <!-- Title -->
         <text x="370" y="18" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Base-100 Price Index (January 2018 = 100)</text>
       </svg>
+      </div>
       <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
         Figure 1. USD/COP peaked at 138.6 in April 2020 while Brent collapsed to 28.3 — a 110-point divergence reflecting Colombia's oil-export dependence.
         Sources: FRED COLCCUSMA02STM (USD/COP), FRED DCOILBRENTEU (Brent).
