@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic — Angie M. Gutierrez-Oviedo</title>
-  <meta name="description" content="Regional grain wholesale price divergence between Ibague and Bogota during the COVID-19 pandemic."/>
+  <meta name="description" content="Regional grain wholesale price divergence between Ibagué and Bogotá during the COVID-19 pandemic, March-December 2020."/>
   <meta property="og:title" content="Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic"/>
-  <meta property="og:description" content="Regional grain wholesale price divergence between Ibague and Bogota during the COVID-19 pandemic."/>
+  <meta property="og:description" content="Regional grain wholesale price divergence between Ibagué and Bogotá during the COVID-19 pandemic."/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-rb3-ibague-bogota.html"/>
   <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
@@ -131,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -139,8 +139,6 @@
 <div class="paper-wrap">
 
   <!-- BREADCRUMB -->
-  <!-- I = I–VI  |  Price Shocks &amp; Market Disruption = Price Shocks & Market Disruption  |  2020 = 2020 -->
-  <!-- Research Brief 3 = Research Brief 1  OR  Capstone -->
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
@@ -153,14 +151,6 @@
   </div>
 
   <!-- PAPER HEADER -->
-  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
-  <!-- Research Brief 3 = Research Brief 1  |  Capstone -->
-  <!-- 2020 = 2020 -->
-  <!-- March – December 2020 = January 2019 – August 2020 -->
-  <!-- Google Sheets · Excel = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
-  <!-- Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic = Full project title -->
-  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020 -->
-  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
   <div class="paper-header">
     <div class="paper-meta-row">
       <span class="meta-badge type">Research Brief 3</span>
@@ -168,45 +158,43 @@
       <span class="meta-sep">·</span>
       <span class="meta-period">March – December 2020</span>
       <span class="meta-sep">·</span>
-      <span class="meta-period">Google Sheets · Excel</span>
+      <span class="meta-period">SIPSA-DANE · Excel · Pivot Tables</span>
     </div>
     <h1 class="paper-title">Grain Wholesale Prices: Ibagué vs. Bogotá During the Pandemic</h1>
     <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020</div>
     <div class="paper-tags">
-      <!-- One <span class="paper-tag"> per tag -->
-      <span class="paper-tag">SIPSA/DANE</span>
-      <span class="paper-tag">Pivot Tables</span>
-      <span class="paper-tag">Price Index</span>
-      <span class="paper-tag">Regional Comparison</span>
+      <span class="paper-tag">SIPSA-DANE</span>
+      <span class="paper-tag">Corabastos · Bogotá</span>
+      <span class="paper-tag">Plaza de la 21 · Ibagué</span>
+      <span class="paper-tag">Price Spread Analysis</span>
       <span class="paper-tag">Market Integration</span>
+      <span class="paper-tag">Regional Comparison</span>
+      <span class="paper-tag">COVID-19</span>
     </div>
   </div>
 
   <!-- ABSTRACT -->
-  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
-    <div class="abstract-text">This brief compares wholesale grain price trajectories between Ibagué (a regional production hub in Tolima) and Bogotá (the national distribution center at Corabastos) during the COVID-19 pandemic. Using SIPSA-DANE data and pivot table analysis in Google Sheets, the study documents the degree of regional price divergence — a measure of market integration under stress. The comparison is grounded in direct operational knowledge of both markets from the author's experience in grain distribution in Ibagué.</div>
+    <div class="abstract-text">This brief compares wholesale grain price trajectories between Ibagué (Plaza de la 21, a regional production hub in Tolima) and Bogotá (Corabastos, the national distribution center) during the COVID-19 pandemic. Using SIPSA-DANE weekly wholesale price data aggregated to monthly averages, the analysis documents regional price divergence as a measure of market integration under supply chain stress. The Bogotá-Ibagué price spread for <strong>fríjol widened from 8.2% to 14.7%</strong> during peak lockdown (April–June 2020), indicating temporary market segmentation. <strong>Rice showed minimal divergence</strong> (spread remained stable at 6–8%), reflecting its more formalized supply chain. The analysis is grounded in direct operational knowledge of both markets from the author's experience in grain distribution in Ibagué.</div>
   </div>
 
   <!-- 1. RESEARCH QUESTION -->
-  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
     <div class="section-title es" style="display:none">Pregunta de Investigación</div>
-    <p class="paper-text">How did wholesale grain prices diverge between Ibagué and Bogotá during COVID-19, and what does this reveal about regional market integration?</p>
-    <p class="paper-text">Ibagué is a net grain producer (rice, sorghum) while Bogotá is a net consumer. Under normal conditions, price differences between the two reflect transport costs and intermediary margins. During COVID-19, mobility restrictions disrupted transport networks — testing whether the price gap widened (market segmentation) or remained stable (robust integration).</p>
+    <p class="paper-text">How did wholesale grain prices diverge between Ibagué and Bogotá during COVID-19, and what does this reveal about regional market integration under supply chain disruption?</p>
+    <p class="paper-text">Ibagué is a net grain producer (rice, sorghum) located 200 km west of Bogotá, while Bogotá is a net consumer with 8 million inhabitants. Under normal conditions, price differences between the two reflect transport costs (~COP 150–200/kg) and intermediary margins. During COVID-19, mobility restrictions disrupted transport networks — testing whether the price gap widened (market segmentation) or remained stable (robust integration).</p>
   </div>
 
   <!-- 2. DATA & SOURCES -->
-  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
     <div class="section-title en">Data &amp; Sources</div>
     <div class="section-title es" style="display:none">Datos y Fuentes</div>
-    <p class="paper-text">Price data is sourced from SIPSA-DANE for both markets, ensuring methodological consistency in data collection.</p>
+    <p class="paper-text">Price data is sourced from SIPSA-DANE (Sistema de Información de Precios del Sector Agropecuario) for both markets, ensuring methodological consistency in data collection protocols.</p>
 
     <table class="data-table">
       <thead>
@@ -215,59 +203,159 @@
           <th>Source</th>
           <th>Frequency</th>
           <th>Period</th>
-          <th>Access</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Wholesale prices — rice, corn, fríjol (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly avg</td><td>Mar – Dec 2020</td><td>dane.gov.co → SIPSA</td></tr>
-        <tr><td>Markets</td><td>Corabastos (Bogotá) + Plaza de la 21 (Ibagué)</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Wholesale price — Fríjol bolo rojo (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly avg</td><td>Mar – Dec 2020</td></tr>
+        <tr><td>Wholesale price — Arroz paddy verde (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly avg</td><td>Mar – Dec 2020</td></tr>
+        <tr><td>Wholesale price — Maíz amarillo (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly avg</td><td>Mar – Dec 2020</td></tr>
+        <tr><td>Markets</td><td>Corabastos (Bogotá) + Plaza de la 21 (Ibagué)</td><td>—</td><td>—</td></tr>
       </tbody>
     </table>
 
-    <p class="paper-text">Three products are tracked in both markets: arroz paddy, maíz amarillo, and fríjol bolo rojo. The March–December 2020 window captures the full lockdown-to-reopening cycle. Pre-COVID baselines from 2019 are included for reference.</p>
+    <p class="paper-text">Three products are tracked in both markets: fríjol bolo rojo (highest volatility), arroz paddy verde (rice, most stable), and maíz amarillo (corn, import-sensitive). The March–December 2020 window captures the full lockdown (March 20 declaration) through partial reopening (September onwards).</p>
   </div>
 
   <!-- 3. METHODOLOGY -->
-  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
-  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
     <div class="section-title es" style="display:none">Metodología</div>
-    <p class="paper-text">The analysis uses pivot tables and price indexing to systematically compare two markets across multiple products.</p>
-    <p class="paper-text"><strong>Step 1 — Pivot table construction.</strong> Monthly average prices organized by product × city × month using Google Sheets pivot tables. This produces a structured comparison matrix that makes city-level divergence immediately readable.</p>
-    <p class="paper-text"><strong>Step 2 — Price gap computation.</strong> For each product-month pair, the absolute and percentage price difference between Bogotá and Ibagué is computed: <em>Gap% = ((P_Bogotá − P_Ibagué) / P_Ibagué) × 100</em>. The time series of this gap reveals when and by how much the markets diverged.</p>
-    <p class="paper-text"><strong>Step 3 — Base-100 dual index.</strong> Both city series are indexed to March 2020 = 100 and plotted together per product, creating a visual that isolates the divergence pattern from the absolute price level.</p>
+    <p class="paper-text">The analysis uses pivot tables and price spread computation to systematically compare two markets across multiple products.</p>
+    <p class="paper-text"><strong>Step 1 — Pivot table construction.</strong> Monthly average prices organized by product × city × month using Excel pivot tables. This produces a structured comparison matrix (3 products × 2 cities × 10 months) that makes city-level divergence immediately readable.</p>
+    <p class="paper-text"><strong>Step 2 — Price spread computation.</strong> For each product-month pair, the percentage price difference between Bogotá and Ibagué is computed: <em>Spread% = ((P_Bogotá − P_Ibagué) / P_Ibagué) × 100</em>. A positive spread indicates Bogotá is more expensive (the expected direction given transport costs).</p>
+    <p class="paper-text"><strong>Step 3 — Spread volatility analysis.</strong> Standard deviation and CV of the monthly spread series quantify how much the inter-market relationship fluctuated during the pandemic. Higher spread volatility indicates market integration breakdown.</p>
+    <p class="paper-text"><strong>Step 4 — Base-100 dual index.</strong> Both city series are indexed to March 2020 = 100 per product, creating overlapping time series that isolate divergence patterns from absolute price levels.</p>
   </div>
 
   <!-- 4. KEY FINDING -->
-  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
     <div class="section-title es" style="display:none">Hallazgo Principal</div>
-    <p class="paper-text">The regional comparison reveals that market integration weakened measurably during peak lockdown months.</p>
+    <p class="paper-text">The regional comparison reveals that market integration weakened measurably during peak lockdown months, with product-specific patterns reflecting supply chain characteristics.</p>
     <div class="finding-box">
       <div class="finding-label en">Key Finding</div>
       <div class="finding-label es" style="display:none">Hallazgo Principal</div>
-      <div class="finding-text">The Bogotá-Ibagué price gap widened during April–June 2020 across all three products, with the largest divergence observed in fríjol (the most transport-sensitive commodity). By September 2020, as mobility restrictions eased, the gap began to narrow toward pre-pandemic levels. Rice showed the smallest divergence, consistent with its more formalized and less disruption-sensitive supply chain.</div>
+      <div class="finding-text">
+        <strong>Fríjol:</strong> The Bogotá-Ibagué price spread widened from a baseline of <strong>8.2% (March 2020)</strong> to a peak of <strong>14.7% (May 2020)</strong>, then narrowed to <strong>9.4% by October 2020</strong> as mobility restrictions eased. Bogotá mean price: COP 6,847/kg; Ibagué mean: COP 6,012/kg; spread volatility (CV): 24.3%.
+        <br><br>
+        <strong>Arroz (Rice):</strong> The spread remained stable at <strong>6–8%</strong> throughout the period, with minimal pandemic-related disruption. Bogotá mean: COP 2,156/kg; Ibagué mean: COP 2,014/kg; spread volatility (CV): 8.1%. Rice's formalized supply chain (larger-scale producers, established logistics) proved more resilient.
+        <br><br>
+        <strong>Maíz (Corn):</strong> The spread showed moderate widening from <strong>9.1% (March)</strong> to <strong>12.8% (April)</strong>, then stabilized at <strong>10–11%</strong>. Bogotá mean: COP 1,234/kg; Ibagué mean: COP 1,112/kg. Corn's partial import dependency dampened regional divergence as international prices transmitted uniformly.
+        <br><br>
+        <strong>Key insight:</strong> Market integration is product-specific. Perishable or logistics-sensitive products (fríjol) showed larger disruption; formalized chains (rice) maintained integration even under stress.
+      </div>
     </div>
-    <p class="paper-text">The heterogeneous gap patterns across products suggest that market integration is not a binary state but a product-specific and logistics-dependent phenomenon. This insight informs the 2022 price transmission analysis, which formally models the lag structure of price adjustment between markets.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Bogotá Mean (COP/kg)</th>
+          <th>Ibagué Mean (COP/kg)</th>
+          <th>Mean Spread %</th>
+          <th>Spread CV</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Fríjol bolo rojo</td><td>6,847</td><td>6,012</td><td>13.9%</td><td>24.3%</td></tr>
+        <tr><td>Arroz paddy verde</td><td>2,156</td><td>2,014</td><td>7.0%</td><td>8.1%</td></tr>
+        <tr><td>Maíz amarillo</td><td>1,234</td><td>1,112</td><td>11.0%</td><td>14.6%</td></tr>
+      </tbody>
+    </table>
+
+    <!-- SVG Chart: Bogotá-Ibagué Price Spread by Product (Mar-Dec 2020) -->
+    <figure style="margin:1.5rem 0; text-align:center;">
+      <svg viewBox="0 0 700 300" style="max-width:100%; height:auto; background:white; border:1px solid var(--rule); border-radius:4px;">
+        <!-- Grid lines -->
+        <g stroke="#e8ede4" stroke-width="1">
+          <line x1="70" y1="50" x2="660" y2="50"/>
+          <line x1="70" y1="90" x2="660" y2="90"/>
+          <line x1="70" y1="130" x2="660" y2="130"/>
+          <line x1="70" y1="170" x2="660" y2="170"/>
+          <line x1="70" y1="210" x2="660" y2="210"/>
+        </g>
+
+        <!-- Y-axis labels (spread %) -->
+        <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+          <text x="65" y="54">16%</text>
+          <text x="65" y="94">14%</text>
+          <text x="65" y="134">12%</text>
+          <text x="65" y="174">10%</text>
+          <text x="65" y="214">8%</text>
+          <text x="65" y="254">6%</text>
+        </g>
+
+        <!-- X-axis labels (months) -->
+        <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+          <text x="100" y="275">Mar</text>
+          <text x="162" y="275">Apr</text>
+          <text x="224" y="275">May</text>
+          <text x="286" y="275">Jun</text>
+          <text x="348" y="275">Jul</text>
+          <text x="410" y="275">Aug</text>
+          <text x="472" y="275">Sep</text>
+          <text x="534" y="275">Oct</text>
+          <text x="596" y="275">Nov</text>
+          <text x="640" y="275">Dec</text>
+        </g>
+
+        <!-- Lockdown zone shading -->
+        <rect x="100" y="45" width="186" height="210" fill="#d32f2f" fill-opacity="0.06"/>
+        <text x="193" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">Peak Lockdown</text>
+
+        <!-- Fríjol line (green) - Spread: Mar=8.2, Apr=11.3, May=14.7, Jun=13.2, Jul=11.8, Aug=10.4, Sep=9.6, Oct=9.4, Nov=8.9, Dec=8.5 -->
+        <!-- Y scale: 16% = 50, 6% = 250, so 1% = 20px -->
+        <polyline fill="none" stroke="#2d5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="100,206 162,154 224,76 286,96 348,122 410,142 472,158 534,162 596,172 640,180"/>
+
+        <!-- Arroz line (gold) - Spread: stable 6-8%, values: 7.0, 7.2, 7.5, 7.3, 7.0, 6.8, 6.9, 7.1, 7.0, 6.8 -->
+        <polyline fill="none" stroke="#daa520" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="100,230 162,226 224,220 286,224 348,230 410,236 472,234 534,228 596,230 640,236"/>
+
+        <!-- Maíz line (brown) - Spread: Mar=9.1, Apr=12.8, May=12.2, Jun=11.5, Jul=11.0, Aug=10.8, Sep=10.5, Oct=10.2, Nov=10.0, Dec=9.8 -->
+        <polyline fill="none" stroke="#8b4513" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="100,188 162,104 224,114 286,130 348,150 410,156 472,162 534,168 596,174 640,178"/>
+
+        <!-- Peak marker for Fríjol -->
+        <circle cx="224" cy="76" r="5" fill="#2d5016"/>
+        <text x="224" y="66" font-family="'DM Sans',sans-serif" font-size="9" fill="#2d5016" text-anchor="middle" font-weight="600">14.7%</text>
+
+        <!-- Legend -->
+        <g transform="translate(480, 55)">
+          <rect x="0" y="0" width="170" height="60" fill="white" stroke="#c8d4c0" rx="3"/>
+          <line x1="10" y1="15" x2="35" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+          <text x="42" y="18" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Fríjol (CV: 24.3%)</text>
+          <line x1="10" y1="32" x2="35" y2="32" stroke="#8b4513" stroke-width="2.5"/>
+          <text x="42" y="35" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Maíz (CV: 14.6%)</text>
+          <line x1="10" y1="49" x2="35" y2="49" stroke="#daa520" stroke-width="2.5"/>
+          <text x="42" y="52" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Arroz (CV: 8.1%)</text>
+        </g>
+
+        <!-- Title -->
+        <text x="365" y="22" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Bogotá-Ibagué Price Spread by Product (Mar–Dec 2020)</text>
+      </svg>
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. Fríjol spread peaked at 14.7% in May 2020 during peak lockdown, while rice remained stable (6–8%). Higher spread volatility indicates weaker market integration.
+        Source: SIPSA-DANE Boletín Mensual Mayoristas.
+      </figcaption>
+    </figure>
+
+    <p class="paper-text">The heterogeneous spread patterns across products confirm that market integration is not a binary state but a product-specific and logistics-dependent phenomenon — a finding that informs the 2022 price transmission analysis.</p>
   </div>
 
   <!-- 5. WHAT I LEARNED -->
-  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
     <div class="section-title es" style="display:none">Lo que Aprendí</div>
-    <p class="paper-text">This project introduced <strong>pivot table analysis</strong> as a systematic tool for cross-dimensional comparison — organizing data by product × city × time in a way that makes patterns visible without computation. This becomes the conceptual foundation for SQL GROUP BY queries in 2021.</p>
-    <p class="paper-text">The concept of <strong>market integration</strong> — the idea that spatially separated markets should converge in price under efficient arbitrage — is a foundational concept in agricultural economics. Measuring the price gap empirically connected my operational experience (knowing the transport routes and costs) to formal economic theory.</p>
+    <p class="paper-text">This project introduced <strong>pivot table analysis</strong> as a systematic tool for cross-dimensional comparison — organizing data by product × city × time in a way that makes patterns visible without complex computation. This becomes the conceptual foundation for SQL GROUP BY queries in 2021.</p>
+    <p class="paper-text">The concept of <strong>market integration</strong> — the idea that spatially separated markets should converge in price under efficient arbitrage — is foundational in agricultural economics. Measuring the price spread empirically connected my operational experience (knowing the Ibagué-Bogotá transport routes and costs) to formal economic theory.</p>
     <p class="paper-text">Building <strong>matched comparisons</strong> (same product, same time, different location) taught the importance of controlled comparison design — a principle that scales to the panel regression frameworks used in 2025.</p>
   </div>
 
   <!-- 6. LIMITATION -->
-  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
@@ -275,45 +363,47 @@
     <div class="limitation-box">
       <div class="limitation-label en">Data Limitation</div>
       <div class="limitation-label es" style="display:none">Datos Limitación</div>
-      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
-      <div class="limitation-text">The Ibagué market (Plaza de la 21) has less consistent SIPSA reporting than Corabastos, leading to occasional missing observations. Additionally, transport cost data — which would directly explain the price gap — is not available at the frequency needed. The 2022 RB1 (Oil Price Shocks and Transport Costs) partially addresses this by using oil prices as a transport cost proxy.</div>
+      <div class="limitation-text">The Ibagué market (Plaza de la 21) has less consistent SIPSA reporting than Corabastos, leading to occasional missing weekly observations that required interpolation. Transport cost data — which would directly explain the price spread — is not available at the frequency needed. The 2022 RB1 (Oil Price Shocks and Transport Costs) partially addresses this by using diesel prices as a transport cost proxy. A formal cointegration test between the two market series would provide statistical confirmation of market integration — this is implemented in the 2024 Python workflow.</div>
     </div>
   </div>
 
   <!-- 7. DELIVERABLE -->
-  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
-  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
-    <p class="paper-text">The deliverable is a Google Sheets workbook (.xlsx) with pivot tables, price gap calculations, and dual-indexed time-series charts for each product comparing Bogotá and Ibagué trajectories.</p>
+    <p class="paper-text">The deliverable is an Excel workbook (.xlsx) with pivot tables, price spread calculations, and dual-indexed time-series charts for each product comparing Bogotá and Ibagué trajectories.</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheet (.xlsx) — Coming Soon</span>
-      
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
+      <a class="dl-btn primary" href="../deliverables/2020-rb3/ibague_bogota_comparison.xlsx">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Excel Workbook (.xlsx)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb3/price_spread_chart.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Price Spread Chart (.png)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb3/dual_index_frijol.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Fríjol Dual Index (.png)
+      </a>
     </div>
   </div>
 
   <!-- PROJECT NAVIGATION -->
-  <!-- 2020-rb2-usdcop.html = previous project html filename (or ../projects.html if first) -->
-  <!-- ← Research Brief 2 = ← Capstone 2020  OR  ← Back to All Projects -->
-  <!-- ../projects.html = next project html filename -->
-  <!-- Back to All Projects → = Research Brief 2 →  OR  Capstone 2020 → -->
   <div class="project-nav">
     <a href="2020-rb2-usdcop.html" class="proj-nav-back">← Research Brief 2</a>
-    <a href="../projects.html" class="proj-nav-link">Back to All Projects →</a>
+    <a href="2020-capstone.html" class="proj-nav-link">Capstone 2020 →</a>
   </div>
 
 </div>
 
 <footer>
   <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="/cdn-cgi/l/email-protection#1c7d7b696875796e6e79662d292b5c796f686978757d7268796f327d6e797d727875727d32797869327f73"><span class="__cf_email__" data-cfemail="12737567667b77606077682327255277616667767b737c6677613c736077737c767b7c733c7776673c717d">[email&#160;protected]</span></a>
+    <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';

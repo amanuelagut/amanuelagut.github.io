@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis — Angie M. Gutierrez-Oviedo</title>
-  <meta name="description" content="Multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic 2018-2020."/>
+  <meta name="description" content="Capstone multi-market analysis of Colombian grain price dynamics during COVID-19, integrating SIPSA-DANE and FRED data (2018-2020)."/>
   <meta property="og:title" content="Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis"/>
-  <meta property="og:description" content="Multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic 2018-2020."/>
+  <meta property="og:description" content="Capstone multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic 2018-2020."/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-capstone.html"/>
   <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
@@ -131,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -139,8 +139,6 @@
 <div class="paper-wrap">
 
   <!-- BREADCRUMB -->
-  <!-- I = I–VI  |  Price Shocks &amp; Market Disruption = Price Shocks & Market Disruption  |  2020 = 2020 -->
-  <!-- Capstone = Research Brief 1  OR  Capstone -->
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
@@ -153,14 +151,6 @@
   </div>
 
   <!-- PAPER HEADER -->
-  <!-- type type-cap = "type" for RB  |  "type type-cap" for Capstone -->
-  <!-- Capstone 2020 = Research Brief 1  |  Capstone -->
-  <!-- 2020 = 2020 -->
-  <!-- January 2018 – December 2020 = January 2019 – August 2020 -->
-  <!-- Google Sheets · Excel = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
-  <!-- Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis = Full project title -->
-  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020 -->
-  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
   <div class="paper-header">
     <div class="paper-meta-row">
       <span class="meta-badge type type-cap">Capstone 2020</span>
@@ -168,47 +158,44 @@
       <span class="meta-sep">·</span>
       <span class="meta-period">January 2018 – December 2020</span>
       <span class="meta-sep">·</span>
-      <span class="meta-period">Google Sheets · Excel</span>
+      <span class="meta-period">SIPSA-DANE · FRED · Excel</span>
     </div>
     <h1 class="paper-title">Colombian Grain Price Dynamics During COVID-19: A Multi-Market Analysis</h1>
     <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020</div>
     <div class="paper-tags">
-      <!-- One <span class="paper-tag"> per tag -->
       <span class="paper-tag">SIPSA-DANE</span>
-      <span class="paper-tag">FRED</span>
-      <span class="paper-tag">Banco de la República</span>
-      <span class="paper-tag">Multiple Regression</span>
-      <span class="paper-tag">Dashboard</span>
+      <span class="paper-tag">FRED API</span>
+      <span class="paper-tag">USD/COP</span>
+      <span class="paper-tag">Brent Crude</span>
+      <span class="paper-tag">Multi-Product Analysis</span>
       <span class="paper-tag">Correlation Matrix</span>
+      <span class="paper-tag">Multiple Regression</span>
       <span class="paper-tag">COVID-19</span>
     </div>
   </div>
 
   <!-- ABSTRACT -->
-  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
-    <div class="abstract-text">This capstone integrates three parallel research briefs into a unified multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic (2018–2020). Using SIPSA-DANE wholesale price data across multiple products and cities, combined with FRED exchange rate series and Banco de la República macroeconomic indicators, the analysis applies descriptive statistics, correlation matrices, regression modeling, and base-100 price indexing within Google Sheets. The project documents how a systemic supply chain shock — national lockdowns, mobility restrictions, and logistics disruptions — transmitted unevenly across grain markets, producing heterogeneous volatility patterns that simple national averages obscure.</div>
+    <div class="abstract-text">This capstone integrates three parallel research briefs into a unified multi-market analysis of Colombian grain price dynamics during the COVID-19 pandemic (2018–2020). Using SIPSA-DANE wholesale price data across three products (fríjol, rice, corn) and two cities (Bogotá, Ibagué), combined with FRED macroeconomic series (USD/COP exchange rate, Brent crude oil), the analysis documents the synchronized "twin shock" that hit Colombian grain markets: <strong>Brent crude collapsed 76% (from $81.42 to $19.53/bbl)</strong> while <strong>USD/COP depreciated 43.7% (from COP 2,765 to COP 3,974/USD)</strong>, with a <strong>correlation of r = −0.82</strong>. Domestic fríjol prices at Corabastos showed the highest volatility increase (<strong>CV rose from 6.02% to 11.34%, +88.4%</strong>), while rice remained stable. Regional price spreads between Bogotá and Ibagué widened during April–June 2020, indicating temporary market segmentation.</div>
   </div>
 
   <!-- 1. RESEARCH QUESTION -->
-  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
     <div class="section-title es" style="display:none">Pregunta de Investigación</div>
-    <p class="paper-text">What systematic price patterns emerge when crossing products, cities, and time periods across Colombia's main grain wholesale markets during the COVID-19 shock?</p>
-    <p class="paper-text">The COVID-19 pandemic created a natural experiment in supply chain disruption. Colombia's centralized wholesale market structure — with Corabastos in Bogotá handling a disproportionate share of national grain flows — meant that lockdown-induced bottlenecks would manifest clearly in price data. This capstone tests whether the disruption was uniform or whether product-specific and region-specific factors created divergent price trajectories.</p>
+    <p class="paper-text">What systematic price patterns emerge when crossing products, cities, macroeconomic variables, and time periods across Colombia's main grain wholesale markets during the COVID-19 shock?</p>
+    <p class="paper-text">The COVID-19 pandemic created a natural experiment in supply chain disruption. Colombia's centralized wholesale market structure — with Corabastos in Bogotá handling a disproportionate share of national grain flows — meant that lockdown-induced bottlenecks would manifest clearly in price data. This capstone tests whether the disruption was uniform or whether product-specific, geography-specific, and macro-level factors created divergent price trajectories.</p>
   </div>
 
   <!-- 2. DATA & SOURCES -->
-  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
     <div class="section-title en">Data &amp; Sources</div>
     <div class="section-title es" style="display:none">Datos y Fuentes</div>
-    <p class="paper-text">The analysis draws on three primary data sources, all publicly available and consistently reported throughout the study period.</p>
+    <p class="paper-text">The analysis integrates four data sources spanning domestic agricultural prices, international commodity prices, and currency markets.</p>
 
     <table class="data-table">
       <thead>
@@ -217,107 +204,283 @@
           <th>Source</th>
           <th>Frequency</th>
           <th>Period</th>
-          <th>Access</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Wholesale prices — fríjol, rice, corn (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly avg</td><td>Jan 2018 – Dec 2020</td><td>dane.gov.co → SIPSA</td></tr>
-        <tr><td>USD/COP exchange rate</td><td>FRED / Banco de la República</td><td>Daily → Monthly avg</td><td>Jan 2018 – Dec 2020</td><td>fred.stlouisfed.org</td></tr>
-        <tr><td>CPI — Food & Non-Alcoholic Beverages</td><td>DANE</td><td>Monthly</td><td>Jan 2018 – Dec 2020</td><td>dane.gov.co</td></tr>
+        <tr><td>Fríjol bolo rojo wholesale price (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly</td><td>Jan 2019 – Aug 2020</td></tr>
+        <tr><td>Arroz paddy verde wholesale price (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly</td><td>Mar – Dec 2020</td></tr>
+        <tr><td>Maíz amarillo wholesale price (COP/kg)</td><td>SIPSA-DANE · Mayoristas</td><td>Weekly → Monthly</td><td>Mar – Dec 2020</td></tr>
+        <tr><td>USD/COP exchange rate</td><td>FRED · COLCCUSMA02STM</td><td>Monthly</td><td>Jan 2018 – Dec 2020</td></tr>
+        <tr><td>Brent crude oil price (USD/bbl)</td><td>FRED · DCOILBRENTEU</td><td>Daily → Monthly</td><td>Jan 2018 – Dec 2020</td></tr>
+        <tr><td>Markets</td><td>Corabastos (Bogotá) + Plaza de la 21 (Ibagué)</td><td>—</td><td>—</td></tr>
       </tbody>
     </table>
 
-    <p class="paper-text">Three grain products — fríjol bolo rojo, arroz paddy, and maíz amarillo — were selected based on consistent SIPSA reporting across both Bogotá (Corabastos) and Ibagué (Plaza de la 21). The 2018–2019 window provides 24 months of pre-pandemic baseline; the 2020 window captures the full lockdown and partial reopening cycle.</p>
+    <p class="paper-text">The dataset spans 36 months for macroeconomic variables (Jan 2018 – Dec 2020), with product-specific domestic price series covering the pandemic period. This multi-source integration enables testing whether domestic price shocks correlate with international commodity movements or reflect purely local supply chain disruptions.</p>
   </div>
 
   <!-- 3. METHODOLOGY -->
-  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
-  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
     <div class="section-title es" style="display:none">Metodología</div>
-    <p class="paper-text">The capstone applies four analytical layers, each building on the skills developed in the three research briefs conducted during 2020.</p>
-    <p class="paper-text"><strong>Step 1 — Multi-product descriptive statistics.</strong> Mean, standard deviation, coefficient of variation, and min/max computed for each product × city × period combination. This produces a 3×2×2 matrix (3 products, 2 cities, 2 periods: pre-COVID vs. COVID) that makes cross-market comparison systematic rather than anecdotal.</p>
-    <p class="paper-text"><strong>Step 2 — Correlation matrix.</strong> Pearson correlation coefficients computed across all product-city price pairs and the USD/COP exchange rate. The matrix identifies which markets move together (high integration) and which diverge under stress (segmentation).</p>
-    <p class="paper-text"><strong>Step 3 — Multiple regression.</strong> Using LINEST in Google Sheets, a regression model estimates the relationship between grain wholesale prices (dependent) and the exchange rate, oil prices, and a COVID dummy variable (independent). The model tests whether the pandemic effect is statistically distinguishable from exchange rate and oil price movements.</p>
-    <p class="paper-text"><strong>Step 4 — Base-100 indexed time series with dashboard.</strong> All price series re-expressed relative to January 2018 = 100, plotted as overlapping time series with an annotated vertical marker at March 2020. A Google Sheets dashboard with drop-down filters for product and city allows interactive exploration.</p>
+    <p class="paper-text">The capstone applies four analytical layers, integrating the methods developed across three research briefs.</p>
+    <p class="paper-text"><strong>Step 1 — Multi-dimensional descriptive statistics.</strong> Mean, standard deviation, coefficient of variation (CV), min/max computed for each product × city × period combination. The CV metric — introduced in RB1 — enables cross-product volatility comparison even when absolute price levels differ by an order of magnitude.</p>
+    <p class="paper-text"><strong>Step 2 — Correlation matrix.</strong> Pearson correlation coefficients computed across all series: three products (Bogotá prices), USD/COP, and Brent crude. The matrix reveals which variables move together under stress and which diverge. The strong negative correlation between USD/COP and Brent (r = −0.82) confirms Colombia's oil-export dependence.</p>
+    <p class="paper-text"><strong>Step 3 — Multiple regression.</strong> Using Excel's LINEST function, a model estimates: <em>Fríjol_price = β₀ + β₁·USD/COP + β₂·Brent + β₃·COVID_dummy + ε</em>. The COVID dummy (1 for Mar–Dec 2020, 0 otherwise) tests whether the pandemic effect is statistically distinguishable from macro movements. High collinearity (USD/COP vs. Brent r = −0.82) limits coefficient interpretability.</p>
+    <p class="paper-text"><strong>Step 4 — Base-100 multi-series chart.</strong> All series re-indexed to January 2018 = 100 (or March 2020 = 100 for regional comparison), enabling direct visual comparison of relative movements on a unified scale.</p>
   </div>
 
   <!-- 4. KEY FINDING -->
-  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
     <div class="section-title es" style="display:none">Hallazgo Principal</div>
     <p class="paper-text">The multi-market analysis reveals that the COVID-19 shock did not affect all grain markets equally — a finding that would be invisible in aggregate national price statistics.</p>
     <div class="finding-box">
-      <div class="finding-label en">Key Finding</div>
-      <div class="finding-label es" style="display:none">Hallazgo Principal</div>
-      <div class="finding-text">Fríjol prices at Corabastos showed the highest COVID-period volatility increase (CV rising from approximately 8% to over 18%), while rice prices remained comparatively stable (CV change of ~2 percentage points). The USD/COP exchange rate explains a larger share of price variation in imported grains (corn) than in domestically produced staples (fríjol). Regional divergence between Bogotá and Ibagué was most pronounced in April–June 2020, coinciding with peak mobility restrictions.</div>
+      <div class="finding-label en">Integrated Findings</div>
+      <div class="finding-label es" style="display:none">Hallazgos Integrados</div>
+      <div class="finding-text">
+        <strong>1. Currency shock:</strong> USD/COP depreciated <strong>43.7%</strong> from April 2018 low (COP 2,765) to April 2020 peak (COP 3,974). The sharpest movement was <strong>+14.4% MoM in March 2020</strong>.
+        <br><br>
+        <strong>2. Oil shock:</strong> Brent crude collapsed <strong>76.0%</strong> from October 2018 peak ($81.42/bbl) to April 2020 trough ($19.53/bbl). The sharpest declines were <strong>−42.7% MoM (March)</strong> and <strong>−38.5% MoM (April)</strong>.
+        <br><br>
+        <strong>3. Correlation:</strong> USD/COP vs. Brent <strong>r = −0.82</strong>, confirming that peso depreciation tracked the oil price collapse as USD inflows from petroleum exports declined.
+        <br><br>
+        <strong>4. Fríjol volatility:</strong> CV at Corabastos rose from <strong>6.02% (Mar–Aug 2019)</strong> to <strong>11.34% (Mar–Aug 2020)</strong> — an <strong>88.4% increase</strong>. The sharpest monthly surge was <strong>+28.3% MoM in April 2020</strong>.
+        <br><br>
+        <strong>5. Regional divergence:</strong> Bogotá-Ibagué fríjol spread widened from <strong>8.2% to 14.7%</strong> during April–June 2020, indicating temporary market segmentation during peak lockdown.
+        <br><br>
+        <strong>6. Product heterogeneity:</strong> Rice showed minimal volatility increase (CV change ~2 pp) and stable regional spreads (6–8%), reflecting its more formalized supply chain.
+      </div>
     </div>
-    <p class="paper-text">These results suggest that food price risk in Colombia during supply chain disruptions is highly product-specific and geography-dependent, reinforcing the case for disaggregated monitoring systems rather than national-level food price indices alone.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Pre-COVID Value</th>
+          <th>COVID Peak/Trough</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>USD/COP (COP/USD)</td><td>2,765 (Apr 2018)</td><td>3,974 (Apr 2020)</td><td>+43.7%</td></tr>
+        <tr><td>Brent Crude (USD/bbl)</td><td>$81.42 (Oct 2018)</td><td>$19.53 (Apr 2020)</td><td>−76.0%</td></tr>
+        <tr><td>Fríjol CV (Corabastos)</td><td>6.02%</td><td>11.34%</td><td>+88.4%</td></tr>
+        <tr><td>Fríjol peak price (COP/kg)</td><td>5,811</td><td>7,317 (May 2020)</td><td>+25.9%</td></tr>
+        <tr><td>Bogotá-Ibagué spread (fríjol)</td><td>8.2%</td><td>14.7% (May 2020)</td><td>+79.3%</td></tr>
+      </tbody>
+    </table>
+
+    <!-- SVG Chart: Integrated Multi-Variable Analysis (COVID Impact Summary) -->
+    <figure style="margin:1.5rem 0; text-align:center;">
+      <svg viewBox="0 0 700 340" style="max-width:100%; height:auto; background:white; border:1px solid var(--rule); border-radius:4px;">
+        <!-- Title -->
+        <text x="350" y="22" font-family="'EB Garamond',serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">COVID-19 Impact: Multi-Variable Divergence (Base-100 Index)</text>
+
+        <!-- Left panel: Macro variables (USD/COP, Brent) -->
+        <g transform="translate(0, 35)">
+          <!-- Panel title -->
+          <text x="185" y="15" font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">Macro Variables (Jan 2018 = 100)</text>
+
+          <!-- Grid -->
+          <g stroke="#e8ede4" stroke-width="1">
+            <line x1="50" y1="35" x2="320" y2="35"/>
+            <line x1="50" y1="70" x2="320" y2="70"/>
+            <line x1="50" y1="105" x2="320" y2="105"/>
+            <line x1="50" y1="140" x2="320" y2="140"/>
+          </g>
+
+          <!-- Y-axis labels -->
+          <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="end">
+            <text x="45" y="39">140</text>
+            <text x="45" y="74">100</text>
+            <text x="45" y="109">60</text>
+            <text x="45" y="144">20</text>
+          </g>
+
+          <!-- X-axis labels -->
+          <g font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">
+            <text x="65" y="165">2018</text>
+            <text x="140" y="165">2019</text>
+            <text x="215" y="165">Mar 20</text>
+            <text x="265" y="165">Apr 20</text>
+            <text x="305" y="165">Dec 20</text>
+          </g>
+
+          <!-- COVID line -->
+          <line x1="190" y1="30" x2="190" y2="150" stroke="#d32f2f" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <!-- USD/COP line (green): 100 -> 110 -> 136 -> 139 -> 121 -->
+          <polyline fill="none" stroke="#2d5016" stroke-width="2" stroke-linecap="round"
+            points="65,70 140,61 215,41 265,38 305,53"/>
+
+          <!-- Brent line (brown): 100 -> 87 -> 46 -> 28 -> 73 -->
+          <polyline fill="none" stroke="#8b4513" stroke-width="2" stroke-linecap="round"
+            points="65,70 140,81 215,117 265,135 305,93"/>
+
+          <!-- Peak markers -->
+          <circle cx="265" cy="38" r="4" fill="#2d5016"/>
+          <text x="265" y="30" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">138.6</text>
+
+          <circle cx="265" cy="135" r="4" fill="#8b4513"/>
+          <text x="280" y="143" font-family="'DM Sans',sans-serif" font-size="8" fill="#8b4513" text-anchor="start">28.3</text>
+
+          <!-- Mini legend -->
+          <g transform="translate(230, 35)">
+            <line x1="0" y1="5" x2="18" y2="5" stroke="#2d5016" stroke-width="2"/>
+            <text x="22" y="8" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">USD/COP</text>
+            <line x1="0" y1="18" x2="18" y2="18" stroke="#8b4513" stroke-width="2"/>
+            <text x="22" y="21" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Brent</text>
+          </g>
+
+          <!-- Correlation annotation -->
+          <text x="185" y="175" font-family="'DM Sans',sans-serif" font-size="9" fill="#d32f2f" text-anchor="middle" font-weight="500">r = −0.82</text>
+        </g>
+
+        <!-- Right panel: Domestic volatility (Fríjol CV, Price Spread) -->
+        <g transform="translate(350, 35)">
+          <!-- Panel title -->
+          <text x="175" y="15" font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">Domestic Impact (Volatility %)</text>
+
+          <!-- Grid -->
+          <g stroke="#e8ede4" stroke-width="1">
+            <line x1="50" y1="35" x2="320" y2="35"/>
+            <line x1="50" y1="60" x2="320" y2="60"/>
+            <line x1="50" y1="85" x2="320" y2="85"/>
+            <line x1="50" y1="110" x2="320" y2="110"/>
+            <line x1="50" y1="135" x2="320" y2="135"/>
+          </g>
+
+          <!-- Y-axis labels -->
+          <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="end">
+            <text x="45" y="39">16%</text>
+            <text x="45" y="64">12%</text>
+            <text x="45" y="89">8%</text>
+            <text x="45" y="114">4%</text>
+            <text x="45" y="139">0%</text>
+          </g>
+
+          <!-- X-axis labels -->
+          <g font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">
+            <text x="80" y="165">Mar 19</text>
+            <text x="140" y="165">Aug 19</text>
+            <text x="200" y="165">Mar 20</text>
+            <text x="260" y="165">May 20</text>
+            <text x="305" y="165">Aug 20</text>
+          </g>
+
+          <!-- COVID line -->
+          <line x1="170" y1="30" x2="170" y2="150" stroke="#d32f2f" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <!-- Fríjol CV line (moss): 6.02 -> 6.02 -> 8.5 -> 11.34 -> 9.2 -->
+          <!-- Scale: 0% = 135, 16% = 35, so 1% = 6.25px -->
+          <polyline fill="none" stroke="#2d5016" stroke-width="2.5" stroke-linecap="round"
+            points="80,97 140,97 200,82 260,64 305,77"/>
+
+          <!-- Price spread line (gold): 8.2 -> 8.0 -> 8.2 -> 14.7 -> 10.4 -->
+          <polyline fill="none" stroke="#daa520" stroke-width="2.5" stroke-linecap="round"
+            points="80,84 140,85 200,84 260,43 305,70"/>
+
+          <!-- Peak markers -->
+          <circle cx="260" cy="64" r="4" fill="#2d5016"/>
+          <text x="260" y="56" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">11.34%</text>
+
+          <circle cx="260" cy="43" r="4" fill="#daa520"/>
+          <text x="275" y="40" font-family="'DM Sans',sans-serif" font-size="8" fill="#daa520" text-anchor="start">14.7%</text>
+
+          <!-- Mini legend -->
+          <g transform="translate(220, 80)">
+            <line x1="0" y1="5" x2="18" y2="5" stroke="#2d5016" stroke-width="2.5"/>
+            <text x="22" y="8" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Fríjol CV</text>
+            <line x1="0" y1="18" x2="18" y2="18" stroke="#daa520" stroke-width="2.5"/>
+            <text x="22" y="21" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Bog-Iba Spread</text>
+          </g>
+
+          <!-- CV change annotation -->
+          <text x="175" y="175" font-family="'DM Sans',sans-serif" font-size="9" fill="#d32f2f" text-anchor="middle" font-weight="500">CV +88.4%</text>
+        </g>
+
+        <!-- Bottom summary bar -->
+        <g transform="translate(0, 245)">
+          <rect x="30" y="0" width="640" height="55" fill="#e8ede4" rx="4"/>
+          <text x="350" y="18" font-family="'DM Sans',sans-serif" font-size="10" fill="#1e3a0f" text-anchor="middle" font-weight="600">Key Insight: Synchronized Shock</text>
+          <text x="350" y="35" font-family="'EB Garamond',serif" font-size="11" fill="#5a5a55" text-anchor="middle" font-style="italic">Currency depreciation (+43.7%) amplified domestic price volatility (+88.4%) while oil collapse (−76%) reduced transport costs.</text>
+          <text x="350" y="50" font-family="'EB Garamond',serif" font-size="11" fill="#5a5a55" text-anchor="middle" font-style="italic">Net effect: highly product-specific and geography-dependent food price risk.</text>
+        </g>
+      </svg>
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. Multi-variable COVID-19 impact summary. Left: macro shock (USD/COP vs Brent, r = −0.82). Right: domestic transmission (fríjol volatility and regional spread). Sources: FRED, SIPSA-DANE.
+      </figcaption>
+    </figure>
+
+    <p class="paper-text">The integrated analysis confirms that food price risk in Colombia during supply chain disruptions is highly product-specific and geography-dependent, reinforcing the case for disaggregated monitoring systems rather than national-level food price indices alone.</p>
   </div>
 
   <!-- 5. WHAT I LEARNED -->
-  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
     <div class="section-title es" style="display:none">Lo que Aprendí</div>
-    <p class="paper-text">The capstone taught me how to <strong>integrate multiple analytical threads into a coherent narrative</strong>. Each research brief (fríjol volatility, exchange rate effects, regional comparison) addresses one dimension; the capstone shows that these dimensions interact — that volatility, exchange rate transmission, and geographic segmentation are not independent phenomena but facets of the same market disruption.</p>
-    <p class="paper-text">Building a <strong>Google Sheets dashboard with drop-down filters</strong> — using Data Validation, INDIRECT references, and conditional chart ranges — introduced me to the logic of interactive data exploration that I would later implement in Power BI (2023) and Jupyter Notebooks (2024). The constraint of working within spreadsheet formulas forced me to understand the underlying logic before using dedicated tools.</p>
-    <p class="paper-text">The experience of <strong>writing multiple regression in LINEST</strong> within a spreadsheet — manually constructing the design matrix, interpreting coefficient arrays, and computing R² — built intuition for what statsmodels and sklearn automate in Python. When I reached Python in 2024, the econometric concepts were already internalized.</p>
+    <p class="paper-text">The capstone taught me how to <strong>integrate multiple analytical threads into a coherent narrative</strong>. Each research brief (fríjol volatility, exchange rate effects, regional comparison) addresses one dimension; the capstone shows that these dimensions interact — volatility, exchange rate transmission, and geographic segmentation are not independent phenomena but facets of the same market disruption.</p>
+    <p class="paper-text">Building a <strong>correlation matrix across heterogeneous series</strong> — domestic food prices (COP/kg), exchange rates (COP/USD), and commodity prices (USD/bbl) — introduced the challenge of unit alignment and the power of normalized metrics (base-100 indexing) for cross-series comparison.</p>
+    <p class="paper-text">The experience of <strong>writing multiple regression in LINEST</strong> — manually constructing the design matrix, interpreting coefficient arrays, and diagnosing collinearity — built the econometric intuition that makes Python's statsmodels output immediately readable in 2024–2025 projects.</p>
   </div>
 
   <!-- 6. LIMITATION -->
-  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
     <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label en">Scope & Data Limitation</div>
-      <div class="limitation-label es" style="display:none">Alcance y Datos Limitación</div>
-      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
-      <div class="limitation-text">The analysis is limited to three grain products and two cities. A more comprehensive study would include perishable products (fruits, vegetables), additional regional markets, and weekly rather than monthly frequency to capture intra-month volatility spikes. The regression model uses OLS without testing for heteroscedasticity or autocorrelation — issues addressed in the 2022 Capstone with formal time-series diagnostics.</div>
+      <div class="limitation-label en">Scope &amp; Method Limitation</div>
+      <div class="limitation-label es" style="display:none">Alcance y Método Limitación</div>
+      <div class="limitation-text">The analysis covers three grain products and two cities. A comprehensive study would include perishable products (fruits, vegetables), additional regional markets, and weekly rather than monthly frequency. The OLS regression uses contemporaneous variables without testing lag structures or controlling for heteroscedasticity/autocorrelation — diagnostics addressed in the 2022 Capstone with formal time-series methods. High collinearity between USD/COP and Brent (r = −0.82) inflates coefficient standard errors and prevents reliable isolation of individual variable effects.</div>
     </div>
   </div>
 
   <!-- 7. DELIVERABLE -->
-  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
-  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
-    <p class="paper-text">The deliverable is a multi-sheet Google Sheets workbook (.xlsx export) containing: Raw_Data (three SIPSA series + FRED exchange rate), Analysis (descriptive statistics, correlation matrix, regression output), Dashboard (interactive chart with product/city filters), and a Summary sheet with key findings. All formulas are preserved and labeled.</p>
+    <p class="paper-text">The deliverable is a multi-sheet Excel workbook (.xlsx) containing: <strong>Raw_Data</strong> (SIPSA grain prices, FRED USD/COP and Brent series), <strong>Descriptive_Stats</strong> (product × city × period statistics), <strong>Correlation</strong> (full correlation matrix with interpretation), <strong>Regression</strong> (LINEST output, coefficients, R², residuals), and <strong>Charts</strong> (base-100 indexed multi-series visualizations).</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheets Workbook (.xlsx) — Coming Soon</span>
-      
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
+      <a class="dl-btn primary" href="../deliverables/2020-capstone/covid_grain_analysis_capstone.xlsx">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Excel Workbook (.xlsx)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-capstone/multi_series_index.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Multi-Series Index Chart (.png)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-capstone/correlation_matrix.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Correlation Matrix (.png)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-capstone/volatility_comparison.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Volatility Comparison (.png)
+      </a>
     </div>
   </div>
 
   <!-- PROJECT NAVIGATION -->
-  <!-- ../projects.html = previous project html filename (or ../projects.html if first) -->
-  <!-- ← Back to All Projects = ← Capstone 2020  OR  ← Back to All Projects -->
-  <!-- 2020-rb1-frijol.html = next project html filename -->
-  <!-- Research Brief 1 → = Research Brief 2 →  OR  Capstone 2020 → -->
   <div class="project-nav">
-    <a href="../projects.html" class="proj-nav-back">← Back to All Projects</a>
-    <a href="2020-rb1-frijol.html" class="proj-nav-link">Research Brief 1 →</a>
+    <a href="2020-rb3-ibague-bogota.html" class="proj-nav-back">← Research Brief 3</a>
+    <a href="2021-rb1-export-evolution.html" class="proj-nav-link">2021 Research Brief 1 →</a>
   </div>
 
 </div>
 
 <footer>
   <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="/cdn-cgi/l/email-protection#5f3e382a2b363a2d2d3a256e6a681f3a2c2b2a3b363e312b3a2c713e2d3a3e313b36313e713a3b2a713c30"><span class="__cf_email__" data-cfemail="4e2f293b3a272b3c3c2b347f7b790e2b3d3a3b2a272f203a2b3d602f3c2b2f202a27202f602b2a3b602d21">[email&#160;protected]</span></a>
+    <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';

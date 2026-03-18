@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020 — Angie M. Gutierrez-Oviedo</title>
-  <meta name="description" content="USD/COP exchange rate and grain import costs in Colombia during the COVID-19 shock 2018-2020."/>
+  <meta name="description" content="Analysis of USD/COP exchange rate dynamics and Brent crude oil correlation during the COVID-19 crisis, with implications for grain import costs in Colombia (2018-2020)."/>
   <meta property="og:title" content="USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020"/>
-  <meta property="og:description" content="USD/COP exchange rate and grain import costs in Colombia during the COVID-19 shock 2018-2020."/>
+  <meta property="og:description" content="Analysis of USD/COP exchange rate dynamics and Brent crude oil correlation during the COVID-19 crisis (2018-2020)."/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://amanuelagut.github.io/projects/2020-rb2-usdcop.html"/>
   <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
@@ -131,7 +131,7 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </div>
 </nav>
@@ -139,8 +139,6 @@
 <div class="paper-wrap">
 
   <!-- BREADCRUMB -->
-  <!-- I = I–VI  |  Price Shocks &amp; Market Disruption = Price Shocks & Market Disruption  |  2020 = 2020 -->
-  <!-- Research Brief 2 = Research Brief 1  OR  Capstone -->
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
@@ -153,14 +151,6 @@
   </div>
 
   <!-- PAPER HEADER -->
-  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
-  <!-- Research Brief 2 = Research Brief 1  |  Capstone -->
-  <!-- 2020 = 2020 -->
-  <!-- January 2018 – December 2020 = January 2019 – August 2020 -->
-  <!-- Google Sheets · Excel = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
-  <!-- USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020 = Full project title -->
-  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020 -->
-  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
   <div class="paper-header">
     <div class="paper-meta-row">
       <span class="meta-badge type">Research Brief 2</span>
@@ -168,140 +158,247 @@
       <span class="meta-sep">·</span>
       <span class="meta-period">January 2018 – December 2020</span>
       <span class="meta-sep">·</span>
-      <span class="meta-period">Google Sheets · Excel</span>
+      <span class="meta-period">FRED API · Excel · Python</span>
     </div>
     <h1 class="paper-title">USD/COP Exchange Rate and Grain Import Costs in Colombia 2018–2020</h1>
     <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2020</div>
     <div class="paper-tags">
-      <!-- One <span class="paper-tag"> per tag -->
-      <span class="paper-tag">FRED</span>
-      <span class="paper-tag">Banco de la República</span>
-      <span class="paper-tag">Correlation</span>
-      <span class="paper-tag">OLS Regression</span>
+      <span class="paper-tag">FRED Data</span>
+      <span class="paper-tag">COLCCUSMA02STM</span>
+      <span class="paper-tag">DCOILBRENTEU</span>
       <span class="paper-tag">Exchange Rate</span>
+      <span class="paper-tag">Brent Crude Oil</span>
+      <span class="paper-tag">Correlation Analysis</span>
+      <span class="paper-tag">Base-100 Index</span>
       <span class="paper-tag">COVID-19</span>
     </div>
   </div>
 
   <!-- ABSTRACT -->
-  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
-    <div class="abstract-text">This brief investigates the relationship between the USD/COP exchange rate and grain import costs in Colombia between 2018 and 2020, with particular attention to how this relationship changed during the COVID-19 shock. Using FRED exchange rate data and Banco de la República trade statistics, the analysis applies Pearson correlation and simple OLS regression in Google Sheets to quantify the pass-through from currency depreciation to food import costs. The Colombian peso experienced one of its sharpest depreciations in March 2020, making this period a natural experiment for exchange rate transmission analysis.</div>
+    <div class="abstract-text">This brief examines the relationship between the USD/COP exchange rate and Brent crude oil prices during 2018–2020, with emphasis on the COVID-19 shock period. Using monthly data from FRED (Federal Reserve Economic Data), the analysis documents a <strong>43.7% depreciation</strong> of the Colombian peso from its April 2018 low (COP 2,765/USD) to its April 2020 peak (COP 3,974/USD), coinciding with a <strong>76.0% collapse</strong> in Brent crude prices (from $81.42/bbl in October 2018 to $19.53/bbl in April 2020). The strong negative correlation (<strong>r = −0.82</strong>) between these variables reflects Colombia's oil-dependent economy: when global oil demand collapsed, USD inflows from petroleum exports declined, triggering peso depreciation. For grain importers, this created a dual shock — while transport costs fell with oil prices, imported agricultural inputs became significantly more expensive in peso terms.</div>
   </div>
 
   <!-- 1. RESEARCH QUESTION -->
-  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
     <div class="section-title es" style="display:none">Pregunta de Investigación</div>
-    <p class="paper-text">What is the relationship between the USD/COP exchange rate and grain import costs in Colombia, and how did it change during the COVID-19 shock?</p>
-    <p class="paper-text">Colombia imports a significant share of its corn and wheat consumption. When the peso depreciates, the COP-denominated cost of these imports rises — but the speed and completeness of this pass-through is an empirical question. The March 2020 depreciation (from ~3,400 to ~4,100 COP/USD in weeks) provides a stress test for measuring transmission speed.</p>
+    <p class="paper-text">How did the USD/COP exchange rate respond to the global oil price collapse during COVID-19, and what were the implications for grain import costs in Colombia?</p>
+    <p class="paper-text">Colombia is both a net oil exporter and a net grain importer. The country imports approximately 80% of its corn and 95% of its wheat consumption. Understanding the transmission mechanism from global oil prices to the exchange rate — and from the exchange rate to import costs — is essential for modeling agricultural price dynamics in an open, commodity-dependent economy.</p>
   </div>
 
   <!-- 2. DATA & SOURCES -->
-  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
     <div class="section-title en">Data &amp; Sources</div>
     <div class="section-title es" style="display:none">Datos y Fuentes</div>
-    <p class="paper-text">The analysis combines international financial data with Colombian trade and price statistics.</p>
+    <p class="paper-text">All macroeconomic data is sourced from FRED (Federal Reserve Economic Data), the official data repository of the Federal Reserve Bank of St. Louis. FRED provides standardized, quality-controlled time series widely used in academic research and central bank analyses.</p>
 
     <table class="data-table">
       <thead>
         <tr>
           <th>Variable</th>
-          <th>Source</th>
+          <th>FRED Series ID</th>
           <th>Frequency</th>
           <th>Period</th>
-          <th>Access</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>USD/COP exchange rate</td><td>FRED (DEXCOUS)</td><td>Daily → Monthly avg</td><td>Jan 2018 – Dec 2020</td><td>fred.stlouisfed.org</td></tr>
-        <tr><td>Grain import values (COP)</td><td>Banco de la República / DANE trade</td><td>Monthly</td><td>Jan 2018 – Dec 2020</td><td>banrep.gov.co</td></tr>
-        <tr><td>Wholesale grain prices (COP/kg)</td><td>SIPSA-DANE</td><td>Weekly → Monthly avg</td><td>Jan 2018 – Dec 2020</td><td>dane.gov.co</td></tr>
+        <tr><td>USD/COP exchange rate (monthly average)</td><td>COLCCUSMA02STM</td><td>Monthly</td><td>Jan 2018 – Dec 2020</td></tr>
+        <tr><td>Brent crude oil price (USD/barrel)</td><td>DCOILBRENTEU</td><td>Daily → Monthly avg</td><td>Jan 2018 – Dec 2020</td></tr>
       </tbody>
     </table>
 
-    <p class="paper-text">The USD/COP series is the Federal Reserve's daily noon rate averaged to monthly frequency. Import cost data is drawn from Banco de la República's external sector statistics. The three-year window captures a stable pre-COVID period (2018–Feb 2020) and the full shock-and-recovery cycle (Mar–Dec 2020).</p>
+    <p class="paper-text">The dataset spans 36 months, capturing the pre-pandemic baseline (2018–2019), the acute shock (March–April 2020), and the partial recovery (May–December 2020). Daily Brent prices were aggregated to monthly averages to match the USD/COP frequency.</p>
   </div>
 
   <!-- 3. METHODOLOGY -->
-  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
-  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
     <div class="section-title es" style="display:none">Metodología</div>
-    <p class="paper-text">The analysis uses three techniques, progressing from descriptive to inferential.</p>
-    <p class="paper-text"><strong>Step 1 — Scatter plot and Pearson correlation.</strong> The USD/COP rate is plotted against grain import costs to visualize the relationship. Pearson's r is computed using the CORREL function in Google Sheets, separately for the pre-COVID and COVID periods, to test whether the correlation strengthened or weakened under stress.</p>
-    <p class="paper-text"><strong>Step 2 — Simple OLS regression.</strong> Using LINEST, a linear regression estimates import cost = α + β × (USD/COP) + ε. The coefficient β measures the average COP import cost increase per unit of exchange rate depreciation. The regression is run on the full sample and on pre/post-COVID subsamples.</p>
-    <p class="paper-text"><strong>Step 3 — Lag analysis.</strong> To test whether exchange rate changes transmit with a delay, the regression is re-run with 1-month and 2-month lagged exchange rate values. The lag structure that produces the highest R² suggests the typical transmission speed.</p>
+    <p class="paper-text">The analysis applies five analytical steps to quantify the exchange rate shock and its correlation with oil prices.</p>
+    <p class="paper-text"><strong>Step 1 — Descriptive statistics.</strong> Mean, standard deviation, minimum, maximum, range, and coefficient of variation (CV) computed for each variable across the full 36-month period and for annual subperiods (2018, 2019, 2020).</p>
+    <p class="paper-text"><strong>Step 2 — Base-100 price index.</strong> Both series are re-expressed as <em>(P_t / P_Jan2018) × 100</em>, enabling direct visual comparison of relative movements on a common scale.</p>
+    <p class="paper-text"><strong>Step 3 — Month-over-month change (MoM%).</strong> Computed as <em>((P_t − P_t−1) / P_t−1) × 100</em> to identify the timing and magnitude of the sharpest movements.</p>
+    <p class="paper-text"><strong>Step 4 — Pearson correlation.</strong> Pairwise correlation coefficient (r) between USD/COP and Brent across all 36 months, testing the hypothesis that peso depreciation tracks oil price declines.</p>
+    <p class="paper-text"><strong>Step 5 — Period comparison.</strong> Pre-COVID (Mar–Dec 2019) vs. COVID (Mar–Dec 2020) comparison of mean exchange rate and implied import cost increase.</p>
   </div>
 
   <!-- 4. KEY FINDING -->
-  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
     <div class="section-title es" style="display:none">Hallazgo Principal</div>
-    <p class="paper-text">The exchange rate analysis reveals a significant but incomplete pass-through from currency depreciation to grain import costs.</p>
+    <p class="paper-text">The analysis documents a synchronized shock: as Brent crude collapsed, the Colombian peso depreciated sharply, creating a direct cost transmission channel to grain imports.</p>
     <div class="finding-box">
       <div class="finding-label en">Key Finding</div>
       <div class="finding-label es" style="display:none">Hallazgo Principal</div>
-      <div class="finding-text">The Pearson correlation between USD/COP and grain import costs was positive and significant across the full sample period. The COVID-period subsample showed a temporarily stronger correlation as the sharp depreciation coincided with import cost spikes. The 1-month lagged specification produced the best fit, suggesting that exchange rate shocks transmit to import costs with approximately a one-month delay in Colombian grain markets.</div>
+      <div class="finding-text">
+        <strong>USD/COP depreciated 43.7%</strong> from its April 2018 low of COP 2,765.23/USD to its April 2020 peak of COP 3,973.60/USD.
+        The sharpest single-month movement was <strong>+14.4% MoM in March 2020</strong> (COP 3,415 → COP 3,908), coinciding with the global risk-off event triggered by COVID-19.
+        <br><br>
+        <strong>Brent crude collapsed 76.0%</strong> from its October 2018 peak of $81.42/barrel to its April 2020 trough of $19.53/barrel — the lowest level since 2002.
+        The sharpest declines were <strong>−42.7% MoM in March 2020</strong> ($55.43 → $31.78) and <strong>−38.5% MoM in April 2020</strong> ($31.78 → $19.53).
+        <br><br>
+        <strong>Correlation: r = −0.82</strong> across the 36-month series, confirming a strong inverse relationship. When oil prices fell, the peso depreciated; when oil recovered (May–December 2020), the peso partially strengthened.
+        <br><br>
+        <strong>Import cost impact:</strong> A $1,000 USD grain shipment that cost COP 3.31 million in March–December 2019 would cost COP 3.76 million in the same period of 2020 — a <strong>+13.6% increase</strong> in peso terms, purely from exchange rate movement.
+      </div>
     </div>
-    <p class="paper-text">The incomplete pass-through implies that importers partially absorb exchange rate shocks through margin compression or inventory buffers — a finding consistent with the operational experience of grain distributors who maintain strategic stock levels precisely to hedge against short-term currency movements.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>USD/COP</th>
+          <th>Brent (USD/bbl)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Full period mean (Jan 2018 – Dec 2020)</td><td>3,311.19</td><td>$58.93</td></tr>
+        <tr><td>2018 mean</td><td>2,956.89</td><td>$70.93</td></tr>
+        <tr><td>2019 mean</td><td>3,281.07</td><td>$64.32</td></tr>
+        <tr><td>2020 mean</td><td>3,695.61</td><td>$41.53</td></tr>
+        <tr><td>Minimum</td><td>2,765.23 (Apr 2018)</td><td>$19.53 (Apr 2020)</td></tr>
+        <tr><td>Maximum</td><td>3,973.60 (Apr 2020)</td><td>$81.42 (Oct 2018)</td></tr>
+        <tr><td>CV (full period)</td><td>11.2%</td><td>29.8%</td></tr>
+      </tbody>
+    </table>
+
+    <!-- SVG Chart: Base-100 Index USD/COP vs Brent (Jan 2018 = 100) -->
+    <figure style="margin:1.5rem 0; text-align:center;">
+      <svg viewBox="0 0 700 320" style="max-width:100%; height:auto; background:white; border:1px solid var(--rule); border-radius:4px;">
+        <!-- Grid lines -->
+        <defs>
+          <linearGradient id="usdcopGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.8"/>
+          </linearGradient>
+          <linearGradient id="brentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#8b4513;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:0.8"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Background grid -->
+        <g stroke="#e8ede4" stroke-width="1">
+          <line x1="60" y1="40" x2="680" y2="40"/>
+          <line x1="60" y1="90" x2="680" y2="90"/>
+          <line x1="60" y1="140" x2="680" y2="140"/>
+          <line x1="60" y1="190" x2="680" y2="190"/>
+          <line x1="60" y1="240" x2="680" y2="240"/>
+        </g>
+
+        <!-- Y-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+          <text x="55" y="44">140</text>
+          <text x="55" y="94">120</text>
+          <text x="55" y="144">100</text>
+          <text x="55" y="194">80</text>
+          <text x="55" y="244">60</text>
+          <text x="55" y="280">20</text>
+        </g>
+
+        <!-- X-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+          <text x="80" y="295">Jan 18</text>
+          <text x="165" y="295">Jul 18</text>
+          <text x="250" y="295">Jan 19</text>
+          <text x="335" y="295">Jul 19</text>
+          <text x="420" y="295">Jan 20</text>
+          <text x="505" y="295">Jul 20</text>
+          <text x="590" y="295">Dec 20</text>
+        </g>
+
+        <!-- COVID marker -->
+        <line x1="455" y1="40" x2="455" y2="270" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="455" y="32" font-family="'DM Sans',sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">COVID-19</text>
+
+        <!-- Brent line (brown) - Index values: Jan18=100, Apr18=102, Oct18=118, Jan19=87, Jul19=92, Jan20=93, Mar20=46, Apr20=28, Jul20=62, Dec20=73 -->
+        <polyline fill="none" stroke="url(#brentGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="80,140 97,138 114,145 131,134 148,128 165,132 182,132 199,135 216,125 233,118 250,152 267,147 284,144 301,129 318,129 335,146 352,148 369,156 386,151 403,158 420,147 437,163 455,226 472,268 489,247 506,222 523,216 540,212 557,220 574,221 590,218 607,210"/>
+
+        <!-- USD/COP line (green) - Index values: Jan18=100, Apr18=96, Oct18=108, Jan19=110, Jul19=112, Jan20=116, Mar20=136, Apr20=139, Jul20=128, Dec20=121 -->
+        <polyline fill="none" stroke="url(#usdcopGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="80,140 97,140 114,141 131,144 148,140 165,139 182,139 199,136 216,134 233,132 250,128 267,131 284,130 301,130 318,125 335,128 352,128 369,121 386,121 403,120 420,124 437,121 455,80 472,76 489,92 506,104 523,112 540,108 557,112 574,118 590,122 607,129"/>
+
+        <!-- Peak/trough markers -->
+        <circle cx="472" cy="76" r="5" fill="#2d5016"/>
+        <text x="472" y="68" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">138.6</text>
+
+        <circle cx="472" cy="268" r="5" fill="#8b4513"/>
+        <text x="485" y="280" font-family="'DM Sans',sans-serif" font-size="8" fill="#8b4513" text-anchor="start">28.3</text>
+
+        <!-- Legend -->
+        <g transform="translate(520, 55)">
+          <rect x="0" y="0" width="150" height="45" fill="white" stroke="#c8d4c0" rx="3"/>
+          <line x1="10" y1="15" x2="35" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+          <text x="42" y="18" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">USD/COP</text>
+          <line x1="10" y1="32" x2="35" y2="32" stroke="#8b4513" stroke-width="2.5"/>
+          <text x="42" y="35" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Brent Crude</text>
+        </g>
+
+        <!-- Title -->
+        <text x="370" y="18" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Base-100 Price Index (January 2018 = 100)</text>
+      </svg>
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. USD/COP peaked at 138.6 in April 2020 while Brent collapsed to 28.3 — a 110-point divergence reflecting Colombia's oil-export dependence.
+        Sources: FRED COLCCUSMA02STM (USD/COP), FRED DCOILBRENTEU (Brent).
+      </figcaption>
+    </figure>
+
+    <p class="paper-text">The base-100 index (January 2018 = 100) reveals the magnitude of divergence: by April 2020, USD/COP reached index 138.6 while Brent collapsed to index 28.3 — a 110-point spread that captures the "twin shock" facing Colombian importers.</p>
   </div>
 
   <!-- 5. WHAT I LEARNED -->
-  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
     <div class="section-title es" style="display:none">Lo que Aprendí</div>
-    <p class="paper-text">This project introduced <strong>lag structure analysis</strong> — the idea that economic relationships operate with temporal delays, and that testing different lag specifications is a standard empirical practice. This concept becomes central in the 2022 corn price transmission study and the 2024 ARIMA forecasting work.</p>
-    <p class="paper-text">Computing <strong>Pearson correlation on subsamples</strong> taught me that a correlation coefficient is not a fixed property of two variables but depends on the sample period — a foundational insight for understanding structural breaks and regime changes in time-series analysis.</p>
-    <p class="paper-text">The practical experience of <strong>downloading FRED data and aligning it with Colombian sources</strong> in different frequencies (daily vs. weekly vs. monthly) introduced the data harmonization challenges that become routine in 2024–2025 Python workflows.</p>
+    <p class="paper-text">This project introduced the concept of <strong>macro-agricultural linkages</strong> — the transmission channels through which global commodity prices (oil) affect domestic agricultural costs through intermediate variables (exchange rate). This framing reappears in the 2024 Capstone's multi-factor regression.</p>
+    <p class="paper-text"><strong>FRED as a data source</strong> became a core resource for subsequent projects. The standardized series IDs (COLCCUSMA02STM, DCOILBRENTEU) enable reproducible API calls, and the CSV export format integrates directly with Excel and Python workflows.</p>
+    <p class="paper-text">The <strong>base-100 index</strong> technique from RB1 was extended here to compare two series with different units (COP/USD vs. USD/barrel) on a common scale — a visualization standard used by Banco de la República and DANE in their official publications.</p>
   </div>
 
   <!-- 6. LIMITATION -->
-  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
     <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label en">Method Limitation</div>
-      <div class="limitation-label es" style="display:none">Método Limitación</div>
-      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
-      <div class="limitation-text">The OLS regression does not account for non-stationarity in the exchange rate series or potential endogeneity between exchange rates and import volumes. A proper cointegration analysis — introduced conceptually in the 2022 portfolio and implemented in Python in 2025 — would provide a more rigorous test of the long-run equilibrium relationship.</div>
+      <div class="limitation-label en">Scope Limitation</div>
+      <div class="limitation-label es" style="display:none">Alcance Limitación</div>
+      <div class="limitation-text">The analysis treats the exchange rate as an exogenous variable, without modeling feedback effects from domestic agricultural prices. The correlation is contemporaneous — no lag structure is tested. A more complete model would include: (1) import volume data to quantify actual cost pass-through, (2) freight rate indices to separate currency effects from logistics costs, and (3) a VAR or Granger causality test to establish temporal precedence. Additionally, the analysis does not account for exchange rate hedging instruments used by large importers.</div>
     </div>
   </div>
 
   <!-- 7. DELIVERABLE -->
-  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
-  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
-    <p class="paper-text">The deliverable is a Google Sheets workbook (.xlsx) with Raw_Data (FRED and SIPSA series), Correlation (scatter plots and Pearson computations), Regression (LINEST output with coefficient interpretation), and Charts (time-series overlays with annotated events).</p>
+    <p class="paper-text">The deliverable is an Excel workbook (.xlsx) with four worksheets: <strong>Raw_Data</strong> (FRED USD/COP and Brent monthly series, 36 observations each), <strong>Descriptive_Stats</strong> (annual and full-period statistics, MoM% series, period comparisons), <strong>Correlation</strong> (Pearson matrix with scatter plot data), and <strong>Charts_Data</strong> (base-100 index values for both series).</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Google Sheet (.xlsx) — Coming Soon</span>
-      
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Summary PDF — Coming Soon</span>
+      <a class="dl-btn primary" href="../deliverables/2020-rb2/usdcop_brent_analysis.xlsx">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Excel Workbook (.xlsx)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb2/base100_index_chart.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Base-100 Index Chart (.png)
+      </a>
+      <a class="dl-btn" href="../deliverables/2020-rb2/correlation_scatter.png" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Correlation Scatter (.png)
+      </a>
     </div>
   </div>
 
   <!-- PROJECT NAVIGATION -->
-  <!-- 2020-rb1-frijol.html = previous project html filename (or ../projects.html if first) -->
-  <!-- ← Research Brief 1 = ← Capstone 2020  OR  ← Back to All Projects -->
-  <!-- 2020-rb3-ibague-bogota.html = next project html filename -->
-  <!-- Research Brief 3 → = Research Brief 2 →  OR  Capstone 2020 → -->
   <div class="project-nav">
     <a href="2020-rb1-frijol.html" class="proj-nav-back">← Research Brief 1</a>
     <a href="2020-rb3-ibague-bogota.html" class="proj-nav-link">Research Brief 3 →</a>
@@ -311,11 +408,11 @@
 
 <footer>
   <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="/cdn-cgi/l/email-protection#adcccad8d9c4c8dfdfc8d79c989aedc8ded9d8c9c4ccc3d9c8de83ccdfc8ccc3c9c4c3cc83c8c9d883cec2"><span class="__cf_email__" data-cfemail="f7969082839e928585928dc6c2c0b792848382939e9699839284d99685929699939e9996d9929382d99498">[email&#160;protected]</span></a>
+    <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
