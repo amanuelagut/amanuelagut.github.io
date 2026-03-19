@@ -1,0 +1,51 @@
+<svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="background:white">
+  <defs>
+    <linearGradient id="usdGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="volGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#ef5350;stop-opacity:0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="320" fill="white"/>
+  <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">USD/COP Exchange Rate and 30-Day Volatility (2020–2023)</text>
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="50" x2="680" y2="50"/>
+    <line x1="60" y1="100" x2="680" y2="100"/>
+    <line x1="60" y1="150" x2="680" y2="150"/>
+    <line x1="60" y1="200" x2="680" y2="200"/>
+    <line x1="60" y1="250" x2="680" y2="250"/>
+  </g>
+  <g font-family="sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+    <text x="55" y="54">5000</text>
+    <text x="55" y="104">4500</text>
+    <text x="55" y="154">4000</text>
+    <text x="55" y="204">3500</text>
+    <text x="55" y="254">3000</text>
+  </g>
+  <g font-family="sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="100" y="280">2020-Q1</text>
+    <text x="200" y="280">2020-Q4</text>
+    <text x="300" y="280">2021-Q3</text>
+    <text x="400" y="280">2022-Q2</text>
+    <text x="500" y="280">2022-Q4</text>
+    <text x="600" y="280">2023-Q3</text>
+  </g>
+  <line x1="120" y1="50" x2="120" y2="260" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="120" y="42" font-family="sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">COVID Peak</text>
+  <line x1="420" y1="50" x2="420" y2="260" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="420" y="42" font-family="sans-serif" font-size="8" fill="#1565c0" text-anchor="middle">Ukraine Crisis</text>
+  <polyline fill="none" stroke="url(#usdGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="80,178 100,168 120,72 140,75 160,120 180,145 200,175 220,162 240,155 260,140 280,148 300,142 320,135 340,122 360,115 380,98 400,85 420,62 440,58 460,48 480,55 500,45 520,65 540,78 560,112 580,145 600,158 620,175 640,182 660,188"/>
+  <circle cx="500" cy="45" r="5" fill="#2d5016"/>
+  <text x="510" y="42" font-family="sans-serif" font-size="9" fill="#2d5016">COP 4,824</text>
+  <circle cx="80" cy="178" r="4" fill="#2d5016"/>
+  <text x="90" y="185" font-family="sans-serif" font-size="9" fill="#2d5016">COP 3,436</text>
+  <g transform="translate(540, 85)">
+    <rect x="0" y="0" width="140" height="35" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="18" x2="35" y2="18" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="42" y="21" font-family="sans-serif" font-size="10" fill="#1a1a18">USD/COP Rate</text>
+  </g>
+</svg>

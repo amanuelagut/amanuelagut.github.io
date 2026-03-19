@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
   <title>Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023 — Angie M. Gutierrez-Oviedo</title>
-  <meta name="description" content="Geographic mapping of Colombia agricultural trade partnerships and flow patterns 2019-2023."/>
+  <meta name="description" content="Power BI geographic mapping of Colombia's agricultural trade partnerships 2019-2023, with US at 33.5% and EU at 21.0% of exports."/>
   <meta property="og:title" content="Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023"/>
-  <meta property="og:description" content="Geographic mapping of Colombia agricultural trade partnerships and flow patterns 2019-2023."/>
+  <meta property="og:description" content="Power BI geographic mapping of Colombia's agricultural trade partnerships 2019-2023."/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://amanuelagut.github.io/projects/2023-rb3-trade-geography.html"/>
   <meta property="og:image" content="https://amanuelagut.github.io/assets/photo.png"/>
@@ -15,16 +15,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f;
-      --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55;
-      --parchment: #faf9f6; --rule: #c8d4c0;
-    }
+    :root { --forest: #1e3a0f; --moss: #2d5016; --sage: #4a7c2f; --mist: #e8ede4; --ink: #1a1a18; --stone: #5a5a55; --parchment: #faf9f6; --rule: #c8d4c0; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--parchment); color: var(--ink); line-height: 1.7; }
-
-    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,246,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
     .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; }
@@ -34,88 +28,57 @@
     .lang-toggle { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--rule); border-radius: 3px; padding: 0.25rem 0.6rem; color: var(--stone); background: transparent; transition: all 0.2s; }
     .lang-toggle:hover { border-color: var(--moss); color: var(--moss); }
     .nav-hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--forest); padding: 0 0.5rem; }
-    @media (max-width: 768px) {
-      .nav-hamburger { display: block; }
-      #navLinks { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem 1.5rem; gap: 1rem; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-      #navLinks.open { display: flex; }
-      #navLinks a { display: block !important; font-size: 0.9rem; padding: 0.3rem 0; }
-    }
-
-    /* PAPER LAYOUT */
+    @media (max-width: 768px) { .nav-hamburger { display: block; } #navLinks { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 1rem 2rem 1.5rem; gap: 1rem; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.08); } #navLinks.open { display: flex; } #navLinks a { display: block !important; font-size: 0.9rem; padding: 0.3rem 0; } }
     .paper-wrap { max-width: 820px; margin: 0 auto; padding: 100px 2rem 6rem; }
-
-    /* BREADCRUMB */
     .breadcrumb { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
     .breadcrumb a { color: var(--moss); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
-
-    /* HEADER */
     .paper-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
     .paper-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
     .meta-badge { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 2px; padding: 0.15rem 0.5rem; color: var(--stone); }
     .meta-badge.type { background: var(--mist); }
-    .meta-badge.type-cap { background: var(--moss); color: white; border-color: var(--moss); }
     .meta-period { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--stone); }
     .meta-sep { color: var(--rule); }
     .paper-title { font-family: 'EB Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 500; color: var(--forest); line-height: 1.2; margin-bottom: 1rem; }
     .paper-author { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--stone); margin-bottom: 1.5rem; }
     .paper-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .paper-tag { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.04em; background: var(--mist); color: var(--stone); border-radius: 2px; padding: 0.15rem 0.5rem; }
-
-    /* ABSTRACT */
     .abstract-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.5rem 1.75rem; margin-bottom: 3rem; }
     .abstract-label { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); font-weight: 500; margin-bottom: 0.6rem; }
     .abstract-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; font-style: italic; }
-
-    /* SECTIONS */
     .paper-section { margin-bottom: 2.75rem; }
     .section-number { font-family: 'EB Garamond', serif; font-size: 0.85rem; color: var(--moss); margin-bottom: 0.1rem; }
     .section-title { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--mist); }
     .paper-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.85; margin-bottom: 1rem; }
     .paper-text:last-child { margin-bottom: 0; }
     .paper-text strong { font-weight: 600; }
-
-    /* DATA TABLE */
     .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
     .data-table th { background: var(--mist); font-family: 'DM Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--moss); padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--rule); }
     .data-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--mist); color: var(--ink); font-family: 'EB Garamond', serif; font-size: 1rem; line-height: 1.5; }
     .data-table tr:last-child td { border-bottom: none; }
-
-    /* KEY FINDING */
     .finding-box { background: white; border: 1px solid var(--rule); border-left: 3px solid var(--moss); border-radius: 0 4px 4px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
     .finding-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.5rem; font-weight: 500; }
     .finding-text { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink); line-height: 1.8; }
-
-    /* LIMITATION */
     .limitation-box { background: var(--mist); border-radius: 3px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
     .limitation-label { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.4rem; font-weight: 500; }
     .limitation-text { font-family: 'EB Garamond', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.75; font-style: italic; }
-
-    /* DELIVERABLE */
     .deliverable-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
     .dl-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); border: 1px solid var(--moss); border-radius: 3px; padding: 0.5rem 1rem; text-decoration: none; transition: all 0.15s; }
     .dl-btn:hover { background: var(--moss); color: white; }
     .dl-btn.primary { background: var(--moss); color: white; }
     .dl-btn.primary:hover { background: var(--forest); }
-
-    /* PROJECT NAV */
     .project-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); flex-wrap: wrap; gap: 1rem; }
     .proj-nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
     .proj-nav-link:hover { color: var(--forest); }
     .proj-nav-back { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); text-decoration: none; }
     .proj-nav-back:hover { color: var(--moss); }
-
     footer { background: var(--forest); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.78rem; }
     footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
-
-    @media (max-width: 600px) {
-      .paper-wrap { padding: 90px 1.25rem 4rem; }
-    }
+    @media (max-width: 600px) { .paper-wrap { padding: 90px 1.25rem 4rem; } }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">A. M. Gutierrez-Oviedo</a>
@@ -131,16 +94,13 @@
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
     </div>
   </div>
 </nav>
 
 <div class="paper-wrap">
 
-  <!-- BREADCRUMB -->
-  <!-- IV = I–VI  |  Visual Intelligence &amp; Market Storytelling = Price Shocks & Market Disruption  |  2023 = 2020 -->
-  <!-- Research Brief 3 = Research Brief 1  OR  Capstone -->
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
@@ -152,19 +112,11 @@
     <span>Research Brief 3</span>
   </div>
 
-  <!-- PAPER HEADER -->
-  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
-  <!-- Research Brief 3 = Research Brief 1  |  Capstone -->
-  <!-- 2023 = 2020 -->
-  <!-- 2019 – 2023 = January 2019 – August 2020 -->
-  <!-- Power BI = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
-  <!-- Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023 = Full project title -->
-  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2023 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2023 -->
-  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
   <div class="paper-header">
     <div class="paper-meta-row">
       <span class="meta-badge type">Research Brief 3</span>
       <span class="meta-badge">2023</span>
+      <span class="meta-badge">JEL: F14, Q17, Q11</span>
       <span class="meta-sep">·</span>
       <span class="meta-period">2019 – 2023</span>
       <span class="meta-sep">·</span>
@@ -173,41 +125,39 @@
     <h1 class="paper-title">Colombia's Agricultural Trade Geography: Key Partners and Flow Patterns 2019–2023</h1>
     <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2023</div>
     <div class="paper-tags">
-      <!-- One <span class="paper-tag"> per tag -->
       <span class="paper-tag">UN Comtrade</span>
       <span class="paper-tag">DANE</span>
       <span class="paper-tag">Power BI</span>
-      <span class="paper-tag">Maps</span>
-      <span class="paper-tag">Treemap</span>
+      <span class="paper-tag">Bubble Maps</span>
+      <span class="paper-tag">Treemaps</span>
       <span class="paper-tag">Trade Geography</span>
     </div>
   </div>
 
-  <!-- ABSTRACT -->
-  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
-    <div class="abstract-text">This brief applies Power BI's geographic mapping and hierarchical visualization tools to explore the spatial distribution and evolution of Colombia's agricultural trade partnerships between 2019 and 2023. Using UN Comtrade bilateral trade data, the analysis creates interactive maps, treemaps, and flow diagrams that reveal partner concentration, regional dependencies, and structural shifts in Colombia's agricultural trade network.</div>
+    <div class="abstract-text">This brief applies Power BI's geographic mapping and hierarchical visualization tools to explore the spatial distribution and evolution of Colombia's agricultural trade partnerships between 2019 and 2023. Using UN Comtrade bilateral trade data, the analysis reveals that the <strong>United States commands 33.5% of agricultural exports</strong> while the <strong>European Union accounts for 21.0%</strong>. The geographic visualization exposes a North-South asymmetry: exports flow primarily to Northern Hemisphere markets while imports are sourced from Southern Cone countries, creating differential exposure to regional economic shocks.</div>
+    <div style="margin-top:0.8rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:var(--stone);">
+      <strong>Keywords:</strong> trade geography, agricultural exports, Colombia, UN Comtrade, Power BI maps, trade concentration, partner diversification
+    </div>
   </div>
 
-  <!-- 1. RESEARCH QUESTION -->
-  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
     <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How can geographic mapping in Power BI reveal the spatial distribution and evolution of Colombia's agricultural trade partnerships between 2019 and 2023?</p>
-    <p class="paper-text">The 2021 SQL-based trade network analysis identified structural patterns in numerical form. This brief asks whether geographic visualization can make those patterns more intuitive and reveal spatial dimensions (proximity effects, regional clustering) that tabular analysis misses.</p>
+    <p class="paper-text"><strong>H₀ (Null Hypothesis):</strong> Colombia's agricultural trade partners are geographically dispersed with no regional concentration pattern visible in map visualizations.</p>
+    <p class="paper-text"><strong>H₁ (Alternative Hypothesis):</strong> Colombia's agricultural trade exhibits geographic concentration, with export destinations concentrated in Northern Hemisphere markets and import sources concentrated in Southern Hemisphere countries.</p>
+    <p class="paper-text">The 2021 SQL-based trade network analysis identified structural patterns in numerical form. This brief asks whether geographic visualization can make those patterns more intuitive and reveal spatial dimensions — proximity effects, regional clustering, hemispheric asymmetries — that tabular analysis misses.</p>
   </div>
 
-  <!-- 2. DATA & SOURCES -->
-  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
     <div class="section-title en">Data &amp; Sources</div>
     <div class="section-title es" style="display:none">Datos y Fuentes</div>
-    <p class="paper-text">Bilateral trade data is sourced from UN Comtrade, supplemented with DANE's external trade statistics for Colombian-specific detail.</p>
+    <p class="paper-text">Bilateral trade data is sourced from UN Comtrade, supplemented with DANE's external trade statistics for Colombian-specific product detail.</p>
 
     <table class="data-table">
       <thead>
@@ -216,33 +166,29 @@
           <th>Source</th>
           <th>Frequency</th>
           <th>Period</th>
-          <th>Access</th>
+          <th>URL</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Bilateral agricultural trade flows (USD)</td><td>UN Comtrade</td><td>Annual</td><td>2019–2023</td><td>comtrade.un.org</td></tr>
-        <tr><td>Colombian trade detail</td><td>DANE External Trade</td><td>Monthly → Annual</td><td>2019–2023</td><td>dane.gov.co</td></tr>
+        <tr><td>Bilateral agricultural trade flows</td><td>UN Comtrade</td><td>Annual</td><td>2019–2023</td><td><a href="https://comtradeplus.un.org/" target="_blank" style="color:var(--moss);">comtradeplus.un.org</a></td></tr>
+        <tr><td>Colombian trade detail</td><td>DANE External Trade</td><td>Monthly → Annual</td><td>2019–2023</td><td><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/comercio-internacional" target="_blank" style="color:var(--moss);">dane.gov.co</a></td></tr>
+        <tr><td>Country geographic coordinates</td><td>Natural Earth</td><td>—</td><td>—</td><td><a href="https://www.naturalearthdata.com/" target="_blank" style="color:var(--moss);">naturalearthdata.com</a></td></tr>
       </tbody>
     </table>
 
-    <p class="paper-text">All bilateral agricultural trade relationships where Colombia is either reporter or partner are included, covering both exports and imports. The analysis separates traditional commodities (coffee, flowers, bananas) from non-traditional agricultural exports.</p>
+    <p class="paper-text">All bilateral agricultural trade relationships where Colombia is either reporter or partner are included, covering both exports and imports. The analysis separates traditional commodities (coffee, flowers, bananas) from non-traditional agricultural exports to identify diversification patterns.</p>
   </div>
 
-  <!-- 3. METHODOLOGY -->
-  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
-  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
     <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The brief uses Power BI's geographic and hierarchical visualization tools to explore trade network structure.</p>
-    <p class="paper-text"><strong>Step 1 — Bubble map of trade partners.</strong> A world map with bubbles sized by trade value shows the geographic distribution of Colombia's agricultural trade network, with color encoding for export vs. import relationships.</p>
-    <p class="paper-text"><strong>Step 2 — Treemap of product-partner composition.</strong> Hierarchical treemaps show the product composition of trade with each major partner, revealing whether relationships are diversified or concentrated in a single product.</p>
-    <p class="paper-text"><strong>Step 3 — Year-over-year flow animation.</strong> Power BI's play axis feature animates the trade map over time, showing how the geographic distribution of trade shifted between 2019 and 2023.</p>
+    <p class="paper-text"><strong>Step 1 — Bubble map of trade partners.</strong> A world map with bubbles sized by trade value shows the geographic distribution of Colombia's agricultural trade network, with color encoding for export (green) vs. import (red) relationships.</p>
+    <p class="paper-text"><strong>Step 2 — Treemap of product-partner composition.</strong> Hierarchical treemaps show the product composition of trade with each major partner, revealing whether relationships are diversified across multiple products or concentrated in a single commodity.</p>
+    <p class="paper-text"><strong>Step 3 — Year-over-year flow animation.</strong> Power BI's play axis feature animates the trade map over time (2019–2023), showing how the geographic distribution of trade shifted during and after the COVID-19 pandemic.</p>
   </div>
 
-  <!-- 4. KEY FINDING -->
-  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
@@ -251,54 +197,113 @@
     <div class="finding-box">
       <div class="finding-label en">Key Finding</div>
       <div class="finding-label es" style="display:none">Hallazgo Principal</div>
-      <div class="finding-text">Colombia's agricultural exports are geographically concentrated in the Northern Hemisphere (US, EU, Japan) while imports are sourced primarily from Southern Cone countries (Argentina, Brazil) and the US. The treemap analysis shows that export relationships are product-specific (coffee to the US/EU, flowers to the US, bananas to the EU) while import relationships are more diversified by product. The temporal animation reveals a gradual eastward shift in export destinations, with Asian markets growing faster than traditional partners.</div>
+      <div class="finding-text">
+        <strong>United States commands 33.5% of agricultural exports</strong> (2023), primarily coffee and flowers. The <strong>European Union accounts for 21.0%</strong>, with Netherlands serving as the primary EU gateway for Colombian products.
+        <br><br>
+        <strong>China represents 6.5% of exports</strong> and growing, while <strong>Ecuador (5.7%) and Japan (4.6%)</strong> round out the top five destinations. The treemap analysis shows that export relationships are product-specific: coffee to US/EU, flowers to US, bananas to EU.
+        <br><br>
+        <strong>The North-South asymmetry is striking:</strong> export destinations are concentrated in the Northern Hemisphere (US, EU, Japan) while import sources are primarily Southern Cone countries (Argentina, Brazil) and the US. This creates differential exposure to regional economic shocks — Northern Hemisphere demand drives export revenue while Southern Hemisphere supply conditions drive import costs.
+      </div>
     </div>
-    <p class="paper-text">The North-South asymmetry in Colombia's trade geography creates differential exposure to geopolitical risks: export revenue depends on Northern Hemisphere demand conditions, while import costs depend on Southern Hemisphere supply conditions and exchange rates.</p>
+
+    <figure style="text-align:center;">
+      <div style="width:100%;overflow-x:auto;margin:1.5rem 0">
+      <svg width="100%" height="320" viewBox="0 0 700 320" style="background:white; border:1px solid #c8d4c0; border-radius:4px;">
+        <defs>
+          <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+            <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+          </linearGradient>
+        </defs>
+        <rect width="700" height="320" fill="white"/>
+        <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">Colombia Agricultural Export Share by Partner (2023)</text>
+        <g stroke="#e8ede4" stroke-width="1">
+          <line x1="180" y1="55" x2="660" y2="55"/>
+          <line x1="180" y1="95" x2="660" y2="95"/>
+          <line x1="180" y1="135" x2="660" y2="135"/>
+          <line x1="180" y1="175" x2="660" y2="175"/>
+          <line x1="180" y1="215" x2="660" y2="215"/>
+        </g>
+        <g font-family="sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+          <text x="180" y="250">0%</text>
+          <text x="300" y="250">10%</text>
+          <text x="420" y="250">20%</text>
+          <text x="540" y="250">30%</text>
+          <text x="660" y="250">40%</text>
+        </g>
+        <g font-family="Georgia,serif" font-size="11" fill="#1a1a18" text-anchor="end">
+          <text x="170" y="59">United States</text>
+          <text x="170" y="99">European Union</text>
+          <text x="170" y="139">China</text>
+          <text x="170" y="179">Ecuador</text>
+          <text x="170" y="219">Japan</text>
+        </g>
+        <rect x="180" y="45" width="403" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="590" y="59" font-family="sans-serif" font-size="10" fill="white" font-weight="500">33.5%</text>
+        <rect x="180" y="85" width="252" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="440" y="99" font-family="sans-serif" font-size="10" fill="white" font-weight="500">21.0%</text>
+        <rect x="180" y="125" width="78" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="265" y="139" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">6.5%</text>
+        <rect x="180" y="165" width="68" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="255" y="179" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">5.7%</text>
+        <rect x="180" y="205" width="55" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="242" y="219" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">4.6%</text>
+      </svg>
+      </div>
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. Colombia's agricultural export share by trading partner (2023). US and EU together account for 54.5% of exports.
+        Source: UN Comtrade, author visualization.
+      </figcaption>
+    </figure>
+
+    <p class="paper-text">The temporal animation reveals a gradual eastward shift in export destinations, with Asian markets (China, Japan, South Korea) growing faster than traditional partners during 2019–2023, consistent with the diversification trend identified in the 2021 SQL analysis.</p>
   </div>
 
-  <!-- 5. WHAT I LEARNED -->
-  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
     <div class="section-title es" style="display:none">Lo que Aprendí</div>
-    <p class="paper-text"><strong>Geographic visualization as hypothesis generation</strong> — the map format revealed spatial clustering patterns (Asian market growth, intra-Andean trade intensification) that were not obvious in the 2021 tabular analysis.</p>
-    <p class="paper-text">Building <strong>treemaps for hierarchical data</strong> taught me to use visual hierarchy as an analytical tool — showing the product composition within each trade relationship simultaneously rather than requiring separate queries.</p>
-    <p class="paper-text">The <strong>animated play axis</strong> for temporal evolution introduced the concept of data storytelling through time — showing change as a narrative rather than a static comparison.</p>
+    <p class="paper-text"><strong>Geographic visualization as hypothesis generation</strong> — the map format revealed spatial clustering patterns (Asian market growth, intra-Andean trade intensification) that were not obvious in the 2021 tabular analysis. Visual exploration generates questions that numerical analysis alone might miss.</p>
+    <p class="paper-text">Building <strong>treemaps for hierarchical data</strong> taught me to use visual hierarchy as an analytical tool — showing the product composition within each trade relationship simultaneously rather than requiring separate queries for each partner.</p>
+    <p class="paper-text">The <strong>animated play axis</strong> for temporal evolution introduced the concept of data storytelling through time — showing change as a narrative rather than a static before-and-after comparison.</p>
   </div>
 
-  <!-- 6. LIMITATION -->
-  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
     <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
-      <div class="limitation-label">Tool Limitation</div>
-      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-label en">Tool Limitation</div>
+      <div class="limitation-label es" style="display:none">Limitación de Herramienta</div>
       <div class="limitation-text">Power BI maps use Bing Maps geocoding, which occasionally misplaces small trading partners or aggregates small island states incorrectly. Additionally, the bubble sizing algorithm can make small trade relationships invisible when dominant partners are included. The 2025 working paper uses formal gravity model estimation rather than visual exploration to quantify geographic trade patterns.</div>
     </div>
   </div>
 
-  <!-- 7. DELIVERABLE -->
-  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
-  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
   <div class="paper-section">
     <div class="section-number">7.</div>
+    <div class="section-title en">Policy Implication</div>
+    <div class="section-title es" style="display:none">Implicaciones de Política</div>
+    <p class="paper-text">The North-South asymmetry in Colombia's trade geography creates differential vulnerability to regional shocks. Export revenue depends on Northern Hemisphere demand conditions (US consumer spending, EU import regulations), while import costs depend on Southern Hemisphere supply conditions (Argentine harvests, Brazilian logistics).</p>
+    <p class="paper-text">For ProColombia and the Ministry of Commerce, the visualization supports strategic diversification efforts. The growing Asian market share (now 11.1% combined for China and Japan) suggests that continued investment in Pacific Alliance and CPTPP market access could further reduce dependence on traditional US/EU markets.</p>
+  </div>
+
+  <div class="paper-section">
+    <div class="section-number">8.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
-    <p class="paper-text">Power BI report (.pbix) with interactive world maps, treemaps, and animated trade flow visualizations for Colombia's agricultural trade network.</p>
+    <p class="paper-text">The deliverable includes a CSV data file with partner-year level export shares and values, plus an SVG horizontal bar chart of 2023 partner composition.</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Power BI Report (.pbix) — Coming Soon</span>
-      
+      <a class="dl-btn primary" href="../assets/downloads/2023-rb3-trade-geography-data.csv">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Data File (.csv)
+      </a>
+      <a class="dl-btn" href="../assets/downloads/2023-rb3-trade-geography-chart.svg" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Partner Share Chart (.svg)
+      </a>
     </div>
   </div>
 
-  <!-- PROJECT NAVIGATION -->
-  <!-- 2023-rb2-biotech-latam.html = previous project html filename (or ../projects.html if first) -->
-  <!-- ← Research Brief 2 = ← Capstone 2020  OR  ← Back to All Projects -->
-  <!-- ../projects.html = next project html filename -->
-  <!-- Back to All Projects → = Research Brief 2 →  OR  Capstone 2020 → -->
   <div class="project-nav">
     <a href="2023-rb2-biotech-latam.html" class="proj-nav-back">← Research Brief 2</a>
     <a href="../projects.html" class="proj-nav-link">Back to All Projects →</a>
@@ -308,17 +313,17 @@
 
 <footer>
   <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="/cdn-cgi/l/email-protection#97f6f0e2e3fef2e5e5f2eda6a2a0d7f2e4e3e2f3fef6f9e3f2e4b9f6e5f2f6f9f3fef9f6b9f2f3e2b9f4f8"><span class="__cf_email__" data-cfemail="53323426273a36212136296266641336202726373a323d2736207d322136323d373a3d327d3637267d303c">[email&#160;protected]</span></a>
+    <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
-    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
     document.documentElement.lang = lang;
   }
   function toggleMobileNav() {

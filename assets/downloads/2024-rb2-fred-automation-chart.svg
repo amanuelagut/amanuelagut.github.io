@@ -1,0 +1,53 @@
+<svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="background:white">
+  <defs>
+    <linearGradient id="brentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="320" fill="white"/>
+  <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">FRED Commodity Price Index (2020–2024, Base=100)</text>
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="50" x2="660" y2="50"/>
+    <line x1="60" y1="100" x2="660" y2="100"/>
+    <line x1="60" y1="150" x2="660" y2="150"/>
+    <line x1="60" y1="200" x2="660" y2="200"/>
+    <line x1="60" y1="250" x2="660" y2="250"/>
+  </g>
+  <g font-family="sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+    <text x="55" y="54">200</text>
+    <text x="55" y="104">175</text>
+    <text x="55" y="154">150</text>
+    <text x="55" y="204">125</text>
+    <text x="55" y="254">100</text>
+  </g>
+  <g font-family="sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="100" y="280">2020-Q1</text>
+    <text x="200" y="280">2021-Q1</text>
+    <text x="300" y="280">2022-Q1</text>
+    <text x="400" y="280">2022-Q4</text>
+    <text x="500" y="280">2023-Q3</text>
+    <text x="600" y="280">2024-Q2</text>
+  </g>
+  <polyline fill="none" stroke="#2d5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="100,250 140,245 180,235 220,215 260,185 300,145 340,95 380,58 420,75 460,115 500,145 540,165 580,185 620,195 660,205"/>
+  <polyline fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="100,250 140,248 180,242 220,225 260,198 300,162 340,118 380,85 420,92 460,125 500,155 540,172 580,188 620,198 660,208"/>
+  <polyline fill="none" stroke="#ff9800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="100,250 140,246 180,238 220,218 260,188 300,152 340,108 380,72 420,85 460,118 500,148 540,168 580,185 620,195 660,202"/>
+  <polyline fill="none" stroke="#7b1fa2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="100,250 140,247 180,240 220,222 260,195 300,158 340,115 380,78 420,88 460,122 500,152 540,170 580,188 620,198 660,205"/>
+  <circle cx="380" cy="58" r="5" fill="#2d5016"/>
+  <text x="390" y="55" font-family="sans-serif" font-size="9" fill="#2d5016">Peak: 196</text>
+  <g transform="translate(480, 55)">
+    <rect x="0" y="0" width="120" height="85" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="15" x2="30" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="35" y="18" font-family="sans-serif" font-size="9" fill="#1a1a18">Brent Oil</text>
+    <line x1="10" y1="32" x2="30" y2="32" stroke="#1565c0" stroke-width="2"/>
+    <text x="35" y="35" font-family="sans-serif" font-size="9" fill="#1a1a18">Coffee</text>
+    <line x1="10" y1="49" x2="30" y2="49" stroke="#ff9800" stroke-width="2"/>
+    <text x="35" y="52" font-family="sans-serif" font-size="9" fill="#1a1a18">Wheat</text>
+    <line x1="10" y1="66" x2="30" y2="66" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="35" y="69" font-family="sans-serif" font-size="9" fill="#1a1a18">Corn</text>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="background:white">
+  <defs>
+    <linearGradient id="posGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="negGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#ef5350;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="320" fill="white"/>
+  <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">Correlation Matrix: Macro Indicators vs. Commodity Prices</text>
+  <line x1="350" y1="50" x2="350" y2="280" stroke="#5a5a55" stroke-width="1"/>
+  <g font-family="sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="200" y="65">-1.0</text>
+    <text x="275" y="65">-0.5</text>
+    <text x="350" y="65">0</text>
+    <text x="425" y="65">+0.5</text>
+    <text x="500" y="65">+1.0</text>
+  </g>
+  <g font-family="Georgia,serif" font-size="11" fill="#1a1a18" text-anchor="end">
+    <text x="145" y="105">USD/COP ↔ Brent</text>
+    <text x="145" y="145">Inflation ↔ Food CPI</text>
+    <text x="145" y="185">Interest Rate ↔ USD/COP</text>
+    <text x="145" y="225">GDP Growth ↔ Imports</text>
+    <text x="145" y="265">Brent ↔ Fertilizer Cost</text>
+  </g>
+  <rect x="350" y="90" width="128" height="22" fill="url(#posGrad)" rx="2"/>
+  <text x="485" y="105" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">r = 0.847</text>
+  <rect x="350" y="130" width="135" height="22" fill="url(#posGrad)" rx="2"/>
+  <text x="492" y="145" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">r = 0.892</text>
+  <rect x="350" y="170" width="98" height="22" fill="url(#posGrad)" rx="2"/>
+  <text x="455" y="185" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">r = 0.651</text>
+  <rect x="275" y="210" width="75" height="22" fill="url(#negGrad)" rx="2"/>
+  <text x="265" y="225" font-family="sans-serif" font-size="10" fill="#d32f2f" font-weight="500">r = -0.498</text>
+  <rect x="350" y="250" width="142" height="22" fill="url(#posGrad)" rx="2"/>
+  <text x="498" y="265" font-family="sans-serif" font-size="10" fill="#2d5016" font-weight="500">r = 0.934</text>
+  <g transform="translate(540, 100)">
+    <rect x="0" y="0" width="130" height="55" fill="white" stroke="#c8d4c0" rx="3"/>
+    <rect x="10" y="12" width="20" height="12" fill="url(#posGrad)" rx="1"/>
+    <text x="35" y="21" font-family="sans-serif" font-size="9" fill="#1a1a18">Positive (p&lt;0.05)</text>
+    <rect x="10" y="32" width="20" height="12" fill="url(#negGrad)" rx="1"/>
+    <text x="35" y="41" font-family="sans-serif" font-size="9" fill="#1a1a18">Negative (p&lt;0.05)</text>
+  </g>
+</svg>

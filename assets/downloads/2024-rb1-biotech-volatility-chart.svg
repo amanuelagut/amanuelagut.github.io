@@ -1,0 +1,60 @@
+<svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="background:white">
+  <defs>
+    <linearGradient id="adoptGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="volGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#ef5350;stop-opacity:0.7"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="320" fill="white"/>
+  <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">Biotech Adoption Rate vs. Price Volatility (2010–2024)</text>
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="50" x2="640" y2="50"/>
+    <line x1="60" y1="100" x2="640" y2="100"/>
+    <line x1="60" y1="150" x2="640" y2="150"/>
+    <line x1="60" y1="200" x2="640" y2="200"/>
+    <line x1="60" y1="250" x2="640" y2="250"/>
+  </g>
+  <g font-family="sans-serif" font-size="10" fill="#2d5016" text-anchor="end">
+    <text x="55" y="54">100%</text>
+    <text x="55" y="104">90%</text>
+    <text x="55" y="154">80%</text>
+    <text x="55" y="204">70%</text>
+    <text x="55" y="254">60%</text>
+  </g>
+  <g font-family="sans-serif" font-size="10" fill="#d32f2f" text-anchor="start">
+    <text x="645" y="54">50%</text>
+    <text x="645" y="104">40%</text>
+    <text x="645" y="154">30%</text>
+    <text x="645" y="204">20%</text>
+    <text x="645" y="254">10%</text>
+  </g>
+  <g font-family="sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="100" y="280">2010</text>
+    <text x="180" y="280">2012</text>
+    <text x="260" y="280">2014</text>
+    <text x="340" y="280">2016</text>
+    <text x="420" y="280">2018</text>
+    <text x="500" y="280">2020</text>
+    <text x="580" y="280">2022</text>
+    <text x="620" y="280">2024</text>
+  </g>
+  <polyline fill="none" stroke="url(#adoptGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="100,190 140,175 180,160 220,145 260,130 300,118 340,105 380,95 420,85 460,78 500,72 540,65 580,58 620,52"/>
+  <polyline fill="none" stroke="url(#volGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3"
+    points="100,170 140,165 180,175 220,185 260,178 300,168 340,180 380,172 420,165 460,145 500,108 540,155 580,175 620,188"/>
+  <circle cx="620" cy="52" r="5" fill="#2d5016"/>
+  <text x="590" y="48" font-family="sans-serif" font-size="9" fill="#2d5016">98.2%</text>
+  <circle cx="500" cy="108" r="4" fill="#d32f2f"/>
+  <text x="510" y="105" font-family="sans-serif" font-size="9" fill="#d32f2f">45.2%</text>
+  <g transform="translate(480, 180)">
+    <rect x="0" y="0" width="150" height="55" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="18" x2="35" y2="18" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="42" y="21" font-family="sans-serif" font-size="10" fill="#1a1a18">Biotech Adoption</text>
+    <line x1="10" y1="38" x2="35" y2="38" stroke="#d32f2f" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="42" y="41" font-family="sans-serif" font-size="10" fill="#1a1a18">Price Volatility</text>
+  </g>
+</svg>

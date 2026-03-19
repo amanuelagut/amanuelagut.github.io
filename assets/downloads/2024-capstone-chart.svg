@@ -1,0 +1,62 @@
+<svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="background:white">
+  <defs>
+    <linearGradient id="cornGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="riceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1565c0;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="wheatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff9800;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#ffb74d;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="320" fill="white"/>
+  <text x="350" y="22" font-family="Georgia,serif" font-size="14" fill="#1e3a0f" text-anchor="middle" font-weight="500">ARIMA Forecast MAPE by Commodity (2015–2024)</text>
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="80" y1="50" x2="640" y2="50"/>
+    <line x1="80" y1="100" x2="640" y2="100"/>
+    <line x1="80" y1="150" x2="640" y2="150"/>
+    <line x1="80" y1="200" x2="640" y2="200"/>
+    <line x1="80" y1="250" x2="640" y2="250"/>
+  </g>
+  <g font-family="sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+    <text x="75" y="54">5.0%</text>
+    <text x="75" y="104">4.0%</text>
+    <text x="75" y="154">3.0%</text>
+    <text x="75" y="204">2.0%</text>
+    <text x="75" y="254">1.0%</text>
+  </g>
+  <g font-family="sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="120" y="280">2015</text>
+    <text x="200" y="280">2017</text>
+    <text x="280" y="280">2019</text>
+    <text x="360" y="280">2021</text>
+    <text x="440" y="280">2022</text>
+    <text x="520" y="280">2023</text>
+    <text x="600" y="280">2024</text>
+  </g>
+  <line x1="360" y1="50" x2="360" y2="260" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="360" y="42" font-family="sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">Supply Chain Crisis</text>
+  <polyline fill="none" stroke="url(#cornGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="120,200 160,195 200,188 240,192 280,185 320,178 360,115 400,82 440,55 480,175 520,195 560,205 600,210"/>
+  <polyline fill="none" stroke="url(#riceGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="120,222 160,228 200,218 240,215 280,220 320,215 360,185 400,178 440,172 480,195 520,198 560,205 600,208"/>
+  <polyline fill="none" stroke="url(#wheatGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="120,200 160,208 200,175 240,182 280,195 320,185 360,112 400,75 440,50 480,175 520,188 560,202 600,205"/>
+  <circle cx="440" cy="50" r="5" fill="#ff9800"/>
+  <text x="450" y="47" font-family="sans-serif" font-size="9" fill="#ff9800">MAPE 4.41%</text>
+  <circle cx="600" cy="208" r="4" fill="#1565c0"/>
+  <text x="550" y="225" font-family="sans-serif" font-size="9" fill="#1565c0">Rice MAPE 1.12%</text>
+  <g transform="translate(500, 70)">
+    <rect x="0" y="0" width="120" height="70" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="15" x2="30" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="35" y="18" font-family="sans-serif" font-size="9" fill="#1a1a18">Corn (μ=2.28%)</text>
+    <line x1="10" y1="32" x2="30" y2="32" stroke="#1565c0" stroke-width="2"/>
+    <text x="35" y="35" font-family="sans-serif" font-size="9" fill="#1a1a18">Rice (μ=1.14%)</text>
+    <line x1="10" y1="49" x2="30" y2="49" stroke="#ff9800" stroke-width="2"/>
+    <text x="35" y="52" font-family="sans-serif" font-size="9" fill="#1a1a18">Wheat (μ=2.26%)</text>
+  </g>
+</svg>
