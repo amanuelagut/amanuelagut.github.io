@@ -122,9 +122,9 @@
     <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
     <div class="nav-links" id="navLinks">
       <a href="../index.html#about" class="en">About</a>
-      <a href="../index.html#about" class="es" style="display:none">Sobre mi</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
       <a href="../index.html#research" class="en">Research</a>
-      <a href="../index.html#research" class="es" style="display:none">Investigacion</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
       <a href="../index.html#experience" class="en">Experience</a>
       <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
       <a href="../projects.html" class="active en">Projects</a>
@@ -143,7 +143,7 @@
     <a href="../index.html">Home</a>
     <span>/</span>
     <a href="../projects.html" class="en">Research Projects</a>
-    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigacion</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>III · Risk, Volatility &amp; Statistical Inference (2022)</span>
     <span>/</span>
@@ -162,7 +162,7 @@
       <span class="meta-period">Excel (Analysis ToolPak · LINEST)</span>
     </div>
     <h1 class="paper-title">Oil Price Shocks and Agricultural Transport Costs in Colombia 2018–2022</h1>
-    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundacion Universitaria del Area Andina · 2022</div>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2022</div>
     <div class="paper-tags">
       <span class="paper-tag">FRED Data</span>
       <span class="paper-tag">DCOILBRENTEU</span>
@@ -187,7 +187,7 @@
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
-    <div class="section-title es" style="display:none">Pregunta de Investigacion</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What is the magnitude and speed of price transmission from international oil markets to Colombian agricultural transport costs?</p>
     <p class="paper-text"><strong>H0 (Null Hypothesis):</strong> There is no statistically significant relationship between Brent crude oil prices and Colombian agricultural transport costs (correlation = 0, regression coefficient = 0).</p>
     <p class="paper-text"><strong>H1 (Alternative Hypothesis):</strong> Brent crude oil prices have a positive and statistically significant effect on Colombian agricultural transport costs, with a pass-through elasticity between 0.3 and 0.6.</p>
@@ -225,7 +225,7 @@
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
-    <div class="section-title es" style="display:none">Metodologia</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis employs a three-stage transmission model implemented in Excel using Analysis ToolPak and LINEST functions.</p>
     <p class="paper-text"><strong>Step 1 — Brent-to-Diesel correlation.</strong> Pearson correlation coefficient computed between monthly Brent crude (USD/bbl) and Colombian diesel price index, testing the first link in the transmission chain. Significance tested with t-statistic: t = r * sqrt(n-2) / sqrt(1-r^2).</p>
     <p class="paper-text"><strong>Step 2 — Diesel-to-Transport regression.</strong> OLS regression estimated using LINEST: Transport_Cost = alpha + beta * Diesel_Index + epsilon. The coefficient beta represents the pass-through elasticity from diesel to transport costs. Full diagnostics reported: R^2, standard error, F-statistic, p-value.</p>
@@ -366,7 +366,7 @@
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
-    <div class="section-title es" style="display:none">Lo que Aprendi</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>Formal hypothesis testing</strong> — stating null and alternative hypotheses, computing test statistics, and comparing to critical values — introduced the discipline of distinguishing between "appears correlated" and "is statistically significantly correlated." This distinction is fundamental to all subsequent inferential work.</p>
     <p class="paper-text">The <strong>LINEST function</strong> in Excel provides full regression output (coefficients, standard errors, R^2, F-statistic) in a single array formula. Understanding how to interpret each element of LINEST output prepared me for the more automated output of Python's statsmodels in 2024.</p>
     <p class="paper-text">The concept of <strong>partial pass-through</strong> — that transmission coefficients are typically between 0 and 1 — is central to supply chain economics. This insight carries through to the corn transmission analysis (RB3) and the 2024 Capstone's multi-factor model.</p>
@@ -376,10 +376,10 @@
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
-    <div class="section-title es" style="display:none">Limitacion</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
       <div class="limitation-label en">Method Limitation</div>
-      <div class="limitation-label es" style="display:none">Metodo Limitacion</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <div class="limitation-text">The OLS regression assumes linearity and does not test for non-stationarity in the time series. If Brent and transport costs are both I(1) processes, the regression may produce spurious results. The 2024 Python portfolio addresses this with formal ADF unit root tests and cointegration analysis. Additionally, the transport cost index is a composite measure that includes non-diesel components (labor, tolls), which may dilute the estimated pass-through elasticity.</div>
     </div>
   </div>
@@ -388,7 +388,7 @@
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Policy Implication</div>
-    <div class="section-title es" style="display:none">Implicaciones de Politica</div>
+    <div class="section-title es" style="display:none">Implicaciones de Política</div>
     <p class="paper-text">The confirmed oil-transport transmission channel (beta = 0.42, p &lt; 0.001) provides empirical grounding for food price stabilization policies. Colombia's diesel price subsidy program ("FEPC") partially insulates domestic prices from international oil volatility — the incomplete pass-through documented here (61% R^2 rather than near-100%) reflects this policy buffer.</p>
     <p class="paper-text">For agricultural supply chain managers, the 1-month transmission lag provides a predictable window for cost forecasting. When Brent crude spikes, transport cost increases can be anticipated approximately 4–6 weeks later, enabling proactive contract renegotiation and logistics optimization.</p>
   </div>
@@ -420,7 +420,7 @@
 </div>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogota, Colombia ·
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
     <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>

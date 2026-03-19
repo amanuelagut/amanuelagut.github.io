@@ -122,9 +122,9 @@
     <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
     <div class="nav-links" id="navLinks">
       <a href="../index.html#about" class="en">About</a>
-      <a href="../index.html#about" class="es" style="display:none">Sobre mi</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
       <a href="../index.html#research" class="en">Research</a>
-      <a href="../index.html#research" class="es" style="display:none">Investigacion</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
       <a href="../index.html#experience" class="en">Experience</a>
       <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
       <a href="../projects.html" class="active en">Projects</a>
@@ -143,7 +143,7 @@
     <a href="../index.html">Home</a>
     <span>/</span>
     <a href="../projects.html" class="en">Research Projects</a>
-    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigacion</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -162,7 +162,7 @@
       <span class="meta-period">SQL</span>
     </div>
     <h1 class="paper-title">Top-Growing Agricultural Commodities in Latin America 2018–2021</h1>
-    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundacion Universitaria del Area Andina · 2021</div>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021</div>
     <div class="paper-tags">
       <span class="paper-tag">UN Comtrade</span>
       <span class="paper-tag">SQL JOIN</span>
@@ -185,7 +185,7 @@
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
-    <div class="section-title es" style="display:none">Pregunta de Investigacion</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">Which agricultural commodities showed the highest trade volume growth in Latin America between 2018 and 2021, and what drove this growth?</p>
     <p class="paper-text">Understanding which products are growing fastest helps identify where competitive opportunities and risks lie for Colombian agricultural exporters. The 2018–2021 window captures both pre-pandemic trends and pandemic-induced shifts in global food demand.</p>
     <p class="paper-text"><strong>H0 (Null Hypothesis):</strong> Agricultural commodity growth rates were uniformly distributed across product categories, with no sector showing statistically significant outperformance.</p>
@@ -222,7 +222,7 @@
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
-    <div class="section-title es" style="display:none">Metodologia</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">JOIN queries combine trade flow data with product classifications, followed by growth rate computations.</p>
     <p class="paper-text"><strong>Step 1 — JOIN trade flows with product names.</strong> INNER JOIN connects the numeric HS codes in the flow table with descriptive product names in the classification table, making results human-readable.</p>
     <p class="paper-text"><strong>Step 2 — Aggregate by product across region.</strong> GROUP BY product code computes total Latin American export and import values per product per year, creating a regional-level product portfolio.</p>
@@ -337,7 +337,7 @@
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
-    <div class="section-title es" style="display:none">Lo que Aprendi</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text"><strong>SQL JOINs as analytical building blocks</strong> — this project cemented the understanding that joining tables is not just a database operation but an analytical method for enriching data with context (adding product names, classification hierarchies, partner metadata).</p>
     <p class="paper-text">Computing <strong>growth rates with minimum thresholds</strong> taught me to handle the small-sample problem: a product going from $1,000 to $10,000 has 900% growth but is economically irrelevant. Filtering by absolute value before ranking is essential for meaningful results.</p>
     <p class="paper-text">The <strong>regional aggregation perspective</strong> — looking at Latin America as a whole rather than just Colombia — expanded my analytical frame from national to regional, a shift that carries through the 2023 Power BI dashboards and 2025 panel regressions.</p>
@@ -347,10 +347,10 @@
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
-    <div class="section-title es" style="display:none">Limitacion</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
       <div class="limitation-label en">Method Limitation</div>
-      <div class="limitation-label es" style="display:none">Metodo Limitacion</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <div class="limitation-text">Simple growth rates do not account for base effects or price vs. volume decomposition. A product whose trade value grew 50% might have experienced a 50% price increase with zero volume change. Separating price and volume effects requires additional data on unit values, which is partially available in Comtrade but not utilized in this brief.</div>
     </div>
   </div>
@@ -359,7 +359,7 @@
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Policy Implication</div>
-    <div class="section-title es" style="display:none">Implicaciones de Politica</div>
+    <div class="section-title es" style="display:none">Implicaciones de Política</div>
     <p class="paper-text">The disproportionate growth in oilseeds and processed foods suggests that Latin American agricultural trade is shifting toward higher-value and more processed products. For Colombia, which has historically focused on primary commodity exports (coffee, flowers, bananas), this trend signals both an opportunity and a competitive threat.</p>
     <p class="paper-text">Policy makers should consider incentivizing food processing capacity and value-added agriculture to capture a larger share of the growing processed foods market. The pandemic-driven surge in storable proteins (pulses, legumes) also suggests opportunities for Colombia to expand production in these categories, which are well-suited to the country's diverse agricultural zones and could enhance domestic food security while creating export opportunities.</p>
   </div>
@@ -391,7 +391,7 @@
 </div>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogota, Colombia ·
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
     <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>

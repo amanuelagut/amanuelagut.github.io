@@ -122,9 +122,9 @@
     <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
     <div class="nav-links" id="navLinks">
       <a href="../index.html#about" class="en">About</a>
-      <a href="../index.html#about" class="es" style="display:none">Sobre mi</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
       <a href="../index.html#research" class="en">Research</a>
-      <a href="../index.html#research" class="es" style="display:none">Investigacion</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
       <a href="../index.html#experience" class="en">Experience</a>
       <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
       <a href="../projects.html" class="active en">Projects</a>
@@ -143,7 +143,7 @@
     <a href="../index.html">Home</a>
     <span>/</span>
     <a href="../projects.html" class="en">Research Projects</a>
-    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigacion</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -162,7 +162,7 @@
       <span class="meta-period">SQL</span>
     </div>
     <h1 class="paper-title">Colombian Agricultural Export Evolution: Key Trading Partners 2015–2021</h1>
-    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundacion Universitaria del Area Andina · 2021</div>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021</div>
     <div class="paper-tags">
       <span class="paper-tag">UN Comtrade</span>
       <span class="paper-tag">SQL</span>
@@ -185,7 +185,7 @@
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
-    <div class="section-title es" style="display:none">Pregunta de Investigacion</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">How did Colombian agricultural exports to key trading partners evolve between 2015 and 2021, and which partners gained or lost share?</p>
     <p class="paper-text">Colombia's agricultural export profile is historically concentrated in coffee and flowers directed to the US and EU. Understanding whether diversification is occurring — both by product and by destination — is relevant for assessing the country's trade vulnerability and the effectiveness of export promotion policies.</p>
     <p class="paper-text"><strong>H0 (Null Hypothesis):</strong> Colombian agricultural export shares across trading partners remained stable between 2015 and 2021, with no significant diversification toward new markets.</p>
@@ -221,7 +221,7 @@
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
-    <div class="section-title es" style="display:none">Metodologia</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The analysis uses progressively complex SQL queries to extract and compute partner-level export dynamics.</p>
     <p class="paper-text"><strong>Step 1 — Aggregate exports by partner and year.</strong> SELECT partner, year, SUM(value) queries compute annual export totals for each destination country.</p>
     <p class="paper-text"><strong>Step 2 — Partner share computation.</strong> Window functions or subqueries calculate each partner's share of total exports per year, enabling share-based comparison independent of absolute value fluctuations.</p>
@@ -358,7 +358,7 @@
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
-    <div class="section-title es" style="display:none">Lo que Aprendi</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">Writing <strong>SQL window functions for share computation</strong> introduced partition-based analysis — computing metrics within groups without collapsing the data. This logic directly informs the panel data structures used in 2025.</p>
     <p class="paper-text">The experience of <strong>interpreting trade share changes</strong> — distinguishing between absolute growth and relative share shifts — built analytical intuition for proportional reasoning that applies across all economic analysis.</p>
     <p class="paper-text">Structuring <strong>queries for export ranking</strong> with ORDER BY and LIMIT clauses taught me to think about data presentation as part of the query design, not just a post-processing step.</p>
@@ -368,10 +368,10 @@
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
-    <div class="section-title es" style="display:none">Limitacion</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
       <div class="limitation-label en">Scope Limitation</div>
-      <div class="limitation-label es" style="display:none">Alcance Limitacion</div>
+      <div class="limitation-label es" style="display:none">Alcance Limitación</div>
       <div class="limitation-text">The analysis does not disaggregate by product within each partner relationship. A partner gaining share might be driven entirely by one product (e.g., flowers to Japan) rather than broad-based diversification. The 2025 RB3 addresses this limitation with product x partner cross-tabulations.</div>
     </div>
   </div>
@@ -380,7 +380,7 @@
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Policy Implication</div>
-    <div class="section-title es" style="display:none">Implicaciones de Politica</div>
+    <div class="section-title es" style="display:none">Implicaciones de Política</div>
     <p class="paper-text">The gradual diversification of Colombia's agricultural export destinations toward Asian markets suggests that trade promotion efforts and free trade agreements (such as the Colombia-Korea FTA signed in 2013) are beginning to show measurable effects. However, the slow pace of diversification — with the US still commanding over one-third of exports — indicates continued vulnerability to demand shocks in traditional markets.</p>
     <p class="paper-text">Policy makers should consider accelerating market access negotiations with high-growth Asian economies and investing in export promotion infrastructure (cold chain logistics, phytosanitary certification) tailored to emerging market requirements. The success of intra-regional trade with Ecuador and Peru also suggests opportunities for deepening Andean Community agricultural trade integration.</p>
   </div>
@@ -412,7 +412,7 @@
 </div>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogota, Colombia ·
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
     <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>

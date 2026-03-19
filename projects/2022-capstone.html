@@ -124,16 +124,16 @@
     <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
     <div class="nav-links" id="navLinks">
       <a href="../index.html#about" class="en">About</a>
-      <a href="../index.html#about" class="es" style="display:none">Sobre mi</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
       <a href="../index.html#research" class="en">Research</a>
-      <a href="../index.html#research" class="es" style="display:none">Investigacion</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
       <a href="../index.html#experience" class="en">Experience</a>
       <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
       <a href="../projects.html" class="active en">Projects</a>
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langToggleBtn" onclick="toggleLang()">ES</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
     </div>
   </div>
 </nav>
@@ -145,7 +145,7 @@
     <a href="../index.html">Home</a>
     <span>/</span>
     <a href="../projects.html" class="en">Research Projects</a>
-    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigacion</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
     <span>/</span>
     <span>III · Risk, Volatility &amp; Statistical Inference (2022)</span>
     <span>/</span>
@@ -164,11 +164,11 @@
       <span class="meta-period">Excel — Analysis ToolPak</span>
     </div>
     <h1 class="paper-title">Agricultural Price Risk in Colombia 2018–2022: Volatility, Correlation and Price Transmission</h1>
-    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundacion Universitaria del Area Andina · 2022</div>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2022</div>
     <div class="paper-tags">
       <span class="paper-tag">FRED</span>
       <span class="paper-tag">SIPSA-DANE</span>
-      <span class="paper-tag">Banco de la Republica</span>
+      <span class="paper-tag">Banco de la República</span>
       <span class="paper-tag">Regression</span>
       <span class="paper-tag">Time Series</span>
       <span class="paper-tag">t-test</span>
@@ -190,7 +190,7 @@
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
-    <div class="section-title es" style="display:none">Pregunta de Investigacion</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
     <p class="paper-text">What integrated picture of agricultural price risk emerges when volatility, correlation, and price transmission are applied simultaneously to Colombian grain markets?</p>
     <p class="paper-text"><strong>H0:</strong> International commodity prices have no statistically significant effect on Colombian domestic grain prices after controlling for exchange rate movements.</p>
     <p class="paper-text"><strong>H1:</strong> International commodity prices show statistically significant transmission to Colombian domestic prices, with exchange rate movements amplifying the pass-through effect.</p>
@@ -217,7 +217,7 @@
       <tbody>
         <tr><td>International commodity prices (corn, wheat, soybeans)</td><td>FRED</td><td>Monthly</td><td>2018–2022</td><td><a href="https://fred.stlouisfed.org/" target="_blank">fred.stlouisfed.org</a></td></tr>
         <tr><td>Wholesale grain prices — Colombia (COP/kg)</td><td>SIPSA-DANE</td><td>Weekly → Monthly</td><td>2018–2022</td><td><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/sistema-de-informacion-de-precios-sipsa" target="_blank">dane.gov.co/sipsa</a></td></tr>
-        <tr><td>USD/COP exchange rate</td><td>Banco de la Republica</td><td>Daily → Monthly</td><td>2018–2022</td><td><a href="https://www.banrep.gov.co/" target="_blank">banrep.gov.co</a></td></tr>
+        <tr><td>USD/COP exchange rate</td><td>Banco de la República</td><td>Daily → Monthly</td><td>2018–2022</td><td><a href="https://www.banrep.gov.co/" target="_blank">banrep.gov.co</a></td></tr>
         <tr><td>Brent crude oil price</td><td>FRED</td><td>Monthly</td><td>2018–2022</td><td><a href="https://fred.stlouisfed.org/" target="_blank">fred.stlouisfed.org</a></td></tr>
       </tbody>
     </table>
@@ -229,7 +229,7 @@
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
-    <div class="section-title es" style="display:none">Metodologia</div>
+    <div class="section-title es" style="display:none">Metodología</div>
     <p class="paper-text">The capstone applies three interconnected analytical methods, each representing a skill advancement from the 2020 baseline.</p>
     <p class="paper-text"><strong>Step 1 — Rolling volatility computation.</strong> 12-month rolling standard deviations and coefficients of variation computed for each domestic and international price series. The rolling window approach — as opposed to static period comparison in 2020 — captures how volatility evolves over time.</p>
     <p class="paper-text"><strong>Step 2 — Correlation matrix with hypothesis testing.</strong> Pearson correlation coefficients computed across all price series, with t-tests for statistical significance at the 5% level. The Analysis ToolPak automates the p-value computation that was done manually in 2020.</p>
@@ -343,7 +343,7 @@
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
-    <div class="section-title es" style="display:none">Lo que Aprendi</div>
+    <div class="section-title es" style="display:none">Lo que Aprendí</div>
     <p class="paper-text">The <strong>transition from descriptive to inferential statistics</strong> — using t-tests, F-tests, and p-values to make formal claims about significance — represents the single largest methodological advancement in the portfolio up to this point. The discipline of stating null hypotheses and testing them against data is foundational for all subsequent work.</p>
     <p class="paper-text"><strong>Excel's Analysis ToolPak</strong> as a statistical environment taught me that serious analysis is possible within constrained tools. The experience of computing regression diagnostics manually (R2, adjusted R2, standard errors) built understanding of what Python's statsmodels automates in 2024.</p>
     <p class="paper-text">The concept of <strong>structural breaks</strong> — that a regression relationship can change at a specific point in time — connects the statistical work to real economic events. This insight is formalized in the 2025 capstone's panel regression framework.</p>
@@ -353,10 +353,10 @@
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
-    <div class="section-title es" style="display:none">Limitacion</div>
+    <div class="section-title es" style="display:none">Limitación</div>
     <div class="limitation-box">
       <div class="limitation-label en">Method Limitation</div>
-      <div class="limitation-label es" style="display:none">Metodo Limitacion</div>
+      <div class="limitation-label es" style="display:none">Método Limitación</div>
       <div class="limitation-text">The regression models assume linearity and do not formally test for non-stationarity in the time series (unit root tests are not available in Excel's ToolPak). Additionally, the Chow test implementation is manual and does not account for unknown break dates. The 2024 Python portfolio addresses these limitations with ADF tests and ARIMA modeling.</div>
     </div>
   </div>
@@ -365,7 +365,7 @@
   <div class="paper-section">
     <div class="section-number">7.</div>
     <div class="section-title en">Policy Implication</div>
-    <div class="section-title es" style="display:none">Implicaciones de Politica</div>
+    <div class="section-title es" style="display:none">Implicaciones de Política</div>
     <p class="paper-text">The finding that international price shocks transmit to Colombian domestic markets with 60–70% pass-through and 1–2 month lag has direct implications for food security policy. The amplification effect of exchange rate depreciation (3–5 additional percentage points per 10% depreciation) means that external price shocks hit Colombian consumers harder when the peso is weak — precisely when import capacity is already constrained.</p>
     <p class="paper-text">For policy makers, the structural break finding suggests that crisis-period transmission is faster and more complete than normal-period transmission. Early warning systems for food price monitoring should incorporate international benchmark tracking with appropriate lead times, and strategic reserves should be calibrated to buffer the 1–2 month transmission lag during price spikes.</p>
   </div>
@@ -397,7 +397,7 @@
 </div>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogota, Colombia ·
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
     <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
@@ -408,7 +408,7 @@
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
-    document.getElementById('langToggleBtn').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
     document.documentElement.lang = lang;
   }
   function toggleMobileNav() {
