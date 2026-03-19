@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" style="background:white;">
+  <defs>
+    <linearGradient id="cornVol" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="riceVol" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1565c0;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="wheatVol" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff8f00;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="698" height="318" fill="none" stroke="#c8d4c0" stroke-width="1"/>
+
+  <!-- Background grid -->
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="80" y1="50" x2="450" y2="50"/>
+    <line x1="80" y1="100" x2="450" y2="100"/>
+    <line x1="80" y1="150" x2="450" y2="150"/>
+    <line x1="80" y1="200" x2="450" y2="200"/>
+  </g>
+
+  <!-- Left panel: Volatility over time -->
+  <!-- Y-axis labels (Volatility %) -->
+  <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="end">
+    <text x="75" y="54">25%</text>
+    <text x="75" y="104">20%</text>
+    <text x="75" y="154">15%</text>
+    <text x="75" y="204">10%</text>
+    <text x="75" y="254">5%</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">
+    <text x="110" y="268">2018</text>
+    <text x="180" y="268">2019</text>
+    <text x="250" y="268">2020</text>
+    <text x="320" y="268">2021</text>
+    <text x="390" y="268">2022</text>
+  </g>
+
+  <!-- Structural break marker -->
+  <line x1="250" y1="50" x2="250" y2="250" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="250" y="42" font-family="'DM Sans',sans-serif" font-size="7" fill="#d32f2f" text-anchor="middle">Break</text>
+
+  <!-- Corn volatility (green) - 8.2% to 24.6% peak -->
+  <polyline fill="none" stroke="#2d5016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="110,188 140,185 180,175 220,172 250,138 280,102 320,82 360,72 390,58 420,78"/>
+
+  <!-- Rice volatility (blue) - 6.4% to 9.8% -->
+  <polyline fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="110,215 140,218 180,212 220,215 250,192 280,195 320,202 360,195 390,188 420,192"/>
+
+  <!-- Wheat volatility (orange) - 7.1% to 20.4% -->
+  <polyline fill="none" stroke="#ff8f00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="110,205 140,202 180,195 220,198 250,168 280,145 320,128 360,108 390,92 420,115"/>
+
+  <!-- Panel label -->
+  <text x="265" y="285" font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle" font-weight="500">12-Month Rolling Volatility</text>
+
+  <!-- Right panel: Correlation matrix -->
+  <g transform="translate(480, 50)">
+    <rect x="0" y="0" width="200" height="140" fill="white" stroke="#c8d4c0" rx="3"/>
+
+    <!-- Header -->
+    <text x="100" y="18" font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle" font-weight="500">Correlation Matrix</text>
+
+    <!-- Matrix labels -->
+    <text x="70" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Corn</text>
+    <text x="110" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Rice</text>
+    <text x="150" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Wheat</text>
+    <text x="180" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">USD</text>
+
+    <text x="35" y="58" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="end">Corn</text>
+    <text x="35" y="78" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="end">Rice</text>
+    <text x="35" y="98" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="end">Wheat</text>
+    <text x="35" y="118" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="end">USD/COP</text>
+
+    <!-- Matrix cells -->
+    <!-- Corn row -->
+    <rect x="50" y="45" width="35" height="18" fill="#2d5016"/>
+    <text x="67" y="58" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">1.00</text>
+    <rect x="90" y="45" width="35" height="18" fill="#e8ede4"/>
+    <text x="107" y="58" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.42</text>
+    <rect x="130" y="45" width="35" height="18" fill="#4a7c2f"/>
+    <text x="147" y="58" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">0.78</text>
+    <rect x="170" y="45" width="25" height="18" fill="#4a7c2f"/>
+    <text x="182" y="58" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">0.73</text>
+
+    <!-- Rice row -->
+    <rect x="50" y="65" width="35" height="18" fill="#e8ede4"/>
+    <text x="67" y="78" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.42</text>
+    <rect x="90" y="65" width="35" height="18" fill="#1565c0"/>
+    <text x="107" y="78" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">1.00</text>
+    <rect x="130" y="65" width="35" height="18" fill="#e8ede4"/>
+    <text x="147" y="78" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.35</text>
+    <rect x="170" y="65" width="25" height="18" fill="#e8ede4"/>
+    <text x="182" y="78" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.38</text>
+
+    <!-- Wheat row -->
+    <rect x="50" y="85" width="35" height="18" fill="#4a7c2f"/>
+    <text x="67" y="98" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">0.78</text>
+    <rect x="90" y="85" width="35" height="18" fill="#e8ede4"/>
+    <text x="107" y="98" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.35</text>
+    <rect x="130" y="85" width="35" height="18" fill="#ff8f00"/>
+    <text x="147" y="98" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">1.00</text>
+    <rect x="170" y="85" width="25" height="18" fill="#e8ede4"/>
+    <text x="182" y="98" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.62</text>
+
+    <!-- USD row -->
+    <rect x="50" y="105" width="35" height="18" fill="#4a7c2f"/>
+    <text x="67" y="118" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">0.73</text>
+    <rect x="90" y="105" width="35" height="18" fill="#e8ede4"/>
+    <text x="107" y="118" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.38</text>
+    <rect x="130" y="105" width="35" height="18" fill="#e8ede4"/>
+    <text x="147" y="118" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">0.62</text>
+    <rect x="170" y="105" width="25" height="18" fill="#8b4513"/>
+    <text x="182" y="118" font-family="'DM Sans',sans-serif" font-size="8" fill="white" text-anchor="middle">1.00</text>
+  </g>
+
+  <!-- Right panel: Pass-through summary -->
+  <g transform="translate(480, 200)">
+    <rect x="0" y="0" width="200" height="85" fill="white" stroke="#c8d4c0" rx="3"/>
+
+    <text x="100" y="18" font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle" font-weight="500">Pass-Through Elasticity</text>
+
+    <rect x="15" y="28" width="50" height="15" fill="#2d5016" rx="2"/>
+    <text x="70" y="39" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Corn: 68-74%</text>
+
+    <rect x="15" y="48" width="30" height="15" fill="#ff8f00" rx="2"/>
+    <text x="70" y="59" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Wheat: 58-66%</text>
+
+    <rect x="15" y="68" width="22" height="15" fill="#1565c0" rx="2"/>
+    <text x="70" y="79" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Rice: 42-48%</text>
+  </g>
+
+  <!-- Legend for volatility chart -->
+  <g transform="translate(90, 210)">
+    <rect x="0" y="0" width="150" height="50" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="15" x2="30" y2="15" stroke="#2d5016" stroke-width="2"/>
+    <text x="35" y="18" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Corn</text>
+    <line x1="70" y1="15" x2="90" y2="15" stroke="#1565c0" stroke-width="2"/>
+    <text x="95" y="18" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Rice</text>
+    <line x1="10" y1="35" x2="30" y2="35" stroke="#ff8f00" stroke-width="2"/>
+    <text x="35" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#1a1a18">Wheat</text>
+  </g>
+
+  <!-- Title -->
+  <text x="350" y="20" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Agricultural Price Risk Dashboard: Volatility, Correlation, Pass-Through (2018-2022)</text>
+
+  <!-- Source -->
+  <text x="350" y="310" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Sources: FRED, SIPSA-DANE, CME | Chow test break: March 2020 (p &lt; 0.01)</text>
+</svg>

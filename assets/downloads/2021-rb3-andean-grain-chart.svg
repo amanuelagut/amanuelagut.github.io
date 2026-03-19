@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" style="background:white;">
+  <defs>
+    <linearGradient id="colGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+    </linearGradient>
+    <linearGradient id="peruGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1565c0;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="ecuGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff8f00;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="bolGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#cd853f;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="698" height="318" fill="none" stroke="#c8d4c0" stroke-width="1"/>
+
+  <!-- Background grid -->
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="50" x2="650" y2="50"/>
+    <line x1="60" y1="100" x2="650" y2="100"/>
+    <line x1="60" y1="150" x2="650" y2="150"/>
+    <line x1="60" y1="200" x2="650" y2="200"/>
+    <line x1="60" y1="250" x2="650" y2="250"/>
+  </g>
+
+  <!-- Y-axis labels (Import Share %) -->
+  <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+    <text x="55" y="54">50%</text>
+    <text x="55" y="104">40%</text>
+    <text x="55" y="154">30%</text>
+    <text x="55" y="204">20%</text>
+    <text x="55" y="254">10%</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="120" y="275">2017</text>
+    <text x="240" y="275">2018</text>
+    <text x="360" y="275">2019</text>
+    <text x="480" y="275">2020</text>
+    <text x="600" y="275">2021</text>
+  </g>
+
+  <!-- Colombia line (green) - 42.3% to 42.8% -->
+  <polyline fill="none" stroke="url(#colGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="120,66 240,64 360,62 480,65 600,64"/>
+
+  <!-- Peru line (blue) - 28.9% to 29.0% -->
+  <polyline fill="none" stroke="url(#peruGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="120,142 240,143 360,142 480,142 600,142"/>
+
+  <!-- Ecuador line (orange) - 17.2% to 17.5% -->
+  <polyline fill="none" stroke="url(#ecuGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="120,206 240,206 360,200 480,204 600,200"/>
+
+  <!-- Bolivia line (brown) - 11.6% to 10.7% -->
+  <polyline fill="none" stroke="url(#bolGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="120,232 240,232 360,238 480,236 600,242"/>
+
+  <!-- Data point markers -->
+  <circle cx="120" cy="66" r="4" fill="#2d5016"/>
+  <circle cx="600" cy="64" r="4" fill="#2d5016"/>
+  <circle cx="120" cy="142" r="4" fill="#1565c0"/>
+  <circle cx="600" cy="142" r="4" fill="#1565c0"/>
+
+  <!-- Annotations -->
+  <text x="120" y="56" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">42.3%</text>
+  <text x="600" y="54" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="middle">42.8%</text>
+  <text x="600" y="132" font-family="'DM Sans',sans-serif" font-size="8" fill="#1565c0" text-anchor="middle">29.0%</text>
+
+  <!-- Legend -->
+  <g transform="translate(480, 55)">
+    <rect x="0" y="0" width="110" height="82" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="15" x2="35" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="42" y="18" font-family="'DM Sans',sans-serif" font-size="9" fill="#1a1a18">Colombia</text>
+    <line x1="10" y1="32" x2="35" y2="32" stroke="#1565c0" stroke-width="2.5"/>
+    <text x="42" y="35" font-family="'DM Sans',sans-serif" font-size="9" fill="#1a1a18">Peru</text>
+    <line x1="10" y1="49" x2="35" y2="49" stroke="#ff8f00" stroke-width="2.5"/>
+    <text x="42" y="52" font-family="'DM Sans',sans-serif" font-size="9" fill="#1a1a18">Ecuador</text>
+    <line x1="10" y1="66" x2="35" y2="66" stroke="#8b4513" stroke-width="2.5"/>
+    <text x="42" y="69" font-family="'DM Sans',sans-serif" font-size="9" fill="#1a1a18">Bolivia</text>
+  </g>
+
+  <!-- Title -->
+  <text x="350" y="22" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Andean Grain Import Market Shares (2017-2021)</text>
+
+  <!-- Source -->
+  <text x="350" y="300" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Source: UN Comtrade, CAN grain imports (HS 10-12)</text>
+</svg>

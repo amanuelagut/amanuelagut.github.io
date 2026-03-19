@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" style="background:white;">
+  <defs>
+    <linearGradient id="cbotGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff8f00;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="colCornGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.8"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a5a55"/>
+    </marker>
+  </defs>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="698" height="318" fill="none" stroke="#c8d4c0" stroke-width="1"/>
+
+  <!-- Background grid -->
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="40" x2="650" y2="40"/>
+    <line x1="60" y1="85" x2="650" y2="85"/>
+    <line x1="60" y1="130" x2="650" y2="130"/>
+    <line x1="60" y1="175" x2="650" y2="175"/>
+    <line x1="60" y1="220" x2="650" y2="220"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+    <text x="55" y="44">220</text>
+    <text x="55" y="89">180</text>
+    <text x="55" y="134">140</text>
+    <text x="55" y="179">100</text>
+    <text x="55" y="224">60</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="85" y="255">Jan 18</text>
+    <text x="175" y="255">Jan 19</text>
+    <text x="265" y="255">Jan 20</text>
+    <text x="355" y="255">Jan 21</text>
+    <text x="445" y="255">Jan 22</text>
+    <text x="535" y="255">Jul 22</text>
+    <text x="610" y="255">Dec 22</text>
+  </g>
+
+  <!-- COVID marker -->
+  <line x1="265" y1="40" x2="265" y2="235" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="265" y="32" font-family="'DM Sans',sans-serif" font-size="8" fill="#d32f2f" text-anchor="middle">COVID</text>
+
+  <!-- Ukraine marker -->
+  <line x1="445" y1="40" x2="445" y2="235" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="445" y="32" font-family="'DM Sans',sans-serif" font-size="8" fill="#1565c0" text-anchor="middle">Ukraine</text>
+
+  <!-- CBOT line (orange) - Jan18=100, peaks Apr22=224 -->
+  <polyline fill="none" stroke="url(#cbotGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="85,175 100,168 115,162 130,158 145,152 160,175 175,180 190,175 205,170 220,160 235,165 250,182 265,195 280,198 295,188 310,195 325,175 340,160 355,115 370,98 385,92 400,78 415,55 430,50 445,42 460,45 475,55 490,78 505,68 520,78 535,58 550,52 565,62 580,62 595,70 610,72"/>
+
+  <!-- Colombia line (green) - follows with 2-month lag, 0.68 elasticity -->
+  <polyline fill="none" stroke="url(#colCornGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="85,175 100,174 115,170 130,168 145,165 160,168 175,172 190,170 205,165 220,162 235,165 250,170 265,172 280,182 295,178 310,172 325,165 340,158 355,138 370,128 385,122 400,112 415,102 430,88 445,80 460,72 475,65 490,72 505,70 520,72 535,65 550,58 565,60 580,58 595,58 610,60"/>
+
+  <!-- Peak markers -->
+  <circle cx="445" cy="42" r="5" fill="#ff8f00"/>
+  <text x="445" y="35" font-family="'DM Sans',sans-serif" font-size="8" fill="#ff8f00" text-anchor="middle">CBOT: 224</text>
+
+  <circle cx="475" cy="65" r="5" fill="#2d5016"/>
+  <text x="492" y="60" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="start">COL: 172</text>
+
+  <!-- Lag indicator -->
+  <g transform="translate(445, 55)">
+    <path d="M0,0 L25,0" stroke="#5a5a55" stroke-width="1" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="12" y="-5" font-family="'DM Sans',sans-serif" font-size="7" fill="#5a5a55" text-anchor="middle">2-mo</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(85, 55)">
+    <rect x="0" y="0" width="160" height="55" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="18" x2="35" y2="18" stroke="#ff8f00" stroke-width="2.5"/>
+    <text x="42" y="21" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">CBOT Corn (Index)</text>
+    <line x1="10" y1="38" x2="35" y2="38" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="42" y="41" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Colombia (Index)</text>
+  </g>
+
+  <!-- Title -->
+  <text x="370" y="18" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">CBOT vs. Colombia Corn Price Transmission (Jan 2018 = 100)</text>
+
+  <!-- Source -->
+  <text x="350" y="280" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Sources: CME Group CBOT, SIPSA-DANE maiz amarillo | Granger F = 8.92, beta = 0.68, 2-month lag</text>
+</svg>

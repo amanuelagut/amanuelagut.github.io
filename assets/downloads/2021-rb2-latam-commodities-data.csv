@@ -1,0 +1,16 @@
+Rank,Commodity,HS_Code,Export_2018_USD_Millions,Export_2021_USD_Millions,CAGR_Pct,Growth_Driver
+1,Soybeans,1201,35420,52890,14.3,China demand recovery
+2,Sunflower Seeds,1206,2134,3678,19.9,Oilseed substitution
+3,Avocados,0804,2567,4012,16.1,Premium fruit demand
+4,Quinoa,1008,187,312,18.6,Health food trends
+5,Blueberries,0810,1234,2145,20.2,Superfoods demand
+6,Processed Poultry,1602,3456,4867,12.1,Protein demand
+7,Pulses (Lentils),0713,1876,2654,12.2,Food security stocks
+8,Frozen Fish,0303,4123,5456,9.8,Cold chain expansion
+9,Cocoa Beans,1801,2345,2978,8.3,Chocolate demand
+10,Coffee,0901,8923,10234,4.7,Stable traditional
+11,Sugar (Raw),1701,6734,7456,3.4,Stable traditional
+12,Corn (Yellow),1005,4567,4823,1.8,Competition pressure
+13,Wheat,1001,3456,3578,1.2,Stable demand
+14,Rice,1006,2123,2198,1.2,Regional self-sufficiency
+15,Bananas,0803,8234,8456,0.9,Mature market

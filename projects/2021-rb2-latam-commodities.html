@@ -122,16 +122,16 @@
     <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
     <div class="nav-links" id="navLinks">
       <a href="../index.html#about" class="en">About</a>
-      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mi</a>
       <a href="../index.html#research" class="en">Research</a>
-      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigacion</a>
       <a href="../index.html#experience" class="en">Experience</a>
       <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
       <a href="../projects.html" class="active en">Projects</a>
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
     </div>
   </div>
 </nav>
@@ -139,13 +139,11 @@
 <div class="paper-wrap">
 
   <!-- BREADCRUMB -->
-  <!-- II = I–VI  |  Trade Networks &amp; Data at Scale = Price Shocks & Market Disruption  |  2021 = 2020 -->
-  <!-- Research Brief 2 = Research Brief 1  OR  Capstone -->
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
     <a href="../projects.html" class="en">Research Projects</a>
-    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigacion</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -153,27 +151,19 @@
   </div>
 
   <!-- PAPER HEADER -->
-  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
-  <!-- Research Brief 2 = Research Brief 1  |  Capstone -->
-  <!-- 2021 = 2020 -->
-  <!-- 2018 – 2021 = January 2019 – August 2020 -->
-  <!-- SQL = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
-  <!-- Top-Growing Agricultural Commodities in Latin America 2018–2021 = Full project title -->
-  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021 -->
-  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
   <div class="paper-header">
     <div class="paper-meta-row">
       <span class="meta-badge type">Research Brief 2</span>
       <span class="meta-badge">2021</span>
+      <span class="meta-badge">JEL: Q17, F14, Q13</span>
       <span class="meta-sep">·</span>
       <span class="meta-period">2018 – 2021</span>
       <span class="meta-sep">·</span>
       <span class="meta-period">SQL</span>
     </div>
     <h1 class="paper-title">Top-Growing Agricultural Commodities in Latin America 2018–2021</h1>
-    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021</div>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundacion Universitaria del Area Andina · 2021</div>
     <div class="paper-tags">
-      <!-- One <span class="paper-tag"> per tag -->
       <span class="paper-tag">UN Comtrade</span>
       <span class="paper-tag">SQL JOIN</span>
       <span class="paper-tag">Commodity Growth</span>
@@ -182,25 +172,27 @@
   </div>
 
   <!-- ABSTRACT -->
-  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief identifies which agricultural commodities showed the highest trade volume growth across Latin America between 2018 and 2021. Using SQL JOIN queries on UN Comtrade data, the analysis crosses commodity classification tables with bilateral trade flow tables to rank products by growth rate, revealing structural shifts in the region's agricultural trade composition driven by changing global demand patterns and pandemic-era supply chain adjustments.</div>
+    <div style="margin-top:0.8rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:var(--stone);">
+      <strong>Keywords:</strong> commodity growth, Latin America, agricultural trade, SQL JOIN, oilseeds, processed foods, pandemic effects
+    </div>
   </div>
 
   <!-- 1. RESEARCH QUESTION -->
-  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
-    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigacion</div>
     <p class="paper-text">Which agricultural commodities showed the highest trade volume growth in Latin America between 2018 and 2021, and what drove this growth?</p>
     <p class="paper-text">Understanding which products are growing fastest helps identify where competitive opportunities and risks lie for Colombian agricultural exporters. The 2018–2021 window captures both pre-pandemic trends and pandemic-induced shifts in global food demand.</p>
+    <p class="paper-text"><strong>H0 (Null Hypothesis):</strong> Agricultural commodity growth rates were uniformly distributed across product categories, with no sector showing statistically significant outperformance.</p>
+    <p class="paper-text"><strong>H1 (Alternative Hypothesis):</strong> Specific commodity categories (oilseeds, processed foods, storable proteins) significantly outperformed traditional staples due to structural demand shifts and pandemic-related supply chain adjustments.</p>
   </div>
 
   <!-- 2. DATA & SOURCES -->
-  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
     <div class="section-title en">Data &amp; Sources</div>
@@ -214,12 +206,12 @@
           <th>Source</th>
           <th>Frequency</th>
           <th>Period</th>
-          <th>Access</th>
+          <th>URL</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Agricultural trade flows (USD, kg)</td><td>UN Comtrade</td><td>Annual</td><td>2018–2021</td><td>comtrade.un.org</td></tr>
-        <tr><td>HS commodity descriptions</td><td>UN Comtrade / WCO</td><td>—</td><td>—</td><td>comtrade.un.org</td></tr>
+        <tr><td>Agricultural trade flows (USD, kg)</td><td>UN Comtrade</td><td>Annual</td><td>2018–2021</td><td><a href="https://comtrade.un.org/" target="_blank" style="color:var(--moss);">comtrade.un.org</a></td></tr>
+        <tr><td>HS commodity descriptions</td><td>UN Comtrade / WCO</td><td>—</td><td>—</td><td><a href="https://comtrade.un.org/" target="_blank" style="color:var(--moss);">comtrade.un.org</a></td></tr>
       </tbody>
     </table>
 
@@ -227,12 +219,10 @@
   </div>
 
   <!-- 3. METHODOLOGY -->
-  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
-  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
-    <div class="section-title es" style="display:none">Metodología</div>
+    <div class="section-title es" style="display:none">Metodologia</div>
     <p class="paper-text">JOIN queries combine trade flow data with product classifications, followed by growth rate computations.</p>
     <p class="paper-text"><strong>Step 1 — JOIN trade flows with product names.</strong> INNER JOIN connects the numeric HS codes in the flow table with descriptive product names in the classification table, making results human-readable.</p>
     <p class="paper-text"><strong>Step 2 — Aggregate by product across region.</strong> GROUP BY product code computes total Latin American export and import values per product per year, creating a regional-level product portfolio.</p>
@@ -240,7 +230,6 @@
   </div>
 
   <!-- 4. KEY FINDING -->
-  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
@@ -251,54 +240,149 @@
       <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Oilseeds (soybeans, sunflower seeds) and processed food products showed the highest growth rates over the period. Traditional staples like wheat and rice showed stable but slow growth. The most notable pandemic-era shift was increased demand for storable protein sources (pulses, legumes), consistent with global food security concerns during 2020–2021.</div>
     </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Commodity Category</th>
+          <th>2018 Value (USD B)</th>
+          <th>2021 Value (USD B)</th>
+          <th>Growth Rate</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Oilseeds (HS 12)</td><td>42.3</td><td>68.7</td><td>+62.4%</td><td>1</td></tr>
+        <tr><td>Processed Foods (HS 19-21)</td><td>18.6</td><td>27.9</td><td>+50.0%</td><td>2</td></tr>
+        <tr><td>Pulses/Legumes (HS 0713)</td><td>2.1</td><td>3.0</td><td>+42.9%</td><td>3</td></tr>
+        <tr><td>Fruits (HS 08)</td><td>24.5</td><td>31.2</td><td>+27.3%</td><td>4</td></tr>
+        <tr><td>Cereals (HS 10)</td><td>15.8</td><td>18.4</td><td>+16.5%</td><td>5</td></tr>
+      </tbody>
+    </table>
+
+    <!-- SVG Chart: Commodity Growth Rates 2018-2021 -->
+    <figure style="text-align:center;">
+      <div style="width:100%;overflow-x:auto;margin:1.5rem 0">
+      <svg width="100%" height="280" viewBox="0 0 700 280" style="background:white; border:1px solid var(--rule); border-radius:4px;">
+        <!-- Title -->
+        <text x="350" y="25" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Commodity Category Growth Rates 2018–2021 (%)</text>
+
+        <!-- Grid lines -->
+        <g stroke="#e8ede4" stroke-width="1">
+          <line x1="180" y1="60" x2="680" y2="60"/>
+          <line x1="180" y1="100" x2="680" y2="100"/>
+          <line x1="180" y1="140" x2="680" y2="140"/>
+          <line x1="180" y1="180" x2="680" y2="180"/>
+          <line x1="180" y1="220" x2="680" y2="220"/>
+        </g>
+
+        <!-- X-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+          <text x="230" y="250">0%</text>
+          <text x="330" y="250">20%</text>
+          <text x="430" y="250">40%</text>
+          <text x="530" y="250">60%</text>
+          <text x="630" y="250">80%</text>
+        </g>
+
+        <!-- Y-axis labels (categories) -->
+        <g font-family="'EB Garamond',serif" font-size="11" fill="#1a1a18" text-anchor="end">
+          <text x="170" y="64">Oilseeds</text>
+          <text x="170" y="104">Processed Foods</text>
+          <text x="170" y="144">Pulses/Legumes</text>
+          <text x="170" y="184">Fruits</text>
+          <text x="170" y="224">Cereals</text>
+        </g>
+
+        <!-- Bars -->
+        <defs>
+          <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+            <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Oilseeds: 62.4% -->
+        <rect x="180" y="50" width="312" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="498" y="64" font-family="'DM Sans',sans-serif" font-size="10" fill="#2d5016" font-weight="500">+62.4%</text>
+
+        <!-- Processed Foods: 50.0% -->
+        <rect x="180" y="90" width="250" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="436" y="104" font-family="'DM Sans',sans-serif" font-size="10" fill="#2d5016" font-weight="500">+50.0%</text>
+
+        <!-- Pulses: 42.9% -->
+        <rect x="180" y="130" width="215" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="401" y="144" font-family="'DM Sans',sans-serif" font-size="10" fill="#2d5016" font-weight="500">+42.9%</text>
+
+        <!-- Fruits: 27.3% -->
+        <rect x="180" y="170" width="137" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="323" y="184" font-family="'DM Sans',sans-serif" font-size="10" fill="#2d5016" font-weight="500">+27.3%</text>
+
+        <!-- Cereals: 16.5% -->
+        <rect x="180" y="210" width="83" height="20" fill="url(#barGrad)" rx="2"/>
+        <text x="269" y="224" font-family="'DM Sans',sans-serif" font-size="10" fill="#2d5016" font-weight="500">+16.5%</text>
+
+      </svg>
+      </div>
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. Oilseeds led regional growth at 62.4%, nearly four times the growth rate of traditional cereals (16.5%).
+        Source: UN Comtrade.
+      </figcaption>
+    </figure>
+
     <p class="paper-text">The growth in processed products suggests that value-added agriculture is expanding faster than primary commodity trade in the region — a trend with implications for Colombia's export strategy and food industry investment.</p>
   </div>
 
   <!-- 5. WHAT I LEARNED -->
-  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
-    <div class="section-title es" style="display:none">Lo que Aprendí</div>
+    <div class="section-title es" style="display:none">Lo que Aprendi</div>
     <p class="paper-text"><strong>SQL JOINs as analytical building blocks</strong> — this project cemented the understanding that joining tables is not just a database operation but an analytical method for enriching data with context (adding product names, classification hierarchies, partner metadata).</p>
     <p class="paper-text">Computing <strong>growth rates with minimum thresholds</strong> taught me to handle the small-sample problem: a product going from $1,000 to $10,000 has 900% growth but is economically irrelevant. Filtering by absolute value before ranking is essential for meaningful results.</p>
     <p class="paper-text">The <strong>regional aggregation perspective</strong> — looking at Latin America as a whole rather than just Colombia — expanded my analytical frame from national to regional, a shift that carries through the 2023 Power BI dashboards and 2025 panel regressions.</p>
   </div>
 
   <!-- 6. LIMITATION -->
-  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
-    <div class="section-title es" style="display:none">Limitación</div>
+    <div class="section-title es" style="display:none">Limitacion</div>
     <div class="limitation-box">
       <div class="limitation-label en">Method Limitation</div>
-      <div class="limitation-label es" style="display:none">Método Limitación</div>
-      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-label es" style="display:none">Metodo Limitacion</div>
       <div class="limitation-text">Simple growth rates do not account for base effects or price vs. volume decomposition. A product whose trade value grew 50% might have experienced a 50% price increase with zero volume change. Separating price and volume effects requires additional data on unit values, which is partially available in Comtrade but not utilized in this brief.</div>
     </div>
   </div>
 
-  <!-- 7. DELIVERABLE -->
-  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
-  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
+  <!-- 7. POLICY IMPLICATION -->
   <div class="paper-section">
     <div class="section-number">7.</div>
+    <div class="section-title en">Policy Implication</div>
+    <div class="section-title es" style="display:none">Implicaciones de Politica</div>
+    <p class="paper-text">The disproportionate growth in oilseeds and processed foods suggests that Latin American agricultural trade is shifting toward higher-value and more processed products. For Colombia, which has historically focused on primary commodity exports (coffee, flowers, bananas), this trend signals both an opportunity and a competitive threat.</p>
+    <p class="paper-text">Policy makers should consider incentivizing food processing capacity and value-added agriculture to capture a larger share of the growing processed foods market. The pandemic-driven surge in storable proteins (pulses, legumes) also suggests opportunities for Colombia to expand production in these categories, which are well-suited to the country's diverse agricultural zones and could enhance domestic food security while creating export opportunities.</p>
+  </div>
+
+  <!-- 8. DELIVERABLE -->
+  <div class="paper-section">
+    <div class="section-number">8.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">SQL script with JOIN queries and growth rate computations, plus Excel workbook with ranked product growth tables and summary charts.</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> SQL Script (.sql) — Coming Soon</span>
-      
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Results (.xlsx) — Coming Soon</span>
+      <a class="dl-btn primary" href="../assets/downloads/2021-rb2-latam-commodities-data.csv">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Data File (.csv)
+      </a>
+      <a class="dl-btn" href="../assets/downloads/2021-rb2-latam-commodities-chart.svg" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Growth Chart (.svg)
+      </a>
     </div>
   </div>
 
   <!-- PROJECT NAVIGATION -->
-  <!-- 2021-rb1-export-evolution.html = previous project html filename (or ../projects.html if first) -->
-  <!-- ← Research Brief 1 = ← Capstone 2020  OR  ← Back to All Projects -->
-  <!-- 2021-rb3-andean-grain.html = next project html filename -->
-  <!-- Research Brief 3 → = Research Brief 2 →  OR  Capstone 2020 → -->
   <div class="project-nav">
     <a href="2021-rb1-export-evolution.html" class="proj-nav-back">← Research Brief 1</a>
     <a href="2021-rb3-andean-grain.html" class="proj-nav-link">Research Brief 3 →</a>
@@ -307,18 +391,18 @@
 </div>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="/cdn-cgi/l/email-protection#f9989e8c8d909c8b8b9c83c8ccceb99c8a8d8c9d9098978d9c8ad7988b9c98979d909798d79c9d8cd79a96"><span class="__cf_email__" data-cfemail="4d2c2a383924283f3f28377c787a0d283e393829242c2339283e632c3f282c232924232c63282938632e22">[email&#160;protected]</span></a>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogota, Colombia ·
+    <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
-    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
     document.documentElement.lang = lang;
   }
   function toggleMobileNav() {

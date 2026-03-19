@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" style="background:white;">
+  <defs>
+    <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1565c0;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="flowGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff8f00;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="698" height="318" fill="none" stroke="#c8d4c0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="350" y="22" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Latin American Agricultural Trade Network Structure (2015-2021)</text>
+
+  <!-- Left column - Exporters -->
+  <g font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">
+    <rect x="30" y="50" width="80" height="25" fill="#2d5016" rx="3"/>
+    <text x="70" y="67" text-anchor="middle" fill="white">Brazil</text>
+
+    <rect x="30" y="85" width="80" height="25" fill="#4a7c2f" rx="3"/>
+    <text x="70" y="102" text-anchor="middle" fill="white">Argentina</text>
+
+    <rect x="30" y="120" width="80" height="25" fill="#1565c0" rx="3"/>
+    <text x="70" y="137" text-anchor="middle" fill="white">Colombia</text>
+
+    <rect x="30" y="155" width="80" height="25" fill="#42a5f5" rx="3"/>
+    <text x="70" y="172" text-anchor="middle" fill="white">Peru</text>
+
+    <rect x="30" y="190" width="80" height="25" fill="#ff8f00" rx="3"/>
+    <text x="70" y="207" text-anchor="middle" fill="white">Chile</text>
+  </g>
+
+  <!-- Right column - Importers -->
+  <g font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">
+    <rect x="550" y="50" width="80" height="25" fill="#d32f2f" rx="3"/>
+    <text x="590" y="67" text-anchor="middle" fill="white">China</text>
+
+    <rect x="550" y="85" width="80" height="25" fill="#c62828" rx="3"/>
+    <text x="590" y="102" text-anchor="middle" fill="white">USA</text>
+
+    <rect x="550" y="120" width="80" height="25" fill="#8b4513" rx="3"/>
+    <text x="590" y="137" text-anchor="middle" fill="white">EU</text>
+
+    <rect x="550" y="155" width="80" height="25" fill="#cd853f" rx="3"/>
+    <text x="590" y="172" text-anchor="middle" fill="white">Japan</text>
+
+    <rect x="550" y="190" width="80" height="25" fill="#795548" rx="3"/>
+    <text x="590" y="207" text-anchor="middle" fill="white">Intra-LATAM</text>
+  </g>
+
+  <!-- Flow lines (major flows) -->
+  <!-- Brazil to China (soybeans - largest) -->
+  <path d="M110,62 C300,62 300,62 550,62" fill="none" stroke="url(#flowGrad1)" stroke-width="18" opacity="0.6"/>
+
+  <!-- Argentina to Brazil (wheat, corn - intra-regional) -->
+  <path d="M110,97 C200,97 400,202 550,202" fill="none" stroke="url(#flowGrad1)" stroke-width="8" opacity="0.5"/>
+
+  <!-- Colombia to USA (coffee, flowers) -->
+  <path d="M110,132 C300,132 300,97 550,97" fill="none" stroke="url(#flowGrad2)" stroke-width="10" opacity="0.5"/>
+
+  <!-- Colombia to EU -->
+  <path d="M110,132 C250,140 400,137 550,137" fill="none" stroke="url(#flowGrad2)" stroke-width="6" opacity="0.4"/>
+
+  <!-- Peru to USA (asparagus, blueberries) -->
+  <path d="M110,167 C300,167 300,97 550,97" fill="none" stroke="url(#flowGrad3)" stroke-width="5" opacity="0.5"/>
+
+  <!-- Chile to China (cherries) -->
+  <path d="M110,202 C300,202 300,62 550,62" fill="none" stroke="url(#flowGrad3)" stroke-width="8" opacity="0.5"/>
+
+  <!-- Center stats box -->
+  <g transform="translate(250, 230)">
+    <rect x="0" y="0" width="200" height="70" fill="white" stroke="#c8d4c0" rx="4"/>
+    <text x="100" y="18" font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle" font-weight="500">KEY METRICS 2021</text>
+    <text x="100" y="35" font-family="'EB Garamond',serif" font-size="11" fill="#1a1a18" text-anchor="middle">Intra-regional growth: +12.3%</text>
+    <text x="100" y="50" font-family="'EB Garamond',serif" font-size="11" fill="#1a1a18" text-anchor="middle">China share: 42% of soy exports</text>
+    <text x="100" y="65" font-family="'EB Garamond',serif" font-size="11" fill="#1a1a18" text-anchor="middle">Colombia HHI: 1712 (concentrated)</text>
+  </g>
+
+  <!-- Column labels -->
+  <text x="70" y="42" font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle" font-weight="500">EXPORTERS</text>
+  <text x="590" y="42" font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle" font-weight="500">IMPORTERS</text>
+
+  <!-- Source -->
+  <text x="350" y="310" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Source: UN Comtrade bilateral trade flows, SQL multi-table analysis</text>
+</svg>

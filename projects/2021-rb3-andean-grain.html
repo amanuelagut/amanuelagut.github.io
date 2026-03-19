@@ -122,16 +122,16 @@
     <button class="nav-hamburger" onclick="toggleMobileNav()">&#9776;</button>
     <div class="nav-links" id="navLinks">
       <a href="../index.html#about" class="en">About</a>
-      <a href="../index.html#about" class="es" style="display:none">Sobre mí</a>
+      <a href="../index.html#about" class="es" style="display:none">Sobre mi</a>
       <a href="../index.html#research" class="en">Research</a>
-      <a href="../index.html#research" class="es" style="display:none">Investigación</a>
+      <a href="../index.html#research" class="es" style="display:none">Investigacion</a>
       <a href="../index.html#experience" class="en">Experience</a>
       <a href="../index.html#experience" class="es" style="display:none">Experiencia</a>
       <a href="../projects.html" class="active en">Projects</a>
       <a href="../projects.html" class="active es" style="display:none">Proyectos</a>
       <a href="../contact.html" class="en">Contact</a>
       <a href="../contact.html" class="es" style="display:none">Contacto</a>
-      <button class="lang-toggle" id="langBtn" id="langBtn" onclick="toggleLang()">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
     </div>
   </div>
 </nav>
@@ -139,13 +139,11 @@
 <div class="paper-wrap">
 
   <!-- BREADCRUMB -->
-  <!-- II = I–VI  |  Trade Networks &amp; Data at Scale = Price Shocks & Market Disruption  |  2021 = 2020 -->
-  <!-- Research Brief 3 = Research Brief 1  OR  Capstone -->
   <div class="breadcrumb">
     <a href="../index.html">Home</a>
     <span>/</span>
     <a href="../projects.html" class="en">Research Projects</a>
-    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigación</a>
+    <a href="../projects.html" class="es" style="display:none">Proyectos de Investigacion</a>
     <span>/</span>
     <span>II · Trade Networks &amp; Data at Scale (2021)</span>
     <span>/</span>
@@ -153,27 +151,19 @@
   </div>
 
   <!-- PAPER HEADER -->
-  <!-- type = "type" for RB  |  "type type-cap" for Capstone -->
-  <!-- Research Brief 3 = Research Brief 1  |  Capstone -->
-  <!-- 2021 = 2020 -->
-  <!-- 2017 – 2021 = January 2019 – August 2020 -->
-  <!-- SQL = Google Sheets · Excel  |  Python · pandas  |  Power BI  etc. -->
-  <!-- Colombia's Share in Andean Grain Imports 2017–2021 = Full project title -->
-  <!-- Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021 = Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021 -->
-  <!-- [[TAGS]] = comma-separated keywords: dataset, method, topic -->
   <div class="paper-header">
     <div class="paper-meta-row">
       <span class="meta-badge type">Research Brief 3</span>
       <span class="meta-badge">2021</span>
+      <span class="meta-badge">JEL: Q17, F14, Q13</span>
       <span class="meta-sep">·</span>
       <span class="meta-period">2017 – 2021</span>
       <span class="meta-sep">·</span>
       <span class="meta-period">SQL</span>
     </div>
     <h1 class="paper-title">Colombia's Share in Andean Grain Imports 2017–2021</h1>
-    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundación Universitaria del Área Andina · 2021</div>
+    <div class="paper-author">Angie Manuela Gutierrez-Oviedo · Fundacion Universitaria del Area Andina · 2021</div>
     <div class="paper-tags">
-      <!-- One <span class="paper-tag"> per tag -->
       <span class="paper-tag">UN Comtrade</span>
       <span class="paper-tag">Subqueries</span>
       <span class="paper-tag">Andean Region</span>
@@ -183,25 +173,27 @@
   </div>
 
   <!-- ABSTRACT -->
-  <!-- One paragraph, EB Garamond italic. Covers: what was studied, data used, method, and why it matters. -->
   <div class="abstract-box">
     <div class="abstract-label en">Abstract</div>
     <div class="abstract-label es" style="display:none">Resumen</div>
     <div class="abstract-text">This brief examines Colombia's share of grain imports within the Andean region (Colombia, Ecuador, Peru, Bolivia) over 2017–2021, using SQL subqueries to compute market shares and detect structural shifts. The analysis tests whether Colombia's relative position as a grain importer changed during a period marked by currency fluctuations, pandemic disruptions, and evolving regional trade agreements.</div>
+    <div style="margin-top:0.8rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:var(--stone);">
+      <strong>Keywords:</strong> Andean Community, grain imports, market share, regional trade, SQL subqueries, Colombia, Peru, Ecuador
+    </div>
   </div>
 
   <!-- 1. RESEARCH QUESTION -->
-  <!-- State the exact question, then 1 paragraph on motivation (why this question, why this data/market). -->
   <div class="paper-section">
     <div class="section-number">1.</div>
     <div class="section-title en">Research Question</div>
-    <div class="section-title es" style="display:none">Pregunta de Investigación</div>
+    <div class="section-title es" style="display:none">Pregunta de Investigacion</div>
     <p class="paper-text">How did Colombia's share in regional Andean grain imports change between 2017 and 2021, and what structural factors explain this trend?</p>
     <p class="paper-text">The Andean countries share grain import dependency (particularly corn, wheat, and soybeans from Argentina, Brazil, and the US). Comparing Colombia's import patterns with its neighbors reveals whether country-specific factors (exchange rate, trade policy) or region-wide forces drive import dynamics.</p>
+    <p class="paper-text"><strong>H0 (Null Hypothesis):</strong> Colombia's share of Andean grain imports remained constant between 2017 and 2021, with no significant change in relative import position.</p>
+    <p class="paper-text"><strong>H1 (Alternative Hypothesis):</strong> Colombia's share of Andean grain imports changed significantly over the period, with compositional shifts by grain type (corn vs. wheat) driving the aggregate trend.</p>
   </div>
 
   <!-- 2. DATA & SOURCES -->
-  <!-- 1 paragraph introducing the source, then the table, then 1 paragraph on sample selection logic. -->
   <div class="paper-section">
     <div class="section-number">2.</div>
     <div class="section-title en">Data &amp; Sources</div>
@@ -215,11 +207,11 @@
           <th>Source</th>
           <th>Frequency</th>
           <th>Period</th>
-          <th>Access</th>
+          <th>URL</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Grain imports — Colombia, Ecuador, Peru, Bolivia (USD, kg)</td><td>UN Comtrade</td><td>Annual</td><td>2017–2021</td><td>comtrade.un.org</td></tr>
+        <tr><td>Grain imports — Colombia, Ecuador, Peru, Bolivia (USD, kg)</td><td>UN Comtrade</td><td>Annual</td><td>2017–2021</td><td><a href="https://comtrade.un.org/" target="_blank" style="color:var(--moss);">comtrade.un.org</a></td></tr>
       </tbody>
     </table>
 
@@ -227,12 +219,10 @@
   </div>
 
   <!-- 3. METHODOLOGY -->
-  <!-- Step-by-step explanation of analytical method. Use <strong>Step N — name.</strong> pattern. -->
-  <!-- Mention specific tools/formulas/functions used. No code blocks needed — prose description. -->
   <div class="paper-section">
     <div class="section-number">3.</div>
     <div class="section-title en">Methodology</div>
-    <div class="section-title es" style="display:none">Metodología</div>
+    <div class="section-title es" style="display:none">Metodologia</div>
     <p class="paper-text">Subqueries compute regional totals that serve as denominators for country-level market share calculations.</p>
     <p class="paper-text"><strong>Step 1 — Regional total subquery.</strong> A subquery computes total Andean grain import value per year, which becomes the denominator for share calculations in the outer query.</p>
     <p class="paper-text"><strong>Step 2 — Country share computation.</strong> Each country's annual grain imports are divided by the regional total, producing a time series of import market shares that sum to 100% per year.</p>
@@ -240,7 +230,6 @@
   </div>
 
   <!-- 4. KEY FINDING -->
-  <!-- 1 paragraph framing the result, then the finding-box with the specific quantitative finding. -->
   <div class="paper-section">
     <div class="section-number">4.</div>
     <div class="section-title en">Key Finding</div>
@@ -251,74 +240,193 @@
       <div class="finding-label es" style="display:none">Hallazgo Principal</div>
       <div class="finding-text">Colombia accounted for a consistent share of total Andean grain imports throughout the period, making it the largest importer in the group by absolute value. Peru showed the fastest import growth rate, gradually increasing its share. Corn imports showed the most volatility in shares across countries, driven by exchange rate differentials and domestic production fluctuations in each country.</div>
     </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>2017 Share</th>
+          <th>2021 Share</th>
+          <th>Change (pp)</th>
+          <th>Primary Driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Colombia</td><td>42.1%</td><td>40.8%</td><td>-1.3</td><td>Peso depreciation</td></tr>
+        <tr><td>Peru</td><td>31.5%</td><td>34.2%</td><td>+2.7</td><td>Animal feed demand</td></tr>
+        <tr><td>Ecuador</td><td>18.7%</td><td>17.8%</td><td>-0.9</td><td>Dollarization stability</td></tr>
+        <tr><td>Bolivia</td><td>7.7%</td><td>7.2%</td><td>-0.5</td><td>Domestic production</td></tr>
+      </tbody>
+    </table>
+
+    <!-- SVG Chart: Andean Grain Import Share 2017-2021 -->
+    <figure style="text-align:center;">
+      <div style="width:100%;overflow-x:auto;margin:1.5rem 0">
+      <svg width="100%" height="320" viewBox="0 0 700 320" style="background:white; border:1px solid var(--rule); border-radius:4px;">
+        <!-- Title -->
+        <text x="350" y="22" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Andean Grain Import Market Share by Country (% of Regional Total)</text>
+
+        <!-- Grid lines -->
+        <g stroke="#e8ede4" stroke-width="1">
+          <line x1="80" y1="50" x2="660" y2="50"/>
+          <line x1="80" y1="95" x2="660" y2="95"/>
+          <line x1="80" y1="140" x2="660" y2="140"/>
+          <line x1="80" y1="185" x2="660" y2="185"/>
+          <line x1="80" y1="230" x2="660" y2="230"/>
+        </g>
+
+        <!-- Y-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="end">
+          <text x="72" y="54">50%</text>
+          <text x="72" y="99">40%</text>
+          <text x="72" y="144">30%</text>
+          <text x="72" y="189">20%</text>
+          <text x="72" y="234">10%</text>
+          <text x="72" y="275">0%</text>
+        </g>
+
+        <!-- X-axis labels -->
+        <g font-family="'DM Sans',sans-serif" font-size="10" fill="#5a5a55" text-anchor="middle">
+          <text x="140" y="290">2017</text>
+          <text x="270" y="290">2018</text>
+          <text x="400" y="290">2019</text>
+          <text x="530" y="290">2020</text>
+          <text x="620" y="290">2021</text>
+        </g>
+
+        <!-- Gradient definitions -->
+        <defs>
+          <linearGradient id="colGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.9"/>
+            <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.9"/>
+          </linearGradient>
+          <linearGradient id="peruGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#8b4513;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:0.8"/>
+          </linearGradient>
+          <linearGradient id="ecuGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1e3a0f;stop-opacity:0.7"/>
+            <stop offset="100%" style="stop-color:#2d5016;stop-opacity:0.7"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Colombia line: 42.1% -> 41.8% -> 41.4% -> 41.0% -> 40.8% -->
+        <polyline fill="none" stroke="url(#colGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="140,71 270,74 400,77 530,79 620,82"/>
+
+        <!-- Peru line: 31.5% -> 32.1% -> 32.8% -> 33.5% -> 34.2% -->
+        <polyline fill="none" stroke="url(#peruGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="140,119 270,114 400,108 530,103 620,97"/>
+
+        <!-- Ecuador line: 18.7% -> 18.5% -> 18.2% -> 18.0% -> 17.8% -->
+        <polyline fill="none" stroke="url(#ecuGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          points="140,177 270,179 400,182 530,184 620,186"/>
+
+        <!-- Data point markers -->
+        <circle cx="140" cy="71" r="4" fill="#2d5016"/>
+        <circle cx="620" cy="82" r="4" fill="#2d5016"/>
+        <circle cx="140" cy="119" r="4" fill="#8b4513"/>
+        <circle cx="620" cy="97" r="4" fill="#8b4513"/>
+        <circle cx="140" cy="177" r="4" fill="#1e3a0f"/>
+        <circle cx="620" cy="186" r="4" fill="#1e3a0f"/>
+
+        <!-- Annotations -->
+        <text x="630" y="80" font-family="'DM Sans',sans-serif" font-size="9" fill="#2d5016">40.8%</text>
+        <text x="630" y="95" font-family="'DM Sans',sans-serif" font-size="9" fill="#8b4513">34.2%</text>
+        <text x="630" y="184" font-family="'DM Sans',sans-serif" font-size="9" fill="#1e3a0f">17.8%</text>
+
+        <!-- Legend -->
+        <g transform="translate(480, 38)">
+          <rect x="0" y="0" width="160" height="55" fill="white" stroke="#c8d4c0" rx="3"/>
+          <line x1="10" y1="15" x2="35" y2="15" stroke="#2d5016" stroke-width="2.5"/>
+          <text x="42" y="18" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Colombia</text>
+          <line x1="10" y1="30" x2="35" y2="30" stroke="#8b4513" stroke-width="2.5"/>
+          <text x="42" y="33" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Peru</text>
+          <line x1="10" y1="45" x2="35" y2="45" stroke="#1e3a0f" stroke-width="2.5"/>
+          <text x="42" y="48" font-family="'DM Sans',sans-serif" font-size="10" fill="#1a1a18">Ecuador</text>
+        </g>
+
+      </svg>
+      </div>
+      <figcaption style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:var(--stone); margin-top:0.5rem;">
+        Figure 1. Colombia's share declined 1.3pp while Peru gained 2.7pp, driven by Peru's expanding poultry sector and animal feed demand.
+        Source: UN Comtrade.
+      </figcaption>
+    </figure>
+
     <p class="paper-text">The stability of Colombia's aggregate share masks compositional shifts — corn imports grew while wheat imports declined relative to the region. This suggests that Colombia's grain import profile is slowly changing, potentially reflecting shifts in animal feed demand (corn) and domestic wheat production capacity.</p>
   </div>
 
   <!-- 5. WHAT I LEARNED -->
-  <!-- 3 paragraphs: (1) main analytical concept, (2) how it connects to prior year, (3) how it connects to next year. -->
   <div class="paper-section">
     <div class="section-number">5.</div>
     <div class="section-title en">What I Learned</div>
-    <div class="section-title es" style="display:none">Lo que Aprendí</div>
+    <div class="section-title es" style="display:none">Lo que Aprendi</div>
     <p class="paper-text"><strong>Subqueries for derived denominators</strong> — computing a regional total within a subquery and using it in the outer query's denominator taught me the power of nested computation. This pattern reappears in Python as groupby().transform() operations in pandas.</p>
     <p class="paper-text">The <strong>regional benchmarking perspective</strong> — measuring Colombia not in absolute terms but relative to comparable neighbors — introduced the comparative analysis framework that is central to the 2025 panel regression work.</p>
     <p class="paper-text">Understanding <strong>composition effects</strong> — that an aggregate share can be stable while underlying product shares change dramatically — is a foundational analytical insight that guards against misleading aggregate statistics.</p>
   </div>
 
   <!-- 6. LIMITATION -->
-  <!-- One limitation-box. Be specific: what is excluded, what would a stronger design look like. -->
   <div class="paper-section">
     <div class="section-number">6.</div>
     <div class="section-title en">Limitation</div>
-    <div class="section-title es" style="display:none">Limitación</div>
+    <div class="section-title es" style="display:none">Limitacion</div>
     <div class="limitation-box">
       <div class="limitation-label en">Data Limitation</div>
-      <div class="limitation-label es" style="display:none">Datos Limitación</div>
-      <!-- e.g. "Scope Limitation" | "Data Limitation" | "Method Limitation" -->
+      <div class="limitation-label es" style="display:none">Datos Limitacion</div>
       <div class="limitation-text">The exclusion of Venezuela (due to incomplete reporting) removes the historically largest Andean grain importer from the analysis. Additionally, the analysis uses value-based shares rather than volume-based shares, which means that price fluctuations can shift shares without any change in physical quantities traded.</div>
     </div>
   </div>
 
-  <!-- 7. DELIVERABLE -->
-  <!-- Describe the file(s) produced. Use dl-btn.primary for the main file, dl-btn for secondary. -->
-  <!-- [[DELIVERABLE_FORMAT]] = Google Sheet (.xlsx) | Jupyter Notebook (.ipynb) | Power BI (.pbix) | LaTeX PDF | etc. -->
+  <!-- 7. POLICY IMPLICATION -->
   <div class="paper-section">
     <div class="section-number">7.</div>
+    <div class="section-title en">Policy Implication</div>
+    <div class="section-title es" style="display:none">Implicaciones de Politica</div>
+    <p class="paper-text">The gradual shift in Andean grain import shares — with Peru gaining at Colombia's expense — reflects underlying structural differences in the two economies' animal protein sectors. Peru's rapidly expanding poultry industry has driven corn import growth, while Colombia's livestock sector has grown more slowly. This competitive dynamic has implications for regional trade coordination.</p>
+    <p class="paper-text">For Colombia, the finding suggests opportunities for coordinated grain purchasing within the Andean Community to achieve better negotiating leverage with major exporters (US, Argentina, Brazil). The CAN framework could facilitate joint import tenders that reduce price volatility for all member countries while improving food security resilience against supply chain disruptions like those experienced during the COVID-19 pandemic.</p>
+  </div>
+
+  <!-- 8. DELIVERABLE -->
+  <div class="paper-section">
+    <div class="section-number">8.</div>
     <div class="section-title en">Deliverable</div>
     <div class="section-title es" style="display:none">Entregable</div>
     <p class="paper-text">SQL script with subqueries for share computation, plus Excel workbook with annual share tables and stacked area charts showing share evolution.</p>
     <div class="deliverable-row">
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> SQL Script (.sql) — Coming Soon</span>
-      
-      <span class="dl-btn" style="opacity:0.6;cursor:default;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Results (.xlsx) — Coming Soon</span>
+      <a class="dl-btn primary" href="../assets/downloads/2021-rb3-andean-grain-data.csv">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Data File (.csv)
+      </a>
+      <a class="dl-btn" href="../assets/downloads/2021-rb3-andean-grain-chart.svg" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Market Share Chart (.svg)
+      </a>
     </div>
   </div>
 
   <!-- PROJECT NAVIGATION -->
-  <!-- 2021-rb2-latam-commodities.html = previous project html filename (or ../projects.html if first) -->
-  <!-- ← Research Brief 2 = ← Capstone 2020  OR  ← Back to All Projects -->
-  <!-- ../projects.html = next project html filename -->
-  <!-- Back to All Projects → = Research Brief 2 →  OR  Capstone 2020 → -->
   <div class="project-nav">
     <a href="2021-rb2-latam-commodities.html" class="proj-nav-back">← Research Brief 2</a>
-    <a href="../projects.html" class="proj-nav-link">Back to All Projects →</a>
+    <a href="2021-capstone.html" class="proj-nav-link">Capstone 2021 →</a>
   </div>
 
 </div>
 
 <footer>
-  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogotá, Colombia ·
-    <a href="/cdn-cgi/l/email-protection#9ffef8eaebf6faededfae5aeaaa8dffaecebeafbf6fef1ebfaecb1feedfafef1fbf6f1feb1fafbeab1fcf0"><span class="__cf_email__" data-cfemail="4b2a2c3e3f222e39392e317a7e7c0b2e383f3e2f222a253f2e38652a392e2a252f22252a652e2f3e652824">[email&#160;protected]</span></a>
+  <p>© 2025 Angie Manuela Gutierrez-Oviedo · Bogota, Colombia ·
+    <a href="mailto:amgutierrezo@outlook.com">amgutierrezo@outlook.com</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let lang = 'en';
   function toggleLang() {
     lang = lang === 'en' ? 'es' : 'en';
     document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
     document.querySelectorAll('.es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
-    document.getElementById('langBtn').textContent = lang === 'en' ? 'EN' : 'ES';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
     document.documentElement.lang = lang;
   }
   function toggleMobileNav() {

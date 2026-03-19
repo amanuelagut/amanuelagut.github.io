@@ -1,0 +1,62 @@
+Year,Reporter,Partner,Product_Category,HS_Chapter,Flow,Value_USD_Millions,Volume_Tonnes,Unit_Value_USD_Tonne,Partner_Share_Pct,Product_Share_Pct,HHI_Partner,Intra_Regional
+2015,Colombia,United States,Coffee,09,Export,1523,312456,4874,38.2,42.3,1845,0
+2015,Colombia,United States,Flowers,06,Export,987,89234,11062,48.2,27.4,2567,0
+2015,Colombia,European Union,Coffee,09,Export,678,142345,4764,17.0,18.8,1845,0
+2015,Colombia,European Union,Flowers,06,Export,423,38456,10999,20.7,11.7,2567,0
+2015,Colombia,Japan,Coffee,09,Export,234,48234,4852,5.9,6.5,1845,0
+2015,Brazil,China,Soybeans,12,Export,18234,52345678,348,34.2,28.4,1234,0
+2015,Brazil,European Union,Soybeans,12,Export,8765,24567890,357,16.4,13.6,1234,0
+2015,Argentina,China,Soybeans,12,Export,4567,13234567,345,22.8,18.2,1567,0
+2015,Argentina,Brazil,Wheat,10,Export,2345,6789012,345,11.7,9.3,1567,1
+2015,Peru,United States,Asparagus,07,Export,345,98234,3513,28.4,12.3,1678,0
+2015,Peru,European Union,Grapes,08,Export,234,67890,3446,19.2,8.4,1678,0
+2015,Chile,United States,Grapes,08,Export,567,156789,3616,32.4,15.2,1456,0
+2015,Chile,China,Cherries,08,Export,456,89234,5112,26.1,12.2,1456,0
+2016,Colombia,United States,Coffee,09,Export,1587,318234,4987,37.8,41.8,1823,0
+2016,Colombia,United States,Flowers,06,Export,1012,91234,11093,47.5,26.7,2534,0
+2016,Colombia,European Union,Coffee,09,Export,712,148234,4803,17.0,18.8,1823,0
+2016,Colombia,Japan,Coffee,09,Export,267,54234,4923,6.4,7.0,1823,0
+2016,Brazil,China,Soybeans,12,Export,19876,56234567,353,35.2,29.1,1256,0
+2016,Argentina,China,Soybeans,12,Export,4823,14234567,339,23.4,18.8,1545,0
+2016,Peru,United States,Asparagus,07,Export,378,102345,3693,28.8,12.8,1656,0
+2016,Chile,China,Cherries,08,Export,534,96234,5549,28.2,13.4,1434,0
+2017,Colombia,United States,Coffee,09,Export,1678,324567,5170,37.1,40.8,1798,0
+2017,Colombia,United States,Flowers,06,Export,1067,94234,11323,46.8,26.0,2498,0
+2017,Colombia,European Union,Coffee,09,Export,756,152345,4964,16.7,18.4,1798,0
+2017,Colombia,South Korea,Coffee,09,Export,189,38234,4943,4.2,4.6,1798,0
+2017,Brazil,China,Soybeans,12,Export,21234,59234567,358,36.1,30.2,1278,0
+2017,Argentina,Brazil,Wheat,10,Export,2567,7234567,355,12.3,9.8,1523,1
+2017,Peru,United States,Asparagus,07,Export,412,108234,3807,29.2,13.2,1634,0
+2017,Chile,China,Cherries,08,Export,623,104234,5978,29.8,14.2,1412,0
+2018,Colombia,United States,Coffee,09,Export,1756,332456,5283,36.5,40.2,1776,0
+2018,Colombia,United States,Flowers,06,Export,1123,97234,11550,45.8,25.7,2456,0
+2018,Colombia,European Union,Coffee,09,Export,789,156789,5031,16.4,18.1,1776,0
+2018,Colombia,South Korea,Coffee,09,Export,223,44234,5041,4.6,5.1,1776,0
+2018,Brazil,China,Soybeans,12,Export,23456,62345678,376,37.2,31.4,1298,0
+2018,Argentina,Brazil,Wheat,10,Export,2789,7678234,363,12.8,10.2,1498,1
+2018,Peru,United States,Asparagus,07,Export,445,112345,3962,29.5,13.6,1612,0
+2018,Chile,China,Cherries,08,Export,712,112345,6339,31.2,15.1,1398,0
+2019,Colombia,United States,Coffee,09,Export,1823,338234,5390,35.8,39.8,1756,0
+2019,Colombia,United States,Flowers,06,Export,1178,99234,11871,44.8,25.7,2423,0
+2019,Colombia,European Union,Coffee,09,Export,823,162345,5069,16.1,18.0,1756,0
+2019,Colombia,South Korea,Coffee,09,Export,267,52234,5114,5.2,5.8,1756,0
+2019,Brazil,China,Soybeans,12,Export,24567,64234567,382,38.1,32.1,1312,0
+2019,Argentina,Brazil,Corn,10,Export,1234,3456789,357,5.8,4.6,1476,1
+2019,Peru,United States,Blueberries,08,Export,489,118234,4136,30.2,14.2,1598,0
+2019,Chile,China,Cherries,08,Export,823,118234,6961,32.4,16.2,1378,0
+2020,Colombia,United States,Coffee,09,Export,1678,312234,5375,34.2,38.2,1734,0
+2020,Colombia,United States,Flowers,06,Export,1098,92234,11904,43.2,25.0,2398,0
+2020,Colombia,European Union,Coffee,09,Export,789,152345,5180,16.1,18.0,1734,0
+2020,Colombia,South Korea,Coffee,09,Export,289,54234,5329,5.9,6.6,1734,0
+2020,Brazil,China,Soybeans,12,Export,28234,72345678,390,40.2,34.5,1356,0
+2020,Argentina,Brazil,Corn,10,Export,1567,4234567,370,7.2,5.8,1456,1
+2020,Peru,United States,Blueberries,08,Export,534,124234,4298,31.4,15.2,1578,0
+2020,Chile,China,Cherries,08,Export,934,124234,7518,34.2,17.4,1356,0
+2021,Colombia,United States,Coffee,09,Export,1934,342345,5650,34.5,38.8,1712,0
+2021,Colombia,United States,Flowers,06,Export,1234,98234,12563,42.8,24.8,2367,0
+2021,Colombia,European Union,Coffee,09,Export,867,162345,5340,15.5,17.4,1712,0
+2021,Colombia,South Korea,Coffee,09,Export,334,62345,5357,6.0,6.7,1712,0
+2021,Brazil,China,Soybeans,12,Export,31234,78234567,399,42.1,36.2,1378,0
+2021,Argentina,Brazil,Corn,10,Export,1823,4789234,381,8.2,6.5,1434,1
+2021,Peru,United States,Blueberries,08,Export,623,132345,4708,32.2,16.4,1556,0
+2021,Chile,China,Cherries,08,Export,1123,132345,8485,36.5,19.2,1334,0

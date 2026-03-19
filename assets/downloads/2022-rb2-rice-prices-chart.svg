@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" style="background:white;">
+  <defs>
+    <linearGradient id="usdGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1565c0;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="riceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#4a7c2f;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="698" height="318" fill="none" stroke="#c8d4c0" stroke-width="1"/>
+
+  <!-- Background grid -->
+  <g stroke="#e8ede4" stroke-width="1">
+    <line x1="60" y1="45" x2="640" y2="45"/>
+    <line x1="60" y1="90" x2="640" y2="90"/>
+    <line x1="60" y1="135" x2="640" y2="135"/>
+    <line x1="60" y1="180" x2="640" y2="180"/>
+    <line x1="60" y1="225" x2="640" y2="225"/>
+  </g>
+
+  <!-- Y-axis labels (left - Rice Index) -->
+  <g font-family="'DM Sans',sans-serif" font-size="10" fill="#2d5016" text-anchor="end">
+    <text x="55" y="49">115</text>
+    <text x="55" y="94">110</text>
+    <text x="55" y="139">105</text>
+    <text x="55" y="184">100</text>
+    <text x="55" y="229">95</text>
+  </g>
+
+  <!-- Y-axis labels (right - USD/COP Index) -->
+  <g font-family="'DM Sans',sans-serif" font-size="10" fill="#1565c0" text-anchor="start">
+    <text x="645" y="49">160</text>
+    <text x="645" y="94">140</text>
+    <text x="645" y="139">120</text>
+    <text x="645" y="184">100</text>
+    <text x="645" y="229">80</text>
+  </g>
+
+  <!-- X-axis labels -->
+  <g font-family="'DM Sans',sans-serif" font-size="9" fill="#5a5a55" text-anchor="middle">
+    <text x="90" y="260">Jan 19</text>
+    <text x="200" y="260">Jan 20</text>
+    <text x="310" y="260">Jan 21</text>
+    <text x="420" y="260">Jan 22</text>
+    <text x="530" y="260">Jul 22</text>
+    <text x="620" y="260">Dec 22</text>
+  </g>
+
+  <!-- Harvest season shading (Major: Aug-Sep, Minor: Mar-Apr) -->
+  <rect x="145" y="45" width="25" height="195" fill="#4a7c2f" opacity="0.1"/>
+  <rect x="255" y="45" width="25" height="195" fill="#4a7c2f" opacity="0.1"/>
+  <rect x="365" y="45" width="25" height="195" fill="#4a7c2f" opacity="0.1"/>
+  <rect x="475" y="45" width="25" height="195" fill="#4a7c2f" opacity="0.1"/>
+  <text x="157" y="55" font-family="'DM Sans',sans-serif" font-size="6" fill="#2d5016">H</text>
+  <text x="267" y="55" font-family="'DM Sans',sans-serif" font-size="6" fill="#2d5016">H</text>
+  <text x="377" y="55" font-family="'DM Sans',sans-serif" font-size="6" fill="#2d5016">H</text>
+  <text x="487" y="55" font-family="'DM Sans',sans-serif" font-size="6" fill="#2d5016">H</text>
+
+  <!-- USD/COP line (blue) - Jan19=100, peaks at Mar20 (~128), Dec22 (~155) -->
+  <polyline fill="none" stroke="url(#usdGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="90,180 110,175 130,168 150,162 170,158 190,150 210,98 230,75 250,92 270,115 290,120 310,135 330,128 350,118 370,112 390,105 410,100 430,95 450,90 470,82 490,72 510,65 530,52 550,45 570,48 590,42 610,45 620,45"/>
+
+  <!-- Rice Price line (green) - smoother, less volatile -->
+  <polyline fill="none" stroke="url(#riceGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="90,180 110,178 130,195 150,205 170,195 190,180 210,162 230,145 250,158 270,168 290,175 310,165 330,158 350,152 370,148 390,155 410,152 430,145 450,138 470,148 490,158 510,152 530,135 550,125 570,135 590,118 610,112 620,108"/>
+
+  <!-- Peak markers -->
+  <circle cx="620" cy="45" r="4" fill="#1565c0"/>
+  <text x="605" y="38" font-family="'DM Sans',sans-serif" font-size="8" fill="#1565c0" text-anchor="end">155</text>
+
+  <circle cx="620" cy="108" r="4" fill="#2d5016"/>
+  <text x="605" y="102" font-family="'DM Sans',sans-serif" font-size="8" fill="#2d5016" text-anchor="end">113</text>
+
+  <!-- Legend -->
+  <g transform="translate(280, 270)">
+    <rect x="0" y="0" width="200" height="35" fill="white" stroke="#c8d4c0" rx="3"/>
+    <line x1="10" y1="18" x2="35" y2="18" stroke="#2d5016" stroke-width="2.5"/>
+    <text x="42" y="21" font-family="'DM Sans',sans-serif" font-size="9" fill="#1a1a18">Rice (Index)</text>
+    <line x1="105" y1="18" x2="130" y2="18" stroke="#1565c0" stroke-width="2.5"/>
+    <text x="137" y="21" font-family="'DM Sans',sans-serif" font-size="9" fill="#1a1a18">USD/COP</text>
+  </g>
+
+  <!-- Title -->
+  <text x="350" y="20" font-family="'EB Garamond',serif" font-size="13" fill="#1e3a0f" text-anchor="middle" font-weight="500">Rice Price vs. USD/COP with Harvest Seasons (2019-2022)</text>
+
+  <!-- Annotation -->
+  <text x="350" y="310" font-family="'DM Sans',sans-serif" font-size="8" fill="#5a5a55" text-anchor="middle">Sources: SIPSA-DANE arroz blanco, FRED COLCCUSMA02STM | R2 = 0.52, Seasonal amplitude = +/-12%</text>
+</svg>
